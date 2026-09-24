@@ -29,7 +29,8 @@ STATE.mkdir(exist_ok=True)
 ORDERS = STATE / "orders.csv"
 B = "https://api.elections.kalshi.com/trade-api/v2"
 SERIES = ["KXNFLTD", "KXNFLFIRSTTD", "KXNFLSPREAD", "KXNFLTOTAL", "KXNFLTEAMTOTAL", "KXNFLGAME",
-          "KXNFLRECYDS", "KXNFLREC", "KXNFLRSHYDS", "KXNFLPASSYDS"]
+          "KXNFLRECYDS", "KXNFLREC", "KXNFLRSHYDS", "KXNFLPASSYDS",
+          "KXNFL1H", "KXNFL1HSPREAD", "KXNFL1HTOTAL", "KXNFL1QSPREAD", "KXNFL1QTOTAL", "KXNFL2HTOTAL"]
 ROUNDS = {"T-6h": 6 * 3600, "T-1h": 3600}
 SIZE = 100                      # paper contracts per order
 MAKER_FEE = 0.0175              # conservative estimate: fee = ceil(0.0175 * size * p * (1 - p)) dollars
