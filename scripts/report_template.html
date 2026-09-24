@@ -95,7 +95,7 @@ ul.caveats{margin:0;padding-left:18px;display:grid;gap:8px;max-width:72ch}
 <header>
   <span class="eyebrow">nflverse closing lines · regular season + playoffs</span>
   <h1>NFL Line Ledger</h1>
-  <p class="lede">Every game from 2011–2025 checked against its closing spread, total and moneyline: about 15,000 situational angles, then power-rating models, luck regression and price-structure tests. Everything was re-checked on seasons it wasn't built on.</p>
+  <p class="lede">NFL betting markets tested with free and cheap data: 4,096 games of closing lines, about 69,000 player props across 35 books and exchanges, and 1.25M Kalshi trades. Everything was re-checked on seasons it wasn't built on.</p>
   <div class="meta" id="meta"></div>
 </header>
 
@@ -129,8 +129,49 @@ ul.caveats{margin:0;padding-left:18px;display:grid;gap:8px;max-width:72ch}
   </div>
 </section>
 
+<section id="now">
+  <div class="sechead"><span class="eyebrow">Where it stands · all rounds</span><h2>What's left standing</h2>
+  <p class="note">Constraint: bets can only go on Kalshi, Polymarket, Novig or ProphetX, not US sportsbooks. Everything below was checked on seasons or games that weren't used to build it.</p></div>
+  <div class="ledger">
+    <div class="entry"><div><span class="chip hold">Paper trading</span></div>
+      <div><div class="claim">Resting orders on Kalshi touchdown-scorer markets</div>
+      <div class="why">I analyzed 1.25M real pre-game trades (349M contracts, 317 games, standard errors clustered by game). The side resting in the book, rather than taking the price, earned <b>+10.4%</b> on 2+ TD (SE 1.5), <b>+18.7%</b> on anytime TD (SE 5.9) and <b>+4.3%</b> on first TD (SE 2.0). Retail traders buy touchdown "Yes" lottery tickets at the ask, and whoever rests on the other side collects. Game-winner markets were about break-even. It's now running as a paper market-maker on GitHub Actions for 2026, with fills behind the real queue.</div></div>
+      <div class="stat"><b>+10 to +19%</b>maker return, TD markets</div></div>
+    <div class="entry"><div><span class="chip lean">Small, consistent</span></div>
+      <div><div class="claim">Prop model at exchange prices</div>
+      <div class="why">About 90 pre-game features. Feature selection happens inside the training years only, and each season is scored blind. The model's accuracy doesn't beat the market's own price, but its strongest picks (edge ≥ 6%) returned <b>+2.2%</b> at Novig/ProphetX (7,149 bets, SE 1.2), positive in 2024, 2025 and 2026.</div></div>
+      <div class="stat"><b>+2.2%</b>7,149 bets</div></div>
+    <div class="entry"><div><span class="chip lean">Mechanism</span></div>
+      <div><div class="claim">Wind forecasts, bet early</div>
+      <div class="why">When the forecast 4 days out shows 12+ mph wind, books lower the total by <b>0.9 points</b> before kickoff (calm games: +0.1), and unders went 59%. Archived forecasts only go back to 2024 (69 games), so the win rate is within noise, but the line movement makes betting the under early on Kalshi or Novig the right way to play it.</div></div>
+      <div class="stat"><b>−0.9 pts</b>total move to close</div></div>
+    <div class="entry"><div><span class="chip noise">No edge</span></div>
+      <div><div class="claim">Taking prices on exchanges and prediction markets</div>
+      <div class="why">Kalshi game markets are well calibrated. Contracts at 4.5¢ hit 4.5% of the time, and buying "No" on longshots at the ask loses 1–4%. Betting exchanges when they're off the sportsbook consensus lost 5%. When Novig disagrees with the books, Novig is usually right (−11.6% on its "+EV" quotes). Futures: essentially one season, dominated by 2025 favorites collapsing.</div></div>
+      <div class="stat"><b>−1 to −12%</b>taker ROI</div></div>
+  </div>
+  <h3>Prop features that really move results vs the price</h3>
+  <p class="note">Each effect is net of the market-wide under lean and holds in both 2023–24 and 2025–26. High vs low compares the top 20% of props on that feature with the bottom 20% (or yes vs no for binary features). Individually real, but together still too small to beat the exchanges' spread reliably.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Feature</th><th>Effect on overs (pts)</th><th>Read</th></tr></thead>
+    <tbody>
+      <tr><td>Receiver's team favored vs big underdog</td><td class="n good">+4.6</td><td style="white-space:normal">"Garbage-time targets" are over-priced</td></tr>
+      <tr><td>High yards per route run / targets per route</td><td class="n bad">−4.4 / −5.2</td><td style="white-space:normal">Efficiency regresses; the market prices it as sticky</td></tr>
+      <tr><td>QB outperforming his expected yards</td><td class="n bad">−10.7</td><td style="white-space:normal">Fade QBs running hot vs expectation</td></tr>
+      <tr><td>Backup QB starting (QB props)</td><td class="n good">+5.3</td><td style="white-space:normal">Backup lines are set too low</td></tr>
+      <tr><td>Blitz-heavy opponent (QB props)</td><td class="n good">+4.7</td><td></td></tr>
+      <tr><td>Coverage matchup (receiver's man/zone split × opponent's man rate)</td><td class="n good">+3.8</td><td></td></tr>
+      <tr><td>Fast-paced team</td><td class="n bad">−3.4</td><td style="white-space:normal">Pace gets over-projected</td></tr>
+      <tr><td>Player at home (receivers)</td><td class="n good">+3.2</td><td></td></tr>
+      <tr><td>Line raised vs last week</td><td class="n bad">−2.7</td><td style="white-space:normal">Overreaction to the last game</td></tr>
+      <tr><td>Over streak in last 5 props</td><td class="n bad">−2.6</td><td style="white-space:normal">Fade hot streaks</td></tr>
+      <tr><td>Forecast wind (QB props)</td><td class="n bad">−7.8</td><td></td></tr>
+    </tbody></table></div>
+  <p class="note"><b>Leaks caught and removed along the way.</b> Next Gen Stats only has a weekly row when a player qualified in that game, which faked a +10-point "separation" effect. Same-game snap and carry share faked +15–20% model ROI. Undercounted official tackles faked +11% on tackle unders. Players with zero touches were dropped from the "longest" markets. Every model result shown is after these fixes.</p>
+</section>
+
 <section id="props-r3">
-  <div class="sechead"><span class="eyebrow">Round 3 · player props · 2023–2026</span><h2>Where the props edge is</h2>
+  <div class="sechead"><span class="eyebrow">Round 3 · player props vs sportsbooks · 2023–2026</span><h2>Where the props edge is (if you can bet the books)</h2>
   <p class="note">About 69,000 props from The Odds API, pulled 4 days out, 24 hours out and 10 minutes before kickoff across 35 books and exchanges, then graded against nflverse results. Two grading bugs were caught along the way. Tackles were undercounted against official totals, which created a fake +11% under edge. And players with zero catches or carries were dropped from the "longest" markets instead of being graded as unders.</p></div>
   <div class="ledger">
     <div class="entry"><div><span class="chip hold">Strongest lead</span></div>
