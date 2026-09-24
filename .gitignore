@@ -1,0 +1,9 @@
+# secrets
+.env
+# large / rebuildable data (see README: scripts/download_nflverse.sh, scripts/build_db.sh, scripts/pull_odds.py)
+data/
+logs/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store

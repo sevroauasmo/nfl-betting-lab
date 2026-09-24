@@ -1,0 +1,914 @@
+{
+ "baseline_resid_by_season": {
+  "2023": 0.0008,
+  "2024": -0.0163,
+  "2025": -0.0261,
+  "2026": -0.0226
+ },
+ "adjusted_effects": [
+  {
+   "group": "all",
+   "feature": "home",
+   "high_minus_low": 0.023,
+   "z": 5.1,
+   "disc": 0.0198,
+   "hold": 0.0292,
+   "n_low": 24243,
+   "n_high": 24388,
+   "consistent": true
+  },
+  {
+   "group": "receiving",
+   "feature": "home",
+   "high_minus_low": 0.0323,
+   "z": 4.96,
+   "disc": 0.0287,
+   "hold": 0.0393,
+   "n_low": 11584,
+   "n_high": 11736,
+   "consistent": true
+  },
+  {
+   "group": "receiving",
+   "feature": "tprr_m8",
+   "high_minus_low": -0.052,
+   "z": -4.93,
+   "disc": -0.0511,
+   "hold": -0.0534,
+   "n_low": 4441,
+   "n_high": 4446,
+   "consistent": true
+  },
+  {
+   "group": "all",
+   "feature": "team_pace",
+   "high_minus_low": -0.0339,
+   "z": -4.62,
+   "disc": -0.0406,
+   "hold": -0.0303,
+   "n_low": 9127,
+   "n_high": 9138,
+   "consistent": true
+  },
+  {
+   "group": "receiving",
+   "feature": "team_line",
+   "high_minus_low": 0.0456,
+   "z": 4.49,
+   "disc": 0.0395,
+   "hold": 0.057,
+   "n_low": 4784,
+   "n_high": 4812,
+   "consistent": true
+  },
+  {
+   "group": "all",
+   "feature": "team_line",
+   "high_minus_low": 0.0296,
+   "z": 4.21,
+   "disc": 0.0303,
+   "hold": 0.0287,
+   "n_low": 9962,
+   "n_high": 9986,
+   "consistent": true
+  },
+  {
+   "group": "all",
+   "feature": "over_rate_l5",
+   "high_minus_low": -0.026,
+   "z": -4.06,
+   "disc": -0.0218,
+   "hold": -0.0333,
+   "n_low": 8655,
+   "n_high": 19485,
+   "consistent": true
+  },
+  {
+   "group": "receiving",
+   "feature": "cv8",
+   "high_minus_low": 0.0403,
+   "z": 3.85,
+   "disc": 0.0293,
+   "hold": 0.0615,
+   "n_low": 4504,
+   "n_high": 4504,
+   "consistent": true
+  },
+  {
+   "group": "passing",
+   "feature": "backup_qb",
+   "high_minus_low": 0.0534,
+   "z": 3.77,
+   "disc": 0.0582,
+   "hold": 0.045,
+   "n_low": 6746,
+   "n_high": 1476,
+   "consistent": true
+  },
+  {
+   "group": "receiving",
+   "feature": "team_pace",
+   "high_minus_low": -0.0398,
+   "z": -3.73,
+   "disc": -0.0452,
+   "hold": -0.0303,
+   "n_low": 4361,
+   "n_high": 4346,
+   "consistent": true
+  },
+  {
+   "group": "all",
+   "feature": "dome",
+   "high_minus_low": 0.0178,
+   "z": 3.67,
+   "disc": 0.0148,
+   "hold": 0.0237,
+   "n_low": 33076,
+   "n_high": 15555,
+   "consistent": true
+  },
+  {
+   "group": "all",
+   "feature": "cv8",
+   "high_minus_low": 0.0259,
+   "z": 3.56,
+   "disc": 0.0235,
+   "hold": 0.0307,
+   "n_low": 9372,
+   "n_high": 9372,
+   "consistent": true
+  },
+  {
+   "group": "other",
+   "feature": "team_proe",
+   "high_minus_low": -0.0592,
+   "z": -3.53,
+   "disc": -0.0601,
+   "hold": -0.0591,
+   "n_low": 1756,
+   "n_high": 1753,
+   "consistent": true
+  },
+  {
+   "group": "receiving",
+   "feature": "cov_matchup",
+   "high_minus_low": 0.0381,
+   "z": 3.5,
+   "disc": 0.0337,
+   "hold": 0.0475,
+   "n_low": 4175,
+   "n_high": 4177,
+   "consistent": true
+  },
+  {
+   "group": "receiving",
+   "feature": "implied_tt",
+   "high_minus_low": 0.0334,
+   "z": 3.28,
+   "disc": 0.0163,
+   "hold": 0.0681,
+   "n_low": 4858,
+   "n_high": 4705,
+   "consistent": true
+  },
+  {
+   "group": "all",
+   "feature": "implied_tt",
+   "high_minus_low": 0.0223,
+   "z": 3.18,
+   "disc": 0.0147,
+   "hold": 0.0372,
+   "n_low": 10256,
+   "n_high": 9737,
+   "consistent": true
+  },
+  {
+   "group": "all",
+   "feature": "exch_gap",
+   "high_minus_low": 0.0436,
+   "z": 3.08,
+   "disc": -0.0369,
+   "hold": 0.0539,
+   "n_low": 2468,
+   "n_high": 2468,
+   "consistent": false
+  },
+  {
+   "group": "passing",
+   "feature": "fc_wind",
+   "high_minus_low": -0.078,
+   "z": -3.07,
+   "disc": -0.0241,
+   "hold": -0.1277,
+   "n_low": 765,
+   "n_high": 755,
+   "consistent": true
+  },
+  {
+   "group": "all",
+   "feature": "cov_matchup",
+   "high_minus_low": 0.0298,
+   "z": 3.07,
+   "disc": 0.0261,
+   "hold": 0.0378,
+   "n_low": 5260,
+   "n_high": 5259,
+   "consistent": true
+  },
+  {
+   "group": "other",
+   "feature": "questionable",
+   "high_minus_low": -0.1007,
+   "z": -3.07,
+   "disc": -0.1035,
+   "hold": -0.0865,
+   "n_low": 9063,
+   "n_high": 226,
+   "consistent": true
+  },
+  {
+   "group": "receiving",
+   "feature": "dome",
+   "high_minus_low": 0.0214,
+   "z": 3.06,
+   "disc": 0.0202,
+   "hold": 0.0239,
+   "n_low": 15895,
+   "n_high": 7425,
+   "consistent": true
+  },
+  {
+   "group": "passing",
+   "feature": "opp_db_out",
+   "high_minus_low": 0.0423,
+   "z": 3.04,
+   "disc": 0.0528,
+   "hold": 0.0232,
+   "n_low": 5436,
+   "n_high": 1648,
+   "consistent": true
+  },
+  {
+   "group": "all",
+   "feature": "fc_wind",
+   "high_minus_low": -0.0315,
+   "z": -3.03,
+   "disc": -0.0082,
+   "hold": -0.056,
+   "n_low": 4546,
+   "n_high": 4534,
+   "consistent": true
+  },
+  {
+   "group": "other",
+   "feature": "over_rate_l5",
+   "high_minus_low": -0.0453,
+   "z": -3.02,
+   "disc": -0.048,
+   "hold": -0.0399,
+   "n_low": 1564,
+   "n_high": 3638,
+   "consistent": true
+  },
+  {
+   "group": "receiving",
+   "feature": "over_rate_l5",
+   "high_minus_low": -0.0279,
+   "z": -3.0,
+   "disc": -0.0212,
+   "hold": -0.039,
+   "n_low": 4103,
+   "n_high": 9455,
+   "consistent": true
+  },
+  {
+   "group": "passing",
+   "feature": "opp_rush_epa_allowed",
+   "high_minus_low": -0.0552,
+   "z": -2.95,
+   "disc": -0.0445,
+   "hold": -0.0659,
+   "n_low": 1405,
+   "n_high": 1404,
+   "consistent": true
+  },
+  {
+   "group": "receiving",
+   "feature": "opp_db_out",
+   "high_minus_low": 0.0229,
+   "z": 2.75,
+   "disc": 0.0237,
+   "hold": 0.0216,
+   "n_low": 15394,
+   "n_high": 4667,
+   "consistent": true
+  },
+  {
+   "group": "receiving",
+   "feature": "opp_ypt_allowed",
+   "high_minus_low": 0.0306,
+   "z": 2.74,
+   "disc": 0.0277,
+   "hold": 0.038,
+   "n_low": 3977,
+   "n_high": 3982,
+   "consistent": true
+  },
+  {
+   "group": "all",
+   "feature": "m8_vs_line",
+   "high_minus_low": 0.0192,
+   "z": 2.68,
+   "disc": 0.0211,
+   "hold": 0.0162,
+   "n_low": 9492,
+   "n_high": 9505,
+   "consistent": true
+  },
+  {
+   "group": "all",
+   "feature": "backup_qb",
+   "high_minus_low": 0.0159,
+   "z": 2.68,
+   "disc": 0.019,
+   "hold": 0.0091,
+   "n_low": 40130,
+   "n_high": 8501,
+   "consistent": true
+  },
+  {
+   "group": "other",
+   "feature": "cons_point",
+   "high_minus_low": -0.0351,
+   "z": -2.68,
+   "disc": -0.0412,
+   "hold": -0.0231,
+   "n_low": 3328,
+   "n_high": 2541,
+   "consistent": true
+  },
+  {
+   "group": "passing",
+   "feature": "wind_mph",
+   "high_minus_low": -0.0547,
+   "z": -2.65,
+   "disc": -0.0374,
+   "hold": -0.0786,
+   "n_low": 1117,
+   "n_high": 1188,
+   "consistent": true
+  },
+  {
+   "group": "other",
+   "feature": "n_books",
+   "high_minus_low": -0.0349,
+   "z": -2.61,
+   "disc": -0.0366,
+   "hold": -0.0317,
+   "n_low": 3322,
+   "n_high": 2361,
+   "consistent": true
+  },
+  {
+   "group": "all",
+   "feature": "opp_allow_rel",
+   "high_minus_low": 0.0189,
+   "z": 2.56,
+   "disc": 0.0255,
+   "hold": 0.0058,
+   "n_low": 9040,
+   "n_high": 9040,
+   "consistent": true
+  },
+  {
+   "group": "receiving",
+   "feature": "fc_wind",
+   "high_minus_low": -0.0376,
+   "z": -2.52,
+   "disc": -0.0109,
+   "hold": -0.0668,
+   "n_low": 2226,
+   "n_high": 2210,
+   "consistent": true
+  },
+  {
+   "group": "all",
+   "feature": "opp_db_out",
+   "high_minus_low": 0.0144,
+   "z": 2.51,
+   "disc": 0.0164,
+   "hold": 0.0105,
+   "n_low": 32123,
+   "n_high": 9771,
+   "consistent": true
+  },
+  {
+   "group": "rushing",
+   "feature": "m8_vs_line",
+   "high_minus_low": 0.0449,
+   "z": 2.51,
+   "disc": 0.0468,
+   "hold": 0.0425,
+   "n_low": 1533,
+   "n_high": 1517,
+   "consistent": true
+  },
+  {
+   "group": "rushing",
+   "feature": "implied_tt",
+   "high_minus_low": 0.044,
+   "z": 2.5,
+   "disc": 0.0609,
+   "hold": 0.0066,
+   "n_low": 1616,
+   "n_high": 1584,
+   "consistent": true
+  },
+  {
+   "group": "receiving",
+   "feature": "wind_mph",
+   "high_minus_low": -0.0302,
+   "z": -2.49,
+   "disc": -0.0183,
+   "hold": -0.046,
+   "n_low": 3215,
+   "n_high": 3511,
+   "consistent": true
+  },
+  {
+   "group": "receiving",
+   "feature": "line_move_rel",
+   "high_minus_low": 0.0551,
+   "z": 2.49,
+   "disc": 0.0689,
+   "hold": 0.0408,
+   "n_low": 2264,
+   "n_high": 651,
+   "consistent": true
+  }
+ ],
+ "logit_model": {
+  "fit": {
+   "test 2024": {
+    "n": 17217,
+    "logloss_market": 0.68735,
+    "logloss_model": 0.69397,
+    "by_group": {
+     "other": {
+      "n": 3416,
+      "ll_market": 0.68729,
+      "ll_model": 0.69987
+     },
+     "receiving": {
+      "n": 8427,
+      "ll_market": 0.68831,
+      "ll_model": 0.69005
+     },
+     "passing": {
+      "n": 2663,
+      "ll_market": 0.68691,
+      "ll_model": 0.69424
+     },
+     "rushing": {
+      "n": 2711,
+      "ll_market": 0.6849,
+      "ll_model": 0.69847
+     }
+    },
+    "coefs": {
+     "other": {
+      "logit_fair": 0.602,
+      "over_rate_l5": -0.05,
+      "prev_margin_rel": -0.037,
+      "m3_vs_line": 0.042,
+      "m8_vs_line": 0.215,
+      "cv8": 0.236,
+      "home": -0.04,
+      "team_line": 0.039,
+      "implied_tt": -0.052,
+      "wind_mph": -0.058,
+      "opp_allow_rel": -0.036,
+      "offense_pct_m3": -0.05,
+      "vacated_target_share": 0.048,
+      "route_share_m3": -0.078,
+      "tprr_m8": -0.036,
+      "cov_matchup": 0.034,
+      "opp_man_rate": 0.045,
+      "opp_pressure_rate": -0.041,
+      "opp_proe": -0.058,
+      "backup_qb": 0.024,
+      "line_dispersion_rel": 0.104,
+      "fc_wind": -0.136,
+      "rest_diff": -0.062
+     },
+     "receiving": {
+      "logit_fair": 0.757,
+      "over_rate_l5": -0.05,
+      "m3_vs_line": -0.02,
+      "m8_vs_line": 0.044,
+      "cv8": 0.085,
+      "home": 0.061,
+      "team_line": 0.095,
+      "implied_tt": -0.085,
+      "wind_mph": -0.024,
+      "opp_allow_rel": 0.064,
+      "opp_pass_epa_allowed": 0.026,
+      "offense_pct_m3": 0.086,
+      "vacated_target_share": -0.051,
+      "route_share_m3": -0.024,
+      "tprr_m8": -0.073,
+      "cov_matchup": 0.063,
+      "opp_man_rate": -0.065,
+      "exp_plays": -0.053,
+      "opp_proe": 0.051,
+      "opp_db_out": -0.037,
+      "opp_front_out": 0.027,
+      "backup_qb": 0.024,
+      "total_move": 0.09,
+      "line_dispersion_rel": 0.066,
+      "fc_wind": 0.058,
+      "ngs_avg_separation": 0.062,
+      "ngs_ryoe": 0.046
+     },
+     "passing": {
+      "logit_fair": 0.798,
+      "over_rate_l5": -0.021,
+      "hit_rate_l8": -0.035,
+      "prev_margin_rel": -0.054,
+      "m3_vs_line": 0.049,
+      "m8_vs_line": 0.158,
+      "cv8": -0.027,
+      "home": 0.117,
+      "team_line": 0.079,
+      "implied_tt": -0.072,
+      "wind_mph": -0.049,
+      "opp_pass_epa_allowed": 0.064,
+      "opp_rush_epa_allowed": -0.02,
+      "offense_pct_m3": -0.147,
+      "vacated_target_share": -0.04,
+      "route_share_m3": 0.168,
+      "tprr_m8": 0.113,
+      "cov_matchup": -0.104,
+      "opp_man_rate": -0.078,
+      "opp_pressure_rate": 0.087,
+      "exp_plays": 0.021,
+      "team_proe": -0.033,
+      "opp_proe": 0.096,
+      "opp_db_out": -0.059,
+      "opp_front_out": 0.049,
+      "backup_qb": 0.092,
+      "total_move": 0.15,
+      "fc_wind": -0.025,
+      "rest_diff": 0.056,
+      "ngs_avg_time_to_throw": -0.082
+     },
+     "rushing": {
+      "logit_fair": 0.252,
+      "over_rate_l5": -0.047,
+      "prev_margin_rel": -0.114,
+      "m3_vs_line": 0.03,
+      "m8_vs_line": 0.059,
+      "home": 0.077,
+      "team_line": -0.054,
+      "implied_tt": 0.04,
+      "wind_mph": -0.048,
+      "opp_allow_rel": 0.075,
+      "opp_pass_epa_allowed": -0.023,
+      "opp_rush_epa_allowed": 0.04,
+      "offense_pct_m3": 0.077,
+      "vacated_target_share": -0.12,
+      "route_share_m3": -0.025,
+      "tprr_m8": 0.028,
+      "opp_man_rate": -0.082,
+      "exp_plays": -0.049,
+      "team_proe": 0.068,
+      "opp_proe": -0.068,
+      "total_move": -0.028,
+      "fc_wind": -0.092,
+      "rest_diff": 0.147,
+      "ngs_ryoe": -0.055,
+      "ngs_avg_time_to_throw": -0.086
+     }
+    }
+   },
+   "test 2025": {
+    "n": 16396,
+    "logloss_market": 0.68953,
+    "logloss_model": 0.69056,
+    "by_group": {
+     "other": {
+      "n": 2819,
+      "ll_market": 0.69114,
+      "ll_model": 0.691
+     },
+     "passing": {
+      "n": 2997,
+      "ll_market": 0.68736,
+      "ll_model": 0.68974
+     },
+     "receiving": {
+      "n": 7861,
+      "ll_market": 0.68935,
+      "ll_model": 0.69064
+     },
+     "rushing": {
+      "n": 2719,
+      "ll_market": 0.69077,
+      "ll_model": 0.69078
+     }
+    },
+    "coefs": {
+     "other": {
+      "logit_fair": 0.757,
+      "over_rate_l5": -0.114,
+      "hit_rate_l8": 0.044,
+      "prev_margin_rel": -0.044,
+      "m3_vs_line": 0.113,
+      "m8_vs_line": 0.314,
+      "cv8": 0.217,
+      "home": -0.033,
+      "team_line": 0.051,
+      "offense_pct_m3": -0.03,
+      "vacated_target_share": 0.038,
+      "route_share_m3": -0.223,
+      "tprr_m8": 0.047,
+      "cov_matchup": -0.024,
+      "opp_pressure_rate": -0.02,
+      "backup_qb": 0.035,
+      "line_dispersion_rel": 0.035,
+      "fc_wind": 0.038,
+      "rest_diff": -0.05,
+      "ngs_avg_separation": 0.023
+     },
+     "passing": {
+      "logit_fair": 0.817,
+      "over_rate_l5": -0.043,
+      "hit_rate_l8": 0.03,
+      "prev_margin_rel": 0.05,
+      "m3_vs_line": 0.048,
+      "m8_vs_line": 0.022,
+      "cv8": -0.032,
+      "home": 0.058,
+      "team_line": 0.061,
+      "implied_tt": -0.06,
+      "wind_mph": -0.072,
+      "opp_allow_rel": 0.032,
+      "opp_pass_epa_allowed": 0.045,
+      "opp_rush_epa_allowed": -0.075,
+      "offense_pct_m3": -0.109,
+      "vacated_target_share": -0.025,
+      "route_share_m3": 0.176,
+      "tprr_m8": 0.102,
+      "cov_matchup": -0.074,
+      "opp_man_rate": -0.043,
+      "opp_pressure_rate": 0.036,
+      "exp_plays": -0.032,
+      "opp_db_out": 0.06,
+      "backup_qb": 0.133,
+      "total_move": 0.084,
+      "fc_wind": 0.035,
+      "rest_diff": 0.081,
+      "ngs_avg_time_to_throw": -0.099
+     },
+     "receiving": {
+      "logit_fair": 0.944,
+      "over_rate_l5": -0.02,
+      "m3_vs_line": -0.031,
+      "m8_vs_line": 0.059,
+      "cv8": 0.083,
+      "home": 0.045,
+      "team_line": 0.083,
+      "implied_tt": -0.054,
+      "opp_allow_rel": 0.041,
+      "offense_pct_m3": 0.199,
+      "vacated_target_share": -0.031,
+      "route_share_m3": -0.063,
+      "tprr_m8": -0.049,
+      "cov_matchup": 0.043,
+      "opp_man_rate": -0.047,
+      "exp_plays": -0.048,
+      "opp_proe": 0.034,
+      "backup_qb": 0.023,
+      "total_move": 0.061,
+      "line_dispersion_rel": 0.032,
+      "ngs_avg_separation": 0.058,
+      "ngs_ryoe": 0.031
+     },
+     "rushing": {
+      "logit_fair": 0.789,
+      "over_rate_l5": -0.074,
+      "hit_rate_l8": 0.044,
+      "prev_margin_rel": -0.061,
+      "home": 0.032,
+      "implied_tt": 0.049,
+      "opp_allow_rel": 0.056,
+      "opp_pass_epa_allowed": -0.03,
+      "opp_rush_epa_allowed": 0.025,
+      "offense_pct_m3": 0.072,
+      "vacated_target_share": -0.102,
+      "route_share_m3": -0.035,
+      "opp_man_rate": -0.049,
+      "opp_pressure_rate": -0.053,
+      "exp_plays": -0.025,
+      "opp_proe": -0.038,
+      "opp_db_out": -0.069,
+      "opp_front_out": 0.039,
+      "backup_qb": 0.021,
+      "rest_diff": 0.078,
+      "ngs_avg_separation": -0.178,
+      "ngs_ryoe": 0.026,
+      "ngs_avg_time_to_throw": -0.022
+     }
+    }
+   }
+  },
+  "bets": {
+   "EV>=0%": {
+    "n": 23892,
+    "unders": 12717,
+    "roi": -0.0022,
+    "se": 0.0064,
+    "by_season": {
+     "2024": -0.0171,
+     "2025": 0.0226,
+     "2026": -0.0549
+    }
+   },
+   "EV>=2%": {
+    "n": 19418,
+    "unders": 10338,
+    "roi": -0.0035,
+    "se": 0.0071,
+    "by_season": {
+     "2024": -0.0167,
+     "2025": 0.0222,
+     "2026": -0.0699
+    }
+   },
+   "EV>=4%": {
+    "n": 15439,
+    "unders": 8203,
+    "roi": 0.0029,
+    "se": 0.008,
+    "by_season": {
+     "2024": -0.0105,
+     "2025": 0.032,
+     "2026": -0.0778
+    }
+   },
+   "EV>=6%": {
+    "n": 12193,
+    "unders": 6446,
+    "roi": 0.0086,
+    "se": 0.0091,
+    "by_season": {
+     "2024": -0.0073,
+     "2025": 0.0454,
+     "2026": -0.0788
+    }
+   },
+   "benchmark: all unders": {
+    "n": 33613,
+    "roi": 0.0013
+   }
+  }
+ },
+ "logit_model_exchange_prices": {
+  "EV>=0%": {
+   "n": 13624,
+   "unders": 6280,
+   "roi": -0.0102,
+   "se": 0.0085,
+   "by_season": {
+    "2024": -0.0392,
+    "2025": -0.0071,
+    "2026": -0.0197
+   },
+   "by_venue": {
+    "novig": -0.0167,
+    "prophetx": -0.0027
+   },
+   "by_group": {
+    "other": [
+     536,
+     -0.029
+    ],
+    "passing": [
+     3237,
+     -0.0119
+    ],
+    "receiving": [
+     7230,
+     -0.0055
+    ],
+    "rushing": [
+     2621,
+     -0.017
+    ]
+   }
+  },
+  "EV>=2%": {
+   "n": 10773,
+   "unders": 4890,
+   "roi": -0.0032,
+   "se": 0.0096,
+   "by_season": {
+    "2024": -0.0502,
+    "2025": 0.0023,
+    "2026": -0.0238
+   },
+   "by_venue": {
+    "novig": -0.0138,
+    "prophetx": 0.009
+   },
+   "by_group": {
+    "other": [
+     395,
+     -0.0457
+    ],
+    "passing": [
+     2693,
+     0.0094
+    ],
+    "receiving": [
+     5589,
+     -0.0004
+    ],
+    "rushing": [
+     2096,
+     -0.0191
+    ]
+   }
+  },
+  "EV>=4%": {
+   "n": 8187,
+   "unders": 3636,
+   "roi": -0.0048,
+   "se": 0.0111,
+   "by_season": {
+    "2024": -0.0392,
+    "2025": 0.0021,
+    "2026": -0.0501
+   },
+   "by_venue": {
+    "novig": -0.0092,
+    "prophetx": 0.0004
+   },
+   "by_group": {
+    "other": [
+     274,
+     -0.0103
+    ],
+    "passing": [
+     2200,
+     0.0118
+    ],
+    "receiving": [
+     4096,
+     -0.0042
+    ],
+    "rushing": [
+     1617,
+     -0.028
+    ]
+   }
+  },
+  "EV>=6%": {
+   "n": 6163,
+   "unders": 2647,
+   "roi": 0.003,
+   "se": 0.0129,
+   "by_season": {
+    "2024": -0.0545,
+    "2025": 0.0117,
+    "2026": -0.039
+   },
+   "by_venue": {
+    "novig": -0.0016,
+    "prophetx": 0.0085
+   },
+   "by_group": {
+    "other": [
+     178,
+     0.0297
+    ],
+    "passing": [
+     1769,
+     0.025
+    ],
+    "receiving": [
+     2967,
+     0.0032
+    ],
+    "rushing": [
+     1249,
+     -0.0323
+    ]
+   }
+  },
+  "benchmark: all unders on exchange": {
+   "n": 20896,
+   "roi": -0.0037
+  }
+ }
+}

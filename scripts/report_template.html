@@ -1,0 +1,399 @@
+<title>NFL Line Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#F3F5F1; --surface:#FFFFFF; --ink:#17211B; --muted:#5B6860; --rule:#D5DCD5; --chalk:#E7EEE6;
+  --turf:#1E6B45; --turf-soft:#D6EBDD; --brick:#B04A2F; --brick-soft:#F4DDD5; --amber:#8A6512; --amber-soft:#F3E8C9;
+  --bar:#8FB9A0;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --ground:#0F1512; --surface:#161F1A; --ink:#E3EAE5; --muted:#93A39A; --rule:#2A352F; --chalk:#1C2721;
+  --turf:#62C08E; --turf-soft:#1D3A2A; --brick:#E4836A; --brick-soft:#3D2019; --amber:#D9B35A; --amber-soft:#3A3018; --bar:#3F7A58;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0F1512; --surface:#161F1A; --ink:#E3EAE5; --muted:#93A39A; --rule:#2A352F; --chalk:#1C2721;
+  --turf:#62C08E; --turf-soft:#1D3A2A; --brick:#E4836A; --brick-soft:#3D2019; --amber:#D9B35A; --amber-soft:#3A3018; --bar:#3F7A58;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;padding:0 20px}
+main{max-width:980px;margin:0 auto;padding-block:40px 80px}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:.01em;text-wrap:balance;margin:0}
+h1{font-size:clamp(40px,7vw,64px);line-height:1;text-transform:uppercase}
+h2{font-size:30px;text-transform:uppercase;line-height:1.1}
+h3{font-size:20px;text-transform:uppercase;letter-spacing:.03em}
+p{margin:0;max-width:68ch}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:18px;color:var(--muted);margin-top:14px}
+header{display:grid;gap:10px;padding-bottom:28px;border-bottom:3px solid var(--ink)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:10px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:500}
+section{padding-top:48px;display:grid;gap:18px}
+.sechead{display:grid;gap:6px;border-bottom:1px solid var(--rule);padding-bottom:10px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+code,.mono{font-family:var(--mono);font-size:.88em}
+code{background:var(--chalk);padding:1px 5px;border-radius:3px}
+
+/* findings ledger */
+.ledger{display:grid;border-top:1px solid var(--rule)}
+.entry{display:grid;grid-template-columns:120px 1fr 190px;gap:6px 20px;padding:16px 0;border-bottom:1px solid var(--rule);align-items:start}
+.entry .claim{font-weight:600;font-size:17px}
+.entry .why{color:var(--muted);font-size:15px;margin-top:4px}
+.entry .stat{font-family:var(--mono);font-size:13px;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.entry .stat b{display:block;font-size:22px;color:var(--ink);font-weight:500}
+.chip{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:2px;white-space:nowrap}
+.chip.hold{background:var(--turf-soft);color:var(--turf)}
+.chip.lean{background:var(--amber-soft);color:var(--amber)}
+.chip.noise{background:var(--chalk);color:var(--muted)}
+.chip.avoid{background:var(--brick-soft);color:var(--brick)}
+@media (max-width:680px){.entry{grid-template-columns:1fr}.entry .stat{text-align:left}}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--rule);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:7px 10px;text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500;border-bottom:1px solid var(--rule);background:var(--chalk)}
+tbody tr+tr td{border-top:1px solid var(--rule)}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13px}
+td.good{color:var(--turf);font-weight:600}
+td.bad{color:var(--brick);font-weight:600}
+td.setup{white-space:normal;min-width:260px;font-size:14px}
+.note{font-size:14px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.panel{background:var(--surface);border:1px solid var(--rule);padding:16px 18px;display:grid;gap:10px;align-content:start}
+.panel h3{font-size:17px}
+svg text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+svg .lbl{fill:var(--ink)}
+.inv{columns:2 300px;column-gap:28px;font-size:14px}
+.inv div{break-inside:avoid;padding:6px 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:12px}
+.inv span:last-child{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+.fields{display:flex;flex-wrap:wrap;gap:6px}
+.fields span{font-family:var(--mono);font-size:12px;background:var(--surface);border:1px solid var(--rule);padding:2px 7px}
+
+/* explorer */
+.controls{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.tabs{display:inline-flex;border:1px solid var(--ink)}
+.tabs button{font:600 14px var(--display);letter-spacing:.06em;text-transform:uppercase;background:transparent;color:var(--ink);border:0;padding:7px 16px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+input[type=search],select{font:14px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--rule);padding:7px 10px;border-radius:0}
+input[type=search]{flex:1 1 220px}
+label.ck{display:flex;gap:6px;align-items:center;font-size:14px}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--turf);outline-offset:2px}
+th.sort{cursor:pointer}
+th.sort:hover{color:var(--ink)}
+pre{background:var(--surface);border:1px solid var(--rule);padding:14px 16px;overflow-x:auto;font:13px/1.55 var(--mono);margin:0}
+ul.caveats{margin:0;padding-left:18px;display:grid;gap:8px;max-width:72ch}
+</style>
+
+<main>
+<header>
+  <span class="eyebrow">nflverse closing lines · regular season + playoffs</span>
+  <h1>NFL Line Ledger</h1>
+  <p class="lede">Every game from 2011–2025 checked against its closing spread, total and moneyline: about 15,000 situational angles, then power-rating models, luck regression and price-structure tests. Everything was re-checked on seasons it wasn't built on.</p>
+  <div class="meta" id="meta"></div>
+</header>
+
+<section id="verdict">
+  <div class="sechead"><span class="eyebrow">Bottom line · game lines</span><h2>What survived</h2></div>
+  <div class="ledger">
+    <div class="entry"><div><span class="chip hold">Held up</span></div>
+      <div><div class="claim">Moderate wind (10–19 mph) → under</div>
+      <div class="why">Unders hit ~57% outdoors. Books cut the total by less than a point in 10–19 mph wind, while games actually land 2–3 points lower. It still holds after correcting for multiple tests (q = 0.025), in both halves of the sample, and in 12 of 15 seasons. At 20+ mph, books adjust more and the edge goes away.</div></div>
+      <div class="stat"><b id="w-rec">—</b>under, 10–19 mph</div></div>
+    <div class="entry"><div><span class="chip hold">Held up</span></div>
+      <div><div class="claim">Wong teaser dogs (+1.5 / +2.5 → +7.5 / +8.5)</div>
+      <div class="why">Legs won 76.1% in 2011–19 and 77.6% in 2020–25. A 2-team 6-point teaser at −120 needs 73.9% per leg to break even, or 75.2% at −130. Wong <em>favorites</em> (−7.5 / −8.5) came in at 72.8%, below break-even.</div></div>
+      <div class="stat"><b>76.8%</b>n = 596 legs</div></div>
+    <div class="entry"><div><span class="chip lean">Suggestive</span></div>
+      <div><div class="claim">Small home favorites (−0.5 to −2.5) underperform</div>
+      <div class="why">Home favorites of under a field goal covered 45.7%, so the road dog covered 54.3%. It was on the same side in both eras (55.2% / 53.2%), but the sample isn't big enough to be conclusive (p = 0.07). This fits the known fact that home-field advantage has shrunk, from about 2.5 to about 1.5 points in the closing lines.</div></div>
+      <div class="stat"><b>259–218</b>road dog ATS</div></div>
+    <div class="entry"><div><span class="chip lean">Suggestive</span></div>
+      <div><div class="claim">West Coast teams in 1pm ET road games cover</div>
+      <div class="why">Covered 56.7% in 2011–19 and 57.5% in 2020–25, the opposite of the usual "body clock" story. Small sample (p = 0.07); worth watching, not betting blind.</div></div>
+      <div class="stat"><b>101–76</b>57.1% ATS</div></div>
+    <div class="entry"><div><span class="chip avoid">Avoid</span></div>
+      <div><div class="claim">Moneyline longshots (implied under 15%)</div>
+      <div class="why">Won 7.8% of the time against 12.2% implied, for a −38% ROI. This is the favorite–longshot bias. Big favorites on the moneyline were roughly break-even.</div></div>
+      <div class="stat"><b>−38%</b>ROI, n = 166</div></div>
+    <div class="entry"><div><span class="chip noise">Noise</span></div>
+      <div><div class="claim">Situational ATS angles ("off a bye", "after a blowout loss", "winless team"…)</div>
+      <div class="why">Of 13,181 spread combos, fewer came up "significant" than chance alone would produce. When outcomes were randomly shuffled, more setups looked robust than in the real data. The top 100 setups from 2011–19 kept their direction only 44 times in 2020–25, and their average edge went to zero.</div></div>
+      <div class="stat"><b id="ats-null">—</b>real vs shuffled</div></div>
+  </div>
+</section>
+
+<section id="props-r3">
+  <div class="sechead"><span class="eyebrow">Round 3 · player props · 2023–2026</span><h2>Where the props edge is</h2>
+  <p class="note">About 69,000 props from The Odds API, pulled 4 days out, 24 hours out and 10 minutes before kickoff across 35 books and exchanges, then graded against nflverse results. Two grading bugs were caught along the way. Tackles were undercounted against official totals, which created a fake +11% under edge. And players with zero catches or carries were dropped from the "longest" markets instead of being graded as unders.</p></div>
+  <div class="ledger">
+    <div class="entry"><div><span class="chip hold">Strongest lead</span></div>
+      <div><div class="claim">Bet US books when they're off the exchange price</div>
+      <div class="why">Treat the de-vigged Novig/ProphetX price as fair value, and bet regulated US books (DraftKings, BetMGM, Hard Rock, ESPN BET…) whenever the book's price beats it by 2%+. Almost all quotes were under 2 minutes old, so these were bettable prices, not stale data. The profit is nearly all on <b>unders</b> (<span id="p-under"></span>) and mostly on <b>receptions</b>. It's driven mainly by 2025, so it needs this season's live results before any real money goes on it.</div></div>
+      <div class="stat"><b id="p-ev2">—</b><span id="p-ev2n"></span></div></div>
+    <div class="entry"><div><span class="chip lean">Structural</span></div>
+      <div><div class="claim">Books shade overs</div>
+      <div class="why">Across all core markets, overs hit <span id="p-over"></span> while the de-vigged prices implied <span id="p-fair"></span>. Blindly betting unders at the best available price went from a loss in 2023 to about break-even in 2025–26. That's not a strategy on its own, but it's why the +EV bets above are nearly all unders.</div></div>
+      <div class="stat"><b id="p-overb">—</b>overs hit</div></div>
+    <div class="entry"><div><span class="chip noise">Doesn't work</span></div>
+      <div><div class="claim">Naive projections (last-8-game average vs line)</div>
+      <div class="why">Books beat a rolling average easily. Receiving-yard edges lost 4–8%. The only positive pockets are rushing unders, which is just the over-shading above.</div></div>
+      <div class="stat"><b>−4 to −10%</b>most rules</div></div>
+    <div class="entry"><div><span class="chip noise">Small</span></div>
+      <div><div class="claim">Getting in early</div>
+      <div class="why">43% of prop lines move between 4 days out and kickoff. But even knowing in advance which way every line would move, betting the opener in that direction returned only <span id="p-mv"></span>. Openers are barely less accurate than closers.</div></div>
+      <div class="stat"><b id="p-mvb">—</b>perfect hindsight</div></div>
+    <div class="entry"><div><span class="chip avoid">Avoid</span></div>
+      <div><div class="claim">Anytime TD longshots</div>
+      <div class="why">Players priced under 10% scored 1.6% of the time, for −62% ROI even at the best price. At a typical single book, every anytime-TD price band loses 7–24%.</div></div>
+      <div class="stat"><b>−62%</b>longshots</div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel"><h3>+EV vs exchange price, regulated books</h3><div class="tbl" style="border:0"><table id="p-ev-tbl"></table></div>
+      <p class="note">Ref = de-vigged exchange price at the same line. Seasons: 2024 (77 games with exchange prices), 2025, 2026 through week 3.</p></div>
+    <div class="panel"><h3>… by market (EV ≥ 2%)</h3><div class="tbl" style="border:0"><table id="p-evm-tbl"></table></div></div>
+  </div>
+  <h3>Over rate vs fair price, by market (closing line)</h3>
+  <div class="tbl"><table id="p-bias-tbl"></table></div>
+  <p class="note">Consensus line = median of books' main lines. "Under @ best" = ROI from taking the best under price among about 8 books at that line; you'd need accounts at all of them. Kalshi and Polymarket post almost no props in this data (Kalshi: 2 markets across 100 games in 2025), so for props the bets have to go on the books.</p>
+</section>
+
+<section id="spread">
+  <div class="sechead"><span class="eyebrow">The example you asked about</span><h2>Favorite cover rate by line &amp; venue</h2>
+  <p class="note">Cover % for the favorite, pushes excluded. The dog's rate is 100 minus this. −110 break-even is 52.4%, so anything between 47.6% and 52.4% isn't worth betting either way. Neutral sites and pick'em games are excluded.</p></div>
+  <div class="tbl"><table id="spread-tbl"></table></div>
+</section>
+
+<section id="totals">
+  <div class="sechead"><span class="eyebrow">Totals</span><h2>Wind is the one real signal</h2></div>
+  <div class="grid2">
+    <div class="panel"><h3>Under % by wind speed</h3><p class="note">Outdoor games; line = 52.4% break-even</p><div id="wind-chart"></div></div>
+    <div class="panel"><h3>10–19 mph under %, by season</h3><p class="note">Bars above the line beat −110</p><div id="wind-season-chart"></div></div>
+  </div>
+  <div class="tbl"><table id="wind-tbl"></table></div>
+  <p class="note">Other totals results: rain showed 39% overs (n = 181), but 2011–19 alone was 48%, so treat it as unproven. Overall, overs hit 49.1%. No referee's over/under record survives multiple-testing correction.</p>
+</section>
+
+<section id="teasers">
+  <div class="sechead"><span class="eyebrow">Derivative markets</span><h2>6-point teaser legs</h2>
+  <p class="note">Leg win % after adding 6 points. Break-even for a 2-team teaser is 72.4% at −110, 73.9% at −120 and 75.2% at −130. For a 3-team teaser it's 72.7% at +160.</p></div>
+  <div class="tbl"><table id="teaser-tbl"></table></div>
+</section>
+
+<section id="ml">
+  <div class="sechead"><span class="eyebrow">Moneyline</span><h2>Price vs. reality</h2></div>
+  <div class="grid2">
+    <div class="panel"><h3>Actual win % vs. implied</h3><p class="note">Dots below the diagonal lost money. Implied probability includes the vig.</p><div id="ml-chart"></div></div>
+    <div class="panel"><h3>ROI by price band</h3><div class="tbl" style="border:0"><table id="ml-tbl"></table></div></div>
+  </div>
+</section>
+
+<section id="scan">
+  <div class="sechead"><span class="eyebrow">The combo scan</span><h2>Explore every setup</h2>
+  <p class="note">Every single filter, pair and triple (at most one per group, e.g. one line bucket, one rest filter), each with at least 100 decided games. <b>2011–19</b> is where setups were found and <b>2020–25</b> is the out-of-sample check. <b>Held</b> means it beat −110 in both periods. q-values correct for the number of setups tested. Nothing in the spread scan has q under 1.0, so treat every spread row as data mining.</p></div>
+  <div class="controls">
+    <div class="tabs" role="group" aria-label="Market">
+      <button id="tab-ats" aria-pressed="true">Spread</button><button id="tab-tot" aria-pressed="false">Totals</button>
+    </div>
+    <input type="search" id="q" placeholder="Filter setups, e.g. dog 3, wind, bye" aria-label="Filter setups">
+    <select id="kf" aria-label="Filters per setup"><option value="0">1–3 filters</option><option value="1">singles</option><option value="2">pairs</option><option value="3">triples</option></select>
+    <label class="ck"><input type="checkbox" id="held"> Held in both periods</label>
+  </div>
+  <div class="tbl"><table id="scan-tbl"></table></div>
+  <p class="note" id="scan-count"></p>
+</section>
+
+<section id="round2">
+  <div class="sechead"><span class="eyebrow">Round 2 · hypothesis tests</span><h2>Things the market already knows</h2>
+  <p class="note">Instead of brute-forcing filter combos, these test specific ideas: power-rating models, luck regression, overreaction, backup QBs and price structure. Models were fit on 2011–19 and scored on 2020–25.</p></div>
+  <div class="tbl"><table id="r2-tbl"></table></div>
+</section>
+
+<section id="props-buy">
+  <div class="sechead"><span class="eyebrow">Data sources</span><h2>Historical player-prop data</h2>
+  <p class="note">The Odds API (bought for this report, one month at $119, about 1.4M of 5M credits used) has had props snapshots every 5 minutes since May 3, 2023. That covers the 2023, 2024 and 2025 seasons plus 2026 so far, about 900 games.</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Source</th><th>Props history</th><th>Cost</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>The Odds API</td><td class="n">May 2023 →</td><td class="n">$59–$119, one month</td><td style="white-space:normal">Each historical event request costs 10 credits × markets × regions. 900 games × 12 prop markets × 1 US region is about 108k credits per snapshot. The $119 plan (5M credits) covers roughly 40 snapshots per game, e.g. open, midweek and close across multiple regions. Pull everything, then cancel.</td></tr>
+      <tr><td>SportsDataIO</td><td class="n">2019 →</td><td class="n">Contact sales</td><td style="white-space:normal">Pre-game, in-play and futures odds via API or S3 bulk delivery. Pricing is enterprise-style.</td></tr>
+      <tr><td>BigDataBall</td><td class="n">Game lines only</td><td class="n">$30 / season</td><td style="white-space:normal">Odds spreadsheets for 2020–25. No props listed.</td></tr>
+      <tr><td>Scottfree Analytics</td><td class="n">Game lines only</td><td class="n">$59</td><td style="white-space:normal">About 5,200 games with open and close lines, useful for testing line movement. No props.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section id="data">
+  <div class="sechead"><span class="eyebrow">What's in the database</span><h2>data/nfl.duckdb</h2>
+  <p class="note">39 tables, 955 MB, all from nflverse with no API key. Rebuild anytime with <code>scripts/download_nflverse.sh &amp;&amp; scripts/build_db.sh</code>.</p></div>
+  <h3>Per-game betting &amp; context fields (<code>games</code>, <code>team_games</code>)</h3>
+  <div class="fields" id="fields"></div>
+  <p class="note">Lines are nflverse's consensus closing numbers (Lee Sharpe). There are <b>no opening lines</b> and <b>no player props</b>. Temp and wind are recorded at kickoff for outdoor games only, and are sparse in 2022.</p>
+  <h3>All tables</h3>
+  <div class="inv" id="inv"></div>
+</section>
+
+<section id="caveats">
+  <div class="sechead"><span class="eyebrow">Read before betting any of this</span><h2>Caveats</h2></div>
+  <ul class="caveats">
+    <li><b>Closing ≠ what you'll get.</b> These are consensus closing lines. To bet wind unders you have to act on the forecast before the total moves, and the close already includes some of that move.</li>
+    <li><b>Wind is recorded at kickoff</b>, not from the forecast, so real-world results will be a little worse than this backtest.</li>
+    <li><b>Teaser pricing varies a lot.</b> Many books now charge −130 to −140 for 2-team 6-point teasers or reprice teasers through key numbers. At −140 the break-even is 76.4% per leg, which is about the whole edge.</li>
+    <li><b>Samples are small.</b> A 55% true edge takes around 1,000 bets to confirm. Most setups here have 100–300.</li>
+    <li><b>Structural shifts.</b> Kickoff moved to the 35 (2011) and the PAT to the 15 (2015). The 2020 no-fans season and the 17-game schedule (2021) also changed scoring and home-field advantage.</li>
+  </ul>
+</section>
+
+<section id="sql">
+  <div class="sechead"><span class="eyebrow">Run your own</span><h2>Querying it</h2></div>
+<pre>duckdb data/nfl.duckdb
+
+-- home favorites of 9+ : ATS record
+SELECT sum(cover) w, count(cover) - sum(cover) l, round(avg(cover), 3) pct
+FROM team_games
+WHERE side = 'home' AND NOT neutral AND team_line >= 9 AND season BETWEEN 2011 AND 2025;
+
+-- unders in 10-19 mph wind by season
+SELECT season, avg((ou_result = 'under')::int) FROM games
+WHERE wind_mph BETWEEN 10 AND 19 AND roof = 'outdoors' GROUP BY 1 ORDER BY 1;
+
+-- re-run the full scan + this report
+uv run python scripts/analysis.py && uv run python scripts/build_report.py</pre>
+</section>
+</main>
+
+<script>
+const D = __DATA__;
+const $ = s => document.querySelector(s);
+const pct = (x, d = 1) => x == null || isNaN(x) ? "—" : (100 * x).toFixed(d) + "%";
+const BE = 110 / 210;
+const cls = x => x >= BE ? "good" : x <= 1 - BE ? "bad" : "";
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+const o = D.overall;
+$("#meta").innerHTML = [
+  ["games", o.games.toLocaleString()], ["home ATS", pct(o.home.pct)], ["favorites ATS", pct(o.fav.pct)],
+  ["overs", pct(o.over.pct)], ["ATS push rate", pct(o.ats_push_rate)], ["avg miss vs spread", o.mean_abs_ats_error.toFixed(1) + " pts"]
+].map(([k, v]) => `<span>${k} <b>${v}</b></span>`).join("");
+
+// wind headline
+const w1014 = D.wind.find(r => r.bucket === "10–14"), w1519 = D.wind.find(r => r.bucket === "15–19");
+const wn = w1014.n + w1519.n, wu = (w1014.under_pct * w1014.n + w1519.under_pct * w1519.n) / wn;
+$("#w-rec").textContent = pct(wu);
+$("#ats-null").textContent = `${D.ats_null.real_robust_k1_2} vs ${Math.min(...D.ats_null.shuffled_robust_k1_2)}–${Math.max(...D.ats_null.shuffled_robust_k1_2)}`;
+
+// spread table
+const buckets = ["0.5-2.5", "3", "3.5-6.5", "7", "7.5-9.5", "10-13.5", "14+"];
+const get = (role, b) => D.spread.find(r => r.role === role && r.line === b);
+$("#spread-tbl").innerHTML = `<thead><tr><th>Favorite by</th><th>Home fav W–L–P</th><th>Home fav cover</th><th>2011–19</th><th>2020–25</th><th>Road fav W–L–P</th><th>Road fav cover</th><th>2011–19</th><th>2020–25</th></tr></thead><tbody>` +
+  buckets.map(b => { const h = get("home fav", b), a = get("away fav", b);
+    const c = r => r ? `<td class="n">${r.w}–${r.l}–${r.p}</td><td class="n ${cls(r.pct)}">${pct(r.pct)}</td><td class="n ${cls(r.pct_2011_19)}">${pct(r.pct_2011_19)}</td><td class="n ${cls(r.pct_2020_25)}">${pct(r.pct_2020_25)}</td>` : "<td></td>".repeat(4);
+    return `<tr><td>${b.replace("-", "–")}</td>${c(h)}${c(a)}</tr>`; }).join("") + "</tbody>";
+
+// generic bar chart (values 0-1), break-even line
+function bars(el, items, {lo = .3, hi = .7, h = 200} = {}) {
+  const W = 440, H = h, pl = 38, pb = 26, pt = 10, pr = 8, iw = W - pl - pr, ih = H - pt - pb;
+  const y = v => pt + ih * (1 - (v - lo) / (hi - lo)), bw = iw / items.length;
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img">`;
+  for (let t = lo; t <= hi + 1e-9; t += .1) s += `<line x1="${pl}" x2="${W - pr}" y1="${y(t)}" y2="${y(t)}" stroke="var(--rule)"/><text x="${pl - 6}" y="${y(t) + 4}" text-anchor="end">${Math.round(t * 100)}%</text>`;
+  items.forEach((d, i) => { const x = pl + i * bw + bw * .18, v = d.v, top = y(Math.max(v, lo));
+    s += `<rect x="${x}" y="${Math.min(top, y(.5))}" width="${bw * .64}" height="${Math.abs(y(.5) - top)}" fill="${v >= BE ? "var(--turf)" : v <= 1 - BE ? "var(--brick)" : "var(--bar)"}"/>`;
+    s += `<text x="${x + bw * .32}" y="${H - 8}" text-anchor="middle" class="lbl">${d.k}</text>`;
+    if (d.show) s += `<text x="${x + bw * .32}" y="${(v >= .5 ? top : y(.5)) - 5}" text-anchor="middle" class="lbl">${pct(v, 0)}</text>`; });
+  s += `<line x1="${pl}" x2="${W - pr}" y1="${y(BE)}" y2="${y(BE)}" stroke="var(--ink)" stroke-dasharray="4 3"/>`;
+  el.innerHTML = s + "</svg>";
+}
+bars($("#wind-chart"), D.wind.map(r => ({k: r.bucket + " mph", v: r.under_pct, show: true})), {lo: .4, hi: .65});
+bars($("#wind-season-chart"), D.wind_seasons.map(r => ({k: "'" + String(r.season).slice(2), v: r.u})), {lo: .3, hi: .8});
+$("#wind-tbl").innerHTML = `<thead><tr><th>Wind (outdoor)</th><th>Games</th><th>Avg total line</th><th>Avg points</th><th>Under %</th><th>2011–19</th><th>2020–25</th></tr></thead><tbody>` +
+  D.wind.map(r => `<tr><td>${r.bucket} mph</td><td class="n">${r.n}</td><td class="n">${r.line.toFixed(1)}</td><td class="n">${r.pts.toFixed(1)}</td><td class="n ${cls(r.under_pct)}">${pct(r.under_pct)}</td><td class="n ${cls(r.u1)}">${pct(r.u1)}</td><td class="n ${cls(r.u2)}">${pct(r.u2)}</td></tr>`).join("") + "</tbody>";
+
+// teasers
+const legs = [...new Set(D.teasers.map(r => r.leg))];
+const tv = (l, e) => D.teasers.find(r => r.leg === l && r.era === e);
+const tcls = x => x >= .739 ? "good" : x < .724 ? "bad" : "";
+$("#teaser-tbl").innerHTML = `<thead><tr><th>Leg</th><th>Legs</th><th>Win %</th><th>2011–19</th><th>2020–25</th></tr></thead><tbody>` +
+  legs.map(l => { const a = tv(l, "all"), b = tv(l, "2011-19"), c = tv(l, "2020-25");
+    return `<tr><td>${esc(l)}</td><td class="n">${a.n}</td><td class="n ${tcls(a.win_pct)}">${pct(a.win_pct)}</td><td class="n ${tcls(b.win_pct)}">${pct(b.win_pct)}</td><td class="n ${tcls(c.win_pct)}">${pct(c.win_pct)}</td></tr>`; }).join("") + "</tbody>";
+
+// moneyline calibration
+(function () {
+  const W = 440, H = 300, p = 40, s = v => p + v * (W - 2 * p), ys = v => H - p + 10 - v * (H - 2 * p);
+  let g = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img">`;
+  for (let t = 0; t <= 1.001; t += .2) g += `<line x1="${s(0)}" x2="${s(1)}" y1="${ys(t)}" y2="${ys(t)}" stroke="var(--rule)"/><text x="${p - 6}" y="${ys(t) + 4}" text-anchor="end">${Math.round(t * 100)}</text><text x="${s(t)}" y="${H - 8}" text-anchor="middle">${Math.round(t * 100)}</text>`;
+  g += `<line x1="${s(0)}" y1="${ys(0)}" x2="${s(1)}" y2="${ys(1)}" stroke="var(--ink)" stroke-dasharray="4 3"/>`;
+  D.ml.forEach(r => { const good = r.roi >= 0; g += `<circle cx="${s(r.implied)}" cy="${ys(r.win_pct)}" r="${3 + Math.sqrt(r.n) / 6}" fill="${good ? "var(--turf)" : "var(--brick)"}" fill-opacity=".75"/>`; });
+  g += `<text x="${W / 2}" y="${H - 22}" text-anchor="middle" class="lbl" style="display:none">implied</text>`;
+  $("#ml-chart").innerHTML = g + `</svg><p class="note">x: implied %, y: actual win %. Dot size = number of bets.</p>`;
+  $("#ml-tbl").innerHTML = `<thead><tr><th>Implied</th><th>Bets</th><th>Won</th><th>ROI</th></tr></thead><tbody>` +
+    D.ml.map(r => `<tr><td class="n">${r.impl_b.replace(/[(\]]/g, "").split(", ").map(x => Math.round(x * 100)).join("–")}%</td><td class="n">${r.n}</td><td class="n">${pct(r.win_pct)}</td><td class="n ${r.roi >= 0 ? "good" : r.roi < -.08 ? "bad" : ""}">${(r.roi * 100).toFixed(1)}%</td></tr>`).join("") + "</tbody>";
+})();
+
+// explorer
+let mode = "ats", sortCol = 8, sortDir = 1;
+const cols = () => mode === "ats"
+  ? ["Setup", "k", "W", "L", "Cover %", "2011–19", "2020–25", "n 20–25", "p", "q", "Held"]
+  : ["Setup", "k", "Over", "Under", "Over %", "2011–19", "2020–25", "n 20–25", "p", "q", "Held"];
+function renderScan() {
+  const rows = mode === "ats" ? D.ats_rows : D.tot_rows, q = $("#q").value.trim().toLowerCase(), k = +$("#kf").value, held = $("#held").checked;
+  const terms = q.split(/\s*,\s*|\s+\+\s+/).filter(Boolean);
+  let f = rows.filter(r => (!k || r[1] === k) && (!held || r[10]) && terms.every(t => r[0].toLowerCase().includes(t)));
+  f.sort((a, b) => { const x = sortCol === 4 ? Math.abs(a[4] - .5) : a[sortCol], y = sortCol === 4 ? Math.abs(b[4] - .5) : b[sortCol];
+    return (x > y ? 1 : x < y ? -1 : 0) * sortDir * (sortCol === 4 ? -1 : 1); });
+  const shown = f.slice(0, 150), bet = mode === "ats" ? ["ON", "FADE"] : ["OVER", "UNDER"];
+  $("#scan-tbl").innerHTML = "<thead><tr>" + cols().map((c, i) => `<th class="sort" data-i="${i}" aria-sort="${i === sortCol ? (sortDir > 0 ? "ascending" : "descending") : "none"}">${c}${i === sortCol ? (sortDir > 0 ? " ↑" : " ↓") : ""}</th>`).join("") + "</tr></thead><tbody>" +
+    shown.map(r => `<tr><td class="setup">${esc(r[0])} <span class="chip ${r[4] >= .5 ? "hold" : "avoid"}">${r[4] >= .5 ? bet[0] : bet[1]}</span></td><td class="n">${r[1]}</td><td class="n">${r[2]}</td><td class="n">${r[3]}</td>` +
+      `<td class="n ${cls(r[4])}">${pct(r[4])}</td><td class="n ${cls(r[5])}">${pct(r[5])}</td><td class="n ${cls(r[6])}">${pct(r[6])}</td><td class="n">${r[7]}</td><td class="n">${r[8]}</td><td class="n">${r[9]}</td><td class="n">${r[10] ? "✓" : ""}</td></tr>`).join("") + "</tbody>";
+  $("#scan-count").textContent = `Showing ${shown.length} of ${f.length.toLocaleString()} matching setups (${rows.length.toLocaleString()} loaded; the full CSVs are in results/). ` +
+    (mode === "ats" ? `Spread scan: ${D.ats_scan.combos_tested.toLocaleString()} combos tested, ${D.ats_scan.p_lt_05} with p < .05 vs ~${D.ats_scan.expected_by_chance_05} expected by chance.`
+                    : `Totals scan: ${D.tot_scan.combos_tested.toLocaleString()} combos tested, ${D.tot_scan.p_lt_05} with p < .05 vs ~${D.tot_scan.expected_by_chance_05} expected by chance; ${D.tot_scan.q_lt_10} with q < .10.`);
+  document.querySelectorAll("#scan-tbl th.sort").forEach(th => th.onclick = () => { const i = +th.dataset.i; if (i === sortCol) sortDir *= -1; else { sortCol = i; sortDir = i === 8 || i === 9 ? 1 : -1; } renderScan(); });
+}
+["#q", "#kf", "#held"].forEach(s => $(s).addEventListener("input", renderScan));
+$("#tab-ats").onclick = () => { mode = "ats"; $("#tab-ats").setAttribute("aria-pressed", "true"); $("#tab-tot").setAttribute("aria-pressed", "false"); renderScan(); };
+$("#tab-tot").onclick = () => { mode = "tot"; $("#tab-tot").setAttribute("aria-pressed", "true"); $("#tab-ats").setAttribute("aria-pressed", "false"); renderScan(); };
+renderScan();
+
+// round 2
+const vchip = {noise: ["noise", "Priced in"], lean: ["lean", "Lead"], info: ["hold", "Useful"]};
+$("#r2-tbl").innerHTML = `<thead><tr><th>Test</th><th>2011–19</th><th>2020–25</th><th>Verdict</th></tr></thead><tbody>` +
+  D.r2.map(r => { const f = k => r.e && r.e[k] ? `${r.e[k][0]}–${r.e[k][1]}<br>${pct(r.e[k][2])}` : "—";
+    return `<tr><td class="setup"><span class="eyebrow">${esc(r.g)}</span><br><b>${esc(r.t)}</b><br><span class="note">${esc(r.d)}</span></td><td class="n">${f("2011-19")}</td><td class="n">${f("2020-25")}</td><td><span class="chip ${vchip[r.v][0]}">${vchip[r.v][1]}</span></td></tr>`; }).join("") + "</tbody>";
+
+// props (round 3)
+(function () {
+  const P = D.props, roiTxt = x => x == null ? "—" : (x >= 0 ? "+" : "") + (100 * x).toFixed(1) + "%", rc = x => x == null ? "" : x >= .02 ? "good" : x <= -.02 ? "bad" : "";
+  const e2 = P.ev_exchange["EV>=2%"];
+  $("#p-ev2").textContent = roiTxt(e2.roi); $("#p-ev2n").textContent = `ROI, ${e2.n.toLocaleString()} bets`;
+  $("#p-under").textContent = roiTxt(P.ev_side["under bets"].roi) + " on " + P.ev_side["under bets"].n.toLocaleString() + " bets vs " + roiTxt(P.ev_side["over bets"].roi) + " on overs";
+  $("#p-over").textContent = pct(P.all.over); $("#p-fair").textContent = pct(P.all.fair); $("#p-overb").textContent = pct(P.all.over);
+  const mv = P.movement["bet_open_in_move_direction (hindsight)"]; $("#p-mv").textContent = roiTxt(mv.roi); $("#p-mvb").textContent = roiTxt(mv.roi);
+  const seasons = ["2024", "2025", "2026"];
+  $("#p-ev-tbl").innerHTML = `<thead><tr><th>Book beats ref by</th><th>Bets</th><th>ROI</th><th>± 1 SE</th>${seasons.map(s => `<th>${s}</th>`).join("")}</tr></thead><tbody>` +
+    Object.entries(P.ev_exchange).map(([k, v]) => `<tr><td>${k.replace("EV>=", "≥ ")}</td><td class="n">${v.n.toLocaleString()}</td><td class="n ${rc(v.roi)}">${roiTxt(v.roi)}</td><td class="n">${(100 * v.se).toFixed(1)}</td>${seasons.map(s => `<td class="n ${rc(v.seasons[s])}">${roiTxt(v.seasons[s])}</td>`).join("")}</tr>`).join("") + "</tbody>";
+  $("#p-evm-tbl").innerHTML = `<thead><tr><th>Market</th><th>Bets</th><th>Unders</th><th>ROI</th></tr></thead><tbody>` +
+    P.ev_market.map(r => `<tr><td>${esc(r.market.replace("player_", "").replace(/_/g, " "))}</td><td class="n">${r.n}</td><td class="n">${r.unders}</td><td class="n ${rc(r.roi)}">${roiTxt(r.roi)}</td></tr>`).join("") + "</tbody>";
+  $("#p-bias-tbl").innerHTML = `<thead><tr><th>Market</th><th>Props</th><th>Fair over</th><th>Actual over</th><th>2023</th><th>2024</th><th>2025</th><th>Under @ best</th><th>Over @ best</th></tr></thead><tbody>` +
+    P.bias.map(r => `<tr><td>${esc(r.market)}</td><td class="n">${r.props.toLocaleString()}</td><td class="n">${pct(r.fair)}</td><td class="n ${r.over < r.fair - .02 ? "bad" : r.over > r.fair + .02 ? "good" : ""}">${pct(r.over)}</td>${["2023", "2024", "2025"].map(s => `<td class="n">${pct(r.seasons[s])}</td>`).join("")}<td class="n ${rc(r.under_best)}">${roiTxt(r.under_best)}</td><td class="n ${rc(r.over_best)}">${roiTxt(r.over_best)}</td></tr>`).join("") + "</tbody>";
+})();
+
+// data inventory
+$("#fields").innerHTML = ["season / week / game_type", "gameday, weekday, kickoff time", "home / away / neutral", "final score, margin, total, OT",
+  "closing spread + juice", "closing total + over/under juice", "moneylines", "division game", "rest days (both teams)", "roof, surface, stadium",
+  "temp °F, wind mph", "rain / snow (from play-by-play text)", "starting QBs", "head coaches", "referee", "time zone / travel", "prev-game SU/ATS result",
+  "record & ATS to date", "last-season record", "QB change flag"].map(f => `<span>${f}</span>`).join("");
+$("#inv").innerHTML = [
+  ["schedules / games / team_games", "1999–2026"], ["pbp: play-by-play, 372 cols incl. EPA, WP, CPOE", "1999–2026"], ["pbp_participation: players on field, coverage", "2016–2025"],
+  ["ftn_charting: play-action, motion, blitz", "2022–2026"], ["stats_player_week / reg / post", "1999–2026"], ["stats_team_week / reg / post", "1999–2026"],
+  ["ngs_passing / rushing / receiving", "2016–2026"], ["pfr_adv_*: pressures, drops, broken tackles", "2018–2026"], ["snap_counts", "2013–2026"],
+  ["injuries (practice + game status)", "2009–2026"], ["depth_charts", "2001–2024"], ["rosters / rosters_weekly", "1920s–2026"],
+  ["qbr_week / qbr_season (ESPN)", "2006–2026"], ["player_stats_def / kicking", "1999–2025"], ["officials (full crews)", "2015–2026"],
+  ["contracts, otc_players", "OverTheCap"], ["draft_picks, combine", "1980–2026"], ["players, pfr_rosters, teams, trades", "reference"]
+].map(([a, b]) => `<div><span>${a}</span><span>${b}</span></div>`).join("");
+</script>

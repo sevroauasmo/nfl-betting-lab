@@ -1,0 +1,1976 @@
+{
+ "coverage": [
+  {
+   "season": 2023,
+   "props": 19927,
+   "avg_books": 7.6
+  },
+  {
+   "season": 2024,
+   "props": 25170,
+   "avg_books": 7.6
+  },
+  {
+   "season": 2025,
+   "props": 21879,
+   "avg_books": 8.4
+  },
+  {
+   "season": 2026,
+   "props": 2405,
+   "avg_books": 8.1
+  }
+ ],
+ "bias_close": [
+  {
+   "market": "player_reception_yds",
+   "props": 9531,
+   "over_pct": 0.4916,
+   "fair_over": 0.5006,
+   "p": 0.1012,
+   "by_season": {
+    "2023": 0.5039,
+    "2024": 0.4924,
+    "2025": 0.4786,
+    "2026": 0.4869
+   },
+   "under_best_price_roi": {
+    "n": 9531,
+    "roi": -0.0266,
+    "se": 0.0098
+   },
+   "over_best_price_roi": {
+    "n": 9531,
+    "roi": -0.0603,
+    "se": 0.0098
+   },
+   "under_dk_roi": {
+    "n": 6248,
+    "roi": -0.057,
+    "se": 0.0119
+   }
+  },
+  {
+   "market": "player_receptions",
+   "props": 9503,
+   "over_pct": 0.478,
+   "fair_over": 0.4926,
+   "p": 0.0,
+   "by_season": {
+    "2023": 0.5013,
+    "2024": 0.4747,
+    "2025": 0.4555,
+    "2026": 0.4986
+   },
+   "under_best_price_roi": {
+    "n": 9503,
+    "roi": 0.0009,
+    "se": 0.01
+   },
+   "over_best_price_roi": {
+    "n": 9503,
+    "roi": -0.055,
+    "se": 0.0103
+   },
+   "under_dk_roi": {
+    "n": 8921,
+    "roi": -0.0357,
+    "se": 0.01
+   }
+  },
+  {
+   "market": "player_reception_longest",
+   "props": 9058,
+   "over_pct": 0.487,
+   "fair_over": 0.4989,
+   "p": 0.0135,
+   "by_season": {
+    "2023": 0.4892,
+    "2024": 0.4899,
+    "2025": 0.4845,
+    "2026": 0.4582
+   },
+   "under_best_price_roi": {
+    "n": 9058,
+    "roi": -0.0267,
+    "se": 0.01
+   },
+   "over_best_price_roi": {
+    "n": 9058,
+    "roi": -0.0708,
+    "se": 0.01
+   },
+   "under_dk_roi": {
+    "n": 7218,
+    "roi": -0.0419,
+    "se": 0.011
+   }
+  },
+  {
+   "market": "player_tackles_assists",
+   "props": 7636,
+   "over_pct": 0.4756,
+   "fair_over": 0.4996,
+   "p": 0.0,
+   "by_season": {
+    "2023": 0.5057,
+    "2024": 0.4695,
+    "2025": 0.4497,
+    "2026": 0.4495
+   },
+   "under_best_price_roi": {
+    "n": 7636,
+    "roi": 0.0068,
+    "se": 0.0111
+   },
+   "over_best_price_roi": {
+    "n": 7636,
+    "roi": -0.0866,
+    "se": 0.0111
+   },
+   "under_dk_roi": {
+    "n": 6860,
+    "roi": -0.0066,
+    "se": 0.0115
+   }
+  },
+  {
+   "market": "player_rush_yds",
+   "props": 4515,
+   "over_pct": 0.4631,
+   "fair_over": 0.4966,
+   "p": 0.0,
+   "by_season": {
+    "2023": 0.4644,
+    "2024": 0.459,
+    "2025": 0.468,
+    "2026": 0.4464
+   },
+   "under_best_price_roi": {
+    "n": 4515,
+    "roi": 0.0213,
+    "se": 0.0142
+   },
+   "over_best_price_roi": {
+    "n": 4515,
+    "roi": -0.1099,
+    "se": 0.0143
+   },
+   "under_dk_roi": {
+    "n": 2948,
+    "roi": -0.015,
+    "se": 0.0172
+   }
+  },
+  {
+   "market": "player_rush_reception_yds",
+   "props": 4286,
+   "over_pct": 0.4846,
+   "fair_over": 0.5001,
+   "p": 0.0454,
+   "by_season": {
+    "2023": 0.477,
+    "2024": 0.4918,
+    "2025": 0.4779,
+    "2026": 0.4651
+   },
+   "under_best_price_roi": {
+    "n": 4286,
+    "roi": -0.0307,
+    "se": 0.0144
+   },
+   "over_best_price_roi": {
+    "n": 4286,
+    "roi": -0.0895,
+    "se": 0.0143
+   },
+   "under_dk_roi": {
+    "n": 2091,
+    "roi": -0.0266,
+    "se": 0.0205
+   }
+  },
+  {
+   "market": "player_sacks",
+   "props": 3780,
+   "over_pct": 0.2857,
+   "fair_over": 0.3095,
+   "p": 0.0,
+   "by_season": {
+    "2024": 0.2768,
+    "2025": 0.2965,
+    "2026": 0.2941
+   },
+   "under_best_price_roi": {
+    "n": 3626,
+    "roi": -0.0032,
+    "se": 0.0111
+   },
+   "over_best_price_roi": {
+    "n": 3626,
+    "roi": -0.0923,
+    "se": 0.0262
+   },
+   "under_dk_roi": {
+    "n": 0,
+    "roi": null,
+    "se": null
+   }
+  },
+  {
+   "market": "player_rush_longest",
+   "props": 3538,
+   "over_pct": 0.4737,
+   "fair_over": 0.4996,
+   "p": 0.0019,
+   "by_season": {
+    "2023": 0.4717,
+    "2024": 0.483,
+    "2025": 0.4692,
+    "2026": 0.4504
+   },
+   "under_best_price_roi": {
+    "n": 3538,
+    "roi": 0.0034,
+    "se": 0.016
+   },
+   "over_best_price_roi": {
+    "n": 3538,
+    "roi": -0.0952,
+    "se": 0.0161
+   },
+   "under_dk_roi": {
+    "n": 2840,
+    "roi": -0.0084,
+    "se": 0.0176
+   }
+  },
+  {
+   "market": "player_rush_attempts",
+   "props": 3283,
+   "over_pct": 0.4743,
+   "fair_over": 0.4994,
+   "p": 0.0034,
+   "by_season": {
+    "2023": 0.4929,
+    "2024": 0.4711,
+    "2025": 0.4615,
+    "2026": 0.4545
+   },
+   "under_best_price_roi": {
+    "n": 3283,
+    "roi": 0.0156,
+    "se": 0.0169
+   },
+   "over_best_price_roi": {
+    "n": 3283,
+    "roi": -0.0831,
+    "se": 0.0169
+   },
+   "under_dk_roi": {
+    "n": 2634,
+    "roi": 0.0076,
+    "se": 0.0185
+   }
+  },
+  {
+   "market": "player_pass_tds",
+   "props": 1728,
+   "over_pct": 0.4873,
+   "fair_over": 0.4828,
+   "p": 0.3009,
+   "by_season": {
+    "2023": 0.4569,
+    "2024": 0.5162,
+    "2025": 0.4885,
+    "2026": 0.4844
+   },
+   "under_best_price_roi": {
+    "n": 1728,
+    "roi": -0.0377,
+    "se": 0.0236
+   },
+   "over_best_price_roi": {
+    "n": 1728,
+    "roi": -0.0175,
+    "se": 0.0253
+   },
+   "under_dk_roi": {
+    "n": 1659,
+    "roi": -0.0705,
+    "se": 0.0231
+   }
+  },
+  {
+   "market": "player_pass_interceptions",
+   "props": 1721,
+   "over_pct": 0.4962,
+   "fair_over": 0.5029,
+   "p": 0.7724,
+   "by_season": {
+    "2023": 0.5176,
+    "2024": 0.4757,
+    "2025": 0.4973,
+    "2026": 0.4844
+   },
+   "under_best_price_roi": {
+    "n": 1721,
+    "roi": -0.0125,
+    "se": 0.0239
+   },
+   "over_best_price_roi": {
+    "n": 1721,
+    "roi": -0.0391,
+    "se": 0.0238
+   },
+   "under_dk_roi": {
+    "n": 1694,
+    "roi": -0.0439,
+    "se": 0.0233
+   }
+  },
+  {
+   "market": "player_pass_longest_completion",
+   "props": 1679,
+   "over_pct": 0.4777,
+   "fair_over": 0.4996,
+   "p": 0.0709,
+   "by_season": {
+    "2023": 0.4887,
+    "2024": 0.4717,
+    "2025": 0.4741,
+    "2026": 0.4667
+   },
+   "under_best_price_roi": {
+    "n": 1679,
+    "roi": -0.0096,
+    "se": 0.0231
+   },
+   "over_best_price_roi": {
+    "n": 1679,
+    "roi": -0.0904,
+    "se": 0.0232
+   },
+   "under_dk_roi": {
+    "n": 1363,
+    "roi": -0.0272,
+    "se": 0.0253
+   }
+  },
+  {
+   "market": "player_pass_completions",
+   "props": 1664,
+   "over_pct": 0.4964,
+   "fair_over": 0.4987,
+   "p": 0.7874,
+   "by_season": {
+    "2023": 0.5164,
+    "2024": 0.4972,
+    "2025": 0.4762,
+    "2026": 0.5
+   },
+   "under_best_price_roi": {
+    "n": 1664,
+    "roi": -0.0254,
+    "se": 0.0238
+   },
+   "over_best_price_roi": {
+    "n": 1664,
+    "roi": -0.0322,
+    "se": 0.024
+   },
+   "under_dk_roi": {
+    "n": 1398,
+    "roi": -0.0539,
+    "se": 0.0251
+   }
+  },
+  {
+   "market": "player_kicking_points",
+   "props": 1653,
+   "over_pct": 0.5299,
+   "fair_over": 0.5007,
+   "p": 0.0159,
+   "by_season": {
+    "2023": 0.533,
+    "2024": 0.5229,
+    "2025": 0.5409,
+    "2026": 0.4754
+   },
+   "under_best_price_roi": {
+    "n": 1653,
+    "roi": -0.0959,
+    "se": 0.0237
+   },
+   "over_best_price_roi": {
+    "n": 1653,
+    "roi": 0.015,
+    "se": 0.0236
+   },
+   "under_dk_roi": {
+    "n": 1534,
+    "roi": -0.1147,
+    "se": 0.0241
+   }
+  },
+  {
+   "market": "player_pass_attempts",
+   "props": 1653,
+   "over_pct": 0.4828,
+   "fair_over": 0.5003,
+   "p": 0.1684,
+   "by_season": {
+    "2023": 0.5195,
+    "2024": 0.4796,
+    "2025": 0.4611,
+    "2026": 0.3968
+   },
+   "under_best_price_roi": {
+    "n": 1653,
+    "roi": 0.0024,
+    "se": 0.0239
+   },
+   "over_best_price_roi": {
+    "n": 1653,
+    "roi": -0.0675,
+    "se": 0.0238
+   },
+   "under_dk_roi": {
+    "n": 1337,
+    "roi": -0.0198,
+    "se": 0.0258
+   }
+  },
+  {
+   "market": "player_field_goals",
+   "props": 1618,
+   "over_pct": 0.5173,
+   "fair_over": 0.4935,
+   "p": 0.1715,
+   "by_season": {
+    "2023": 0.4953,
+    "2024": 0.5397,
+    "2025": 0.5202,
+    "2026": 0.4815
+   },
+   "under_best_price_roi": {
+    "n": 1618,
+    "roi": -0.0838,
+    "se": 0.0239
+   },
+   "over_best_price_roi": {
+    "n": 1618,
+    "roi": 0.0023,
+    "se": 0.0244
+   },
+   "under_dk_roi": {
+    "n": 1537,
+    "roi": -0.095,
+    "se": 0.0242
+   }
+  },
+  {
+   "market": "player_pass_yds",
+   "props": 1455,
+   "over_pct": 0.5052,
+   "fair_over": 0.5,
+   "p": 0.7136,
+   "by_season": {
+    "2023": 0.5202,
+    "2024": 0.501,
+    "2025": 0.4959,
+    "2026": 0.5
+   },
+   "under_best_price_roi": {
+    "n": 1455,
+    "roi": -0.0617,
+    "se": 0.0249
+   },
+   "over_best_price_roi": {
+    "n": 1455,
+    "roi": -0.0405,
+    "se": 0.0249
+   },
+   "under_dk_roi": {
+    "n": 774,
+    "roi": -0.0983,
+    "se": 0.0337
+   }
+  },
+  {
+   "market": "player_pass_rush_yds",
+   "props": 1080,
+   "over_pct": 0.5037,
+   "fair_over": 0.5,
+   "p": 0.8313,
+   "by_season": {
+    "2023": 0.5061,
+    "2024": 0.5,
+    "2025": 0.5079,
+    "2026": 0.4894
+   },
+   "under_best_price_roi": {
+    "n": 1080,
+    "roi": -0.0684,
+    "se": 0.0286
+   },
+   "over_best_price_roi": {
+    "n": 1080,
+    "roi": -0.0541,
+    "se": 0.0286
+   },
+   "under_dk_roi": {
+    "n": 489,
+    "roi": -0.0452,
+    "se": 0.0424
+   }
+  }
+ ],
+ "bias_all_core": {
+  "props": 69381,
+  "over_pct": {
+   "n": 69227,
+   "pct": 0.4741,
+   "p": 0.0
+  },
+  "fair_over": 0.4877,
+  "under_best_roi": {
+   "n": 69227,
+   "roi": -0.0147,
+   "se": 0.0036
+  },
+  "over_best_roi": {
+   "n": 69227,
+   "roi": -0.0683,
+   "se": 0.0038
+  },
+  "by_season_under_best_roi": {
+   "2023": {
+    "n": 19927,
+    "roi": -0.0383,
+    "se": 0.0068
+   },
+   "2024": {
+    "n": 25089,
+    "roi": -0.016,
+    "se": 0.0059
+   },
+   "2025": {
+    "n": 21812,
+    "roi": 0.0058,
+    "se": 0.0064
+   },
+   "2026": {
+    "n": 2399,
+    "roi": 0.0084,
+    "se": 0.0192
+   }
+  }
+ },
+ "calibration_close": [
+  {
+   "fb": "(0.0, 0.4]",
+   "n": 4208,
+   "fair": 0.2974,
+   "actual": 0.2799
+  },
+  {
+   "fb": "(0.4, 0.45]",
+   "n": 5056,
+   "fair": 0.4298,
+   "actual": 0.4124
+  },
+  {
+   "fb": "(0.45, 0.48]",
+   "n": 6458,
+   "fair": 0.4672,
+   "actual": 0.4492
+  },
+  {
+   "fb": "(0.48, 0.52]",
+   "n": 42672,
+   "fair": 0.5001,
+   "actual": 0.485
+  },
+  {
+   "fb": "(0.52, 0.55]",
+   "n": 5717,
+   "fair": 0.533,
+   "actual": 0.5347
+  },
+  {
+   "fb": "(0.55, 0.6]",
+   "n": 4302,
+   "fair": 0.569,
+   "actual": 0.553
+  },
+  {
+   "fb": "(0.6, 1.0]",
+   "n": 814,
+   "fair": 0.6258,
+   "actual": 0.6437
+  }
+ ],
+ "ev_same_point": {
+  "EV>=0%": {
+   "all": {
+    "n": 18810,
+    "roi": -0.0199,
+    "se": 0.0082
+   },
+   "by_season": {
+    "2023": {
+     "n": 4527,
+     "roi": -0.0256,
+     "se": 0.0156
+    },
+    "2024": {
+     "n": 5039,
+     "roi": -0.0299,
+     "se": 0.0174
+    },
+    "2025": {
+     "n": 8561,
+     "roi": -0.0116,
+     "se": 0.0119
+    },
+    "2026": {
+     "n": 683,
+     "roi": -0.0138,
+     "se": 0.0401
+    }
+   },
+   "avg_claimed_ev": 0.0209
+  },
+  "EV>=2%": {
+   "all": {
+    "n": 7097,
+    "roi": 0.0001,
+    "se": 0.0144
+   },
+   "by_season": {
+    "2023": {
+     "n": 1692,
+     "roi": -0.0144,
+     "se": 0.0262
+    },
+    "2024": {
+     "n": 1842,
+     "roi": -0.0157,
+     "se": 0.0326
+    },
+    "2025": {
+     "n": 3325,
+     "roi": 0.0114,
+     "se": 0.0204
+    },
+    "2026": {
+     "n": 238,
+     "roi": 0.0665,
+     "se": 0.0699
+    }
+   },
+   "avg_claimed_ev": 0.0414
+  },
+  "EV>=4%": {
+   "all": {
+    "n": 2599,
+    "roi": 0.0244,
+    "se": 0.0262
+   },
+   "by_season": {
+    "2023": {
+     "n": 546,
+     "roi": 0.0346,
+     "se": 0.0476
+    },
+    "2024": {
+     "n": 698,
+     "roi": 0.0118,
+     "se": 0.0597
+    },
+    "2025": {
+     "n": 1287,
+     "roi": 0.0213,
+     "se": 0.0358
+    },
+    "2026": {
+     "n": 68,
+     "roi": 0.1317,
+     "se": 0.1395
+    }
+   },
+   "avg_claimed_ev": 0.0641
+  },
+  "EV>=6%": {
+   "all": {
+    "n": 1002,
+    "roi": 0.0727,
+    "se": 0.0482
+   },
+   "by_season": {
+    "2023": {
+     "n": 160,
+     "roi": 0.1408,
+     "se": 0.0914
+    },
+    "2024": {
+     "n": 301,
+     "roi": 0.0758,
+     "se": 0.1084
+    },
+    "2025": {
+     "n": 513,
+     "roi": 0.0435,
+     "se": 0.0622
+    },
+    "2026": {
+     "n": 28,
+     "roi": 0.1872,
+     "se": 0.2115
+    }
+   },
+   "avg_claimed_ev": 0.0887
+  },
+  "EV>=8%": {
+   "all": {
+    "n": 435,
+    "roi": 0.0452,
+    "se": 0.0772
+   },
+   "by_season": {
+    "2023": {
+     "n": 45,
+     "roi": 0.134,
+     "se": 0.1839
+    },
+    "2024": {
+     "n": 136,
+     "roi": -0.0628,
+     "se": 0.1558
+    },
+    "2025": {
+     "n": 249,
+     "roi": 0.0889,
+     "se": 0.0984
+    },
+    "2026": {
+     "n": 5,
+     "roi": 0.01,
+     "se": 0.5633
+    }
+   },
+   "avg_claimed_ev": 0.1154
+  }
+ },
+ "ev_by_book": [
+  {
+   "book": "betonlineag",
+   "n": 375,
+   "roi": 0.072,
+   "se": 0.0726
+  },
+  {
+   "book": "hardrockbet",
+   "n": 374,
+   "roi": -0.0219,
+   "se": 0.082
+  },
+  {
+   "book": "novig",
+   "n": 323,
+   "roi": -0.0489,
+   "se": 0.0634
+  },
+  {
+   "book": "bovada",
+   "n": 299,
+   "roi": 0.033,
+   "se": 0.0638
+  },
+  {
+   "book": "espnbet",
+   "n": 282,
+   "roi": 0.0289,
+   "se": 0.1069
+  },
+  {
+   "book": "prophetx",
+   "n": 278,
+   "roi": 0.0027,
+   "se": 0.0681
+  },
+  {
+   "book": "draftkings",
+   "n": 128,
+   "roi": 0.0743,
+   "se": 0.0985
+  },
+  {
+   "book": "williamhill_us",
+   "n": 110,
+   "roi": -0.0091,
+   "se": 0.1079
+  },
+  {
+   "book": "betmgm",
+   "n": 79,
+   "roi": 0.1298,
+   "se": 0.1326
+  },
+  {
+   "book": "fanduel",
+   "n": 75,
+   "roi": 0.1889,
+   "se": 0.142
+  },
+  {
+   "book": "betparx",
+   "n": 71,
+   "roi": -0.0046,
+   "se": 0.128
+  },
+  {
+   "book": "ballybet",
+   "n": 69,
+   "roi": 0.0605,
+   "se": 0.1207
+  },
+  {
+   "book": "betrivers",
+   "n": 66,
+   "roi": -0.0137,
+   "se": 0.1388
+  },
+  {
+   "book": "fliff",
+   "n": 39,
+   "roi": 0.1533,
+   "se": 0.2462
+  },
+  {
+   "book": "unibet_us",
+   "n": 15,
+   "roi": -0.1248,
+   "se": 0.2812
+  },
+  {
+   "book": "fanatics",
+   "n": 11,
+   "roi": 0.2076,
+   "se": 0.354
+  },
+  {
+   "book": "barstool",
+   "n": 3,
+   "roi": 0.45,
+   "se": 0.593
+  },
+  {
+   "book": "pointsbetus",
+   "n": 1,
+   "roi": -1.0,
+   "se": null
+  },
+  {
+   "book": "windcreek",
+   "n": 1,
+   "roi": -1.0,
+   "se": null
+  }
+ ],
+ "off_point": {
+  "player_reception_yds 3-8% off": {
+   "n": 18448,
+   "roi": -0.0444,
+   "se": 0.0068
+  },
+  "player_reception_yds 8%+ off": {
+   "n": 8280,
+   "roi": -0.0379,
+   "se": 0.0101
+  },
+  "player_rush_yds 3-8% off": {
+   "n": 7615,
+   "roi": -0.0438,
+   "se": 0.0106
+  },
+  "player_rush_yds 8%+ off": {
+   "n": 3519,
+   "roi": -0.0407,
+   "se": 0.0154
+  },
+  "player_pass_yds 3-8% off": {
+   "n": 614,
+   "roi": -0.0245,
+   "se": 0.0363
+  },
+  "player_pass_yds 8%+ off": {
+   "n": 2,
+   "roi": 0.7418,
+   "se": 0.0194
+  },
+  "player_receptions 3-8% off": {
+   "n": 0,
+   "roi": null,
+   "se": null
+  },
+  "player_receptions 8%+ off": {
+   "n": 4298,
+   "roi": -0.059,
+   "se": 0.0118
+  }
+ },
+ "movement": {
+  "props_with_open_and_close": 9973,
+  "share_line_moved": 0.428,
+  "mae_open": 12.918,
+  "mae_close": 12.879,
+  "bet_open_in_move_direction (hindsight)": {
+   "n": 4268,
+   "roi": 0.0131,
+   "se": 0.0142
+  },
+  "same bet graded at close line": {
+   "n": 4268,
+   "roi": -0.0324,
+   "se": 0.0149
+  },
+  "under at open (best price)": {
+   "n": 9973,
+   "roi": -0.0082,
+   "se": 0.0095
+  },
+  "under at close (best price)": {
+   "n": 9973,
+   "roi": 0.0139,
+   "se": 0.0097
+  }
+ },
+ "movement_by_market": [
+  {
+   "market": "player_reception_yds",
+   "n": 1720,
+   "moved": 0.757,
+   "mae_open": 22.72,
+   "mae_close": 22.66,
+   "under_open_roi": -0.0202,
+   "under_close_roi": 0.0148
+  },
+  {
+   "market": "player_receptions",
+   "n": 1392,
+   "moved": 0.143,
+   "mae_open": 1.63,
+   "mae_close": 1.62,
+   "under_open_roi": 0.0309,
+   "under_close_roi": 0.0534
+  },
+  {
+   "market": "player_reception_longest",
+   "n": 1266,
+   "moved": 0.46,
+   "mae_open": 9.3,
+   "mae_close": 9.26,
+   "under_open_roi": -0.0164,
+   "under_close_roi": -0.0003
+  },
+  {
+   "market": "player_rush_yds",
+   "n": 969,
+   "moved": 0.751,
+   "mae_open": 20.29,
+   "mae_close": 20.31,
+   "under_open_roi": -0.0116,
+   "under_close_roi": 0.0232
+  },
+  {
+   "market": "player_pass_tds",
+   "n": 728,
+   "moved": 0.022,
+   "mae_open": 0.93,
+   "mae_close": 0.93,
+   "under_open_roi": 0.0408,
+   "under_close_roi": 0.0555
+  },
+  {
+   "market": "player_pass_interceptions",
+   "n": 593,
+   "moved": 0.0,
+   "mae_open": 0.71,
+   "mae_close": 0.71,
+   "under_open_roi": -0.043,
+   "under_close_roi": -0.0252
+  },
+  {
+   "market": "player_pass_yds",
+   "n": 526,
+   "moved": 0.903,
+   "mae_open": 58.53,
+   "mae_close": 58.15,
+   "under_open_roi": -0.0079,
+   "under_close_roi": -0.0006
+  },
+  {
+   "market": "player_pass_longest_completion",
+   "n": 437,
+   "moved": 0.375,
+   "mae_open": 10.41,
+   "mae_close": 10.37,
+   "under_open_roi": 0.0323,
+   "under_close_roi": 0.0398
+  },
+  {
+   "market": "player_pass_completions",
+   "n": 422,
+   "moved": 0.355,
+   "mae_open": 4.4,
+   "mae_close": 4.39,
+   "under_open_roi": 0.0129,
+   "under_close_roi": 0.0512
+  },
+  {
+   "market": "player_pass_attempts",
+   "n": 414,
+   "moved": 0.415,
+   "mae_open": 6.67,
+   "mae_close": 6.71,
+   "under_open_roi": 0.0739,
+   "under_close_roi": 0.0892
+  },
+  {
+   "market": "player_rush_attempts",
+   "n": 403,
+   "moved": 0.315,
+   "mae_open": 3.57,
+   "mae_close": 3.57,
+   "under_open_roi": -0.0512,
+   "under_close_roi": -0.0489
+  },
+  {
+   "market": "player_kicking_points",
+   "n": 268,
+   "moved": 0.116,
+   "mae_open": 3.16,
+   "mae_close": 3.16,
+   "under_open_roi": -0.1431,
+   "under_close_roi": -0.1089
+  },
+  {
+   "market": "player_rush_longest",
+   "n": 254,
+   "moved": 0.315,
+   "mae_open": 7.37,
+   "mae_close": 7.36,
+   "under_open_roi": -0.0102,
+   "under_close_roi": 0.0171
+  },
+  {
+   "market": "player_tackles_assists",
+   "n": 223,
+   "moved": 0.184,
+   "mae_open": 2.04,
+   "mae_close": 2.02,
+   "under_open_roi": -0.0134,
+   "under_close_roi": 0.0163
+  },
+  {
+   "market": "player_field_goals",
+   "n": 132,
+   "moved": 0.0,
+   "mae_open": 1.14,
+   "mae_close": 1.14,
+   "under_open_roi": -0.2709,
+   "under_close_roi": -0.2485
+  },
+  {
+   "market": "player_rush_reception_yds",
+   "n": 127,
+   "moved": 0.882,
+   "mae_open": 33.06,
+   "mae_close": 32.85,
+   "under_open_roi": -0.1572,
+   "under_close_roi": -0.1654
+  },
+  {
+   "market": "player_pass_rush_yds",
+   "n": 99,
+   "moved": 0.899,
+   "mae_open": 60.89,
+   "mae_close": 60.77,
+   "under_open_roi": 0.1175,
+   "under_close_roi": 0.1014
+  }
+ ],
+ "anytime_td": [
+  {
+   "implied": "(0.0, 0.1]",
+   "n": 20003,
+   "implied_avg": 0.0377,
+   "scored": 0.016,
+   "roi_best_price": -0.616,
+   "roi_median_price": -0.7108
+  },
+  {
+   "implied": "(0.1, 0.2]",
+   "n": 5300,
+   "implied_avg": 0.1498,
+   "scored": 0.1143,
+   "roi_best_price": -0.0628,
+   "roi_median_price": -0.2444
+  },
+  {
+   "implied": "(0.2, 0.3]",
+   "n": 3631,
+   "implied_avg": 0.2482,
+   "scored": 0.2021,
+   "roi_best_price": -0.0628,
+   "roi_median_price": -0.1883
+  },
+  {
+   "implied": "(0.3, 0.4]",
+   "n": 2567,
+   "implied_avg": 0.3489,
+   "scored": 0.3218,
+   "roi_best_price": 0.0184,
+   "roi_median_price": -0.0788
+  },
+  {
+   "implied": "(0.4, 0.5]",
+   "n": 1406,
+   "implied_avg": 0.4477,
+   "scored": 0.3947,
+   "roi_best_price": -0.0377,
+   "roi_median_price": -0.1187
+  },
+  {
+   "implied": "(0.5, 0.6]",
+   "n": 718,
+   "implied_avg": 0.5507,
+   "scored": 0.493,
+   "roi_best_price": -0.0381,
+   "roi_median_price": -0.1045
+  },
+  {
+   "implied": "(0.6, 1.0]",
+   "n": 333,
+   "implied_avg": 0.6594,
+   "scored": 0.6126,
+   "roi_best_price": -0.0053,
+   "roi_median_price": -0.0699
+  }
+ ],
+ "naive_projection": [
+  {
+   "market": "player_reception_yds",
+   "proj": "med8",
+   "rule": "proj >= 15% above line",
+   "n": 3193,
+   "roi": -0.0751,
+   "se": 0.0169,
+   "by_season": {
+    "2023": -0.0267,
+    "2024": -0.1037,
+    "2025": -0.0916,
+    "2026": -0.0674
+   }
+  },
+  {
+   "market": "player_reception_yds",
+   "proj": "med8",
+   "rule": "proj >= 15% below line",
+   "n": 2947,
+   "roi": -0.0553,
+   "se": 0.0176,
+   "by_season": {
+    "2023": -0.0734,
+    "2024": -0.0477,
+    "2025": -0.0406,
+    "2026": -0.0766
+   }
+  },
+  {
+   "market": "player_reception_yds",
+   "proj": "mean8",
+   "rule": "proj >= 15% above line",
+   "n": 4774,
+   "roi": -0.0656,
+   "se": 0.0138,
+   "by_season": {
+    "2023": -0.0421,
+    "2024": -0.077,
+    "2025": -0.0795,
+    "2026": -0.0395
+   }
+  },
+  {
+   "market": "player_reception_yds",
+   "proj": "mean8",
+   "rule": "proj >= 15% below line",
+   "n": 1398,
+   "roi": -0.0366,
+   "se": 0.0256,
+   "by_season": {
+    "2023": -0.0693,
+    "2024": -0.0157,
+    "2025": -0.0393,
+    "2026": 0.0725
+   }
+  },
+  {
+   "market": "player_receptions",
+   "proj": "med8",
+   "rule": "proj >= 15% above line",
+   "n": 2606,
+   "roi": -0.0438,
+   "se": 0.0186,
+   "by_season": {
+    "2023": 0.0033,
+    "2024": -0.0422,
+    "2025": -0.1057,
+    "2026": 0.0342
+   }
+  },
+  {
+   "market": "player_receptions",
+   "proj": "med8",
+   "rule": "proj >= 15% below line",
+   "n": 3052,
+   "roi": -0.0214,
+   "se": 0.0169,
+   "by_season": {
+    "2023": -0.0705,
+    "2024": -0.0192,
+    "2025": 0.0267,
+    "2026": -0.0847
+   }
+  },
+  {
+   "market": "player_receptions",
+   "proj": "mean8",
+   "rule": "proj >= 15% above line",
+   "n": 3115,
+   "roi": -0.0385,
+   "se": 0.017,
+   "by_season": {
+    "2023": 0.0032,
+    "2024": -0.0642,
+    "2025": -0.0656,
+    "2026": 0.0348
+   }
+  },
+  {
+   "market": "player_receptions",
+   "proj": "mean8",
+   "rule": "proj >= 15% below line",
+   "n": 2161,
+   "roi": 0.0031,
+   "se": 0.0197,
+   "by_season": {
+    "2023": -0.0328,
+    "2024": 0.0205,
+    "2025": 0.0194,
+    "2026": -0.0163
+   }
+  },
+  {
+   "market": "player_rush_yds",
+   "proj": "med8",
+   "rule": "proj >= 15% above line",
+   "n": 1346,
+   "roi": -0.1183,
+   "se": 0.026,
+   "by_season": {
+    "2023": -0.1115,
+    "2024": -0.1344,
+    "2025": -0.0952,
+    "2026": -0.2073
+   }
+  },
+  {
+   "market": "player_rush_yds",
+   "proj": "med8",
+   "rule": "proj >= 15% below line",
+   "n": 1629,
+   "roi": 0.0289,
+   "se": 0.0233,
+   "by_season": {
+    "2023": 0.0099,
+    "2024": 0.039,
+    "2025": 0.0411,
+    "2026": -0.0226
+   }
+  },
+  {
+   "market": "player_rush_yds",
+   "proj": "mean8",
+   "rule": "proj >= 15% above line",
+   "n": 1954,
+   "roi": -0.1022,
+   "se": 0.0218,
+   "by_season": {
+    "2023": -0.0957,
+    "2024": -0.1265,
+    "2025": -0.0667,
+    "2026": -0.2305
+   }
+  },
+  {
+   "market": "player_rush_yds",
+   "proj": "mean8",
+   "rule": "proj >= 15% below line",
+   "n": 866,
+   "roi": 0.0631,
+   "se": 0.0321,
+   "by_season": {
+    "2023": 0.055,
+    "2024": 0.0678,
+    "2025": 0.0858,
+    "2026": -0.108
+   }
+  },
+  {
+   "market": "player_rush_attempts",
+   "proj": "med8",
+   "rule": "proj >= 15% above line",
+   "n": 656,
+   "roi": -0.0123,
+   "se": 0.0371,
+   "by_season": {
+    "2023": 0.0376,
+    "2024": -0.0559,
+    "2025": 0.0147,
+    "2026": -0.1744
+   }
+  },
+  {
+   "market": "player_rush_attempts",
+   "proj": "med8",
+   "rule": "proj >= 15% below line",
+   "n": 919,
+   "roi": 0.035,
+   "se": 0.0314,
+   "by_season": {
+    "2023": -0.007,
+    "2024": 0.0388,
+    "2025": 0.0599,
+    "2026": 0.1522
+   }
+  },
+  {
+   "market": "player_rush_attempts",
+   "proj": "mean8",
+   "rule": "proj >= 15% above line",
+   "n": 715,
+   "roi": 0.0191,
+   "se": 0.0355,
+   "by_season": {
+    "2023": 0.0779,
+    "2024": -0.0071,
+    "2025": 0.0042,
+    "2026": -0.1125
+   }
+  },
+  {
+   "market": "player_rush_attempts",
+   "proj": "mean8",
+   "rule": "proj >= 15% below line",
+   "n": 727,
+   "roi": 0.0606,
+   "se": 0.0351,
+   "by_season": {
+    "2023": 0.0407,
+    "2024": 0.0966,
+    "2025": 0.0363,
+    "2026": 0.0772
+   }
+  },
+  {
+   "market": "player_pass_yds",
+   "proj": "med8",
+   "rule": "proj >= 15% above line",
+   "n": 131,
+   "roi": -0.2006,
+   "se": 0.0822,
+   "by_season": {
+    "2023": -0.0847,
+    "2024": -0.0954,
+    "2025": -0.3844,
+    "2026": -0.5227
+   }
+  },
+  {
+   "market": "player_pass_yds",
+   "proj": "med8",
+   "rule": "proj >= 15% below line",
+   "n": 213,
+   "roi": -0.1294,
+   "se": 0.0646,
+   "by_season": {
+    "2023": -0.1825,
+    "2024": -0.0565,
+    "2025": -0.163,
+    "2026": -0.0588
+   }
+  },
+  {
+   "market": "player_pass_yds",
+   "proj": "mean8",
+   "rule": "proj >= 15% above line",
+   "n": 81,
+   "roi": -0.2959,
+   "se": 0.1021,
+   "by_season": {
+    "2023": -0.1999,
+    "2024": -0.1914,
+    "2025": -0.4339,
+    "2026": -0.365
+   }
+  },
+  {
+   "market": "player_pass_yds",
+   "proj": "mean8",
+   "rule": "proj >= 15% below line",
+   "n": 228,
+   "roi": -0.1284,
+   "se": 0.0625,
+   "by_season": {
+    "2023": -0.2178,
+    "2024": -0.0703,
+    "2025": -0.1381,
+    "2026": 0.0687
+   }
+  },
+  {
+   "market": "player_pass_completions",
+   "proj": "med8",
+   "rule": "proj >= 15% above line",
+   "n": 101,
+   "roi": -0.0212,
+   "se": 0.0948,
+   "by_season": {
+    "2023": 0.0193,
+    "2024": 0.0234,
+    "2025": -0.116,
+    "2026": 0.0969
+   }
+  },
+  {
+   "market": "player_pass_completions",
+   "proj": "med8",
+   "rule": "proj >= 15% below line",
+   "n": 250,
+   "roi": 0.0479,
+   "se": 0.0608,
+   "by_season": {
+    "2023": -0.0148,
+    "2024": 0.0973,
+    "2025": 0.0147,
+    "2026": 0.2917
+   }
+  },
+  {
+   "market": "player_pass_completions",
+   "proj": "mean8",
+   "rule": "proj >= 15% above line",
+   "n": 66,
+   "roi": -0.1682,
+   "se": 0.1159,
+   "by_season": {
+    "2023": 0.107,
+    "2024": -0.1031,
+    "2025": -0.4643,
+    "2026": 0.129
+   }
+  },
+  {
+   "market": "player_pass_completions",
+   "proj": "mean8",
+   "rule": "proj >= 15% below line",
+   "n": 277,
+   "roi": 0.0692,
+   "se": 0.0576,
+   "by_season": {
+    "2023": -0.0179,
+    "2024": 0.0925,
+    "2025": 0.0724,
+    "2026": 0.3493
+   }
+  },
+  {
+   "market": "player_pass_attempts",
+   "proj": "med8",
+   "rule": "proj >= 15% above line",
+   "n": 86,
+   "roi": -0.0674,
+   "se": 0.1031,
+   "by_season": {
+    "2023": -0.1302,
+    "2024": -0.003,
+    "2025": -0.1636,
+    "2026": 0.9494
+   }
+  },
+  {
+   "market": "player_pass_attempts",
+   "proj": "med8",
+   "rule": "proj >= 15% below line",
+   "n": 248,
+   "roi": 0.0321,
+   "se": 0.061,
+   "by_season": {
+    "2023": -0.0999,
+    "2024": 0.0064,
+    "2025": 0.1373,
+    "2026": 0.129
+   }
+  },
+  {
+   "market": "player_pass_attempts",
+   "proj": "mean8",
+   "rule": "proj >= 15% above line",
+   "n": 51,
+   "roi": -0.1079,
+   "se": 0.1327,
+   "by_season": {
+    "2023": 0.1205,
+    "2024": -0.3501,
+    "2025": -0.2841,
+    "2026": 0.2778
+   }
+  },
+  {
+   "market": "player_pass_attempts",
+   "proj": "mean8",
+   "rule": "proj >= 15% below line",
+   "n": 254,
+   "roi": 0.0476,
+   "se": 0.0604,
+   "by_season": {
+    "2023": -0.005,
+    "2024": -0.0024,
+    "2025": 0.1137,
+    "2026": 0.4284
+   }
+  }
+ ],
+ "exchange_coverage": [
+  {
+   "bookmaker": "kalshi",
+   "season": "2025",
+   "games": 100,
+   "markets": 2
+  },
+  {
+   "bookmaker": "kalshi",
+   "season": "2026",
+   "games": 33,
+   "markets": 1
+  },
+  {
+   "bookmaker": "novig",
+   "season": "2024",
+   "games": 77,
+   "markets": 6
+  },
+  {
+   "bookmaker": "novig",
+   "season": "2025",
+   "games": 282,
+   "markets": 19
+  },
+  {
+   "bookmaker": "novig",
+   "season": "2026",
+   "games": 22,
+   "markets": 19
+  },
+  {
+   "bookmaker": "polymarket",
+   "season": "2026",
+   "games": 16,
+   "markets": 1
+  },
+  {
+   "bookmaker": "prophetx",
+   "season": "2024",
+   "games": 77,
+   "markets": 12
+  },
+  {
+   "bookmaker": "prophetx",
+   "season": "2025",
+   "games": 283,
+   "markets": 21
+  },
+  {
+   "bookmaker": "prophetx",
+   "season": "2026",
+   "games": 34,
+   "markets": 19
+  }
+ ],
+ "ev_regulated_only": {
+  "EV>=2%": {
+   "all": {
+    "n": 3602,
+    "roi": 0.0048,
+    "se": 0.0215
+   },
+   "by_season": {
+    "2023": 0.0305,
+    "2024": -0.0502,
+    "2025": 0.0416,
+    "2026": 0.0685
+   }
+  },
+  "EV>=4%": {
+   "all": {
+    "n": 1324,
+    "roi": 0.0314,
+    "se": 0.0396
+   },
+   "by_season": {
+    "2023": 0.0507,
+    "2024": -0.0456,
+    "2025": 0.0844,
+    "2026": 0.2162
+   }
+  },
+  "EV>=6%": {
+   "all": {
+    "n": 578,
+    "roi": 0.1055,
+    "se": 0.0693
+   },
+   "by_season": {
+    "2023": 0.1541,
+    "2024": 0.0788,
+    "2025": 0.0959,
+    "2026": 0.4685
+   }
+  }
+ },
+ "ev_vs_exchange": {
+  "EV>=0%": {
+   "all": {
+    "n": 7010,
+    "roi": 0.0328,
+    "se": 0.012
+   },
+   "by_season": {
+    "2024": -0.0333,
+    "2025": 0.0521,
+    "2026": -0.0405
+   }
+  },
+  "EV>=2%": {
+   "all": {
+    "n": 2593,
+    "roi": 0.0833,
+    "se": 0.0201
+   },
+   "by_season": {
+    "2024": 0.0202,
+    "2025": 0.094,
+    "2026": 0.0827
+   }
+  },
+  "EV>=4%": {
+   "all": {
+    "n": 919,
+    "roi": 0.1089,
+    "se": 0.0344
+   },
+   "by_season": {
+    "2024": 0.173,
+    "2025": 0.1197,
+    "2026": -0.0161
+   }
+  },
+  "EV>=6%": {
+   "all": {
+    "n": 325,
+    "roi": 0.1176,
+    "se": 0.0606
+   },
+   "by_season": {
+    "2024": 0.2312,
+    "2025": 0.1575,
+    "2026": -0.1058
+   }
+  }
+ },
+ "exchange_calibration": {
+  "n": 16017,
+  "exchange_fair_over": 0.4952,
+  "book_fair_over": 0.497,
+  "actual_over": 0.4728
+ },
+ "ev_vs_exchange_by_quote_age": {
+  "<2 min": {
+   "n": 2520,
+   "roi": 0.0866,
+   "se": 0.0204
+  },
+  "2-10 min": {
+   "n": 61,
+   "roi": -0.1151,
+   "se": 0.1288
+  },
+  "10-60 min": {
+   "n": 12,
+   "roi": 0.3992,
+   "se": 0.2944
+  },
+  ">60 min": {
+   "n": 0,
+   "roi": null,
+   "se": null
+  }
+ },
+ "ev_vs_exchange_by_book": [
+  {
+   "book": "ballybet",
+   "n": 51,
+   "roi": -0.1082,
+   "se": 0.1386
+  },
+  {
+   "book": "betmgm",
+   "n": 496,
+   "roi": 0.0572,
+   "se": 0.0468
+  },
+  {
+   "book": "betparx",
+   "n": 390,
+   "roi": 0.0251,
+   "se": 0.0517
+  },
+  {
+   "book": "betrivers",
+   "n": 264,
+   "roi": 0.0265,
+   "se": 0.0635
+  },
+  {
+   "book": "courtside",
+   "n": 0,
+   "roi": null,
+   "se": null
+  },
+  {
+   "book": "draftkings",
+   "n": 320,
+   "roi": 0.1476,
+   "se": 0.0568
+  },
+  {
+   "book": "espnbet",
+   "n": 213,
+   "roi": 0.114,
+   "se": 0.0693
+  },
+  {
+   "book": "fanatics",
+   "n": 95,
+   "roi": 0.2235,
+   "se": 0.1001
+  },
+  {
+   "book": "fanduel",
+   "n": 145,
+   "roi": 0.0391,
+   "se": 0.0861
+  },
+  {
+   "book": "fliff",
+   "n": 67,
+   "roi": 0.0227,
+   "se": 0.1206
+  },
+  {
+   "book": "hardrockbet",
+   "n": 465,
+   "roi": 0.1372,
+   "se": 0.048
+  },
+  {
+   "book": "hardrockbet_fl",
+   "n": 30,
+   "roi": 0.192,
+   "se": 0.1672
+  },
+  {
+   "book": "rebet",
+   "n": 6,
+   "roi": 0.0091,
+   "se": 0.4124
+  },
+  {
+   "book": "williamhill_us",
+   "n": 51,
+   "roi": 0.1345,
+   "se": 0.1393
+  }
+ ],
+ "ev_vs_exchange_by_market": [
+  {
+   "market": "player_field_goals",
+   "overs": 53,
+   "unders": 24,
+   "n": 77,
+   "roi": 0.0689,
+   "se": 0.109
+  },
+  {
+   "market": "player_kicking_points",
+   "overs": 22,
+   "unders": 19,
+   "n": 41,
+   "roi": 0.3353,
+   "se": 0.1433
+  },
+  {
+   "market": "player_pass_attempts",
+   "overs": 33,
+   "unders": 79,
+   "n": 112,
+   "roi": -0.1348,
+   "se": 0.0911
+  },
+  {
+   "market": "player_pass_completions",
+   "overs": 75,
+   "unders": 89,
+   "n": 164,
+   "roi": -0.059,
+   "se": 0.0772
+  },
+  {
+   "market": "player_pass_interceptions",
+   "overs": 64,
+   "unders": 95,
+   "n": 159,
+   "roi": -0.0133,
+   "se": 0.0841
+  },
+  {
+   "market": "player_pass_longest_completion",
+   "overs": 0,
+   "unders": 17,
+   "n": 17,
+   "roi": 0.6658,
+   "se": 0.148
+  },
+  {
+   "market": "player_pass_rush_yds",
+   "overs": 0,
+   "unders": 7,
+   "n": 7,
+   "roi": 0.3398,
+   "se": 0.3203
+  },
+  {
+   "market": "player_pass_tds",
+   "overs": 91,
+   "unders": 54,
+   "n": 145,
+   "roi": 0.0788,
+   "se": 0.1005
+  },
+  {
+   "market": "player_pass_yds",
+   "overs": 3,
+   "unders": 0,
+   "n": 3,
+   "roi": 0.9484,
+   "se": 0.0253
+  },
+  {
+   "market": "player_reception_longest",
+   "overs": 54,
+   "unders": 65,
+   "n": 119,
+   "roi": -0.1714,
+   "se": 0.0878
+  },
+  {
+   "market": "player_reception_yds",
+   "overs": 30,
+   "unders": 48,
+   "n": 78,
+   "roi": 0.228,
+   "se": 0.108
+  },
+  {
+   "market": "player_receptions",
+   "overs": 389,
+   "unders": 657,
+   "n": 1046,
+   "roi": 0.1273,
+   "se": 0.0323
+  },
+  {
+   "market": "player_rush_attempts",
+   "overs": 114,
+   "unders": 187,
+   "n": 301,
+   "roi": 0.0061,
+   "se": 0.0558
+  },
+  {
+   "market": "player_rush_longest",
+   "overs": 50,
+   "unders": 39,
+   "n": 89,
+   "roi": 0.2603,
+   "se": 0.098
+  },
+  {
+   "market": "player_rush_reception_yds",
+   "overs": 4,
+   "unders": 3,
+   "n": 7,
+   "roi": 0.3322,
+   "se": 0.3185
+  },
+  {
+   "market": "player_rush_yds",
+   "overs": 63,
+   "unders": 28,
+   "n": 91,
+   "roi": 0.2006,
+   "se": 0.1125
+  },
+  {
+   "market": "player_sacks",
+   "overs": 5,
+   "unders": 5,
+   "n": 10,
+   "roi": -0.3908,
+   "se": 0.2969
+  },
+  {
+   "market": "player_tackles_assists",
+   "overs": 59,
+   "unders": 68,
+   "n": 127,
+   "roi": 0.1869,
+   "se": 0.0841
+  }
+ ],
+ "ev_vs_exchange_side": {
+  "over bets": {
+   "n": 1109,
+   "roi": 0.0127,
+   "se": 0.0314
+  },
+  "under bets": {
+   "n": 1484,
+   "roi": 0.1361,
+   "se": 0.0261
+  }
+ }
+}

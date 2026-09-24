@@ -1,0 +1,1123 @@
+{
+ "futures_n_markets": 1167,
+ "futures_n_snapshots": 12825,
+ "futures_by_price": [
+  {
+   "bucket": "(0.0, 0.03]",
+   "n": 945,
+   "avg_price": 0.0201,
+   "yes_rate": 0.0508,
+   "roi_buy_yes_taker": 0.3563,
+   "roi_buy_no_taker": -0.0479,
+   "roi_buy_yes_maker": 3.127,
+   "roi_buy_no_maker": -0.0244,
+   "se_no_taker": 0.0072
+  },
+  {
+   "bucket": "(0.03, 0.06]",
+   "n": 843,
+   "avg_price": 0.0436,
+   "yes_rate": 0.032,
+   "roi_buy_yes_taker": -0.5499,
+   "roi_buy_no_taker": -0.0163,
+   "roi_buy_yes_maker": 0.6548,
+   "roi_buy_no_maker": 0.0314,
+   "se_no_taker": 0.0062
+  },
+  {
+   "bucket": "(0.06, 0.1]",
+   "n": 622,
+   "avg_price": 0.0794,
+   "yes_rate": 0.0627,
+   "roi_buy_yes_taker": -0.406,
+   "roi_buy_no_taker": -0.015,
+   "roi_buy_yes_maker": 0.1035,
+   "roi_buy_no_maker": 0.043,
+   "se_no_taker": 0.0103
+  },
+  {
+   "bucket": "(0.1, 0.2]",
+   "n": 945,
+   "avg_price": 0.148,
+   "yes_rate": 0.1492,
+   "roi_buy_yes_taker": -0.1838,
+   "roi_buy_no_taker": -0.0573,
+   "roi_buy_yes_maker": 0.3889,
+   "roi_buy_no_maker": 0.0551,
+   "se_no_taker": 0.0129
+  },
+  {
+   "bucket": "(0.2, 0.35]",
+   "n": 961,
+   "avg_price": 0.2682,
+   "yes_rate": 0.1655,
+   "roi_buy_yes_taker": -0.4892,
+   "roi_buy_no_taker": 0.007,
+   "roi_buy_yes_maker": 0.6054,
+   "roi_buy_no_maker": 0.351,
+   "se_no_taker": 0.015
+  },
+  {
+   "bucket": "(0.35, 0.5]",
+   "n": 664,
+   "avg_price": 0.4268,
+   "yes_rate": 0.2229,
+   "roi_buy_yes_taker": -0.5389,
+   "roi_buy_no_taker": 0.1373,
+   "roi_buy_yes_maker": 0.1268,
+   "roi_buy_no_maker": 1.7999,
+   "se_no_taker": 0.0251
+  },
+  {
+   "bucket": "(0.5, 0.65]",
+   "n": 580,
+   "avg_price": 0.5805,
+   "yes_rate": 0.3259,
+   "roi_buy_yes_taker": -0.4967,
+   "roi_buy_no_taker": 0.298,
+   "roi_buy_yes_maker": -0.2535,
+   "roi_buy_no_maker": 4.7357,
+   "se_no_taker": 0.0401
+  },
+  {
+   "bucket": "(0.65, 0.8]",
+   "n": 601,
+   "avg_price": 0.7264,
+   "yes_rate": 0.396,
+   "roi_buy_yes_taker": -0.5066,
+   "roi_buy_no_taker": 0.6315,
+   "roi_buy_yes_maker": -0.395,
+   "roi_buy_no_maker": 10.4355,
+   "se_no_taker": 0.0575
+  },
+  {
+   "bucket": "(0.8, 0.9]",
+   "n": 494,
+   "avg_price": 0.8552,
+   "yes_rate": 0.4372,
+   "roi_buy_yes_taker": -0.5176,
+   "roi_buy_no_taker": 1.7617,
+   "roi_buy_yes_maker": -0.4695,
+   "roi_buy_no_maker": 9.303,
+   "se_no_taker": 0.1169
+  },
+  {
+   "bucket": "(0.9, 0.97]",
+   "n": 367,
+   "avg_price": 0.9355,
+   "yes_rate": 0.7602,
+   "roi_buy_yes_taker": -0.2237,
+   "roi_buy_no_taker": 1.2406,
+   "roi_buy_yes_maker": -0.1573,
+   "roi_buy_no_maker": 12.0876,
+   "se_no_taker": 0.2174
+  },
+  {
+   "bucket": "(0.97, 1.0]",
+   "n": 53,
+   "avg_price": 0.9818,
+   "yes_rate": 0.8868,
+   "roi_buy_yes_taker": -0.1121,
+   "roi_buy_no_taker": 1.956,
+   "roi_buy_yes_maker": -0.0909,
+   "roi_buy_no_maker": 9.3774,
+   "se_no_taker": 1.1645
+  }
+ ],
+ "futures_longshots_by_family": {
+  "SB / conference": {
+   "n": 652,
+   "avg_price": 0.0409,
+   "yes_rate": 0.0629,
+   "roi_buy_yes_taker": 0.5283,
+   "roi_buy_no_taker": -0.0383,
+   "roi_buy_yes_maker": 3.3766,
+   "roi_buy_no_maker": -0.0145,
+   "se_no_taker": 0.0098
+  },
+  "awards / other": {
+   "n": 1218,
+   "avg_price": 0.0383,
+   "yes_rate": 0.0263,
+   "roi_buy_yes_taker": -0.5068,
+   "roi_buy_no_taker": -0.0117,
+   "roi_buy_yes_maker": 0.3585,
+   "roi_buy_no_maker": 0.0281,
+   "se_no_taker": 0.0047
+  },
+  "division": {
+   "n": 108,
+   "avg_price": 0.0524,
+   "yes_rate": 0.1204,
+   "roi_buy_yes_taker": 0.4193,
+   "roi_buy_no_taker": -0.0925,
+   "roi_buy_yes_maker": 1.6811,
+   "roi_buy_no_maker": -0.0635,
+   "se_no_taker": 0.0324
+  },
+  "playoffs / seeding": {
+   "n": 35,
+   "avg_price": 0.053,
+   "yes_rate": 0.0286,
+   "roi_buy_yes_taker": -0.7403,
+   "roi_buy_no_taker": -0.0014,
+   "roi_buy_yes_maker": -0.4286,
+   "roi_buy_no_maker": 0.0437,
+   "se_no_taker": 0.0293
+  },
+  "win totals": {
+   "n": 397,
+   "avg_price": 0.0612,
+   "yes_rate": 0.068,
+   "roi_buy_yes_taker": -0.3175,
+   "roi_buy_no_taker": -0.0482,
+   "roi_buy_yes_maker": 1.9309,
+   "roi_buy_no_maker": 0.0271,
+   "se_no_taker": 0.013
+  }
+ },
+ "futures_favorites_by_family": {
+  "SB / conference": {
+   "n": 0,
+   "avg_price": NaN,
+   "yes_rate": NaN,
+   "roi_buy_yes_taker": NaN,
+   "roi_buy_no_taker": NaN,
+   "roi_buy_yes_maker": NaN,
+   "roi_buy_no_maker": NaN,
+   "se_no_taker": null
+  },
+  "awards / other": {
+   "n": 21,
+   "avg_price": 0.8988,
+   "yes_rate": 1.0,
+   "roi_buy_yes_taker": 0.0819,
+   "roi_buy_no_taker": -1.0,
+   "roi_buy_yes_maker": 0.138,
+   "roi_buy_no_maker": -1.0,
+   "se_no_taker": 0.0
+  },
+  "division": {
+   "n": 14,
+   "avg_price": 0.8586,
+   "yes_rate": 0.5714,
+   "roi_buy_yes_taker": -0.3538,
+   "roi_buy_no_taker": 1.598,
+   "roi_buy_yes_maker": -0.3295,
+   "roi_buy_no_maker": 2.5957,
+   "se_no_taker": 0.8686
+  },
+  "playoffs / seeding": {
+   "n": 54,
+   "avg_price": 0.8924,
+   "yes_rate": 0.6852,
+   "roi_buy_yes_taker": -0.2636,
+   "roi_buy_no_taker": 1.0228,
+   "roi_buy_yes_maker": -0.227,
+   "roi_buy_no_maker": 3.2921,
+   "se_no_taker": 0.4752
+  },
+  "win totals": {
+   "n": 863,
+   "avg_price": 0.8913,
+   "yes_rate": 0.5736,
+   "roi_buy_yes_taker": -0.3973,
+   "roi_buy_no_taker": 1.6178,
+   "roi_buy_yes_maker": -0.338,
+   "roi_buy_no_maker": 11.5093,
+   "se_no_taker": 0.1309
+  }
+ },
+ "futures_first_snapshot_longshots": {
+  "n": 224,
+  "avg_price": 0.0473,
+  "yes_rate": 0.0446,
+  "roi_buy_yes_taker": -0.3194,
+  "roi_buy_no_taker": -0.0281,
+  "roi_buy_yes_maker": 1.2364,
+  "roi_buy_no_maker": 0.0261,
+  "se_no_taker": 0.0141
+ },
+ "futures_first_snapshot_by_price": [
+  {
+   "bucket": "(0.0, 0.03]",
+   "n": 79,
+   "avg_price": 0.0201,
+   "yes_rate": 0.038,
+   "roi_buy_yes_taker": 0.0549,
+   "roi_buy_no_taker": -0.0354,
+   "roi_buy_yes_maker": 1.5316,
+   "roi_buy_no_maker": -0.0107,
+   "se_no_taker": 0.0216
+  },
+  {
+   "bucket": "(0.03, 0.06]",
+   "n": 75,
+   "avg_price": 0.0453,
+   "yes_rate": 0.0267,
+   "roi_buy_yes_taker": -0.6667,
+   "roi_buy_no_taker": -0.0147,
+   "roi_buy_yes_maker": 1.6667,
+   "roi_buy_no_maker": 0.0456,
+   "se_no_taker": 0.0189
+  },
+  {
+   "bucket": "(0.06, 0.1]",
+   "n": 70,
+   "avg_price": 0.0801,
+   "yes_rate": 0.0714,
+   "roi_buy_yes_taker": -0.3696,
+   "roi_buy_no_taker": -0.0342,
+   "roi_buy_yes_maker": 0.4422,
+   "roi_buy_no_maker": 0.0468,
+   "se_no_taker": 0.0321
+  },
+  {
+   "bucket": "(0.1, 0.2]",
+   "n": 100,
+   "avg_price": 0.1467,
+   "yes_rate": 0.15,
+   "roi_buy_yes_taker": -0.1566,
+   "roi_buy_no_taker": -0.0522,
+   "roi_buy_yes_maker": 0.4305,
+   "roi_buy_no_maker": 0.043,
+   "se_no_taker": 0.04
+  },
+  {
+   "bucket": "(0.2, 0.35]",
+   "n": 126,
+   "avg_price": 0.2685,
+   "yes_rate": 0.1667,
+   "roi_buy_yes_taker": -0.5126,
+   "roi_buy_no_taker": -0.0153,
+   "roi_buy_yes_maker": 1.941,
+   "roi_buy_no_maker": 0.3805,
+   "se_no_taker": 0.0412
+  },
+  {
+   "bucket": "(0.35, 0.5]",
+   "n": 78,
+   "avg_price": 0.4299,
+   "yes_rate": 0.2308,
+   "roi_buy_yes_taker": -0.5262,
+   "roi_buy_no_taker": 0.169,
+   "roi_buy_yes_maker": 0.8099,
+   "roi_buy_no_maker": 3.7702,
+   "se_no_taker": 0.076
+  },
+  {
+   "bucket": "(0.5, 0.65]",
+   "n": 68,
+   "avg_price": 0.5815,
+   "yes_rate": 0.4412,
+   "roi_buy_yes_taker": -0.2862,
+   "roi_buy_no_taker": 0.2057,
+   "roi_buy_yes_maker": -0.1992,
+   "roi_buy_no_maker": 0.4795,
+   "se_no_taker": 0.1311
+  },
+  {
+   "bucket": "(0.65, 0.8]",
+   "n": 68,
+   "avg_price": 0.7262,
+   "yes_rate": 0.5441,
+   "roi_buy_yes_taker": -0.3033,
+   "roi_buy_no_taker": 0.3598,
+   "roi_buy_yes_maker": -0.2278,
+   "roi_buy_no_maker": 0.8841,
+   "se_no_taker": 0.1838
+  },
+  {
+   "bucket": "(0.8, 0.9]",
+   "n": 72,
+   "avg_price": 0.8582,
+   "yes_rate": 0.5,
+   "roi_buy_yes_taker": -0.448,
+   "roi_buy_no_taker": 1.4468,
+   "roi_buy_yes_maker": -0.4011,
+   "roi_buy_no_maker": 4.0882,
+   "se_no_taker": 0.295
+  },
+  {
+   "bucket": "(0.9, 0.97]",
+   "n": 46,
+   "avg_price": 0.9393,
+   "yes_rate": 0.7826,
+   "roi_buy_yes_taker": -0.2012,
+   "roi_buy_no_taker": 0.9349,
+   "roi_buy_yes_maker": -0.1409,
+   "roi_buy_no_maker": 12.9493,
+   "se_no_taker": 0.5494
+  },
+  {
+   "bucket": "(0.97, 1.0]",
+   "n": 0,
+   "avg_price": NaN,
+   "yes_rate": NaN,
+   "roi_buy_yes_taker": NaN,
+   "roi_buy_no_taker": NaN,
+   "roi_buy_yes_maker": NaN,
+   "roi_buy_no_maker": NaN,
+   "se_no_taker": null
+  }
+ ],
+ "game_markets_with_candles": 8675,
+ "game_markets": {
+  "1h": {
+   "by_price": [
+    {
+     "bucket": "(0.0, 0.03]",
+     "n": 279,
+     "avg_price": 0.0239,
+     "yes_rate": 0.0179,
+     "roi_buy_yes_taker": -0.5579,
+     "roi_buy_no_taker": -0.0133,
+     "roi_buy_yes_maker": 0.4337,
+     "roi_buy_no_maker": 0.0157,
+     "se_no_taker": 0.008
+    },
+    {
+     "bucket": "(0.03, 0.06]",
+     "n": 647,
+     "avg_price": 0.0449,
+     "yes_rate": 0.0448,
+     "roi_buy_yes_taker": -0.3801,
+     "roi_buy_no_taker": -0.0272,
+     "roi_buy_yes_maker": 1.017,
+     "roi_buy_no_maker": 0.0181,
+     "se_no_taker": 0.0083
+    },
+    {
+     "bucket": "(0.06, 0.1]",
+     "n": 699,
+     "avg_price": 0.0796,
+     "yes_rate": 0.0858,
+     "roi_buy_yes_taker": -0.174,
+     "roi_buy_no_taker": -0.0388,
+     "roi_buy_yes_maker": 0.5959,
+     "roi_buy_no_maker": 0.0171,
+     "se_no_taker": 0.0112
+    },
+    {
+     "bucket": "(0.1, 0.2]",
+     "n": 1205,
+     "avg_price": 0.1497,
+     "yes_rate": 0.1469,
+     "roi_buy_yes_taker": -0.2537,
+     "roi_buy_no_taker": -0.0381,
+     "roi_buy_yes_maker": 0.6578,
+     "roi_buy_no_maker": 0.0351,
+     "se_no_taker": 0.0116
+    },
+    {
+     "bucket": "(0.2, 0.35]",
+     "n": 1418,
+     "avg_price": 0.2742,
+     "yes_rate": 0.2948,
+     "roi_buy_yes_taker": -0.0885,
+     "roi_buy_no_taker": -0.0829,
+     "roi_buy_yes_maker": 1.3905,
+     "roi_buy_no_maker": 0.0164,
+     "se_no_taker": 0.0159
+    },
+    {
+     "bucket": "(0.35, 0.5]",
+     "n": 1335,
+     "avg_price": 0.4277,
+     "yes_rate": 0.4547,
+     "roi_buy_yes_taker": -0.0639,
+     "roi_buy_no_taker": -0.1278,
+     "roi_buy_yes_maker": 1.9474,
+     "roi_buy_no_maker": 0.5517,
+     "se_no_taker": 0.0221
+    },
+    {
+     "bucket": "(0.5, 0.65]",
+     "n": 989,
+     "avg_price": 0.5724,
+     "yes_rate": 0.549,
+     "roi_buy_yes_taker": -0.1059,
+     "roi_buy_no_taker": -0.0332,
+     "roi_buy_yes_maker": 0.0243,
+     "roi_buy_no_maker": 0.2386,
+     "se_no_taker": 0.0343
+    },
+    {
+     "bucket": "(0.65, 0.8]",
+     "n": 704,
+     "avg_price": 0.7238,
+     "yes_rate": 0.7259,
+     "roi_buy_yes_taker": -0.0515,
+     "roi_buy_no_taker": -0.116,
+     "roi_buy_yes_maker": 0.0434,
+     "roi_buy_no_maker": 0.2849,
+     "se_no_taker": 0.0554
+    },
+    {
+     "bucket": "(0.8, 0.9]",
+     "n": 325,
+     "avg_price": 0.8492,
+     "yes_rate": 0.8154,
+     "roi_buy_yes_taker": -0.0706,
+     "roi_buy_no_taker": -0.0044,
+     "roi_buy_yes_maker": -0.0214,
+     "roi_buy_no_maker": 0.3739,
+     "se_no_taker": 0.1189
+    },
+    {
+     "bucket": "(0.9, 0.97]",
+     "n": 157,
+     "avg_price": 0.9388,
+     "yes_rate": 0.9045,
+     "roi_buy_yes_taker": -0.0592,
+     "roi_buy_no_taker": 0.164,
+     "roi_buy_yes_maker": -0.0238,
+     "roi_buy_no_maker": 1.0132,
+     "se_no_taker": 0.3048
+    },
+    {
+     "bucket": "(0.97, 1.0]",
+     "n": 29,
+     "avg_price": 0.9784,
+     "yes_rate": 0.9655,
+     "roi_buy_yes_taker": -0.0313,
+     "roi_buy_no_taker": -0.1379,
+     "roi_buy_yes_maker": -0.0049,
+     "roi_buy_no_maker": 0.7241,
+     "se_no_taker": 0.8471
+    }
+   ],
+   "longshots_by_series": {
+    "KXNFL1H": {
+     "n": 32,
+     "avg_price": 0.0777,
+     "yes_rate": 0.0625,
+     "roi_buy_yes_taker": -0.3403,
+     "roi_buy_no_taker": -0.0005,
+     "roi_buy_yes_maker": -0.1629,
+     "roi_buy_no_maker": 0.0224,
+     "se_no_taker": 0.0456
+    },
+    "KXNFL1HSPREAD": {
+     "n": 57,
+     "avg_price": 0.1064,
+     "yes_rate": 0.0351,
+     "roi_buy_yes_taker": -0.7734,
+     "roi_buy_no_taker": 0.0518,
+     "roi_buy_yes_maker": -0.7397,
+     "roi_buy_no_maker": 0.0968,
+     "se_no_taker": 0.027
+    },
+    "KXNFL1HTOTAL": {
+     "n": 70,
+     "avg_price": 0.0582,
+     "yes_rate": 0.0857,
+     "roi_buy_yes_taker": 0.1832,
+     "roi_buy_no_taker": -0.0484,
+     "roi_buy_yes_maker": 0.9829,
+     "roi_buy_no_maker": -0.0184,
+     "se_no_taker": 0.0351
+    },
+    "KXNFL2TD": {
+     "n": 402,
+     "avg_price": 0.0614,
+     "yes_rate": 0.0547,
+     "roi_buy_yes_taker": -0.3996,
+     "roi_buy_no_taker": -0.022,
+     "roi_buy_yes_maker": 0.5199,
+     "roi_buy_no_maker": 0.0274,
+     "se_no_taker": 0.0119
+    },
+    "KXNFLANYTD": {
+     "n": 271,
+     "avg_price": 0.0924,
+     "yes_rate": 0.0701,
+     "roi_buy_yes_taker": -0.4665,
+     "roi_buy_no_taker": -0.0151,
+     "roi_buy_yes_maker": 0.2551,
+     "roi_buy_no_maker": 0.0564,
+     "se_no_taker": 0.0166
+    },
+    "KXNFLFIRSTTD": {
+     "n": 420,
+     "avg_price": 0.0542,
+     "yes_rate": 0.0643,
+     "roi_buy_yes_taker": -0.2043,
+     "roi_buy_no_taker": -0.0371,
+     "roi_buy_yes_maker": 1.3811,
+     "roi_buy_no_maker": 0.0074,
+     "se_no_taker": 0.0124
+    },
+    "KXNFLPASSTDS": {
+     "n": 205,
+     "avg_price": 0.0711,
+     "yes_rate": 0.0732,
+     "roi_buy_yes_taker": -0.3823,
+     "roi_buy_no_taker": -0.0348,
+     "roi_buy_yes_maker": 0.3351,
+     "roi_buy_no_maker": 0.0199,
+     "se_no_taker": 0.0191
+    },
+    "KXNFLPASSYDS": {
+     "n": 176,
+     "avg_price": 0.0803,
+     "yes_rate": 0.0852,
+     "roi_buy_yes_taker": -0.1837,
+     "roi_buy_no_taker": -0.0417,
+     "roi_buy_yes_maker": 0.9418,
+     "roi_buy_no_maker": 0.0254,
+     "se_no_taker": 0.0222
+    },
+    "KXNFLREC": {
+     "n": 121,
+     "avg_price": 0.0803,
+     "yes_rate": 0.0992,
+     "roi_buy_yes_taker": -0.2033,
+     "roi_buy_no_taker": -0.0547,
+     "roi_buy_yes_maker": 0.7844,
+     "roi_buy_no_maker": 0.0023,
+     "se_no_taker": 0.0287
+    },
+    "KXNFLRECYDS": {
+     "n": 105,
+     "avg_price": 0.0929,
+     "yes_rate": 0.1143,
+     "roi_buy_yes_taker": -0.2151,
+     "roi_buy_no_taker": -0.0667,
+     "roi_buy_yes_maker": 1.3591,
+     "roi_buy_no_maker": 0.0135,
+     "se_no_taker": 0.0329
+    },
+    "KXNFLRSHYDS": {
+     "n": 99,
+     "avg_price": 0.0888,
+     "yes_rate": 0.0707,
+     "roi_buy_yes_taker": -0.5867,
+     "roi_buy_no_taker": -0.0187,
+     "roi_buy_yes_maker": 2.367,
+     "roi_buy_no_maker": 0.0525,
+     "se_no_taker": 0.0276
+    },
+    "KXNFLSPREAD": {
+     "n": 99,
+     "avg_price": 0.0957,
+     "yes_rate": 0.0707,
+     "roi_buy_yes_taker": -0.4696,
+     "roi_buy_no_taker": 0.0048,
+     "roi_buy_yes_maker": -0.3282,
+     "roi_buy_no_maker": 0.0386,
+     "se_no_taker": 0.0281
+    },
+    "KXNFLTEAMTOTAL": {
+     "n": 116,
+     "avg_price": 0.0786,
+     "yes_rate": 0.069,
+     "roi_buy_yes_taker": -0.3527,
+     "roi_buy_no_taker": -0.0169,
+     "roi_buy_yes_maker": 0.0858,
+     "roi_buy_no_maker": 0.0298,
+     "se_no_taker": 0.0251
+    }
+   },
+   "spread_cents_median": 0.03
+  },
+  "24h": {
+   "by_price": [
+    {
+     "bucket": "(0.0, 0.03]",
+     "n": 184,
+     "avg_price": 0.0226,
+     "yes_rate": 0.0163,
+     "roi_buy_yes_taker": -0.5471,
+     "roi_buy_no_taker": -0.0133,
+     "roi_buy_yes_maker": 0.6304,
+     "roi_buy_no_maker": 0.0167,
+     "se_no_taker": 0.0094
+    },
+    {
+     "bucket": "(0.03, 0.06]",
+     "n": 585,
+     "avg_price": 0.0452,
+     "yes_rate": 0.0598,
+     "roi_buy_yes_taker": -0.1988,
+     "roi_buy_no_taker": -0.0461,
+     "roi_buy_yes_maker": 2.1538,
+     "roi_buy_no_maker": 0.007,
+     "se_no_taker": 0.01
+    },
+    {
+     "bucket": "(0.06, 0.1]",
+     "n": 614,
+     "avg_price": 0.0802,
+     "yes_rate": 0.0831,
+     "roi_buy_yes_taker": -0.2487,
+     "roi_buy_no_taker": -0.041,
+     "roi_buy_yes_maker": 0.7233,
+     "roi_buy_no_maker": 0.0272,
+     "se_no_taker": 0.0117
+    },
+    {
+     "bucket": "(0.1, 0.2]",
+     "n": 1114,
+     "avg_price": 0.15,
+     "yes_rate": 0.1463,
+     "roi_buy_yes_taker": -0.2956,
+     "roi_buy_no_taker": -0.0502,
+     "roi_buy_yes_maker": 0.924,
+     "roi_buy_no_maker": 0.0542,
+     "se_no_taker": 0.0119
+    },
+    {
+     "bucket": "(0.2, 0.35]",
+     "n": 1351,
+     "avg_price": 0.273,
+     "yes_rate": 0.2961,
+     "roi_buy_yes_taker": -0.0998,
+     "roi_buy_no_taker": -0.0968,
+     "roi_buy_yes_maker": 1.7303,
+     "roi_buy_no_maker": 0.0365,
+     "se_no_taker": 0.0161
+    },
+    {
+     "bucket": "(0.35, 0.5]",
+     "n": 1271,
+     "avg_price": 0.4301,
+     "yes_rate": 0.4422,
+     "roi_buy_yes_taker": -0.0999,
+     "roi_buy_no_taker": -0.1286,
+     "roi_buy_yes_maker": 2.2663,
+     "roi_buy_no_maker": 1.398,
+     "se_no_taker": 0.0223
+    },
+    {
+     "bucket": "(0.5, 0.65]",
+     "n": 914,
+     "avg_price": 0.5717,
+     "yes_rate": 0.5635,
+     "roi_buy_yes_taker": -0.0844,
+     "roi_buy_no_taker": -0.0716,
+     "roi_buy_yes_maker": 0.0526,
+     "roi_buy_no_maker": 0.244,
+     "se_no_taker": 0.0353
+    },
+    {
+     "bucket": "(0.65, 0.8]",
+     "n": 677,
+     "avg_price": 0.7232,
+     "yes_rate": 0.7386,
+     "roi_buy_yes_taker": -0.0411,
+     "roi_buy_no_taker": -0.1854,
+     "roi_buy_yes_maker": 0.067,
+     "roi_buy_no_maker": 0.0926,
+     "se_no_taker": 0.0536
+    },
+    {
+     "bucket": "(0.8, 0.9]",
+     "n": 326,
+     "avg_price": 0.8485,
+     "yes_rate": 0.8006,
+     "roi_buy_yes_taker": -0.0981,
+     "roi_buy_no_taker": 0.0197,
+     "roi_buy_yes_maker": -0.0249,
+     "roi_buy_no_maker": 0.6385,
+     "se_no_taker": 0.1158
+    },
+    {
+     "bucket": "(0.9, 0.97]",
+     "n": 139,
+     "avg_price": 0.9382,
+     "yes_rate": 0.9209,
+     "roi_buy_yes_taker": -0.0477,
+     "roi_buy_no_taker": -0.0545,
+     "roi_buy_yes_maker": 0.0026,
+     "roi_buy_no_maker": 1.7958,
+     "se_no_taker": 0.2875
+    },
+    {
+     "bucket": "(0.97, 1.0]",
+     "n": 14,
+     "avg_price": 0.9789,
+     "yes_rate": 0.8571,
+     "roi_buy_yes_taker": -0.1414,
+     "roi_buy_no_taker": 2.2143,
+     "roi_buy_yes_maker": -0.1171,
+     "roi_buy_no_maker": 9.7143,
+     "se_no_taker": 2.1193
+    }
+   ],
+   "longshots_by_series": {
+    "KXNFL1H": {
+     "n": 32,
+     "avg_price": 0.0784,
+     "yes_rate": 0.0625,
+     "roi_buy_yes_taker": -0.375,
+     "roi_buy_no_taker": -0.0029,
+     "roi_buy_yes_maker": -0.2188,
+     "roi_buy_no_maker": 0.0262,
+     "se_no_taker": 0.0455
+    },
+    "KXNFL1HSPREAD": {
+     "n": 44,
+     "avg_price": 0.1115,
+     "yes_rate": 0.0,
+     "roi_buy_yes_taker": -1.0,
+     "roi_buy_no_taker": 0.0698,
+     "roi_buy_yes_maker": -1.0,
+     "roi_buy_no_maker": 0.1783,
+     "se_no_taker": 0.0056
+    },
+    "KXNFL1HTOTAL": {
+     "n": 71,
+     "avg_price": 0.063,
+     "yes_rate": 0.0986,
+     "roi_buy_yes_taker": 0.2252,
+     "roi_buy_no_taker": -0.0646,
+     "roi_buy_yes_maker": 0.8773,
+     "roi_buy_no_maker": -0.0206,
+     "se_no_taker": 0.037
+    },
+    "KXNFL2TD": {
+     "n": 391,
+     "avg_price": 0.0588,
+     "yes_rate": 0.0665,
+     "roi_buy_yes_taker": -0.204,
+     "roi_buy_no_taker": -0.0396,
+     "roi_buy_yes_maker": 1.5326,
+     "roi_buy_no_maker": 0.0162,
+     "se_no_taker": 0.0131
+    },
+    "KXNFLANYTD": {
+     "n": 249,
+     "avg_price": 0.0964,
+     "yes_rate": 0.0683,
+     "roi_buy_yes_taker": -0.5037,
+     "roi_buy_no_taker": -0.0232,
+     "roi_buy_yes_maker": 0.4072,
+     "roi_buy_no_maker": 0.0821,
+     "se_no_taker": 0.0169
+    },
+    "KXNFLFIRSTTD": {
+     "n": 297,
+     "avg_price": 0.0586,
+     "yes_rate": 0.064,
+     "roi_buy_yes_taker": -0.2734,
+     "roi_buy_no_taker": -0.0387,
+     "roi_buy_yes_maker": 1.5607,
+     "roi_buy_no_maker": 0.0198,
+     "se_no_taker": 0.0147
+    },
+    "KXNFLPASSTDS": {
+     "n": 191,
+     "avg_price": 0.0721,
+     "yes_rate": 0.089,
+     "roi_buy_yes_taker": -0.2462,
+     "roi_buy_no_taker": -0.0521,
+     "roi_buy_yes_maker": 1.6581,
+     "roi_buy_no_maker": 0.0059,
+     "se_no_taker": 0.0216
+    },
+    "KXNFLPASSYDS": {
+     "n": 163,
+     "avg_price": 0.083,
+     "yes_rate": 0.092,
+     "roi_buy_yes_taker": -0.1086,
+     "roi_buy_no_taker": -0.0471,
+     "roi_buy_yes_maker": 1.5046,
+     "roi_buy_no_maker": 0.0235,
+     "se_no_taker": 0.0239
+    },
+    "KXNFLREC": {
+     "n": 102,
+     "avg_price": 0.0856,
+     "yes_rate": 0.1373,
+     "roi_buy_yes_taker": -0.0748,
+     "roi_buy_no_taker": -0.0997,
+     "roi_buy_yes_maker": 0.8577,
+     "roi_buy_no_maker": -0.0277,
+     "se_no_taker": 0.0357
+    },
+    "KXNFLRECYDS": {
+     "n": 91,
+     "avg_price": 0.0888,
+     "yes_rate": 0.1209,
+     "roi_buy_yes_taker": -0.2595,
+     "roi_buy_no_taker": -0.0807,
+     "roi_buy_yes_maker": 2.3346,
+     "roi_buy_no_maker": 0.0039,
+     "se_no_taker": 0.0359
+    },
+    "KXNFLRSHYDS": {
+     "n": 83,
+     "avg_price": 0.088,
+     "yes_rate": 0.0482,
+     "roi_buy_yes_taker": -0.6805,
+     "roi_buy_no_taker": -0.0066,
+     "roi_buy_yes_maker": 0.8164,
+     "roi_buy_no_maker": 0.0909,
+     "se_no_taker": 0.0249
+    },
+    "KXNFLSPREAD": {
+     "n": 101,
+     "avg_price": 0.0976,
+     "yes_rate": 0.0594,
+     "roi_buy_yes_taker": -0.5695,
+     "roi_buy_no_taker": 0.0149,
+     "roi_buy_yes_maker": -0.3596,
+     "roi_buy_no_maker": 0.0599,
+     "se_no_taker": 0.0256
+    },
+    "KXNFLTEAMTOTAL": {
+     "n": 80,
+     "avg_price": 0.0915,
+     "yes_rate": 0.0875,
+     "roi_buy_yes_taker": -0.4177,
+     "roi_buy_no_taker": -0.0328,
+     "roi_buy_yes_maker": 1.3333,
+     "roi_buy_no_maker": 0.0343,
+     "se_no_taker": 0.0337
+    }
+   },
+   "spread_cents_median": 0.04
+  }
+ },
+ "maker_taker_all": {
+  "trades": 1254374,
+  "contracts": 348927373,
+  "maker_pnl_per_contract_c": 0.997,
+  "taker_fee_per_contract_c": 1.906,
+  "maker_return_on_capital": 0.0202,
+  "markets": 2207
+ },
+ "maker_taker_by_series": {
+  "KXNFL1H": {
+   "trades": 9395,
+   "contracts": 2758405,
+   "maker_pnl_per_contract_c": 5.833,
+   "taker_fee_per_contract_c": 1.737,
+   "maker_return_on_capital": 0.0979,
+   "markets": 96
+  },
+  "KXNFL1HSPREAD": {
+   "trades": 3828,
+   "contracts": 1497892,
+   "maker_pnl_per_contract_c": 8.684,
+   "taker_fee_per_contract_c": 1.97,
+   "maker_return_on_capital": 0.1711,
+   "markets": 101
+  },
+  "KXNFL1HTOTAL": {
+   "trades": 2461,
+   "contracts": 656389,
+   "maker_pnl_per_contract_c": -1.622,
+   "taker_fee_per_contract_c": 1.892,
+   "maker_return_on_capital": -0.0358,
+   "markets": 111
+  },
+  "KXNFL1HWINNER": {
+   "trades": 7637,
+   "contracts": 1507317,
+   "maker_pnl_per_contract_c": -5.017,
+   "taker_fee_per_contract_c": 1.712,
+   "maker_return_on_capital": -0.0852,
+   "markets": 21
+  },
+  "KXNFL2TD": {
+   "trades": 2474,
+   "contracts": 536265,
+   "maker_pnl_per_contract_c": 9.078,
+   "taker_fee_per_contract_c": 1.059,
+   "maker_return_on_capital": 0.1035,
+   "markets": 118
+  },
+  "KXNFLANYTD": {
+   "trades": 4558,
+   "contracts": 740496,
+   "maker_pnl_per_contract_c": 13.547,
+   "taker_fee_per_contract_c": 1.529,
+   "maker_return_on_capital": 0.1874,
+   "markets": 134
+  },
+  "KXNFLFIRSTTD": {
+   "trades": 4271,
+   "contracts": 992812,
+   "maker_pnl_per_contract_c": 4.016,
+   "taker_fee_per_contract_c": 1.013,
+   "maker_return_on_capital": 0.0431,
+   "markets": 125
+  },
+  "KXNFLGAME": {
+   "trades": 1186072,
+   "contracts": 330432629,
+   "maker_pnl_per_contract_c": 0.811,
+   "taker_fee_per_contract_c": 1.911,
+   "maker_return_on_capital": 0.0166,
+   "markets": 620
+  },
+  "KXNFLPASSTDS": {
+   "trades": 3044,
+   "contracts": 330938,
+   "maker_pnl_per_contract_c": -6.502,
+   "taker_fee_per_contract_c": 1.747,
+   "maker_return_on_capital": -0.1062,
+   "markets": 110
+  },
+  "KXNFLPASSYDS": {
+   "trades": 2203,
+   "contracts": 332685,
+   "maker_pnl_per_contract_c": 2.14,
+   "taker_fee_per_contract_c": 1.839,
+   "maker_return_on_capital": 0.0448,
+   "markets": 111
+  },
+  "KXNFLREC": {
+   "trades": 429,
+   "contracts": 43208,
+   "maker_pnl_per_contract_c": -6.905,
+   "taker_fee_per_contract_c": 1.615,
+   "maker_return_on_capital": -0.1022,
+   "markets": 87
+  },
+  "KXNFLRECYDS": {
+   "trades": 899,
+   "contracts": 137964,
+   "maker_pnl_per_contract_c": -3.62,
+   "taker_fee_per_contract_c": 1.89,
+   "maker_return_on_capital": -0.0628,
+   "markets": 93
+  },
+  "KXNFLRSHYDS": {
+   "trades": 1784,
+   "contracts": 280228,
+   "maker_pnl_per_contract_c": 5.123,
+   "taker_fee_per_contract_c": 1.931,
+   "maker_return_on_capital": 0.0913,
+   "markets": 109
+  },
+  "KXNFLSPREAD": {
+   "trades": 14138,
+   "contracts": 5007124,
+   "maker_pnl_per_contract_c": 8.994,
+   "taker_fee_per_contract_c": 1.973,
+   "maker_return_on_capital": 0.185,
+   "markets": 132
+  },
+  "KXNFLTEAMTOTAL": {
+   "trades": 1829,
+   "contracts": 296004,
+   "maker_pnl_per_contract_c": 18.503,
+   "taker_fee_per_contract_c": 1.93,
+   "maker_return_on_capital": 0.3936,
+   "markets": 110
+  },
+  "KXNFLTOTAL": {
+   "trades": 9352,
+   "contracts": 3377018,
+   "maker_pnl_per_contract_c": -2.81,
+   "taker_fee_per_contract_c": 1.952,
+   "maker_return_on_capital": -0.0581,
+   "markets": 129
+  }
+ },
+ "maker_taker_by_window_h": {
+  "1": {
+   "trades": 1029480,
+   "contracts": 312479166,
+   "maker_pnl_per_contract_c": 0.926,
+   "taker_fee_per_contract_c": 1.906,
+   "maker_return_on_capital": 0.0189,
+   "markets": 2156
+  },
+  "6": {
+   "trades": 165742,
+   "contracts": 28848013,
+   "maker_pnl_per_contract_c": 2.116,
+   "taker_fee_per_contract_c": 1.907,
+   "maker_return_on_capital": 0.0417,
+   "markets": 1308
+  },
+  "24": {
+   "trades": 44294,
+   "contracts": 6257691,
+   "maker_pnl_per_contract_c": -0.905,
+   "taker_fee_per_contract_c": 1.864,
+   "maker_return_on_capital": -0.0177,
+   "markets": 901
+  },
+  "72": {
+   "trades": 14858,
+   "contracts": 1342503,
+   "maker_pnl_per_contract_c": 2.19,
+   "taker_fee_per_contract_c": 1.886,
+   "maker_return_on_capital": 0.043,
+   "markets": 698
+  }
+ },
+ "maker_taker_by_taker_price": {
+  "(0.0, 0.1]": {
+   "trades": 11438,
+   "contracts": 3608559,
+   "maker_pnl_per_contract_c": 5.22,
+   "taker_fee_per_contract_c": 1.0,
+   "maker_return_on_capital": 0.0567,
+   "markets": 374
+  },
+  "(0.1, 0.25]": {
+   "trades": 149252,
+   "contracts": 43269016,
+   "maker_pnl_per_contract_c": -7.859,
+   "taker_fee_per_contract_c": 1.67,
+   "maker_return_on_capital": -0.0977,
+   "markets": 565
+  },
+  "(0.25, 0.5]": {
+   "trades": 489976,
+   "contracts": 121170862,
+   "maker_pnl_per_contract_c": -2.494,
+   "taker_fee_per_contract_c": 2.0,
+   "maker_return_on_capital": -0.041,
+   "markets": 1163
+  },
+  "(0.5, 0.75]": {
+   "trades": 474516,
+   "contracts": 132287658,
+   "maker_pnl_per_contract_c": 4.762,
+   "taker_fee_per_contract_c": 2.0,
+   "maker_return_on_capital": 0.1235,
+   "markets": 1071
+  },
+  "(0.75, 0.9]": {
+   "trades": 126937,
+   "contracts": 47511848,
+   "maker_pnl_per_contract_c": 7.321,
+   "taker_fee_per_contract_c": 1.706,
+   "maker_return_on_capital": 0.3865,
+   "markets": 428
+  },
+  "(0.9, 1.0]": {
+   "trades": 2255,
+   "contracts": 1079430,
+   "maker_pnl_per_contract_c": -6.204,
+   "taker_fee_per_contract_c": 1.0,
+   "maker_return_on_capital": -0.7097,
+   "markets": 147
+  }
+ },
+ "maker_taker_by_taker_side": {
+  "no": {
+   "trades": 62871,
+   "contracts": 31575668,
+   "maker_pnl_per_contract_c": -4.259,
+   "taker_fee_per_contract_c": 1.894,
+   "maker_return_on_capital": -0.0866,
+   "markets": 1397
+  },
+  "yes": {
+   "trades": 1191503,
+   "contracts": 317351705,
+   "maker_pnl_per_contract_c": 1.519,
+   "taker_fee_per_contract_c": 1.907,
+   "maker_return_on_capital": 0.0308,
+   "markets": 2138
+  }
+ }
+}

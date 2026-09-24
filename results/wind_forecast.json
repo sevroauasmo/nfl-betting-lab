@@ -1,0 +1,344 @@
+{
+ "games": 949,
+ "forecast_skill": {
+  "day0": {
+   "corr_with_observed": 0.68,
+   "n": 841,
+   "mean_abs_err_mph": 2.79
+  },
+  "day1": {
+   "corr_with_observed": 0.733,
+   "n": 392,
+   "mean_abs_err_mph": 2.28
+  },
+  "day2": {
+   "corr_with_observed": 0.692,
+   "n": 392,
+   "mean_abs_err_mph": 2.45
+  },
+  "day4": {
+   "corr_with_observed": 0.637,
+   "n": 389,
+   "mean_abs_err_mph": 2.66
+  },
+  "day6": {
+   "corr_with_observed": 0.461,
+   "n": 389,
+   "mean_abs_err_mph": 3.32
+  }
+ },
+ "by_snapshot": {
+  "open6d": {
+   "all games": {
+    "n": 337,
+    "under_pct": 0.5875,
+    "roi": 0.145,
+    "se": 0.0523,
+    "avg_line": 45.08,
+    "avg_total": 43.3
+   },
+   "fcst wind >= 10": {
+    "n": 0,
+    "under_pct": null,
+    "roi": null,
+    "se": null,
+    "avg_line": null,
+    "avg_total": null
+   },
+   "fcst wind >= 12": {
+    "n": 0,
+    "under_pct": null,
+    "roi": null,
+    "se": null,
+    "avg_line": null,
+    "avg_total": null
+   },
+   "fcst wind >= 15": {
+    "n": 0,
+    "under_pct": null,
+    "roi": null,
+    "se": null,
+    "avg_line": null,
+    "avg_total": null
+   },
+   "fcst wind >= 18": {
+    "n": 0,
+    "under_pct": null,
+    "roi": null,
+    "se": null,
+    "avg_line": null,
+    "avg_total": null
+   },
+   "line move to close, windy fcst": null,
+   "line move to close, calm fcst": null
+  },
+  "open4d": {
+   "all games": {
+    "n": 559,
+    "under_pct": 0.4991,
+    "roi": -0.033,
+    "se": 0.041,
+    "avg_line": 43.79,
+    "avg_total": 44.34
+   },
+   "fcst wind >= 10": {
+    "n": 121,
+    "under_pct": 0.5289,
+    "roi": 0.0249,
+    "se": 0.0879,
+    "avg_line": 44.35,
+    "avg_total": 43.9
+   },
+   "fcst wind >= 12": {
+    "n": 69,
+    "under_pct": 0.5942,
+    "roi": 0.1515,
+    "se": 0.1146,
+    "avg_line": 44.27,
+    "avg_total": 42.33
+   },
+   "fcst wind >= 15": {
+    "n": 18,
+    "under_pct": 0.6667,
+    "roi": 0.2885,
+    "se": 0.2148,
+    "avg_line": 44.42,
+    "avg_total": 44.11
+   },
+   "fcst wind >= 18": {
+    "n": 6,
+    "under_pct": 0.8333,
+    "roi": 0.6039,
+    "se": 0.2929,
+    "avg_line": 41.5,
+    "avg_total": 37.0
+   },
+   "line move to close, windy fcst": -0.91,
+   "line move to close, calm fcst": 0.08
+  },
+  "day_before": {
+   "all games": {
+    "n": 556,
+    "under_pct": 0.4892,
+    "roi": -0.0519,
+    "se": 0.0411,
+    "avg_line": 43.62,
+    "avg_total": 44.35
+   },
+   "fcst wind >= 10": {
+    "n": 99,
+    "under_pct": 0.5657,
+    "roi": 0.0936,
+    "se": 0.0963,
+    "avg_line": 43.39,
+    "avg_total": 42.64
+   },
+   "fcst wind >= 12": {
+    "n": 63,
+    "under_pct": 0.5714,
+    "roi": 0.1031,
+    "se": 0.1204,
+    "avg_line": 43.11,
+    "avg_total": 42.41
+   },
+   "fcst wind >= 15": {
+    "n": 22,
+    "under_pct": 0.4545,
+    "roi": -0.1216,
+    "se": 0.2052,
+    "avg_line": 42.3,
+    "avg_total": 43.5
+   },
+   "fcst wind >= 18": {
+    "n": 5,
+    "under_pct": 0.4,
+    "roi": -0.2364,
+    "se": 0.4183,
+    "avg_line": 43.0,
+    "avg_total": 50.2
+   },
+   "line move to close, windy fcst": -0.57,
+   "line move to close, calm fcst": 0.19
+  },
+  "close (odds api)": {
+   "all games": {
+    "n": 920,
+    "under_pct": 0.5315,
+    "roi": 0.0373,
+    "se": 0.0321,
+    "avg_line": 44.0,
+    "avg_total": 43.92
+   },
+   "fcst wind >= 10": {
+    "n": 100,
+    "under_pct": 0.55,
+    "roi": 0.0698,
+    "se": 0.0968,
+    "avg_line": 42.92,
+    "avg_total": 42.64
+   },
+   "fcst wind >= 12": {
+    "n": 64,
+    "under_pct": 0.5625,
+    "roi": 0.0953,
+    "se": 0.1208,
+    "avg_line": 42.41,
+    "avg_total": 42.41
+   },
+   "fcst wind >= 15": {
+    "n": 22,
+    "under_pct": 0.4545,
+    "roi": -0.1152,
+    "se": 0.2067,
+    "avg_line": 41.34,
+    "avg_total": 43.5
+   },
+   "fcst wind >= 18": {
+    "n": 5,
+    "under_pct": 0.4,
+    "roi": -0.217,
+    "se": 0.4289,
+    "avg_line": 41.9,
+    "avg_total": 50.2
+   },
+   "line move to close, windy fcst": 0.14,
+   "line move to close, calm fcst": 0.06
+  },
+  "close (nflverse, -110)": {
+   "all games": {
+    "n": 939,
+    "under_pct": 0.5272,
+    "roi": 0.0064,
+    "se": 0.0311,
+    "avg_line": 44.06,
+    "avg_total": 43.97
+   },
+   "fcst wind >= 10": {
+    "n": 101,
+    "under_pct": 0.5545,
+    "roi": 0.0585,
+    "se": 0.0944,
+    "avg_line": 43.0,
+    "avg_total": 42.64
+   },
+   "fcst wind >= 12": {
+    "n": 64,
+    "under_pct": 0.5625,
+    "roi": 0.0739,
+    "se": 0.1184,
+    "avg_line": 42.55,
+    "avg_total": 42.41
+   },
+   "fcst wind >= 15": {
+    "n": 22,
+    "under_pct": 0.4545,
+    "roi": -0.1322,
+    "se": 0.2027,
+    "avg_line": 41.61,
+    "avg_total": 43.5
+   },
+   "fcst wind >= 18": {
+    "n": 5,
+    "under_pct": 0.4,
+    "roi": -0.2364,
+    "se": 0.4183,
+    "avg_line": 42.3,
+    "avg_total": 50.2
+   },
+   "line move to close, windy fcst": 0.0,
+   "line move to close, calm fcst": 0.0
+  }
+ },
+ "exchange_under_day_before_wind12": {
+  "n": 34,
+  "under_pct": 0.5294,
+  "roi": 0.0327,
+  "se": 0.167,
+  "avg_line": 43.72,
+  "avg_total": 43.79
+ },
+ "exchange_under_open4d_wind12": {
+  "n": 37,
+  "under_pct": 0.6216,
+  "roi": 0.2182,
+  "se": 0.1563,
+  "avg_line": 44.18,
+  "avg_total": 42.78
+ },
+ "by_season_d1_ge12_close": {
+  "2021": {
+   "n": 0,
+   "under_pct": null,
+   "roi": null,
+   "se": null,
+   "avg_line": null,
+   "avg_total": null
+  },
+  "2022": {
+   "n": 0,
+   "under_pct": null,
+   "roi": null,
+   "se": null,
+   "avg_line": null,
+   "avg_total": null
+  },
+  "2023": {
+   "n": 0,
+   "under_pct": null,
+   "roi": null,
+   "se": null,
+   "avg_line": null,
+   "avg_total": null
+  },
+  "2024": {
+   "n": 30,
+   "under_pct": 0.5,
+   "roi": -0.0455,
+   "se": 0.1743,
+   "avg_line": 42.27,
+   "avg_total": 43.23
+  },
+  "2025": {
+   "n": 33,
+   "under_pct": 0.6061,
+   "roi": 0.157,
+   "se": 0.1624,
+   "avg_line": 42.8,
+   "avg_total": 41.7
+  },
+  "2026": {
+   "n": 1,
+   "under_pct": 1.0,
+   "roi": 0.9091,
+   "se": null,
+   "avg_line": 42.5,
+   "avg_total": 41.0
+  }
+ },
+ "gusts_d1": {
+  "gust >= 20": {
+   "n": 99,
+   "under_pct": 0.5354,
+   "roi": 0.022,
+   "se": 0.0957,
+   "avg_line": 43.37,
+   "avg_total": 42.98
+  },
+  "gust >= 25": {
+   "n": 50,
+   "under_pct": 0.64,
+   "roi": 0.2218,
+   "se": 0.1296,
+   "avg_line": 42.84,
+   "avg_total": 40.75
+  },
+  "gust >= 30": {
+   "n": 18,
+   "under_pct": 0.5556,
+   "roi": 0.0606,
+   "se": 0.2236,
+   "avg_line": 42.75,
+   "avg_total": 43.44
+  }
+ }
+}
