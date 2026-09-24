@@ -20,8 +20,14 @@ import pandas as pd
 import shap
 
 ROOT = Path(__file__).resolve().parent.parent
+import sys
+VARIANT = sys.argv[1] if len(sys.argv) > 1 else ""          # "depth" -> add depth-chart features
 D = pd.read_parquet(ROOT / "data/player_games.parquet")
 FAM = json.loads((ROOT / "data/player_feature_families.json").read_text())
+if VARIANT == "depth":
+    DF = pd.read_parquet(ROOT / "data/depth_features.parquet")
+    D = D.merge(DF, on=["player_id", "game_id"], how="left")
+    FAM.update({c: "depth chart" for c in DF.columns if c not in ("player_id", "game_id")})
 FEATS = list(FAM)
 QS = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 payout = lambda o: np.where(np.asarray(o, float) < 0, 100 / -np.asarray(o, float), np.asarray(o, float) / 100)  # noqa: E731
@@ -156,9 +162,9 @@ for task, cfg in TASKS.items():
     mb = mb[mb.n >= 8]
     mp = mb.merge(mb, on="player", suffixes=("_a", "_b")); mp = mp[mp.season_b == mp.season_a + 1]
     R[f"{task}_player_model_edge_persistence"] = {"pairs": len(mp), "corr": round(float(mp[["better_a", "better_b"]].corr().iloc[0, 1]), 4)}
-    M.to_parquet(ROOT / f"data/player_model_{task}_preds.parquet")
+    M.to_parquet(ROOT / f"data/player_model_{task}{'_' + VARIANT if VARIANT else ''}_preds.parquet")
 
-(ROOT / "results/player_model.json").write_text(json.dumps(R, indent=1, default=str))
+(ROOT / f"results/player_model{'_' + VARIANT if VARIANT else ''}.json").write_text(json.dumps(R, indent=1, default=str))
 for task in TASKS:
     print(f"\n######## {task}")
     print("forecast:", json.dumps(R[f"{task}_forecast"]))
