@@ -1,0 +1,1050 @@
+{
+ "rec_forecast": {
+  "2023": {
+   "n": 3767,
+   "mae_mean": 19.5,
+   "mae_median": 18.53,
+   "mae_naive_m8": 19.88,
+   "coverage_10_90": 0.764
+  },
+  "2024": {
+   "n": 3758,
+   "mae_mean": 19.02,
+   "mae_median": 18.3,
+   "mae_naive_m8": 19.56,
+   "coverage_10_90": 0.758
+  },
+  "2025": {
+   "n": 3907,
+   "mae_mean": 18.38,
+   "mae_median": 17.19,
+   "mae_naive_m8": 18.92,
+   "coverage_10_90": 0.776
+  },
+  "2026": {
+   "n": 417,
+   "mae_mean": 19.44,
+   "mae_median": 18.47,
+   "mae_naive_m8": 20.18,
+   "coverage_10_90": 0.734
+  }
+ },
+ "rec_vs_market": {
+  "2023": {
+   "n": 2235,
+   "mae_line": 22.5,
+   "mae_model_median": 22.99,
+   "model_closer_pct": 0.485,
+   "brier_market": 0.25016,
+   "brier_model": 0.25562,
+   "brier_blend": 0.24975,
+   "model_median_minus_line": -2.15
+  },
+  "2024": {
+   "n": 2273,
+   "mae_line": 21.74,
+   "mae_model_median": 22.52,
+   "model_closer_pct": 0.4509,
+   "brier_market": 0.24984,
+   "brier_model": 0.26125,
+   "brier_blend": 0.2522,
+   "model_median_minus_line": -1.91
+  },
+  "2025": {
+   "n": 2263,
+   "mae_line": 21.68,
+   "mae_model_median": 22.28,
+   "model_closer_pct": 0.487,
+   "brier_market": 0.2501,
+   "brier_model": 0.25796,
+   "brier_blend": 0.2511,
+   "model_median_minus_line": -1.76
+  },
+  "2026": {
+   "n": 246,
+   "mae_line": 22.63,
+   "mae_model_median": 23.88,
+   "model_closer_pct": 0.4472,
+   "brier_market": 0.25014,
+   "brier_model": 0.27148,
+   "brier_blend": 0.25607,
+   "model_median_minus_line": -5.02
+  }
+ },
+ "rec_roi_best_book_model": {
+  "EV>=0%": {
+   "n": 5846,
+   "unders": 3408,
+   "roi": -0.0033,
+   "se": 0.0126,
+   "by_season": {
+    "2023": [
+     1897,
+     0.0288
+    ],
+    "2024": [
+     1887,
+     -0.0474
+    ],
+    "2025": [
+     1848,
+     0.0142
+    ],
+    "2026": [
+     214,
+     -0.0487
+    ]
+   }
+  },
+  "EV>=3%": {
+   "n": 5114,
+   "unders": 3031,
+   "roi": -0.0047,
+   "se": 0.0134,
+   "by_season": {
+    "2023": [
+     1648,
+     0.0256
+    ],
+    "2024": [
+     1655,
+     -0.0455
+    ],
+    "2025": [
+     1613,
+     0.0105
+    ],
+    "2026": [
+     198,
+     -0.0388
+    ]
+   }
+  },
+  "EV>=6%": {
+   "n": 4438,
+   "unders": 2661,
+   "roi": -0.0051,
+   "se": 0.0144,
+   "by_season": {
+    "2023": [
+     1426,
+     0.0201
+    ],
+    "2024": [
+     1422,
+     -0.0318
+    ],
+    "2025": [
+     1408,
+     -0.0022
+    ],
+    "2026": [
+     182,
+     -0.0169
+    ]
+   }
+  },
+  "EV>=9%": {
+   "n": 3787,
+   "unders": 2310,
+   "roi": -0.0155,
+   "se": 0.0156,
+   "by_season": {
+    "2023": [
+     1188,
+     0.0162
+    ],
+    "2024": [
+     1240,
+     -0.0411
+    ],
+    "2025": [
+     1195,
+     -0.0178
+    ],
+    "2026": [
+     164,
+     -0.0363
+    ]
+   }
+  }
+ },
+ "rec_roi_best_book_blend": {
+  "EV>=0%": {
+   "n": 4803,
+   "unders": 2849,
+   "roi": -0.0028,
+   "se": 0.0139,
+   "by_season": {
+    "2023": [
+     1578,
+     0.0288
+    ],
+    "2024": [
+     1542,
+     -0.0302
+    ],
+    "2025": [
+     1496,
+     -0.0054
+    ],
+    "2026": [
+     187,
+     -0.0228
+    ]
+   }
+  },
+  "EV>=3%": {
+   "n": 3530,
+   "unders": 2172,
+   "roi": -0.0119,
+   "se": 0.0162,
+   "by_season": {
+    "2023": [
+     1136,
+     0.0212
+    ],
+    "2024": [
+     1145,
+     -0.04
+    ],
+    "2025": [
+     1096,
+     -0.0127
+    ],
+    "2026": [
+     153,
+     -0.0411
+    ]
+   }
+  },
+  "EV>=6%": {
+   "n": 2492,
+   "unders": 1580,
+   "roi": 0.0072,
+   "se": 0.0193,
+   "by_season": {
+    "2023": [
+     811,
+     0.0271
+    ],
+    "2024": [
+     813,
+     -0.033
+    ],
+    "2025": [
+     750,
+     0.0403
+    ],
+    "2026": [
+     118,
+     -0.0623
+    ]
+   }
+  },
+  "EV>=9%": {
+   "n": 1706,
+   "unders": 1093,
+   "roi": 0.0283,
+   "se": 0.0234,
+   "by_season": {
+    "2023": [
+     563,
+     0.0566
+    ],
+    "2024": [
+     548,
+     0.014
+    ],
+    "2025": [
+     501,
+     0.0335
+    ],
+    "2026": [
+     94,
+     -0.0864
+    ]
+   }
+  }
+ },
+ "rec_roi_exchange_model": {
+  "EV>=0%": {
+   "n": 1892,
+   "unders": 1123,
+   "roi": -0.0343,
+   "se": 0.0222,
+   "by_season": {
+    "2024": [
+     168,
+     -0.1737
+    ],
+    "2025": [
+     1550,
+     -0.0083
+    ],
+    "2026": [
+     174,
+     -0.1316
+    ]
+   }
+  },
+  "EV>=3%": {
+   "n": 1636,
+   "unders": 989,
+   "roi": -0.0355,
+   "se": 0.0239,
+   "by_season": {
+    "2024": [
+     146,
+     -0.1544
+    ],
+    "2025": [
+     1333,
+     -0.0124
+    ],
+    "2026": [
+     157,
+     -0.121
+    ]
+   }
+  },
+  "EV>=6%": {
+   "n": 1419,
+   "unders": 863,
+   "roi": -0.0318,
+   "se": 0.0257,
+   "by_season": {
+    "2024": [
+     125,
+     -0.0885
+    ],
+    "2025": [
+     1151,
+     -0.0186
+    ],
+    "2026": [
+     143,
+     -0.0888
+    ]
+   }
+  },
+  "EV>=9%": {
+   "n": 1216,
+   "unders": 749,
+   "roi": -0.0303,
+   "se": 0.0278,
+   "by_season": {
+    "2024": [
+     106,
+     -0.0878
+    ],
+    "2025": [
+     977,
+     -0.0137
+    ],
+    "2026": [
+     133,
+     -0.106
+    ]
+   }
+  }
+ },
+ "rec_roi_exchange_blend": {
+  "EV>=0%": {
+   "n": 1559,
+   "unders": 918,
+   "roi": -0.0555,
+   "se": 0.0246,
+   "by_season": {
+    "2024": [
+     132,
+     -0.1204
+    ],
+    "2025": [
+     1273,
+     -0.0387
+    ],
+    "2026": [
+     154,
+     -0.1383
+    ]
+   }
+  },
+  "EV>=3%": {
+   "n": 1156,
+   "unders": 703,
+   "roi": -0.0305,
+   "se": 0.0287,
+   "by_season": {
+    "2024": [
+     93,
+     -0.1154
+    ],
+    "2025": [
+     932,
+     -0.0136
+    ],
+    "2026": [
+     131,
+     -0.0906
+    ]
+   }
+  },
+  "EV>=6%": {
+   "n": 842,
+   "unders": 523,
+   "roi": 0.0053,
+   "se": 0.0337,
+   "by_season": {
+    "2024": [
+     59,
+     -0.0299
+    ],
+    "2025": [
+     678,
+     0.0171
+    ],
+    "2026": [
+     105,
+     -0.0509
+    ]
+   }
+  },
+  "EV>=9%": {
+   "n": 596,
+   "unders": 384,
+   "roi": 0.0216,
+   "se": 0.04,
+   "by_season": {
+    "2024": [
+     46,
+     0.1169
+    ],
+    "2025": [
+     466,
+     0.046
+    ],
+    "2026": [
+     84,
+     -0.166
+    ]
+   }
+  }
+ },
+ "rec_shap_yards_family": {
+  "form": 13.21,
+  "usage": 8.78,
+  "player": 0.904,
+  "opponent": 0.875,
+  "game script": 0.868,
+  "expected": 0.713,
+  "projection": 0.702,
+  "tracking (NGS)": 0.625,
+  "pace / tendency": 0.485,
+  "weather": 0.433,
+  "efficiency": 0.257,
+  "QB / scheme": 0.253,
+  "injury / roster": 0.16
+ },
+ "rec_shap_yards_top": {
+  "receiving_first_downs_ewm": 3.816,
+  "receiving_yards_ewm": 3.206,
+  "route_share_m3": 2.27,
+  "targets_ewm": 1.719,
+  "target_share_m8": 1.71,
+  "snap_pct_l1": 1.642,
+  "routes_m3": 1.082,
+  "receiving_yards_m24": 0.954,
+  "wopr_m3": 0.666,
+  "receptions_ewm": 0.663,
+  "target_share_m3": 0.638,
+  "draft_number": 0.432,
+  "ngs_avg_yac_above_expectation": 0.36,
+  "x_rec_yards_gained_exp_m8": 0.319,
+  "wopr_m8": 0.309,
+  "proj_targets": 0.261,
+  "receiving_air_yards_ewm": 0.219,
+  "temp_f": 0.202,
+  "win_pct": 0.195,
+  "receiving_yards_after_catch_ewm": 0.187
+ },
+ "rec_residual_model": {
+  "n_train": 4508,
+  "n_test": 2509,
+  "corr_pred_vs_actual_resid": 0.0459,
+  "top20_over_rate_vs_fair": [
+   0.504,
+   0.5017
+  ],
+  "bottom20_over_rate_vs_fair": [
+   0.4402,
+   0.5018
+  ]
+ },
+ "rec_shap_residual_family": {
+  "form": 8.282,
+  "opponent": 3.671,
+  "game script": 1.918,
+  "usage": 1.787,
+  "tracking (NGS)": 1.644,
+  "pace / tendency": 1.332,
+  "projection": 1.331,
+  "expected": 1.261,
+  "QB / scheme": 0.885,
+  "weather": 0.858,
+  "player": 0.656,
+  "efficiency": 0.445,
+  "market": 0.351,
+  "injury / roster": 0.322
+ },
+ "rec_shap_residual_top": {
+  "win_pct": 0.905,
+  "proj_targets": 0.8,
+  "receiving_yards_m24": 0.593,
+  "receiving_air_yards_m1": 0.591,
+  "ngs_avg_yac_above_expectation": 0.498,
+  "opp_blitz_std": 0.494,
+  "opp_rush_epa_allowed": 0.483,
+  "receiving_yards_m8": 0.449,
+  "ngs_avg_intended_air_yards": 0.438,
+  "team_play_action_std": 0.433,
+  "receiving_epa_m8": 0.432,
+  "receiving_yards_m3": 0.423,
+  "team_plays_std": 0.42,
+  "games_prior": 0.402,
+  "receiving_yards_med8": 0.381
+ },
+ "rec_player_persistence": {
+  "player_season_pairs": 247,
+  "corr_err_next_season": 0.144,
+  "corr_over_minus_fair_next_season": 0.0275
+ },
+ "rec_player_model_edge_persistence": {
+  "pairs": 215,
+  "corr": 0.1453
+ },
+ "rush_forecast": {
+  "2023": {
+   "n": 1510,
+   "mae_mean": 19.33,
+   "mae_median": 18.48,
+   "mae_naive_m8": 19.82,
+   "coverage_10_90": 0.784
+  },
+  "2024": {
+   "n": 1578,
+   "mae_mean": 20.0,
+   "mae_median": 19.44,
+   "mae_naive_m8": 20.3,
+   "coverage_10_90": 0.761
+  },
+  "2025": {
+   "n": 1611,
+   "mae_mean": 19.37,
+   "mae_median": 18.0,
+   "mae_naive_m8": 19.98,
+   "coverage_10_90": 0.775
+  },
+  "2026": {
+   "n": 170,
+   "mae_mean": 19.49,
+   "mae_median": 17.99,
+   "mae_naive_m8": 21.12,
+   "coverage_10_90": 0.835
+  }
+ },
+ "rush_vs_market": {
+  "2023": {
+   "n": 837,
+   "mae_line": 21.33,
+   "mae_model_median": 22.92,
+   "model_closer_pct": 0.4325,
+   "brier_market": 0.24938,
+   "brier_model": 0.26462,
+   "brier_blend": 0.25188,
+   "model_median_minus_line": -4.42
+  },
+  "2024": {
+   "n": 879,
+   "mae_line": 22.7,
+   "mae_model_median": 24.24,
+   "model_closer_pct": 0.4562,
+   "brier_market": 0.25013,
+   "brier_model": 0.26758,
+   "brier_blend": 0.25366,
+   "model_median_minus_line": -5.96
+  },
+  "2025": {
+   "n": 891,
+   "mae_line": 23.07,
+   "mae_model_median": 23.5,
+   "model_closer_pct": 0.5051,
+   "brier_market": 0.24997,
+   "brier_model": 0.25729,
+   "brier_blend": 0.24966,
+   "model_median_minus_line": -3.97
+  },
+  "2026": {
+   "n": 101,
+   "mae_line": 20.11,
+   "mae_model_median": 21.02,
+   "model_closer_pct": 0.4455,
+   "brier_market": 0.24998,
+   "brier_model": 0.26344,
+   "brier_blend": 0.24977,
+   "model_median_minus_line": -6.04
+  }
+ },
+ "rush_roi_best_book_model": {
+  "EV>=0%": {
+   "n": 2397,
+   "unders": 1680,
+   "roi": 0.0115,
+   "se": 0.0196,
+   "by_season": {
+    "2023": [
+     723,
+     0.0002
+    ],
+    "2024": [
+     801,
+     -0.0379
+    ],
+    "2025": [
+     786,
+     0.0684
+    ],
+    "2026": [
+     87,
+     0.0461
+    ]
+   }
+  },
+  "EV>=3%": {
+   "n": 2178,
+   "unders": 1561,
+   "roi": 0.0219,
+   "se": 0.0206,
+   "by_season": {
+    "2023": [
+     659,
+     0.0042
+    ],
+    "2024": [
+     737,
+     -0.0064
+    ],
+    "2025": [
+     699,
+     0.0651
+    ],
+    "2026": [
+     83,
+     0.0508
+    ]
+   }
+  },
+  "EV>=6%": {
+   "n": 1961,
+   "unders": 1420,
+   "roi": 0.0277,
+   "se": 0.0217,
+   "by_season": {
+    "2023": [
+     598,
+     0.0172
+    ],
+    "2024": [
+     675,
+     -0.0118
+    ],
+    "2025": [
+     614,
+     0.0787
+    ],
+    "2026": [
+     74,
+     0.0502
+    ]
+   }
+  },
+  "EV>=9%": {
+   "n": 1753,
+   "unders": 1289,
+   "roi": 0.0279,
+   "se": 0.0229,
+   "by_season": {
+    "2023": [
+     536,
+     0.0118
+    ],
+    "2024": [
+     611,
+     -0.0059
+    ],
+    "2025": [
+     538,
+     0.075
+    ],
+    "2026": [
+     68,
+     0.0873
+    ]
+   }
+  }
+ },
+ "rush_roi_best_book_blend": {
+  "EV>=0%": {
+   "n": 2093,
+   "unders": 1499,
+   "roi": 0.0215,
+   "se": 0.021,
+   "by_season": {
+    "2023": [
+     642,
+     0.0085
+    ],
+    "2024": [
+     711,
+     -0.0041
+    ],
+    "2025": [
+     663,
+     0.0545
+    ],
+    "2026": [
+     77,
+     0.0836
+    ]
+   }
+  },
+  "EV>=3%": {
+   "n": 1694,
+   "unders": 1243,
+   "roi": 0.0359,
+   "se": 0.0234,
+   "by_season": {
+    "2023": [
+     531,
+     0.0167
+    ],
+    "2024": [
+     592,
+     0.0113
+    ],
+    "2025": [
+     505,
+     0.0816
+    ],
+    "2026": [
+     66,
+     0.0627
+    ]
+   }
+  },
+  "EV>=6%": {
+   "n": 1301,
+   "unders": 985,
+   "roi": 0.015,
+   "se": 0.0267,
+   "by_season": {
+    "2023": [
+     420,
+     0.0083
+    ],
+    "2024": [
+     464,
+     -0.0039
+    ],
+    "2025": [
+     367,
+     0.056
+    ],
+    "2026": [
+     50,
+     -0.0538
+    ]
+   }
+  },
+  "EV>=9%": {
+   "n": 968,
+   "unders": 728,
+   "roi": 0.025,
+   "se": 0.031,
+   "by_season": {
+    "2023": [
+     334,
+     0.008
+    ],
+    "2024": [
+     341,
+     0.0184
+    ],
+    "2025": [
+     251,
+     0.0702
+    ],
+    "2026": [
+     42,
+     -0.0556
+    ]
+   }
+  }
+ },
+ "rush_roi_exchange_model": {
+  "EV>=0%": {
+   "n": 816,
+   "unders": 576,
+   "roi": 0.0652,
+   "se": 0.0337,
+   "by_season": {
+    "2024": [
+     75,
+     0.0905
+    ],
+    "2025": [
+     664,
+     0.0666
+    ],
+    "2026": [
+     77,
+     0.0281
+    ]
+   }
+  },
+  "EV>=3%": {
+   "n": 734,
+   "unders": 531,
+   "roi": 0.0874,
+   "se": 0.0354,
+   "by_season": {
+    "2024": [
+     67,
+     0.1075
+    ],
+    "2025": [
+     595,
+     0.0934
+    ],
+    "2026": [
+     72,
+     0.0197
+    ]
+   }
+  },
+  "EV>=6%": {
+   "n": 663,
+   "unders": 489,
+   "roi": 0.0754,
+   "se": 0.0373,
+   "by_season": {
+    "2024": [
+     63,
+     0.1169
+    ],
+    "2025": [
+     532,
+     0.0735
+    ],
+    "2026": [
+     68,
+     0.0513
+    ]
+   }
+  },
+  "EV>=9%": {
+   "n": 587,
+   "unders": 431,
+   "roi": 0.0622,
+   "se": 0.0397,
+   "by_season": {
+    "2024": [
+     60,
+     0.1067
+    ],
+    "2025": [
+     464,
+     0.0629
+    ],
+    "2026": [
+     63,
+     0.0143
+    ]
+   }
+  }
+ },
+ "rush_roi_exchange_blend": {
+  "EV>=0%": {
+   "n": 724,
+   "unders": 520,
+   "roi": 0.0584,
+   "se": 0.0359,
+   "by_season": {
+    "2024": [
+     65,
+     0.1143
+    ],
+    "2025": [
+     587,
+     0.0601
+    ],
+    "2026": [
+     72,
+     -0.0056
+    ]
+   }
+  },
+  "EV>=3%": {
+   "n": 579,
+   "unders": 417,
+   "roi": 0.0803,
+   "se": 0.0402,
+   "by_season": {
+    "2024": [
+     56,
+     0.1272
+    ],
+    "2025": [
+     464,
+     0.0902
+    ],
+    "2026": [
+     59,
+     -0.0414
+    ]
+   }
+  },
+  "EV>=6%": {
+   "n": 435,
+   "unders": 313,
+   "roi": 0.0636,
+   "se": 0.0465,
+   "by_season": {
+    "2024": [
+     44,
+     0.0863
+    ],
+    "2025": [
+     343,
+     0.0668
+    ],
+    "2026": [
+     48,
+     0.0206
+    ]
+   }
+  },
+  "EV>=9%": {
+   "n": 292,
+   "unders": 207,
+   "roi": 0.0147,
+   "se": 0.0571,
+   "by_season": {
+    "2024": [
+     33,
+     -0.0759
+    ],
+    "2025": [
+     220,
+     0.039
+    ],
+    "2026": [
+     39,
+     -0.0461
+    ]
+   }
+  }
+ },
+ "rush_shap_yards_family": {
+  "form": 14.168,
+  "usage": 12.596,
+  "opponent": 3.282,
+  "player": 1.826,
+  "game script": 1.371,
+  "pace / tendency": 1.305,
+  "expected": 1.273,
+  "projection": 1.026,
+  "tracking (NGS)": 0.908,
+  "QB / scheme": 0.656,
+  "weather": 0.368,
+  "efficiency": 0.366,
+  "injury / roster": 0.204
+ },
+ "rush_shap_yards_top": {
+  "carry_share_m3": 8.173,
+  "rushing_yards_ewm": 4.902,
+  "snap_pct_l1": 2.673,
+  "draft_number": 1.097,
+  "opp_allow_rushing_yards_rel": 0.991,
+  "carries_ewm": 0.887,
+  "rushing_yards_m8": 0.762,
+  "rushing_yards_m3": 0.735,
+  "carries_m1": 0.732,
+  "rushing_epa_m3": 0.577,
+  "carry_share_m8": 0.564,
+  "rushing_yards_m24": 0.505,
+  "x_rush_yards_gained_exp_m4": 0.495,
+  "team_line": 0.486,
+  "rushing_epa_m1": 0.418,
+  "rushing_yards_m1": 0.413,
+  "win_pct": 0.375,
+  "rushing_first_downs_ewm": 0.374,
+  "opp_blitz_std": 0.373,
+  "opp_missed_tackles_pg": 0.347
+ },
+ "rush_residual_model": {
+  "n_train": 1716,
+  "n_test": 992,
+  "corr_pred_vs_actual_resid": 0.0824,
+  "top20_over_rate_vs_fair": [
+   0.5126,
+   0.5025
+  ],
+  "bottom20_over_rate_vs_fair": [
+   0.3819,
+   0.5004
+  ]
+ },
+ "rush_shap_residual_family": {
+  "form": 8.288,
+  "opponent": 4.547,
+  "usage": 2.255,
+  "pace / tendency": 1.933,
+  "game script": 1.876,
+  "projection": 1.764,
+  "QB / scheme": 1.202,
+  "expected": 1.141,
+  "weather": 1.031,
+  "tracking (NGS)": 0.88,
+  "player": 0.857,
+  "efficiency": 0.756,
+  "market": 0.738,
+  "injury / roster": 0.078
+ },
+ "rush_shap_residual_top": {
+  "rushing_epa_m3": 1.251,
+  "opp_blitz_std": 1.07,
+  "temp_f": 0.854,
+  "proj_runs": 0.805,
+  "rushing_epa_m1": 0.735,
+  "team_screen_std": 0.694,
+  "opp_win_pct": 0.673,
+  "route_share_m3": 0.583,
+  "receiving_epa_m1": 0.582,
+  "team_line": 0.48,
+  "opp_allow_rushing_yards_rel": 0.462,
+  "draft_number": 0.447,
+  "team_neutral_proe_std": 0.415,
+  "receiving_yards_sd8": 0.412,
+  "fair_over": 0.408
+ },
+ "rush_player_persistence": {
+  "player_season_pairs": 92,
+  "corr_err_next_season": -0.0031,
+  "corr_over_minus_fair_next_season": 0.0019
+ },
+ "rush_player_model_edge_persistence": {
+  "pairs": 82,
+  "corr": -0.1107
+ }
+}
