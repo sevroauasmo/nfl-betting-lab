@@ -1,0 +1,54 @@
+{
+ "targets freed (news)": {
+  "sportsbook_props": 679,
+  "matched_kalshi_contracts": 429,
+  "priced": 331,
+  "set": "targets freed (news)",
+  "contracts": 300,
+  "team_games": 61,
+  "no_win_rate": 0.6133,
+  "avg_no_ask": 0.615,
+  "avg_spread_c": 14.4,
+  "roi_take_no_at_ask": 0.005,
+  "se_take": 0.0611,
+  "roi_no_at_mid": 0.1415,
+  "se_mid": 0.0689,
+  "tight_spread_le_4c": {
+   "contracts": 118,
+   "no_win_rate": 0.6271,
+   "roi_take": 0.1421
+  },
+  "median_spread_c": 5.0,
+  "by_market": {
+   "player_receptions": 0.0079,
+   "player_reception_yds": 0.0025
+  },
+  "exact_strike_only_take_roi": -0.0137
+ },
+ "control: no news": {
+  "sportsbook_props": 1104,
+  "matched_kalshi_contracts": 602,
+  "priced": 457,
+  "set": "control: no news",
+  "contracts": 404,
+  "team_games": 77,
+  "no_win_rate": 0.5074,
+  "avg_no_ask": 0.605,
+  "avg_spread_c": 13.3,
+  "roi_take_no_at_ask": -0.1313,
+  "se_take": 0.0581,
+  "roi_no_at_mid": -0.0358,
+  "se_mid": 0.0629,
+  "tight_spread_le_4c": {
+   "contracts": 160,
+   "no_win_rate": 0.45,
+   "roi_take": -0.1484
+  },
+  "median_spread_c": 5.0,
+  "by_market": {
+   "player_receptions": -0.1039,
+   "player_reception_yds": -0.1558
+  },
+  "exact_strike_only_take_roi": -0.1131
+ }
+}

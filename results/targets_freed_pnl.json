@@ -1,0 +1,317 @@
+{
+ "table": [
+  {
+   "season": 2023,
+   "venue": "best of ~8 books",
+   "team_games": 73,
+   "bets": 604,
+   "win_rate": 0.515,
+   "fair_under": 0.5,
+   "avg_odds": -110.0,
+   "units": -5.5,
+   "roi": -0.0091
+  },
+  {
+   "season": 2023,
+   "venue": "DraftKings only",
+   "team_games": 73,
+   "bets": 565,
+   "win_rate": 0.517,
+   "fair_under": 0.5,
+   "avg_odds": -115.0,
+   "units": -19.2,
+   "roi": -0.0341
+  },
+  {
+   "season": 2023,
+   "venue": "FanDuel only",
+   "team_games": 73,
+   "bets": 293,
+   "win_rate": 0.481,
+   "fair_under": 0.5,
+   "avg_odds": -110.0,
+   "units": -25.6,
+   "roi": -0.0874
+  },
+  {
+   "season": 2023,
+   "venue": "Novig/ProphetX",
+   "team_games": 73,
+   "bets": 0,
+   "win_rate": NaN,
+   "fair_under": 0.5,
+   "avg_odds": NaN,
+   "units": 0.0,
+   "roi": NaN
+  },
+  {
+   "season": 2023,
+   "venue": "flat -110",
+   "team_games": 73,
+   "bets": 604,
+   "win_rate": 0.515,
+   "fair_under": 0.5,
+   "avg_odds": -110.0,
+   "units": -10.3,
+   "roi": -0.017
+  },
+  {
+   "season": 2024,
+   "venue": "best of ~8 books",
+   "team_games": 55,
+   "bets": 469,
+   "win_rate": 0.567,
+   "fair_under": 0.501,
+   "avg_odds": -110.0,
+   "units": 43.6,
+   "roi": 0.093
+  },
+  {
+   "season": 2024,
+   "venue": "DraftKings only",
+   "team_games": 55,
+   "bets": 399,
+   "win_rate": 0.559,
+   "fair_under": 0.501,
+   "avg_odds": -115.0,
+   "units": 18.3,
+   "roi": 0.0458
+  },
+  {
+   "season": 2024,
+   "venue": "FanDuel only",
+   "team_games": 55,
+   "bets": 278,
+   "win_rate": 0.565,
+   "fair_under": 0.501,
+   "avg_odds": -110.0,
+   "units": 12.5,
+   "roi": 0.0451
+  },
+  {
+   "season": 2024,
+   "venue": "Novig/ProphetX",
+   "team_games": 55,
+   "bets": 61,
+   "win_rate": 0.557,
+   "fair_under": 0.501,
+   "avg_odds": -112.0,
+   "units": 2.7,
+   "roi": 0.0438
+  },
+  {
+   "season": 2024,
+   "venue": "flat -110",
+   "team_games": 55,
+   "bets": 469,
+   "win_rate": 0.567,
+   "fair_under": 0.501,
+   "avg_odds": -110.0,
+   "units": 38.8,
+   "roi": 0.0828
+  },
+  {
+   "season": 2025,
+   "venue": "best of ~8 books",
+   "team_games": 73,
+   "bets": 613,
+   "win_rate": 0.599,
+   "fair_under": 0.506,
+   "avg_odds": -110.0,
+   "units": 90.5,
+   "roi": 0.1476
+  },
+  {
+   "season": 2025,
+   "venue": "DraftKings only",
+   "team_games": 73,
+   "bets": 467,
+   "win_rate": 0.606,
+   "fair_under": 0.506,
+   "avg_odds": -114.0,
+   "units": 59.6,
+   "roi": 0.1276
+  },
+  {
+   "season": 2025,
+   "venue": "FanDuel only",
+   "team_games": 73,
+   "bets": 488,
+   "win_rate": 0.586,
+   "fair_under": 0.506,
+   "avg_odds": -112.0,
+   "units": 43.3,
+   "roi": 0.0887
+  },
+  {
+   "season": 2025,
+   "venue": "Novig/ProphetX",
+   "team_games": 73,
+   "bets": 523,
+   "win_rate": 0.591,
+   "fair_under": 0.506,
+   "avg_odds": -112.0,
+   "units": 63.4,
+   "roi": 0.1212
+  },
+  {
+   "season": 2025,
+   "venue": "flat -110",
+   "team_games": 73,
+   "bets": 613,
+   "win_rate": 0.599,
+   "fair_under": 0.506,
+   "avg_odds": -110.0,
+   "units": 87.6,
+   "roi": 0.143
+  },
+  {
+   "season": 2026,
+   "venue": "best of ~8 books",
+   "team_games": 6,
+   "bets": 66,
+   "win_rate": 0.591,
+   "fair_under": 0.508,
+   "avg_odds": -110.0,
+   "units": 7.2,
+   "roi": 0.1095
+  },
+  {
+   "season": 2026,
+   "venue": "DraftKings only",
+   "team_games": 6,
+   "bets": 54,
+   "win_rate": 0.574,
+   "fair_under": 0.508,
+   "avg_odds": -113.0,
+   "units": 2.7,
+   "roi": 0.0494
+  },
+  {
+   "season": 2026,
+   "venue": "FanDuel only",
+   "team_games": 6,
+   "bets": 54,
+   "win_rate": 0.556,
+   "fair_under": 0.508,
+   "avg_odds": -113.0,
+   "units": 1.3,
+   "roi": 0.025
+  },
+  {
+   "season": 2026,
+   "venue": "Novig/ProphetX",
+   "team_games": 6,
+   "bets": 58,
+   "win_rate": 0.552,
+   "fair_under": 0.508,
+   "avg_odds": -109.0,
+   "units": 3.1,
+   "roi": 0.0537
+  },
+  {
+   "season": 2026,
+   "venue": "flat -110",
+   "team_games": 6,
+   "bets": 66,
+   "win_rate": 0.591,
+   "fair_under": 0.508,
+   "avg_odds": -110.0,
+   "units": 8.5,
+   "roi": 0.1281
+  },
+  {
+   "season": "ALL",
+   "venue": "best of ~8 books",
+   "team_games": 207,
+   "bets": 1752,
+   "win_rate": 0.561,
+   "fair_under": 0.503,
+   "avg_odds": -110.0,
+   "units": 135.8,
+   "roi": 0.0775
+  },
+  {
+   "season": "ALL",
+   "venue": "DraftKings only",
+   "team_games": 207,
+   "bets": 1485,
+   "win_rate": 0.558,
+   "fair_under": 0.503,
+   "avg_odds": -115.0,
+   "units": 61.3,
+   "roi": 0.0413
+  },
+  {
+   "season": "ALL",
+   "venue": "FanDuel only",
+   "team_games": 207,
+   "bets": 1113,
+   "win_rate": 0.552,
+   "fair_under": 0.503,
+   "avg_odds": -112.0,
+   "units": 31.6,
+   "roi": 0.0283
+  },
+  {
+   "season": "ALL",
+   "venue": "Novig/ProphetX",
+   "team_games": 207,
+   "bets": 642,
+   "win_rate": 0.584,
+   "fair_under": 0.503,
+   "avg_odds": -111.0,
+   "units": 69.2,
+   "roi": 0.1078
+  },
+  {
+   "season": "ALL",
+   "venue": "flat -110",
+   "team_games": 207,
+   "bets": 1752,
+   "win_rate": 0.561,
+   "fair_under": 0.503,
+   "avg_odds": -110.0,
+   "units": 124.6,
+   "roi": 0.0711
+  }
+ ],
+ "one_bet_per_player": {
+  "bets": 1025,
+  "win_rate": 0.559,
+  "roi_best": 0.0765,
+  "units": 78.4
+ },
+ "by_market": [
+  {
+   "market": "player_reception_yds",
+   "bets": 809.0,
+   "win_rate": 0.569,
+   "roi_best": 0.087
+  },
+  {
+   "market": "player_receptions",
+   "bets": 943.0,
+   "win_rate": 0.555,
+   "roi_best": 0.069
+  }
+ ],
+ "bankroll": {
+  "bets": 1752,
+  "units_total": 135.8,
+  "max_drawdown_units": -24.4,
+  "weeks_with_bets": 60,
+  "winning_weeks": 38,
+  "avg_bets_per_week": 29.2,
+  "team_games": 207,
+  "team_games_profitable": 114,
+  "worst_team_game_units": -9.0,
+  "best_team_game_units": 12.3
+ },
+ "cumulative_units_by_season_end": {
+  "2023": -5.5,
+  "2024": 38.1,
+  "2025": 128.6,
+  "2026": 135.8
+ }
+}

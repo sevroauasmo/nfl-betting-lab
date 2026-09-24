@@ -1,0 +1,42 @@
+{
+ "targets freed (news)": {
+  "sportsbook_props": 679,
+  "matched_kalshi_contracts": 429,
+  "priced": 408,
+  "set": "targets freed (news)",
+  "contracts": 355,
+  "team_games": 62,
+  "no_win_rate": 0.6169,
+  "avg_no_ask": 0.616,
+  "avg_spread_c": 13.3,
+  "roi_take_no_at_ask": 0.0045,
+  "se_take": 0.0564,
+  "roi_rest_no_bid_if_filled": 0.3925,
+  "se_rest": 0.1223,
+  "by_market": {
+   "player_receptions": 0.0341,
+   "player_reception_yds": -0.0218
+  },
+  "exact_strike_only_take_roi": 0.0039
+ },
+ "control: no news": {
+  "sportsbook_props": 1104,
+  "matched_kalshi_contracts": 602,
+  "priced": 579,
+  "set": "control: no news",
+  "contracts": 498,
+  "team_games": 82,
+  "no_win_rate": 0.5141,
+  "avg_no_ask": 0.606,
+  "avg_spread_c": 12.5,
+  "roi_take_no_at_ask": -0.1372,
+  "se_take": 0.0505,
+  "roi_rest_no_bid_if_filled": 0.0724,
+  "se_rest": 0.0598,
+  "by_market": {
+   "player_receptions": -0.0795,
+   "player_reception_yds": -0.1891
+  },
+  "exact_strike_only_take_roi": -0.0927
+ }
+}
