@@ -4,7 +4,8 @@ Research into whether public NFL data finds an edge in betting markets, plus a l
 strategy that survived: **resting orders on Kalshi touchdown-scorer markets**.
 
 - Full write-up: `results/report.html` (published as a private Claude artifact).
-- Live paper-trading results: [`paper/SUMMARY.md`](paper/SUMMARY.md), updated automatically on game days.
+- Live paper-trading results: [`paper/SUMMARY.md`](paper/SUMMARY.md) (Kalshi market-maker) and
+  [`paper/TARGETS_FREED.md`](paper/TARGETS_FREED.md) (surprise-inactive receiver unders), updated automatically on game days.
 
 ## What's automated
 
@@ -19,6 +20,13 @@ windows, every few hours on off days). Nothing runs on a local machine. Each run
    the size resting ahead of it at placement has traded through. Cancellations ahead of us are ignored, so fills are pessimistic.
 3. **settle**: once Kalshi finalizes a market, grade fills and subtract an estimated maker fee.
 4. Rewrite `paper/SUMMARY.md` and commit `paper/state/orders.csv` back to the repo.
+
+A second strategy, `paper/targets_freed.py`, runs in the same job. At about T-85 (just after inactives are announced)
+it snapshots Kalshi receiving-ladder order books, sportsbook and Novig/ProphetX odds (The Odds API, ~4 credits per game,
+`ODDS_API_KEY` repo secret) and ESPN's injury feed. After the game it identifies surprise inactives (INA but not Out/Doubtful,
+≥10% target share) and grades paper unders on their teammates' receptions and receiving yards: Kalshi taking the ask
+(all / only when the spread ≤ 4¢), Kalshi resting a NO bid at the mid (filled from the trade tape), best sportsbook, and
+best exchange.
 
 No real orders are ever sent. The Kalshi public API needs no key. Trigger a run manually from the Actions tab
 (`workflow_dispatch`).

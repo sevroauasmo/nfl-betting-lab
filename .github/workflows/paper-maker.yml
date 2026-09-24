@@ -33,9 +33,13 @@ jobs:
       - uses: astral-sh/setup-uv@v6
       - name: Paper market-maker (place, fill, settle, summarize)
         run: uv run --no-project --python 3.12 --with requests python paper/kalshi_maker.py
+      - name: Surprise-inactive receiver unders (snapshot ~T-85, grade after game)
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: uv run --no-project --python 3.12 --with requests --with pandas --with pyarrow python paper/targets_freed.py
       - name: Commit state
         run: |
           git config user.name "paper-maker-bot"
           git config user.email "paper-maker-bot@users.noreply.github.com"
-          git add paper/state paper/SUMMARY.md
+          git add paper/state paper/SUMMARY.md paper/TARGETS_FREED.md
           git diff --cached --quiet || (git commit -m "paper maker: $(date -u +%Y-%m-%dT%H:%MZ)" && git pull --rebase && git push)
