@@ -1,0 +1,308 @@
+{
+ "props_with_all_snapshots": 25063,
+ "surprise_inactives": {
+  "all_inactive_skill_players": 3642,
+  "surprise": 2677,
+  "surprise_with_target_share_ge_10pct": 180,
+  "surprise_with_carry_share_ge_20pct": 198,
+  "surprise_starting_qb": 199
+ },
+ "line_movement": {
+  "passing | none": {
+   "n": 2386,
+   "avg_move_t120_to_close_pct": -0.01,
+   "avg_move_by_t80_pct": 0.0,
+   "avg_move_after_t80_pct": -0.01,
+   "share_lines_moved_by_t80": 0.156,
+   "share_lines_moved_after_t80": 0.314
+  },
+  "receiving | none": {
+   "n": 14736,
+   "avg_move_t120_to_close_pct": 0.23,
+   "avg_move_by_t80_pct": 0.12,
+   "avg_move_after_t80_pct": 0.11,
+   "share_lines_moved_by_t80": 0.095,
+   "share_lines_moved_after_t80": 0.18
+  },
+  "receiving | targets freed": {
+   "n": 1752,
+   "avg_move_t120_to_close_pct": 1.4,
+   "avg_move_by_t80_pct": 0.4,
+   "avg_move_after_t80_pct": 1.0,
+   "share_lines_moved_by_t80": 0.113,
+   "share_lines_moved_after_t80": 0.225
+  },
+  "rushing | carries freed": {
+   "n": 621,
+   "avg_move_t120_to_close_pct": 0.64,
+   "avg_move_by_t80_pct": -0.2,
+   "avg_move_after_t80_pct": 0.84,
+   "share_lines_moved_by_t80": 0.142,
+   "share_lines_moved_after_t80": 0.242
+  },
+  "rushing | none": {
+   "n": 5568,
+   "avg_move_t120_to_close_pct": 0.26,
+   "avg_move_by_t80_pct": 0.06,
+   "avg_move_after_t80_pct": 0.2,
+   "share_lines_moved_by_t80": 0.118,
+   "share_lines_moved_after_t80": 0.22
+  }
+ },
+ "bets": {
+  "targets freed: OVER at t120, best book": {
+   "n": 1752,
+   "win_rate": 0.4418,
+   "roi": -0.1467,
+   "se": 0.0231
+  },
+  "targets freed: OVER at t120, exchange": {
+   "n": 652,
+   "win_rate": 0.4172,
+   "roi": -0.1844,
+   "se": 0.0382
+  },
+  "targets freed: OVER at t80, best book": {
+   "n": 1752,
+   "win_rate": 0.4401,
+   "roi": -0.1489,
+   "se": 0.0231
+  },
+  "targets freed: OVER at t80, exchange": {
+   "n": 635,
+   "win_rate": 0.4126,
+   "roi": -0.189,
+   "se": 0.0388
+  },
+  "targets freed: OVER at t45, best book": {
+   "n": 1702,
+   "win_rate": 0.4407,
+   "roi": -0.148,
+   "se": 0.0235
+  },
+  "targets freed: OVER at t45, exchange": {
+   "n": 627,
+   "win_rate": 0.4067,
+   "roi": -0.1995,
+   "se": 0.0391
+  },
+  "targets freed: OVER at t10, best book": {
+   "n": 1752,
+   "win_rate": 0.4389,
+   "roi": -0.1469,
+   "se": 0.0233
+  },
+  "targets freed: OVER at t10, exchange": {
+   "n": 642,
+   "win_rate": 0.4159,
+   "roi": -0.1774,
+   "se": 0.0389
+  },
+  "targets freed: closing-line value of T-80 line (close - T80, pts)": 0.13,
+  "targets freed: fair over at close vs actual over rate": [
+   0.4972,
+   0.4389
+  ],
+  "carries freed: OVER at t120, best book": {
+   "n": 621,
+   "win_rate": 0.4992,
+   "roi": -0.0448,
+   "se": 0.0385
+  },
+  "carries freed: OVER at t120, exchange": {
+   "n": 173,
+   "win_rate": 0.5087,
+   "roi": -0.0306,
+   "se": 0.0727
+  },
+  "carries freed: OVER at t80, best book": {
+   "n": 621,
+   "win_rate": 0.5024,
+   "roi": -0.0383,
+   "se": 0.0385
+  },
+  "carries freed: OVER at t80, exchange": {
+   "n": 177,
+   "win_rate": 0.5141,
+   "roi": -0.017,
+   "se": 0.0721
+  },
+  "carries freed: OVER at t45, best book": {
+   "n": 593,
+   "win_rate": 0.5008,
+   "roi": -0.0399,
+   "se": 0.0395
+  },
+  "carries freed: OVER at t45, exchange": {
+   "n": 179,
+   "win_rate": 0.5307,
+   "roi": 0.0173,
+   "se": 0.0717
+  },
+  "carries freed: OVER at t10, best book": {
+   "n": 621,
+   "win_rate": 0.5008,
+   "roi": -0.0363,
+   "se": 0.0387
+  },
+  "carries freed: OVER at t10, exchange": {
+   "n": 180,
+   "win_rate": 0.5389,
+   "roi": 0.0372,
+   "se": 0.0718
+  },
+  "carries freed: closing-line value of T-80 line (close - T80, pts)": 0.17,
+  "carries freed: fair over at close vs actual over rate": [
+   0.4997,
+   0.5008
+  ]
+ },
+ "momentum_after_news_window": {
+  "props_that_moved_T120_T80": 2724,
+  "then_moved_same_direction": 0.122,
+  "then_reversed": 0.381,
+  "bet_in_direction_of_early_move_at_T80_best_book": null,
+  "over at T-80 after line rose T120->T80": {
+   "n": 1405,
+   "win_rate": 0.4783,
+   "roi": -0.0771,
+   "se": 0.0258
+  },
+  "under at T-80 after line fell T120->T80": {
+   "n": 1319,
+   "win_rate": 0.5208,
+   "roi": 0.0085,
+   "se": 0.0267
+  }
+ },
+ "vs_baseline": {
+  "passing | none": {
+   "n": 2386,
+   "over": 0.4895,
+   "fair": 0.5001,
+   "resid": -0.0105,
+   "under_roi_best_close": -0.0181,
+   "by_season_resid": {
+    "2023": 0.0082,
+    "2024": -0.0141,
+    "2025": -0.0201,
+    "2026": -0.0478
+   }
+  },
+  "receiving | none": {
+   "n": 14736,
+   "over": 0.4785,
+   "fair": 0.4965,
+   "resid": -0.018,
+   "under_roi_best_close": 0.0011,
+   "by_season_resid": {
+    "2023": -0.0022,
+    "2024": -0.0219,
+    "2025": -0.031,
+    "2026": -0.0119
+   }
+  },
+  "receiving | targets freed": {
+   "n": 1752,
+   "over": 0.4389,
+   "fair": 0.4972,
+   "resid": -0.0583,
+   "under_roi_best_close": 0.0775,
+   "by_season_resid": {
+    "2023": -0.0147,
+    "2024": -0.0657,
+    "2025": -0.0929,
+    "2026": -0.0834
+   }
+  },
+  "rushing | carries freed": {
+   "n": 621,
+   "over": 0.5008,
+   "fair": 0.4997,
+   "resid": 0.0011,
+   "under_roi_best_close": -0.0379,
+   "by_season_resid": {
+    "2023": -0.0126,
+    "2024": -0.0008,
+    "2025": 0.0226,
+    "2026": 0.0018
+   }
+  },
+  "rushing | none": {
+   "n": 5568,
+   "over": 0.4686,
+   "fair": 0.4993,
+   "resid": -0.0308,
+   "under_roi_best_close": 0.0224,
+   "by_season_resid": {
+    "2023": -0.0245,
+    "2024": -0.0409,
+    "2025": -0.027,
+    "2026": -0.0068
+   }
+  },
+  "receiving | surprise starting QB inactive": {
+   "n": 1678,
+   "over": 0.4708,
+   "fair": 0.4948,
+   "resid": -0.024
+  },
+  "passing | surprise starting QB inactive": {
+   "n": 247,
+   "over": 0.4939,
+   "fair": 0.5003,
+   "resid": -0.0064
+  }
+ },
+ "targets_freed_robustness": {
+  "excess_resid_vs_no_news_clustered": {
+   "estimate": -0.0403,
+   "se": 0.0148,
+   "t": -2.73,
+   "team_games": 207
+  },
+  "under_roi_best_close_clustered": {
+   "roi": 0.0775,
+   "se": 0.0288,
+   "team_games": 207
+  },
+  "under_roi_best_t120_clustered": {
+   "roi": 0.0671,
+   "se": 0.0285,
+   "team_games": 207
+  },
+  "under_roi_best_t80_clustered": {
+   "roi": 0.0705,
+   "se": 0.0283,
+   "team_games": 207
+  },
+  "under_roi_exchange_close_clustered": {
+   "n_props": 642,
+   "roi": 0.1078,
+   "se": 0.0469,
+   "team_games": 91
+  },
+  "player_reception_yds: over vs fair": [
+   809,
+   0.4314,
+   0.5007
+  ],
+  "player_receptions: over vs fair": [
+   943,
+   0.4454,
+   0.4943
+  ],
+  "vacated target share 0.10-0.18": {
+   "n": 1141,
+   "resid": -0.0508
+  },
+  "vacated target share 0.18-0.30": {
+   "n": 496,
+   "resid": -0.0715
+  },
+  "vacated target share 0.30-2.00": {
+   "n": 115,
+   "resid": -0.0762
+  }
+ }
+}

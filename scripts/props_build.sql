@@ -30,6 +30,16 @@ FROM stats_player_week s
 LEFT JOIN pfr_adv_week_def p ON p.game_id = s.game_id AND norm_name(p.pfr_player_name) = norm_name(s.player_display_name)
 WHERE s.season >= 2023;
 
+-- Players who were active and took offensive snaps but recorded no stats have no row in stats_player_week.
+-- Books grade their props as 0 (under wins), so add zero rows. Inactive / 0-snap players stay absent -> void.
+INSERT INTO player_game_stats
+SELECT sc.game_id, pl.gsis_id, pl.display_name, norm_name(pl.display_name), sc.position, sc.team,
+       CASE WHEN sc.team = g.home_team THEN g.away_team ELSE g.home_team END,
+       0, 0, 0, 0, 0,  0, 0, 0,  0, 0, 0, 0,  0, 0, 0, 0, 0, 0, 0,  0
+FROM snap_counts sc JOIN players pl ON pl.pfr_id = sc.pfr_player_id JOIN games g ON g.game_id = sc.game_id
+WHERE sc.season >= 2023 AND sc.offense_snaps > 0
+  AND NOT EXISTS (SELECT 1 FROM player_game_stats s WHERE s.game_id = sc.game_id AND s.player_id = pl.gsis_id);
+
 -- Longest plays come from play-by-play.
 CREATE OR REPLACE TABLE player_game_longest AS
 SELECT game_id, player_id, max(longest_rec) AS longest_rec, max(longest_rush) AS longest_rush, max(longest_comp) AS longest_comp

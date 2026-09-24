@@ -54,8 +54,7 @@ nw = nw.rename(columns={"pos_rank": "fine_rank"})
 # ------------------------------------------------------------------ combine + change features
 dc = pd.concat([old[["game_id", "team", "player_id", "pos", "tier"]], nw[["game_id", "team", "player_id", "pos", "tier", "fine_rank", "snap_dt"]]])
 dc = dc.sort_values("tier").drop_duplicates(["game_id", "player_id"])
-base = con.execute("""SELECT s.player_id, s.game_id, s.team, s.position AS pos FROM stats_player_week s
-                      WHERE s.season >= 2021 AND s.position IN ('WR', 'TE', 'RB')""").df()
+base = pd.read_parquet(ROOT / "data/player_games.parquet", columns=["player_id", "game_id", "team", "position"]).rename(columns={"position": "pos"})
 base = base.merge(tg[["game_id", "team", "prev_game_id"]], on=["game_id", "team"], how="left")
 F = base.merge(dc[["game_id", "player_id", "tier", "fine_rank"]], on=["game_id", "player_id"], how="left")
 charted_games = set(dc.game_id)

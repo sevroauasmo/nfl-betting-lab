@@ -29,11 +29,11 @@
    "t": -2.53
   },
   "2025-26 point-in-time | backup (tier 2)": {
-   "n": 503,
-   "over": 0.495,
+   "n": 504,
+   "over": 0.496,
    "fair": 0.5007,
-   "resid": -0.0057,
-   "t": -0.26
+   "resid": -0.0047,
+   "t": -0.21
   },
   "2025-26 point-in-time | not on chart / deep": {
    "n": 41,
@@ -64,11 +64,11 @@
    "t": 0.21
   },
   "2023-24 weekly | promoted (tier up)": {
-   "n": 229,
-   "over": 0.4279,
+   "n": 230,
+   "over": 0.4304,
    "fair": 0.499,
-   "resid": -0.0711,
-   "t": -2.16
+   "resid": -0.0686,
+   "t": -2.09
   },
   "2023-24 weekly | demoted (tier down)": {
    "n": 66,
@@ -78,18 +78,18 @@
    "t": 1.28
   },
   "2023-24 weekly | starter slot opened at position": {
-   "n": 504,
-   "over": 0.4841,
-   "fair": 0.5002,
-   "resid": -0.0161,
-   "t": -0.72
+   "n": 505,
+   "over": 0.4851,
+   "fair": 0.5003,
+   "resid": -0.0151,
+   "t": -0.68
   },
   "2023-24 weekly | starter (tier 1)": {
    "n": 3086,
-   "over": 0.4984,
+   "over": 0.4987,
    "fair": 0.5008,
-   "resid": -0.0024,
-   "t": -0.26
+   "resid": -0.0021,
+   "t": -0.23
   },
   "2023-24 weekly | backup (tier 2)": {
    "n": 1058,
@@ -99,10 +99,10 @@
    "t": 0.84
   },
   "2023-24 weekly | not on chart / deep": {
-   "n": 364,
-   "over": 0.5275,
-   "fair": 0.5,
-   "resid": 0.0275,
+   "n": 366,
+   "over": 0.5273,
+   "fair": 0.4999,
+   "resid": 0.0274,
    "t": 1.05
   }
  },
@@ -164,11 +164,11 @@
    "t": -1.48
   },
   "2023-24 weekly | starter slot opened at position": {
-   "n": 107,
-   "over": 0.4299,
+   "n": 106,
+   "over": 0.434,
    "fair": 0.4993,
-   "resid": -0.0694,
-   "t": -1.44
+   "resid": -0.0653,
+   "t": -1.35
   },
   "2023-24 weekly | starter (tier 1)": {
    "n": 903,
@@ -178,11 +178,11 @@
    "t": -0.75
   },
   "2023-24 weekly | backup (tier 2)": {
-   "n": 589,
-   "over": 0.455,
+   "n": 588,
+   "over": 0.4558,
    "fair": 0.5002,
-   "resid": -0.0452,
-   "t": -2.2
+   "resid": -0.0444,
+   "t": -2.16
   },
   "2023-24 weekly | not on chart / deep": {
    "n": 224,

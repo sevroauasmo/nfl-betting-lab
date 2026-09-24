@@ -40,6 +40,14 @@ B = con.execute("""
            s.receiving_air_yards, s.receiving_yards_after_catch, s.receiving_epa, s.rushing_epa, s.receiving_first_downs, s.rushing_first_downs
     FROM stats_player_week s
     WHERE s.season >= 2021 AND s.season_type IN ('REG', 'POST') AND s.position IN ('WR', 'TE', 'RB')
+    UNION ALL
+    -- active players who took offensive snaps but recorded no stats: real zero-yard games (props grade them as 0)
+    SELECT pl.gsis_id, pl.display_name, sc.position, sc.season, sc.week, sc.game_id, sc.team,
+           CASE WHEN sc.team = g.home_team THEN g.away_team ELSE g.home_team END,
+           0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0
+    FROM snap_counts sc JOIN players pl ON pl.pfr_id = sc.pfr_player_id JOIN games g ON g.game_id = sc.game_id
+    WHERE sc.season >= 2021 AND sc.offense_snaps > 0 AND sc.position IN ('WR', 'TE', 'RB') AND sc.game_type IN ('REG', 'WC', 'DIV', 'CON', 'SB')
+      AND NOT EXISTS (SELECT 1 FROM stats_player_week s WHERE s.game_id = sc.game_id AND s.player_id = pl.gsis_id)
 """).df()
 B["t"] = T(B)
 B = B.sort_values(["player_id", "t"]).reset_index(drop=True)

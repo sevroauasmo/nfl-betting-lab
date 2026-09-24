@@ -47,6 +47,8 @@ ALT_MARKETS = [m + "_alternate" for m in (
     "player_reception_tds", "player_rush_reception_yds", "player_pass_rush_yds", "player_field_goals", "player_kicking_points",
     "player_sacks", "player_tackles_assists")]
 LINE_MARKETS = ["h2h", "spreads", "totals"]
+NEWS_MARKETS = ["player_reception_yds", "player_receptions", "player_rush_yds", "player_rush_attempts", "player_pass_yds",
+                "player_pass_attempts", "h2h", "spreads", "totals"]
 PERIOD_MARKETS = [f"{m}_{p}" for p in ("q1", "q2", "q3", "q4", "h1", "h2")
                   for m in ("h2h", "spreads", "totals", "team_totals", "alternate_spreads", "alternate_totals")]
 
@@ -56,6 +58,10 @@ PASSES = {
     "close_alt":  dict(offset=timedelta(minutes=10), regions="us",           markets=ALT_MARKETS, start=PROPS_START),
     "day_before": dict(offset=timedelta(hours=24),   regions="us,us_ex",     markets=PROP_MARKETS + LINE_MARKETS, start=PROPS_START),
     "open":       dict(offset=timedelta(hours=96),   regions="us,us_ex",     markets=PROP_MARKETS + LINE_MARKETS, start=PROPS_START),
+    # around the 90-minute inactives announcement: before, just after, and later (close = T-10m already pulled)
+    "news_t120": dict(offset=timedelta(minutes=120), regions="us,us_ex", markets=NEWS_MARKETS, start=PROPS_START),
+    "news_t80":  dict(offset=timedelta(minutes=80),  regions="us,us_ex", markets=NEWS_MARKETS, start=PROPS_START),
+    "news_t45":  dict(offset=timedelta(minutes=45),  regions="us,us_ex", markets=NEWS_MARKETS, start=PROPS_START),
     "periods_close": dict(offset=timedelta(minutes=10), regions="us,us_ex", markets=PERIOD_MARKETS, start=PROPS_START),
     "periods_open":  dict(offset=timedelta(hours=96),   regions="us,us_ex", markets=PERIOD_MARKETS, start=PROPS_START),
     "lines_close": dict(offset=timedelta(minutes=10), regions="us,eu",       markets=LINE_MARKETS, start=LINES_START, end=PROPS_START),
