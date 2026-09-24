@@ -1,0 +1,65 @@
+{
+ "spreads_h1: home fast-start minus away fast-start": {
+  "n": 770,
+  "top_minus_bottom_quartile": 0.0854,
+  "z": 1.69,
+  "corr": 0.0587,
+  "top_q_a_rate_vs_fair": [
+   0.5803,
+   0.5012
+  ]
+ },
+ "spreads_h1: home 1H margin form minus away": {
+  "n": 770,
+  "top_minus_bottom_quartile": 0.0494,
+  "z": 0.97,
+  "corr": 0.0441,
+  "top_q_a_rate_vs_fair": [
+   0.5619,
+   0.5028
+  ]
+ },
+ "spreads_h2: home 2H margin form minus away (halftime adjusters)": {
+  "n": 710,
+  "top_minus_bottom_quartile": 0.0183,
+  "z": 0.35,
+  "corr": 0.0239,
+  "top_q_a_rate_vs_fair": [
+   0.5196,
+   0.4998
+  ]
+ },
+ "spreads_h2: home fast-start minus away (fade in 2H?)": {
+  "n": 710,
+  "top_minus_bottom_quartile": 0.0272,
+  "z": 0.52,
+  "corr": -0.0037,
+  "top_q_a_rate_vs_fair": [
+   0.5082,
+   0.4964
+  ]
+ },
+ "totals_h1: avg 1H share of scoring, both teams": {
+  "n": 747,
+  "top_minus_bottom_quartile": -0.0122,
+  "z": -0.24,
+  "corr": -0.0054,
+  "top_q_a_rate_vs_fair": [
+   0.5294,
+   0.4992
+  ]
+ },
+ "totals_h2: avg 1H share of scoring, both teams": {
+  "n": 632,
+  "top_minus_bottom_quartile": 0.0266,
+  "z": 0.47,
+  "corr": 0.0103,
+  "top_q_a_rate_vs_fair": [
+   0.5127,
+   0.4972
+  ]
+ },
+ "book_1H_total_as_share_of_full_total": 0.4961,
+ "actual_1H_share_of_points_2023_26": 0.5021,
+ "book_1H_spread_as_share_of_full_spread": -0.5556
+}

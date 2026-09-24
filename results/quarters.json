@@ -1,0 +1,1238 @@
+{
+ "scoring_share_2011_25": {
+  "q1": 0.1964,
+  "q2": 0.3057,
+  "q3": 0.2091,
+  "q4": 0.2888,
+  "h1": 0.5021,
+  "h2": 0.4979
+ },
+ "line_coverage": [
+  {
+   "pass": "periods_close",
+   "period": "h1",
+   "spreads": 781,
+   "totals": 766
+  },
+  {
+   "pass": "periods_close",
+   "period": "h2",
+   "spreads": 710,
+   "totals": 632
+  },
+  {
+   "pass": "periods_close",
+   "period": "q1",
+   "spreads": 831,
+   "totals": 813
+  },
+  {
+   "pass": "periods_close",
+   "period": "q2",
+   "spreads": 794,
+   "totals": 801
+  },
+  {
+   "pass": "periods_close",
+   "period": "q3",
+   "spreads": 780,
+   "totals": 836
+  },
+  {
+   "pass": "periods_close",
+   "period": "q4",
+   "spreads": 588,
+   "totals": 739
+  },
+  {
+   "pass": "periods_open",
+   "period": "h1",
+   "spreads": 751,
+   "totals": 749
+  },
+  {
+   "pass": "periods_open",
+   "period": "h2",
+   "spreads": 724,
+   "totals": 668
+  },
+  {
+   "pass": "periods_open",
+   "period": "q1",
+   "spreads": 736,
+   "totals": 759
+  },
+  {
+   "pass": "periods_open",
+   "period": "q2",
+   "spreads": 484,
+   "totals": 619
+  },
+  {
+   "pass": "periods_open",
+   "period": "q3",
+   "spreads": 431,
+   "totals": 714
+  },
+  {
+   "pass": "periods_open",
+   "period": "q4",
+   "spreads": 359,
+   "totals": 641
+  }
+ ],
+ "bias": [
+  {
+   "pass": "periods_close",
+   "market": "spreads_h1",
+   "n": 770,
+   "a_rate": 0.5117,
+   "fair_a": 0.5016,
+   "roi_a_best": -0.0079,
+   "roi_b_best": -0.0452,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.4915,
+    "2024": 0.5128,
+    "2025": 0.5294,
+    "2026": 0.5
+   }
+  },
+  {
+   "pass": "periods_close",
+   "market": "spreads_h2",
+   "n": 710,
+   "a_rate": 0.5113,
+   "fair_a": 0.4993,
+   "roi_a_best": -0.0101,
+   "roi_b_best": -0.0559,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.5281,
+    "2024": 0.5042,
+    "2025": 0.5169,
+    "2026": 0.4062
+   }
+  },
+  {
+   "pass": "periods_close",
+   "market": "spreads_q1",
+   "n": 828,
+   "a_rate": 0.4758,
+   "fair_a": 0.5025,
+   "roi_a_best": -0.0761,
+   "roi_b_best": 0.0297,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.4924,
+    "2024": 0.4569,
+    "2025": 0.4813,
+    "2026": 0.4483
+   }
+  },
+  {
+   "pass": "periods_close",
+   "market": "spreads_q2",
+   "n": 794,
+   "a_rate": 0.505,
+   "fair_a": 0.5003,
+   "roi_a_best": -0.0303,
+   "roi_b_best": -0.049,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.5281,
+    "2024": 0.5057,
+    "2025": 0.5,
+    "2026": 0.375
+   }
+  },
+  {
+   "pass": "periods_close",
+   "market": "spreads_q3",
+   "n": 780,
+   "a_rate": 0.4731,
+   "fair_a": 0.4976,
+   "roi_a_best": -0.0854,
+   "roi_b_best": 0.0065,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.4667,
+    "2024": 0.4961,
+    "2025": 0.4569,
+    "2026": 0.4667
+   }
+  },
+  {
+   "pass": "periods_close",
+   "market": "spreads_q4",
+   "n": 588,
+   "a_rate": 0.517,
+   "fair_a": 0.4976,
+   "roi_a_best": -0.001,
+   "roi_b_best": -0.0759,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.5022,
+    "2024": 0.5097,
+    "2025": 0.6154,
+    "2026": 0.1111
+   }
+  },
+  {
+   "pass": "periods_close",
+   "market": "totals_h1",
+   "n": 747,
+   "a_rate": 0.5114,
+   "fair_a": 0.4991,
+   "roi_a_best": -0.0075,
+   "roi_b_best": -0.0529,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.5446,
+    "2024": 0.5223,
+    "2025": 0.4815,
+    "2026": 0.4483
+   }
+  },
+  {
+   "pass": "periods_close",
+   "market": "totals_h2",
+   "n": 632,
+   "a_rate": 0.4953,
+   "fair_a": 0.4993,
+   "roi_a_best": -0.0411,
+   "roi_b_best": -0.0235,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.4434,
+    "2024": 0.5081,
+    "2025": 0.5423,
+    "2026": 0.5312
+   }
+  },
+  {
+   "pass": "periods_close",
+   "market": "totals_q1",
+   "n": 791,
+   "a_rate": 0.4741,
+   "fair_a": 0.4943,
+   "roi_a_best": -0.0621,
+   "roi_b_best": 0.0124,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.4874,
+    "2024": 0.4713,
+    "2025": 0.4656,
+    "2026": 0.4667
+   }
+  },
+  {
+   "pass": "periods_close",
+   "market": "totals_q2",
+   "n": 801,
+   "a_rate": 0.5131,
+   "fair_a": 0.4981,
+   "roi_a_best": -0.0047,
+   "roi_b_best": -0.0601,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.5319,
+    "2024": 0.5303,
+    "2025": 0.4834,
+    "2026": 0.4839
+   }
+  },
+  {
+   "pass": "periods_close",
+   "market": "totals_q3",
+   "n": 836,
+   "a_rate": 0.5179,
+   "fair_a": 0.4988,
+   "roi_a_best": 0.0065,
+   "roi_b_best": -0.0705,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.5,
+    "2024": 0.5257,
+    "2025": 0.5146,
+    "2026": 0.625
+   }
+  },
+  {
+   "pass": "periods_close",
+   "market": "totals_q4",
+   "n": 739,
+   "a_rate": 0.4966,
+   "fair_a": 0.4968,
+   "roi_a_best": -0.0353,
+   "roi_b_best": -0.0367,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.4453,
+    "2024": 0.5074,
+    "2025": 0.5561,
+    "2026": 0.4167
+   }
+  },
+  {
+   "pass": "periods_open",
+   "market": "spreads_h1",
+   "n": 746,
+   "a_rate": 0.5214,
+   "fair_a": 0.4964,
+   "roi_a_best": 0.0133,
+   "roi_b_best": -0.0805,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.4874,
+    "2024": 0.5216,
+    "2025": 0.561,
+    "2026": 0.4667
+   }
+  },
+  {
+   "pass": "periods_open",
+   "market": "spreads_h2",
+   "n": 724,
+   "a_rate": 0.4986,
+   "fair_a": 0.4996,
+   "roi_a_best": -0.0393,
+   "roi_b_best": -0.0351,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.4937,
+    "2024": 0.5085,
+    "2025": 0.5045,
+    "2026": 0.4194
+   }
+  },
+  {
+   "pass": "periods_open",
+   "market": "spreads_q1",
+   "n": 735,
+   "a_rate": 0.4748,
+   "fair_a": 0.5007,
+   "roi_a_best": -0.0828,
+   "roi_b_best": 0.0191,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.4667,
+    "2024": 0.4667,
+    "2025": 0.4839,
+    "2026": 0.5455
+   }
+  },
+  {
+   "pass": "periods_open",
+   "market": "spreads_q2",
+   "n": 484,
+   "a_rate": 0.5269,
+   "fair_a": 0.5018,
+   "roi_a_best": 0.0071,
+   "roi_b_best": -0.0903,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.5698,
+    "2024": 0.495,
+    "2025": 0.5217,
+    "2026": 0.35
+   }
+  },
+  {
+   "pass": "periods_open",
+   "market": "spreads_q3",
+   "n": 430,
+   "a_rate": 0.4721,
+   "fair_a": 0.5025,
+   "roi_a_best": -0.1014,
+   "roi_b_best": 0.0167,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.4908,
+    "2024": 0.5361,
+    "2025": 0.4026,
+    "2026": 0.5625
+   }
+  },
+  {
+   "pass": "periods_open",
+   "market": "spreads_q4",
+   "n": 359,
+   "a_rate": 0.493,
+   "fair_a": 0.4999,
+   "roi_a_best": -0.0463,
+   "roi_b_best": -0.022,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.4848,
+    "2024": 0.4587,
+    "2025": 0.5897,
+    "2026": 0.1429
+   }
+  },
+  {
+   "pass": "periods_open",
+   "market": "totals_h1",
+   "n": 734,
+   "a_rate": 0.515,
+   "fair_a": 0.5035,
+   "roi_a_best": -0.0113,
+   "roi_b_best": -0.0564,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.5391,
+    "2024": 0.5351,
+    "2025": 0.49,
+    "2026": 0.3704
+   }
+  },
+  {
+   "pass": "periods_open",
+   "market": "totals_h2",
+   "n": 668,
+   "a_rate": 0.488,
+   "fair_a": 0.4999,
+   "roi_a_best": -0.06,
+   "roi_b_best": -0.0141,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.4208,
+    "2024": 0.5157,
+    "2025": 0.5402,
+    "2026": 0.5161
+   }
+  },
+  {
+   "pass": "periods_open",
+   "market": "totals_q1",
+   "n": 751,
+   "a_rate": 0.494,
+   "fair_a": 0.4969,
+   "roi_a_best": -0.0323,
+   "roi_b_best": -0.0236,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.5063,
+    "2024": 0.4764,
+    "2025": 0.502,
+    "2026": 0.4643
+   }
+  },
+  {
+   "pass": "periods_open",
+   "market": "totals_q2",
+   "n": 619,
+   "a_rate": 0.5024,
+   "fair_a": 0.4971,
+   "roi_a_best": -0.023,
+   "roi_b_best": -0.0432,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.5399,
+    "2024": 0.525,
+    "2025": 0.4595,
+    "2026": 0.4167
+   }
+  },
+  {
+   "pass": "periods_open",
+   "market": "totals_q3",
+   "n": 714,
+   "a_rate": 0.5168,
+   "fair_a": 0.4998,
+   "roi_a_best": -0.0037,
+   "roi_b_best": -0.0736,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.5021,
+    "2024": 0.5283,
+    "2025": 0.5128,
+    "2026": 0.5926
+   }
+  },
+  {
+   "pass": "periods_open",
+   "market": "totals_q4",
+   "n": 641,
+   "a_rate": 0.4883,
+   "fair_a": 0.4978,
+   "roi_a_best": -0.0548,
+   "roi_b_best": -0.0175,
+   "push_rate": 0.0,
+   "by_season_a_rate": {
+    "2023": 0.4521,
+    "2024": 0.4877,
+    "2025": 0.5469,
+    "2026": 0.3704
+   }
+  }
+ ],
+ "model_vs_market_brier": {
+  "spreads_h1": {
+   "n": 770,
+   "brier_market": 0.25036,
+   "brier_model": 0.25189
+  },
+  "spreads_h2": {
+   "n": 710,
+   "brier_market": 0.24853,
+   "brier_model": 0.25074
+  },
+  "spreads_q1": {
+   "n": 828,
+   "brier_market": 0.24923,
+   "brier_model": 0.25263
+  },
+  "spreads_q2": {
+   "n": 794,
+   "brier_market": 0.24976,
+   "brier_model": 0.25266
+  },
+  "spreads_q3": {
+   "n": 780,
+   "brier_market": 0.24836,
+   "brier_model": 0.25076
+  },
+  "spreads_q4": {
+   "n": 588,
+   "brier_market": 0.24818,
+   "brier_model": 0.24971
+  },
+  "totals_h1": {
+   "n": 747,
+   "brier_market": 0.24937,
+   "brier_model": 0.2537
+  },
+  "totals_h2": {
+   "n": 632,
+   "brier_market": 0.2499,
+   "brier_model": 0.25203
+  },
+  "totals_q1": {
+   "n": 791,
+   "brier_market": 0.24946,
+   "brier_model": 0.24926
+  },
+  "totals_q2": {
+   "n": 801,
+   "brier_market": 0.24959,
+   "brier_model": 0.25238
+  },
+  "totals_q3": {
+   "n": 836,
+   "brier_market": 0.25007,
+   "brier_model": 0.25238
+  },
+  "totals_q4": {
+   "n": 739,
+   "brier_market": 0.24927,
+   "brier_model": 0.25126
+  }
+ },
+ "model_roi_best_book": {
+  "EV>=0%": {
+   "n": 6147,
+   "roi": -0.0388,
+   "se": 0.0124,
+   "by_season": {
+    "2023": [
+     1948,
+     -0.0299
+    ],
+    "2024": [
+     2094,
+     -0.0328
+    ],
+    "2025": [
+     1896,
+     -0.0563
+    ],
+    "2026": [
+     209,
+     -0.0244
+    ]
+   },
+   "by_market": {
+    "spreads_h1": [
+     523,
+     -0.0248
+    ],
+    "spreads_h2": [
+     525,
+     -0.0598
+    ],
+    "spreads_q1": [
+     600,
+     -0.0458
+    ],
+    "spreads_q2": [
+     466,
+     -0.0393
+    ],
+    "spreads_q3": [
+     490,
+     -0.0649
+    ],
+    "spreads_q4": [
+     415,
+     -0.0393
+    ],
+    "totals_h1": [
+     566,
+     -0.0176
+    ],
+    "totals_h2": [
+     455,
+     -0.0152
+    ],
+    "totals_q1": [
+     541,
+     0.0305
+    ],
+    "totals_q2": [
+     592,
+     -0.0715
+    ],
+    "totals_q3": [
+     489,
+     -0.074
+    ],
+    "totals_q4": [
+     485,
+     -0.0447
+    ]
+   }
+  },
+  "EV>=2%": {
+   "n": 4523,
+   "roi": -0.035,
+   "se": 0.0145,
+   "by_season": {
+    "2023": [
+     1461,
+     -0.0352
+    ],
+    "2024": [
+     1528,
+     -0.016
+    ],
+    "2025": [
+     1389,
+     -0.0508
+    ],
+    "2026": [
+     145,
+     -0.0818
+    ]
+   },
+   "by_market": {
+    "spreads_h1": [
+     380,
+     -0.0249
+    ],
+    "spreads_h2": [
+     420,
+     -0.0455
+    ],
+    "spreads_q1": [
+     434,
+     -0.0643
+    ],
+    "spreads_q2": [
+     346,
+     -0.0463
+    ],
+    "spreads_q3": [
+     364,
+     -0.0468
+    ],
+    "spreads_q4": [
+     302,
+     -0.0032
+    ],
+    "totals_h1": [
+     449,
+     -0.0256
+    ],
+    "totals_h2": [
+     341,
+     0.02
+    ],
+    "totals_q1": [
+     358,
+     0.035
+    ],
+    "totals_q2": [
+     422,
+     -0.0979
+    ],
+    "totals_q3": [
+     329,
+     -0.0821
+    ],
+    "totals_q4": [
+     378,
+     -0.0193
+    ]
+   }
+  },
+  "EV>=4%": {
+   "n": 3101,
+   "roi": -0.032,
+   "se": 0.0176,
+   "by_season": {
+    "2023": [
+     1021,
+     -0.026
+    ],
+    "2024": [
+     1016,
+     -0.0074
+    ],
+    "2025": [
+     974,
+     -0.0584
+    ],
+    "2026": [
+     90,
+     -0.091
+    ]
+   },
+   "by_market": {
+    "spreads_h1": [
+     256,
+     -0.0062
+    ],
+    "spreads_h2": [
+     316,
+     -0.015
+    ],
+    "spreads_q1": [
+     284,
+     -0.072
+    ],
+    "spreads_q2": [
+     241,
+     -0.0946
+    ],
+    "spreads_q3": [
+     260,
+     -0.1165
+    ],
+    "spreads_q4": [
+     172,
+     0.0403
+    ],
+    "totals_h1": [
+     336,
+     -0.0784
+    ],
+    "totals_h2": [
+     260,
+     0.031
+    ],
+    "totals_q1": [
+     212,
+     0.0006
+    ],
+    "totals_q2": [
+     281,
+     -0.0236
+    ],
+    "totals_q3": [
+     200,
+     -0.0317
+    ],
+    "totals_q4": [
+     283,
+     0.0171
+    ]
+   }
+  },
+  "EV>=6%": {
+   "n": 2041,
+   "roi": -0.0442,
+   "se": 0.0218,
+   "by_season": {
+    "2023": [
+     710,
+     -0.031
+    ],
+    "2024": [
+     634,
+     -0.0234
+    ],
+    "2025": [
+     633,
+     -0.0852
+    ],
+    "2026": [
+     64,
+     0.0089
+    ]
+   },
+   "by_market": {
+    "spreads_h1": [
+     176,
+     -0.0065
+    ],
+    "spreads_h2": [
+     203,
+     0.046
+    ],
+    "spreads_q1": [
+     186,
+     -0.0515
+    ],
+    "spreads_q2": [
+     146,
+     -0.1504
+    ],
+    "spreads_q3": [
+     176,
+     -0.1178
+    ],
+    "spreads_q4": [
+     88,
+     0.0513
+    ],
+    "totals_h1": [
+     229,
+     -0.139
+    ],
+    "totals_h2": [
+     191,
+     0.0063
+    ],
+    "totals_q1": [
+     119,
+     -0.0303
+    ],
+    "totals_q2": [
+     186,
+     -0.0502
+    ],
+    "totals_q3": [
+     130,
+     -0.0784
+    ],
+    "totals_q4": [
+     211,
+     0.0148
+    ]
+   }
+  },
+  "EV>=8%": {
+   "n": 1324,
+   "roi": -0.0484,
+   "se": 0.0271,
+   "by_season": {
+    "2023": [
+     496,
+     -0.0373
+    ],
+    "2024": [
+     379,
+     -0.0308
+    ],
+    "2025": [
+     409,
+     -0.0861
+    ],
+    "2026": [
+     40,
+     0.0316
+    ]
+   },
+   "by_market": {
+    "spreads_h1": [
+     123,
+     0.0189
+    ],
+    "spreads_h2": [
+     132,
+     -0.0206
+    ],
+    "spreads_q1": [
+     130,
+     -0.06
+    ],
+    "spreads_q2": [
+     94,
+     -0.1045
+    ],
+    "spreads_q3": [
+     111,
+     -0.1156
+    ],
+    "spreads_q4": [
+     33,
+     -0.0683
+    ],
+    "totals_h1": [
+     153,
+     -0.1838
+    ],
+    "totals_h2": [
+     136,
+     -0.0132
+    ],
+    "totals_q1": [
+     63,
+     -0.0303
+    ],
+    "totals_q2": [
+     119,
+     -0.0564
+    ],
+    "totals_q3": [
+     82,
+     -0.0182
+    ],
+    "totals_q4": [
+     148,
+     0.0611
+    ]
+   }
+  }
+ },
+ "model_roi_exchange": {
+  "EV>=0%": {
+   "n": 93,
+   "roi": -0.0133,
+   "se": 0.1037,
+   "by_season": {
+    "2025": [
+     79,
+     0.0102
+    ],
+    "2026": [
+     14,
+     -0.1463
+    ]
+   },
+   "by_market": {
+    "spreads_h1": [
+     57,
+     -0.0157
+    ],
+    "totals_h1": [
+     36,
+     -0.0096
+    ]
+   }
+  },
+  "EV>=2%": {
+   "n": 66,
+   "roi": 0.0034,
+   "se": 0.1238,
+   "by_season": {
+    "2025": [
+     56,
+     0.0063
+    ],
+    "2026": [
+     10,
+     -0.0129
+    ]
+   },
+   "by_market": {
+    "spreads_h1": [
+     41,
+     0.0379
+    ],
+    "totals_h1": [
+     25,
+     -0.0533
+    ]
+   }
+  },
+  "EV>=4%": {
+   "n": 51,
+   "roi": -0.0933,
+   "se": 0.1404,
+   "by_season": {
+    "2025": [
+     41,
+     -0.1129
+    ],
+    "2026": [
+     10,
+     -0.0129
+    ]
+   },
+   "by_market": {
+    "spreads_h1": [
+     33,
+     -0.0161
+    ],
+    "totals_h1": [
+     18,
+     -0.2348
+    ]
+   }
+  },
+  "EV>=6%": {
+   "n": 35,
+   "roi": -0.0199,
+   "se": 0.1709,
+   "by_season": {
+    "2025": [
+     33,
+     -0.0869
+    ],
+    "2026": [
+     2,
+     1.085
+    ]
+   },
+   "by_market": {
+    "spreads_h1": [
+     26,
+     0.0089
+    ],
+    "totals_h1": [
+     9,
+     -0.1031
+    ]
+   }
+  },
+  "EV>=8%": {
+   "n": 25,
+   "roi": -0.101,
+   "se": 0.2032,
+   "by_season": {
+    "2025": [
+     24,
+     -0.1523
+    ],
+    "2026": [
+     1,
+     1.13
+    ]
+   },
+   "by_market": {
+    "spreads_h1": [
+     22,
+     -0.1679
+    ],
+    "totals_h1": [
+     3,
+     0.39
+    ]
+   }
+  }
+ },
+ "situational": [
+  {
+   "market": "spreads_q3",
+   "situation": "high total (48+)",
+   "n": 149,
+   "resid": -0.1059,
+   "t": -2.66
+  },
+  {
+   "market": "spreads_q3",
+   "situation": "dome",
+   "n": 252,
+   "resid": -0.0799,
+   "t": -2.56
+  },
+  {
+   "market": "totals_q4",
+   "situation": "high total (48+)",
+   "n": 158,
+   "resid": 0.0877,
+   "t": 2.23
+  },
+  {
+   "market": "totals_q1",
+   "situation": "windy 12+ mph",
+   "n": 96,
+   "resid": -0.1078,
+   "t": -2.17
+  },
+  {
+   "market": "totals_h2",
+   "situation": "pick'em-ish (<=3)",
+   "n": 248,
+   "resid": -0.0679,
+   "t": -2.15
+  },
+  {
+   "market": "totals_q1",
+   "situation": "high total (48+)",
+   "n": 151,
+   "resid": -0.0853,
+   "t": -2.11
+  },
+  {
+   "market": "totals_h1",
+   "situation": "big spread (7.5+)",
+   "n": 153,
+   "resid": 0.0759,
+   "t": 1.9
+  },
+  {
+   "market": "totals_q3",
+   "situation": "dome",
+   "n": 273,
+   "resid": 0.0556,
+   "t": 1.84
+  },
+  {
+   "market": "spreads_h2",
+   "situation": "windy 12+ mph",
+   "n": 82,
+   "resid": 0.0993,
+   "t": 1.83
+  },
+  {
+   "market": "spreads_q4",
+   "situation": "windy 12+ mph",
+   "n": 80,
+   "resid": 0.088,
+   "t": 1.6
+  },
+  {
+   "market": "totals_q2",
+   "situation": "high total (48+)",
+   "n": 152,
+   "resid": 0.0624,
+   "t": 1.55
+  },
+  {
+   "market": "spreads_q4",
+   "situation": "big spread (7.5+)",
+   "n": 142,
+   "resid": 0.0632,
+   "t": 1.51
+  },
+  {
+   "market": "totals_h2",
+   "situation": "windy 12+ mph",
+   "n": 77,
+   "resid": -0.0852,
+   "t": -1.51
+  },
+  {
+   "market": "spreads_q2",
+   "situation": "low total (<=41)",
+   "n": 179,
+   "resid": 0.0543,
+   "t": 1.47
+  },
+  {
+   "market": "totals_h1",
+   "situation": "windy 12+ mph",
+   "n": 92,
+   "resid": -0.0733,
+   "t": -1.42
+  },
+  {
+   "market": "spreads_q2",
+   "situation": "high total (48+)",
+   "n": 151,
+   "resid": -0.0568,
+   "t": -1.4
+  },
+  {
+   "market": "totals_q3",
+   "situation": "low total (<=41)",
+   "n": 186,
+   "resid": 0.0512,
+   "t": 1.39
+  },
+  {
+   "market": "totals_q2",
+   "situation": "dome",
+   "n": 260,
+   "resid": 0.0403,
+   "t": 1.31
+  },
+  {
+   "market": "totals_h1",
+   "situation": "dome",
+   "n": 241,
+   "resid": 0.0391,
+   "t": 1.22
+  },
+  {
+   "market": "spreads_h1",
+   "situation": "dome",
+   "n": 242,
+   "resid": 0.0385,
+   "t": 1.2
+  },
+  {
+   "market": "spreads_h2",
+   "situation": "high total (48+)",
+   "n": 143,
+   "resid": -0.0499,
+   "t": -1.2
+  },
+  {
+   "market": "spreads_q2",
+   "situation": "big spread (7.5+)",
+   "n": 159,
+   "resid": -0.0457,
+   "t": -1.15
+  },
+  {
+   "market": "spreads_q2",
+   "situation": "dome",
+   "n": 256,
+   "resid": 0.035,
+   "t": 1.12
+  },
+  {
+   "market": "totals_q2",
+   "situation": "big spread (7.5+)",
+   "n": 162,
+   "resid": 0.0437,
+   "t": 1.12
+  },
+  {
+   "market": "spreads_h2",
+   "situation": "low total (<=41)",
+   "n": 161,
+   "resid": 0.0413,
+   "t": 1.05
+  },
+  {
+   "market": "totals_q1",
+   "situation": "low total (<=41)",
+   "n": 150,
+   "resid": 0.0392,
+   "t": 0.97
+  },
+  {
+   "market": "spreads_h2",
+   "situation": "dome",
+   "n": 233,
+   "resid": -0.0313,
+   "t": -0.96
+  },
+  {
+   "market": "totals_q3",
+   "situation": "high total (48+)",
+   "n": 163,
+   "resid": 0.0361,
+   "t": 0.92
+  },
+  {
+   "market": "totals_q3",
+   "situation": "pick'em-ish (<=3)",
+   "n": 335,
+   "resid": -0.0248,
+   "t": -0.9
+  },
+  {
+   "market": "spreads_q3",
+   "situation": "pick'em-ish (<=3)",
+   "n": 304,
+   "resid": -0.0256,
+   "t": -0.89
+  }
+ ]
+}
