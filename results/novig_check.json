@@ -1,0 +1,105 @@
+{
+ "strategy_at_novig": {
+  "2024": {
+   "qualifying_props": 666,
+   "novig_same_line": 54,
+   "coverage": 0.081,
+   "under_win": 0.63,
+   "median_price": -111,
+   "roi": 0.1855,
+   "se": 0.1279,
+   "team_games": 12
+  },
+  "2025": {
+   "qualifying_props": 568,
+   "novig_same_line": 497,
+   "coverage": 0.875,
+   "under_win": 0.592,
+   "median_price": -112,
+   "roi": 0.1153,
+   "se": 0.0568,
+   "team_games": 70
+  },
+  "2026": {
+   "qualifying_props": 54,
+   "novig_same_line": 5,
+   "coverage": 0.093,
+   "under_win": 0.8,
+   "median_price": -147,
+   "roi": 0.4033,
+   "se": null,
+   "team_games": 1
+  },
+  "2024-26": {
+   "qualifying_props": 1288,
+   "novig_same_line": 556,
+   "coverage": 0.432,
+   "under_win": 0.597,
+   "median_price": -112,
+   "roi": 0.1247,
+   "se": 0.0523,
+   "team_games": 83
+  }
+ },
+ "baseline_all_novig_receiving_unders": [
+  {
+   "season": "2024",
+   "n": 1707,
+   "under_win": 0.5096660808435852,
+   "roi": -0.03850266908311117
+  },
+  {
+   "season": "2025",
+   "n": 12688,
+   "under_win": 0.5348360655737705,
+   "roi": 0.009419877393421922
+  },
+  {
+   "season": "2026",
+   "n": 292,
+   "under_win": 0.5102739726027398,
+   "roi": -0.04028676900815068
+  }
+ ],
+ "novig_td": [
+  {
+   "season": "2025",
+   "market": "player_anytime_td",
+   "n": 5682,
+   "with_no_price": 5060,
+   "scored": 0.16737064413938754,
+   "med_yes": 604.0,
+   "med_no": -652.0,
+   "roi_no": -0.007958651413771695,
+   "roi_yes": -0.1727642888040602
+  },
+  {
+   "season": "2026",
+   "market": "player_anytime_td",
+   "n": 352,
+   "with_no_price": 276,
+   "scored": 0.16193181818181818,
+   "med_yes": 627.5,
+   "med_no": -590.0,
+   "roi_no": -0.022974584336021172,
+   "roi_yes": -0.15405364955485668
+  }
+ ],
+ "novig_coverage": [
+  {
+   "season": "2024",
+   "games": 76,
+   "markets": 6
+  },
+  {
+   "season": "2025",
+   "games": 279,
+   "markets": 18
+  },
+  {
+   "season": "2026",
+   "games": 17,
+   "markets": 18
+  }
+ ]
+}

@@ -11,6 +11,7 @@ grade     (after the game, once nflverse has published game-day rosters): identi
               kalshi_rest_mid   - rest a NO bid at the mid; filled from the real trade tape behind the queue
               book_best         - under at the best US sportsbook price at the consensus line
               exchange_best     - under at the best Novig/ProphetX price at that line
+              novig             - under at Novig's price at that line (primary execution venue)
           Kalshi bets settle on Kalshi's result; book/exchange bets on nflverse stats (active + snaps + no stats = 0; else void).
 summarize -> paper/TARGETS_FREED.md
 """
@@ -221,7 +222,8 @@ def grade_game(snap, rows):
             L = pts[len(pts) // 2]; cons[(pn, stat)] = L
             actual = float(game_stats.loc[gid, stat]) if gid in game_stats.index else (0.0 if gid in played else None)   # None -> void
             for venue, pool in (("book_best", [q for q in books if q[1] == "Under" and q[2] == L]),
-                                ("exchange_best", [q for q in qs if q[0] in EXCH and q[1] == "Under" and q[2] == L])):
+                                ("exchange_best", [q for q in qs if q[0] in EXCH and q[1] == "Under" and q[2] == L]),
+                                ("novig", [q for q in qs if q[0] == "novig" and q[1] == "Under" and q[2] == L])):   # primary venue
                 if not pool or actual is None:
                     continue
                 bk, _, _, price = max(pool, key=lambda q: q[3])
