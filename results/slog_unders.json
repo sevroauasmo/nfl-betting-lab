@@ -1,0 +1,1869 @@
+{
+ "n_bets": 12919,
+ "n_games": 869,
+ "baseline_prices": [
+  {
+   "label": "all games, pnl_110",
+   "games": 869,
+   "bets": 12919,
+   "under_pct": 0.5202,
+   "roi": -0.007,
+   "ci90": [
+    -0.022,
+    0.008
+   ],
+   "p_roi_le_0": 0.7855,
+   "game_win_pct": 0.5178,
+   "units_per_game": -0.103
+  },
+  {
+   "label": "all games, pnl_med",
+   "games": 869,
+   "bets": 12919,
+   "under_pct": 0.5202,
+   "roi": -0.0272,
+   "ci90": [
+    -0.0422,
+    -0.0133
+   ],
+   "p_roi_le_0": 0.9995,
+   "game_win_pct": 0.4649,
+   "units_per_game": -0.405
+  },
+  {
+   "label": "all games, pnl_best",
+   "games": 869,
+   "bets": 12919,
+   "under_pct": 0.5202,
+   "roi": -0.0033,
+   "ci90": [
+    -0.0184,
+    0.0113
+   ],
+   "p_roi_le_0": 0.652,
+   "game_win_pct": 0.5155,
+   "units_per_game": -0.048
+  },
+  {
+   "label": "all games, pnl_exch",
+   "games": 382,
+   "bets": 3908,
+   "under_pct": 0.5312,
+   "roi": 0.0174,
+   "ci90": [
+    -0.0107,
+    0.0435
+   ],
+   "p_roi_le_0": 0.1405,
+   "game_win_pct": 0.5079,
+   "units_per_game": 0.178
+  }
+ ],
+ "baseline_by_season": [
+  {
+   "label": "2023",
+   "games": 274,
+   "bets": 3986,
+   "under_pct": 0.5063,
+   "roi": -0.0553,
+   "ci90": [
+    -0.0827,
+    -0.0287
+   ],
+   "p_roi_le_0": 1.0,
+   "game_win_pct": 0.427,
+   "units_per_game": -0.804
+  },
+  {
+   "label": "2024",
+   "games": 281,
+   "bets": 4170,
+   "under_pct": 0.5197,
+   "roi": -0.0281,
+   "ci90": [
+    -0.0519,
+    -0.0028
+   ],
+   "p_roi_le_0": 0.9695,
+   "game_win_pct": 0.4591,
+   "units_per_game": -0.417
+  },
+  {
+   "label": "2025",
+   "games": 282,
+   "bets": 4290,
+   "under_pct": 0.5315,
+   "roi": -0.0044,
+   "ci90": [
+    -0.0301,
+    0.0208
+   ],
+   "p_roi_le_0": 0.6125,
+   "game_win_pct": 0.5,
+   "units_per_game": -0.067
+  },
+  {
+   "label": "2026",
+   "games": 32,
+   "bets": 473,
+   "under_pct": 0.5391,
+   "roi": 0.0094,
+   "ci90": [
+    -0.067,
+    0.0848
+   ],
+   "p_roi_le_0": 0.407,
+   "game_win_pct": 0.5312,
+   "units_per_game": 0.139
+  }
+ ],
+ "baseline_by_pos": [
+  {
+   "label": "QB",
+   "games": 867,
+   "bets": 1739,
+   "under_pct": 0.4957,
+   "roi": -0.0738,
+   "ci90": [
+    -0.1125,
+    -0.0352
+   ],
+   "p_roi_le_0": 0.9985,
+   "game_win_pct": 0.2734,
+   "units_per_game": -0.148
+  },
+  {
+   "label": "RB/FB",
+   "games": 864,
+   "bets": 3037,
+   "under_pct": 0.5311,
+   "roi": -0.0065,
+   "ci90": [
+    -0.0325,
+    0.0195
+   ],
+   "p_roi_le_0": 0.664,
+   "game_win_pct": 0.4074,
+   "units_per_game": -0.023
+  },
+  {
+   "label": "WR",
+   "games": 868,
+   "bets": 5619,
+   "under_pct": 0.5246,
+   "roi": -0.0187,
+   "ci90": [
+    -0.0387,
+    0.0014
+   ],
+   "p_roi_le_0": 0.937,
+   "game_win_pct": 0.4804,
+   "units_per_game": -0.121
+  },
+  {
+   "label": "TE",
+   "games": 864,
+   "bets": 2524,
+   "under_pct": 0.5139,
+   "roi": -0.0392,
+   "ci90": [
+    -0.0697,
+    -0.007
+   ],
+   "p_roi_le_0": 0.974,
+   "game_win_pct": 0.3935,
+   "units_per_game": -0.115
+  }
+ ],
+ "ingredients": [
+  {
+   "label": "total <= 41",
+   "games": 190,
+   "bets": 2670,
+   "under_pct": 0.5075,
+   "roi": -0.0529,
+   "ci90": [
+    -0.0864,
+    -0.022
+   ],
+   "p_roi_le_0": 0.997,
+   "game_win_pct": 0.4211,
+   "units_per_game": -0.744
+  },
+  {
+   "label": "total <= 38.5",
+   "games": 97,
+   "bets": 1314,
+   "under_pct": 0.5183,
+   "roi": -0.0314,
+   "ci90": [
+    -0.0749,
+    0.012
+   ],
+   "p_roi_le_0": 0.876,
+   "game_win_pct": 0.4536,
+   "units_per_game": -0.426
+  },
+  {
+   "label": "total >= 48 (contrast)",
+   "games": 168,
+   "bets": 2584,
+   "under_pct": 0.5174,
+   "roi": -0.0322,
+   "ci90": [
+    -0.0629,
+    -0.0029
+   ],
+   "p_roi_le_0": 0.9645,
+   "game_win_pct": 0.4702,
+   "units_per_game": -0.495
+  },
+  {
+   "label": "TNF",
+   "games": 61,
+   "bets": 991,
+   "under_pct": 0.5197,
+   "roi": -0.0285,
+   "ci90": [
+    -0.0881,
+    0.0307
+   ],
+   "p_roi_le_0": 0.787,
+   "game_win_pct": 0.4426,
+   "units_per_game": -0.463
+  },
+  {
+   "label": "short rest (<=4 days)",
+   "games": 56,
+   "bets": 908,
+   "under_pct": 0.5253,
+   "roi": -0.0183,
+   "ci90": [
+    -0.0789,
+    0.0446
+   ],
+   "p_roi_le_0": 0.693,
+   "game_win_pct": 0.4643,
+   "units_per_game": -0.296
+  },
+  {
+   "label": "bad weather (outdoor, fcst wind>=12 | precip | <=32F)",
+   "games": 125,
+   "bets": 1911,
+   "under_pct": 0.5311,
+   "roi": -0.0063,
+   "ci90": [
+    -0.0454,
+    0.0317
+   ],
+   "p_roi_le_0": 0.6065,
+   "game_win_pct": 0.488,
+   "units_per_game": -0.097
+  },
+  {
+   "label": "both D top-third (EPA allowed)",
+   "games": 286,
+   "bets": 4338,
+   "under_pct": 0.5244,
+   "roi": -0.0203,
+   "ci90": [
+    -0.0455,
+    0.005
+   ],
+   "p_roi_le_0": 0.904,
+   "game_win_pct": 0.4545,
+   "units_per_game": -0.308
+  },
+  {
+   "label": "both O bottom-third",
+   "games": 297,
+   "bets": 4348,
+   "under_pct": 0.5193,
+   "roi": -0.0288,
+   "ci90": [
+    -0.0546,
+    -0.0027
+   ],
+   "p_roi_le_0": 0.966,
+   "game_win_pct": 0.4579,
+   "units_per_game": -0.422
+  },
+  {
+   "label": "divisional",
+   "games": 295,
+   "bets": 4210,
+   "under_pct": 0.5178,
+   "roi": -0.0318,
+   "ci90": [
+    -0.0582,
+    -0.0049
+   ],
+   "p_roi_le_0": 0.9765,
+   "game_win_pct": 0.4475,
+   "units_per_game": -0.453
+  },
+  {
+   "label": "spread <= 3 (close game)",
+   "games": 346,
+   "bets": 5125,
+   "under_pct": 0.5294,
+   "roi": -0.0105,
+   "ci90": [
+    -0.0337,
+    0.0126
+   ],
+   "p_roi_le_0": 0.7875,
+   "game_win_pct": 0.4827,
+   "units_per_game": -0.156
+  }
+ ],
+ "slog_buckets": [
+  {
+   "label": "slog pct 0-20",
+   "games": 163,
+   "bets": 2485,
+   "under_pct": 0.5179,
+   "roi": -0.0315,
+   "ci90": [
+    -0.0645,
+    0.002
+   ],
+   "p_roi_le_0": 0.9405,
+   "game_win_pct": 0.4908,
+   "units_per_game": -0.48
+  },
+  {
+   "label": "slog pct 20-40",
+   "games": 163,
+   "bets": 2435,
+   "under_pct": 0.5097,
+   "roi": -0.047,
+   "ci90": [
+    -0.0769,
+    -0.0165
+   ],
+   "p_roi_le_0": 0.995,
+   "game_win_pct": 0.411,
+   "units_per_game": -0.702
+  },
+  {
+   "label": "slog pct 40-60",
+   "games": 164,
+   "bets": 2453,
+   "under_pct": 0.5243,
+   "roi": -0.0191,
+   "ci90": [
+    -0.0561,
+    0.0164
+   ],
+   "p_roi_le_0": 0.8195,
+   "game_win_pct": 0.5183,
+   "units_per_game": -0.286
+  },
+  {
+   "label": "slog pct 60-80",
+   "games": 164,
+   "bets": 2454,
+   "under_pct": 0.5216,
+   "roi": -0.0244,
+   "ci90": [
+    -0.0588,
+    0.0152
+   ],
+   "p_roi_le_0": 0.846,
+   "game_win_pct": 0.4329,
+   "units_per_game": -0.366
+  },
+  {
+   "label": "slog pct 80-90",
+   "games": 81,
+   "bets": 1169,
+   "under_pct": 0.5158,
+   "roi": -0.0363,
+   "ci90": [
+    -0.0888,
+    0.0138
+   ],
+   "p_roi_le_0": 0.8835,
+   "game_win_pct": 0.4321,
+   "units_per_game": -0.523
+  },
+  {
+   "label": "slog pct 90-100",
+   "games": 85,
+   "bets": 1207,
+   "under_pct": 0.5302,
+   "roi": -0.0117,
+   "ci90": [
+    -0.061,
+    0.0389
+   ],
+   "p_roi_le_0": 0.655,
+   "game_win_pct": 0.5059,
+   "units_per_game": -0.166
+  }
+ ],
+ "strategy": [
+  {
+   "label": "slog top20%, top 6 by line",
+   "games": 166,
+   "bets": 985,
+   "under_pct": 0.5157,
+   "roi": -0.0395,
+   "ci90": [
+    -0.0902,
+    0.0113
+   ],
+   "p_roi_le_0": 0.889,
+   "game_win_pct": 0.4398,
+   "units_per_game": -0.235
+  },
+  {
+   "label": "slog top20%, top 10 by line",
+   "games": 166,
+   "bets": 1612,
+   "under_pct": 0.5236,
+   "roi": -0.0232,
+   "ci90": [
+    -0.0666,
+    0.0175
+   ],
+   "p_roi_le_0": 0.8205,
+   "game_win_pct": 0.4217,
+   "units_per_game": -0.226
+  },
+  {
+   "label": "slog top20%, top 12 by line",
+   "games": 166,
+   "bets": 1917,
+   "under_pct": 0.5284,
+   "roi": -0.0136,
+   "ci90": [
+    -0.0504,
+    0.023
+   ],
+   "p_roi_le_0": 0.729,
+   "game_win_pct": 0.4759,
+   "units_per_game": -0.157
+  },
+  {
+   "label": "slog top20%, top 99 by line",
+   "games": 166,
+   "bets": 2376,
+   "under_pct": 0.5231,
+   "roi": -0.0238,
+   "ci90": [
+    -0.0582,
+    0.0098
+   ],
+   "p_roi_le_0": 0.871,
+   "game_win_pct": 0.4699,
+   "units_per_game": -0.341
+  },
+  {
+   "label": "slog top20%, 2 QB + 3 rush + 7 rec (12 bets)",
+   "games": 166,
+   "bets": 1914,
+   "under_pct": 0.5261,
+   "roi": -0.0182,
+   "ci90": [
+    -0.0575,
+    0.0189
+   ],
+   "p_roi_le_0": 0.7945,
+   "game_win_pct": 0.4759,
+   "units_per_game": -0.21
+  },
+  {
+   "label": "  ...same at pnl_110",
+   "games": 166,
+   "bets": 1914,
+   "under_pct": 0.5261,
+   "roi": 0.0044,
+   "ci90": [
+    -0.0315,
+    0.0412
+   ],
+   "p_roi_le_0": 0.4175,
+   "game_win_pct": 0.4759,
+   "units_per_game": 0.051
+  },
+  {
+   "label": "  ...same at pnl_best",
+   "games": 166,
+   "bets": 1914,
+   "under_pct": 0.5261,
+   "roi": 0.0062,
+   "ci90": [
+    -0.0319,
+    0.0454
+   ],
+   "p_roi_le_0": 0.397,
+   "game_win_pct": 0.4759,
+   "units_per_game": 0.072
+  },
+  {
+   "label": "  ...same at pnl_exch",
+   "games": 72,
+   "bets": 607,
+   "under_pct": 0.5387,
+   "roi": 0.0315,
+   "ci90": [
+    -0.034,
+    0.0969
+   ],
+   "p_roi_le_0": 0.2065,
+   "game_win_pct": 0.4722,
+   "units_per_game": 0.265
+  }
+ ],
+ "holdout": [
+  {
+   "label": "2023-24 slog top20%, 12 bets",
+   "games": 102,
+   "bets": 1179,
+   "under_pct": 0.5089,
+   "roi": -0.0528,
+   "ci90": [
+    -0.0978,
+    -0.0067
+   ],
+   "p_roi_le_0": 0.965,
+   "game_win_pct": 0.4118,
+   "units_per_game": -0.61
+  },
+  {
+   "label": "2025-26 slog top20%, 12 bets",
+   "games": 64,
+   "bets": 735,
+   "under_pct": 0.5537,
+   "roi": 0.0372,
+   "ci90": [
+    -0.0243,
+    0.0955
+   ],
+   "p_roi_le_0": 0.156,
+   "game_win_pct": 0.5781,
+   "units_per_game": 0.427
+  },
+  {
+   "label": "2023-24 other games, 12 bets",
+   "games": 453,
+   "bets": 5352,
+   "under_pct": 0.5107,
+   "roi": -0.0453,
+   "ci90": [
+    -0.0699,
+    -0.0222
+   ],
+   "p_roi_le_0": 0.999,
+   "game_win_pct": 0.4459,
+   "units_per_game": -0.536
+  },
+  {
+   "label": "2025-26 other games, 12 bets",
+   "games": 250,
+   "bets": 2962,
+   "under_pct": 0.526,
+   "roi": -0.0138,
+   "ci90": [
+    -0.0436,
+    0.0171
+   ],
+   "p_roi_le_0": 0.766,
+   "game_win_pct": 0.468,
+   "units_per_game": -0.163
+  }
+ ],
+ "within_total": [
+  {
+   "label": "total <=40.5, slog above bucket median",
+   "games": 80,
+   "bets": 1107,
+   "under_pct": 0.5113,
+   "roi": -0.0469,
+   "ci90": [
+    -0.0943,
+    -0.0005
+   ],
+   "p_roi_le_0": 0.9525,
+   "game_win_pct": 0.4875,
+   "units_per_game": -0.649
+  },
+  {
+   "label": "total <=40.5, slog below",
+   "games": 93,
+   "bets": 1313,
+   "under_pct": 0.5118,
+   "roi": -0.0438,
+   "ci90": [
+    -0.093,
+    0.0045
+   ],
+   "p_roi_le_0": 0.933,
+   "game_win_pct": 0.3763,
+   "units_per_game": -0.619
+  },
+  {
+   "label": "total 41-44.5, slog above bucket median",
+   "games": 149,
+   "bets": 2231,
+   "under_pct": 0.5217,
+   "roi": -0.0243,
+   "ci90": [
+    -0.0622,
+    0.0104
+   ],
+   "p_roi_le_0": 0.88,
+   "game_win_pct": 0.4698,
+   "units_per_game": -0.364
+  },
+  {
+   "label": "total 41-44.5, slog below",
+   "games": 174,
+   "bets": 2595,
+   "under_pct": 0.5306,
+   "roi": -0.0059,
+   "ci90": [
+    -0.0408,
+    0.0299
+   ],
+   "p_roi_le_0": 0.62,
+   "game_win_pct": 0.5057,
+   "units_per_game": -0.088
+  },
+  {
+   "label": "total 45-48.5, slog above bucket median",
+   "games": 121,
+   "bets": 1852,
+   "under_pct": 0.5275,
+   "roi": -0.0138,
+   "ci90": [
+    -0.053,
+    0.0253
+   ],
+   "p_roi_le_0": 0.7365,
+   "game_win_pct": 0.4463,
+   "units_per_game": -0.211
+  },
+  {
+   "label": "total 45-48.5, slog below",
+   "games": 136,
+   "bets": 2026,
+   "under_pct": 0.5153,
+   "roi": -0.0366,
+   "ci90": [
+    -0.0721,
+    -0.0024
+   ],
+   "p_roi_le_0": 0.9615,
+   "game_win_pct": 0.4706,
+   "units_per_game": -0.545
+  },
+  {
+   "label": "total >=49, slog above bucket median",
+   "games": 54,
+   "bets": 827,
+   "under_pct": 0.532,
+   "roi": -0.0036,
+   "ci90": [
+    -0.0536,
+    0.0479
+   ],
+   "p_roi_le_0": 0.564,
+   "game_win_pct": 0.4259,
+   "units_per_game": -0.055
+  },
+  {
+   "label": "total >=49, slog below",
+   "games": 62,
+   "bets": 968,
+   "under_pct": 0.4959,
+   "roi": -0.0726,
+   "ci90": [
+    -0.1205,
+    -0.0225
+   ],
+   "p_roi_le_0": 0.99,
+   "game_win_pct": 0.5,
+   "units_per_game": -1.134
+  }
+ ],
+ "game_total_under_in_slog_games": {
+  "games": 168,
+  "under_pct": 0.5119,
+  "roi_at_110": -0.0227
+ },
+ "strategy_game_pnl": {
+  "mean": -0.21,
+  "sd": 3.402,
+  "worst": -8.25,
+  "best": 7.03,
+  "pct_games_up": 0.476,
+  "corr_with_total_minus_line": -0.405
+ },
+ "strategy_cum": [
+  {
+   "game_id": "2023_03_NE_NYJ",
+   "season": 2023,
+   "week": 3,
+   "p": 2.895,
+   "cum": 2.89
+  },
+  {
+   "game_id": "2023_03_TEN_CLE",
+   "season": 2023,
+   "week": 3,
+   "p": 1.192,
+   "cum": 4.09
+  },
+  {
+   "game_id": "2023_04_BAL_CLE",
+   "season": 2023,
+   "week": 4,
+   "p": 1.093,
+   "cum": 5.18
+  },
+  {
+   "game_id": "2023_05_BAL_PIT",
+   "season": 2023,
+   "week": 5,
+   "p": -4.537,
+   "cum": 0.64
+  },
+  {
+   "game_id": "2023_05_NO_NE",
+   "season": 2023,
+   "week": 5,
+   "p": 2.154,
+   "cum": 2.8
+  },
+  {
+   "game_id": "2023_06_NO_HOU",
+   "season": 2023,
+   "week": 6,
+   "p": -2.684,
+   "cum": 0.11
+  },
+  {
+   "game_id": "2023_06_SF_CLE",
+   "season": 2023,
+   "week": 6,
+   "p": -0.816,
+   "cum": -0.7
+  },
+  {
+   "game_id": "2023_07_JAX_NO",
+   "season": 2023,
+   "week": 7,
+   "p": 2.253,
+   "cum": 1.55
+  },
+  {
+   "game_id": "2023_08_ATL_TEN",
+   "season": 2023,
+   "week": 8,
+   "p": -4.558,
+   "cum": -3.01
+  },
+  {
+   "game_id": "2023_08_CLE_SEA",
+   "season": 2023,
+   "week": 8,
+   "p": -3.48,
+   "cum": -6.49
+  },
+  {
+   "game_id": "2023_08_NYJ_NYG",
+   "season": 2023,
+   "week": 8,
+   "p": 3.023,
+   "cum": -3.46
+  },
+  {
+   "game_id": "2023_09_ARI_CLE",
+   "season": 2023,
+   "week": 9,
+   "p": 5.618,
+   "cum": 2.15
+  },
+  {
+   "game_id": "2023_09_TEN_PIT",
+   "season": 2023,
+   "week": 9,
+   "p": -6.424,
+   "cum": -4.27
+  },
+  {
+   "game_id": "2023_10_CAR_CHI",
+   "season": 2023,
+   "week": 10,
+   "p": 4.749,
+   "cum": 0.48
+  },
+  {
+   "game_id": "2023_10_CLE_BAL",
+   "season": 2023,
+   "week": 10,
+   "p": -8.245,
+   "cum": -7.77
+  },
+  {
+   "game_id": "2023_10_NYG_DAL",
+   "season": 2023,
+   "week": 10,
+   "p": -2.634,
+   "cum": -10.4
+  },
+  {
+   "game_id": "2023_10_NYJ_LV",
+   "season": 2023,
+   "week": 10,
+   "p": -1.057,
+   "cum": -11.46
+  },
+  {
+   "game_id": "2023_11_NYJ_BUF",
+   "season": 2023,
+   "week": 11,
+   "p": 2.883,
+   "cum": -8.58
+  },
+  {
+   "game_id": "2023_11_PIT_CLE",
+   "season": 2023,
+   "week": 11,
+   "p": 2.713,
+   "cum": -5.86
+  },
+  {
+   "game_id": "2023_12_CAR_TEN",
+   "season": 2023,
+   "week": 12,
+   "p": -3.024,
+   "cum": -8.89
+  },
+  {
+   "game_id": "2023_12_CLE_DEN",
+   "season": 2023,
+   "week": 12,
+   "p": -0.885,
+   "cum": -9.77
+  },
+  {
+   "game_id": "2023_12_MIA_NYJ",
+   "season": 2023,
+   "week": 12,
+   "p": -0.822,
+   "cum": -10.59
+  },
+  {
+   "game_id": "2023_12_NE_NYG",
+   "season": 2023,
+   "week": 12,
+   "p": 1.232,
+   "cum": -9.36
+  },
+  {
+   "game_id": "2023_12_PIT_CIN",
+   "season": 2023,
+   "week": 12,
+   "p": -4.551,
+   "cum": -13.91
+  },
+  {
+   "game_id": "2023_13_ATL_NYJ",
+   "season": 2023,
+   "week": 13,
+   "p": 4.822,
+   "cum": -9.09
+  },
+  {
+   "game_id": "2023_13_CAR_TB",
+   "season": 2023,
+   "week": 13,
+   "p": 1.051,
+   "cum": -8.04
+  },
+  {
+   "game_id": "2023_13_CLE_LA",
+   "season": 2023,
+   "week": 13,
+   "p": -2.645,
+   "cum": -10.69
+  },
+  {
+   "game_id": "2023_14_CAR_NO",
+   "season": 2023,
+   "week": 14,
+   "p": -0.752,
+   "cum": -11.44
+  },
+  {
+   "game_id": "2023_14_HOU_NYJ",
+   "season": 2023,
+   "week": 14,
+   "p": 1.088,
+   "cum": -10.35
+  },
+  {
+   "game_id": "2023_14_JAX_CLE",
+   "season": 2023,
+   "week": 14,
+   "p": -6.397,
+   "cum": -16.75
+  },
+  {
+   "game_id": "2023_14_NE_PIT",
+   "season": 2023,
+   "week": 14,
+   "p": -0.888,
+   "cum": -17.63
+  },
+  {
+   "game_id": "2023_15_ATL_CAR",
+   "season": 2023,
+   "week": 15,
+   "p": -2.696,
+   "cum": -20.33
+  },
+  {
+   "game_id": "2023_15_CHI_CLE",
+   "season": 2023,
+   "week": 15,
+   "p": 2.817,
+   "cum": -17.51
+  },
+  {
+   "game_id": "2023_15_LAC_LV",
+   "season": 2023,
+   "week": 15,
+   "p": -4.518,
+   "cum": -22.03
+  },
+  {
+   "game_id": "2023_15_NYG_NO",
+   "season": 2023,
+   "week": 15,
+   "p": -2.647,
+   "cum": -24.68
+  },
+  {
+   "game_id": "2023_15_NYJ_MIA",
+   "season": 2023,
+   "week": 15,
+   "p": 2.822,
+   "cum": -21.86
+  },
+  {
+   "game_id": "2023_16_CLE_HOU",
+   "season": 2023,
+   "week": 16,
+   "p": 4.855,
+   "cum": -17.0
+  },
+  {
+   "game_id": "2023_16_NE_DEN",
+   "season": 2023,
+   "week": 16,
+   "p": -2.716,
+   "cum": -19.72
+  },
+  {
+   "game_id": "2023_16_WAS_NYJ",
+   "season": 2023,
+   "week": 16,
+   "p": -6.391,
+   "cum": -26.11
+  },
+  {
+   "game_id": "2023_17_ATL_CHI",
+   "season": 2023,
+   "week": 17,
+   "p": -0.758,
+   "cum": -26.87
+  },
+  {
+   "game_id": "2023_17_CAR_JAX",
+   "season": 2023,
+   "week": 17,
+   "p": 4.676,
+   "cum": -22.19
+  },
+  {
+   "game_id": "2023_17_NYJ_CLE",
+   "season": 2023,
+   "week": 17,
+   "p": -6.352,
+   "cum": -28.54
+  },
+  {
+   "game_id": "2023_18_CLE_CIN",
+   "season": 2023,
+   "week": 18,
+   "p": 0.411,
+   "cum": -28.13
+  },
+  {
+   "game_id": "2023_18_DEN_LV",
+   "season": 2023,
+   "week": 18,
+   "p": -4.376,
+   "cum": -32.51
+  },
+  {
+   "game_id": "2023_18_NYJ_NE",
+   "season": 2023,
+   "week": 18,
+   "p": 5.009,
+   "cum": -27.5
+  },
+  {
+   "game_id": "2023_18_PIT_BAL",
+   "season": 2023,
+   "week": 18,
+   "p": 2.17,
+   "cum": -25.33
+  },
+  {
+   "game_id": "2023_18_TB_CAR",
+   "season": 2023,
+   "week": 18,
+   "p": -0.703,
+   "cum": -26.03
+  },
+  {
+   "game_id": "2024_01_BAL_KC",
+   "season": 2024,
+   "week": 1,
+   "p": 1.129,
+   "cum": -24.9
+  },
+  {
+   "game_id": "2024_01_CAR_NO",
+   "season": 2024,
+   "week": 1,
+   "p": 1.018,
+   "cum": -23.89
+  },
+  {
+   "game_id": "2024_01_DAL_CLE",
+   "season": 2024,
+   "week": 1,
+   "p": 6.686,
+   "cum": -17.2
+  },
+  {
+   "game_id": "2024_01_NE_CIN",
+   "season": 2024,
+   "week": 1,
+   "p": 6.8,
+   "cum": -10.4
+  },
+  {
+   "game_id": "2024_01_NYJ_SF",
+   "season": 2024,
+   "week": 1,
+   "p": 5.018,
+   "cum": -5.38
+  },
+  {
+   "game_id": "2024_02_CLE_JAX",
+   "season": 2024,
+   "week": 2,
+   "p": -2.761,
+   "cum": -8.14
+  },
+  {
+   "game_id": "2024_02_LAC_CAR",
+   "season": 2024,
+   "week": 2,
+   "p": 2.868,
+   "cum": -5.28
+  },
+  {
+   "game_id": "2024_02_NYJ_TEN",
+   "season": 2024,
+   "week": 2,
+   "p": 4.705,
+   "cum": -0.57
+  },
+  {
+   "game_id": "2024_02_PIT_DEN",
+   "season": 2024,
+   "week": 2,
+   "p": 2.86,
+   "cum": 2.29
+  },
+  {
+   "game_id": "2024_02_SEA_NE",
+   "season": 2024,
+   "week": 2,
+   "p": -0.811,
+   "cum": 1.48
+  },
+  {
+   "game_id": "2024_03_CAR_LV",
+   "season": 2024,
+   "week": 3,
+   "p": 0.986,
+   "cum": 2.46
+  },
+  {
+   "game_id": "2024_03_LAC_PIT",
+   "season": 2024,
+   "week": 3,
+   "p": -2.613,
+   "cum": -0.15
+  },
+  {
+   "game_id": "2024_03_NE_NYJ",
+   "season": 2024,
+   "week": 3,
+   "p": -0.822,
+   "cum": -0.97
+  },
+  {
+   "game_id": "2024_03_NYG_CLE",
+   "season": 2024,
+   "week": 3,
+   "p": -0.766,
+   "cum": -1.74
+  },
+  {
+   "game_id": "2024_04_CLE_LV",
+   "season": 2024,
+   "week": 4,
+   "p": 1.114,
+   "cum": -0.62
+  },
+  {
+   "game_id": "2024_04_DEN_NYJ",
+   "season": 2024,
+   "week": 4,
+   "p": 0.974,
+   "cum": 0.35
+  },
+  {
+   "game_id": "2024_04_LA_CHI",
+   "season": 2024,
+   "week": 4,
+   "p": -0.773,
+   "cum": -0.42
+  },
+  {
+   "game_id": "2024_04_PIT_IND",
+   "season": 2024,
+   "week": 4,
+   "p": -4.5,
+   "cum": -4.92
+  },
+  {
+   "game_id": "2024_04_TEN_MIA",
+   "season": 2024,
+   "week": 4,
+   "p": 3.11,
+   "cum": -1.81
+  },
+  {
+   "game_id": "2024_05_CAR_CHI",
+   "season": 2024,
+   "week": 5,
+   "p": -2.696,
+   "cum": -4.51
+  },
+  {
+   "game_id": "2024_05_LV_DEN",
+   "season": 2024,
+   "week": 5,
+   "p": -0.834,
+   "cum": -5.34
+  },
+  {
+   "game_id": "2024_05_NYJ_MIN",
+   "season": 2024,
+   "week": 5,
+   "p": 1.249,
+   "cum": -4.09
+  },
+  {
+   "game_id": "2024_06_BUF_NYJ",
+   "season": 2024,
+   "week": 6,
+   "p": -2.553,
+   "cum": -6.65
+  },
+  {
+   "game_id": "2024_06_CLE_PHI",
+   "season": 2024,
+   "week": 6,
+   "p": 1.027,
+   "cum": -5.62
+  },
+  {
+   "game_id": "2024_06_HOU_NE",
+   "season": 2024,
+   "week": 6,
+   "p": -0.664,
+   "cum": -6.28
+  },
+  {
+   "game_id": "2024_06_IND_TEN",
+   "season": 2024,
+   "week": 6,
+   "p": 4.661,
+   "cum": -1.62
+  },
+  {
+   "game_id": "2024_06_LAC_DEN",
+   "season": 2024,
+   "week": 6,
+   "p": -0.664,
+   "cum": -2.29
+  },
+  {
+   "game_id": "2024_06_PIT_LV",
+   "season": 2024,
+   "week": 6,
+   "p": -2.725,
+   "cum": -5.01
+  },
+  {
+   "game_id": "2024_07_DEN_NO",
+   "season": 2024,
+   "week": 7,
+   "p": -0.696,
+   "cum": -5.71
+  },
+  {
+   "game_id": "2024_07_NYJ_PIT",
+   "season": 2024,
+   "week": 7,
+   "p": -4.543,
+   "cum": -10.25
+  },
+  {
+   "game_id": "2024_07_TEN_BUF",
+   "season": 2024,
+   "week": 7,
+   "p": -6.372,
+   "cum": -16.62
+  },
+  {
+   "game_id": "2024_08_CAR_DEN",
+   "season": 2024,
+   "week": 8,
+   "p": -2.56,
+   "cum": -19.18
+  },
+  {
+   "game_id": "2024_08_NYG_PIT",
+   "season": 2024,
+   "week": 8,
+   "p": -6.391,
+   "cum": -25.57
+  },
+  {
+   "game_id": "2024_08_NYJ_NE",
+   "season": 2024,
+   "week": 8,
+   "p": 1.337,
+   "cum": -24.24
+  },
+  {
+   "game_id": "2024_09_HOU_NYJ",
+   "season": 2024,
+   "week": 9,
+   "p": 1.057,
+   "cum": -23.18
+  },
+  {
+   "game_id": "2024_09_LAC_CLE",
+   "season": 2024,
+   "week": 9,
+   "p": -2.815,
+   "cum": -26.0
+  },
+  {
+   "game_id": "2024_09_NE_TEN",
+   "season": 2024,
+   "week": 9,
+   "p": -4.493,
+   "cum": -30.49
+  },
+  {
+   "game_id": "2024_10_NE_CHI",
+   "season": 2024,
+   "week": 10,
+   "p": 3.154,
+   "cum": -27.33
+  },
+  {
+   "game_id": "2024_10_TEN_LAC",
+   "season": 2024,
+   "week": 10,
+   "p": 0.965,
+   "cum": -26.37
+  },
+  {
+   "game_id": "2024_11_MIN_TEN",
+   "season": 2024,
+   "week": 11,
+   "p": -4.498,
+   "cum": -30.87
+  },
+  {
+   "game_id": "2024_12_MIN_CHI",
+   "season": 2024,
+   "week": 12,
+   "p": -4.534,
+   "cum": -35.4
+  },
+  {
+   "game_id": "2024_12_PIT_CLE",
+   "season": 2024,
+   "week": 12,
+   "p": -2.606,
+   "cum": -38.01
+  },
+  {
+   "game_id": "2024_12_TEN_HOU",
+   "season": 2024,
+   "week": 12,
+   "p": -5.376,
+   "cum": -43.38
+  },
+  {
+   "game_id": "2024_13_NYG_DAL",
+   "season": 2024,
+   "week": 13,
+   "p": 1.019,
+   "cum": -42.36
+  },
+  {
+   "game_id": "2024_14_NO_NYG",
+   "season": 2024,
+   "week": 14,
+   "p": -4.518,
+   "cum": -46.88
+  },
+  {
+   "game_id": "2024_16_DEN_LAC",
+   "season": 2024,
+   "week": 16,
+   "p": -2.625,
+   "cum": -49.51
+  },
+  {
+   "game_id": "2024_16_HOU_KC",
+   "season": 2024,
+   "week": 16,
+   "p": -0.817,
+   "cum": -50.32
+  },
+  {
+   "game_id": "2024_17_LV_NO",
+   "season": 2024,
+   "week": 17,
+   "p": -2.726,
+   "cum": -53.05
+  },
+  {
+   "game_id": "2024_17_MIA_CLE",
+   "season": 2024,
+   "week": 17,
+   "p": -0.816,
+   "cum": -53.87
+  },
+  {
+   "game_id": "2024_17_TEN_JAX",
+   "season": 2024,
+   "week": 17,
+   "p": -0.841,
+   "cum": -54.71
+  },
+  {
+   "game_id": "2024_18_BUF_NE",
+   "season": 2024,
+   "week": 18,
+   "p": -1.145,
+   "cum": -55.85
+  },
+  {
+   "game_id": "2024_18_HOU_TEN",
+   "season": 2024,
+   "week": 18,
+   "p": -0.236,
+   "cum": -56.09
+  },
+  {
+   "game_id": "2024_18_KC_DEN",
+   "season": 2024,
+   "week": 18,
+   "p": -5.0,
+   "cum": -61.09
+  },
+  {
+   "game_id": "2024_18_NYG_PHI",
+   "season": 2024,
+   "week": 18,
+   "p": 1.41,
+   "cum": -59.68
+  },
+  {
+   "game_id": "2024_20_HOU_KC",
+   "season": 2024,
+   "week": 20,
+   "p": -2.542,
+   "cum": -62.22
+  },
+  {
+   "game_id": "2025_01_LV_NE",
+   "season": 2025,
+   "week": 1,
+   "p": -4.483,
+   "cum": -66.7
+  },
+  {
+   "game_id": "2025_01_PIT_NYJ",
+   "season": 2025,
+   "week": 1,
+   "p": -2.604,
+   "cum": -69.31
+  },
+  {
+   "game_id": "2025_03_GB_CLE",
+   "season": 2025,
+   "week": 3,
+   "p": 7.033,
+   "cum": -62.28
+  },
+  {
+   "game_id": "2025_04_MIN_PIT",
+   "season": 2025,
+   "week": 4,
+   "p": -2.558,
+   "cum": -64.83
+  },
+  {
+   "game_id": "2025_04_TEN_HOU",
+   "season": 2025,
+   "week": 4,
+   "p": 0.985,
+   "cum": -63.85
+  },
+  {
+   "game_id": "2025_05_MIN_CLE",
+   "season": 2025,
+   "week": 5,
+   "p": -6.368,
+   "cum": -70.22
+  },
+  {
+   "game_id": "2025_06_CLE_PIT",
+   "season": 2025,
+   "week": 6,
+   "p": 1.098,
+   "cum": -69.12
+  },
+  {
+   "game_id": "2025_06_PHI_NYG",
+   "season": 2025,
+   "week": 6,
+   "p": -0.766,
+   "cum": -69.88
+  },
+  {
+   "game_id": "2025_06_TEN_LV",
+   "season": 2025,
+   "week": 6,
+   "p": 1.147,
+   "cum": -68.74
+  },
+  {
+   "game_id": "2025_07_CAR_NYJ",
+   "season": 2025,
+   "week": 7,
+   "p": 4.903,
+   "cum": -63.83
+  },
+  {
+   "game_id": "2025_07_HOU_SEA",
+   "season": 2025,
+   "week": 7,
+   "p": 1.144,
+   "cum": -62.69
+  },
+  {
+   "game_id": "2025_07_MIA_CLE",
+   "season": 2025,
+   "week": 7,
+   "p": 6.754,
+   "cum": -55.94
+  },
+  {
+   "game_id": "2025_07_NE_TEN",
+   "season": 2025,
+   "week": 7,
+   "p": 0.933,
+   "cum": -55.0
+  },
+  {
+   "game_id": "2025_07_NO_CHI",
+   "season": 2025,
+   "week": 7,
+   "p": -0.734,
+   "cum": -55.74
+  },
+  {
+   "game_id": "2025_07_NYG_DEN",
+   "season": 2025,
+   "week": 7,
+   "p": -6.291,
+   "cum": -62.03
+  },
+  {
+   "game_id": "2025_08_CLE_NE",
+   "season": 2025,
+   "week": 8,
+   "p": 1.16,
+   "cum": -60.87
+  },
+  {
+   "game_id": "2025_08_SF_HOU",
+   "season": 2025,
+   "week": 8,
+   "p": -4.589,
+   "cum": -65.46
+  },
+  {
+   "game_id": "2025_09_DEN_HOU",
+   "season": 2025,
+   "week": 9,
+   "p": 6.711,
+   "cum": -58.75
+  },
+  {
+   "game_id": "2025_10_CLE_NYJ",
+   "season": 2025,
+   "week": 10,
+   "p": 4.786,
+   "cum": -53.96
+  },
+  {
+   "game_id": "2025_10_JAX_HOU",
+   "season": 2025,
+   "week": 10,
+   "p": -2.692,
+   "cum": -56.65
+  },
+  {
+   "game_id": "2025_10_LV_DEN",
+   "season": 2025,
+   "week": 10,
+   "p": 4.946,
+   "cum": -51.71
+  },
+  {
+   "game_id": "2025_10_NO_CAR",
+   "season": 2025,
+   "week": 10,
+   "p": 1.084,
+   "cum": -50.62
+  },
+  {
+   "game_id": "2025_11_BAL_CLE",
+   "season": 2025,
+   "week": 11,
+   "p": 1.057,
+   "cum": -49.56
+  },
+  {
+   "game_id": "2025_11_HOU_TEN",
+   "season": 2025,
+   "week": 11,
+   "p": 1.199,
+   "cum": -48.37
+  },
+  {
+   "game_id": "2025_12_CLE_LV",
+   "season": 2025,
+   "week": 12,
+   "p": 2.99,
+   "cum": -45.38
+  },
+  {
+   "game_id": "2025_13_ATL_NYJ",
+   "season": 2025,
+   "week": 13,
+   "p": -0.69,
+   "cum": -46.07
+  },
+  {
+   "game_id": "2025_13_LV_LAC",
+   "season": 2025,
+   "week": 13,
+   "p": 5.792,
+   "cum": -40.27
+  },
+  {
+   "game_id": "2025_13_NO_MIA",
+   "season": 2025,
+   "week": 13,
+   "p": -2.663,
+   "cum": -42.94
+  },
+  {
+   "game_id": "2025_13_SF_CLE",
+   "season": 2025,
+   "week": 13,
+   "p": -0.751,
+   "cum": -43.69
+  },
+  {
+   "game_id": "2025_14_DEN_LV",
+   "season": 2025,
+   "week": 14,
+   "p": 2.9,
+   "cum": -40.79
+  },
+  {
+   "game_id": "2025_14_HOU_KC",
+   "season": 2025,
+   "week": 14,
+   "p": 2.943,
+   "cum": -37.84
+  },
+  {
+   "game_id": "2025_14_NO_TB",
+   "season": 2025,
+   "week": 14,
+   "p": 3.047,
+   "cum": -34.8
+  },
+  {
+   "game_id": "2025_14_PHI_LAC",
+   "season": 2025,
+   "week": 14,
+   "p": -0.721,
+   "cum": -35.52
+  },
+  {
+   "game_id": "2025_14_TEN_CLE",
+   "season": 2025,
+   "week": 14,
+   "p": 1.065,
+   "cum": -34.45
+  },
+  {
+   "game_id": "2025_15_CLE_CHI",
+   "season": 2025,
+   "week": 15,
+   "p": -0.716,
+   "cum": -35.17
+  },
+  {
+   "game_id": "2025_15_LV_PHI",
+   "season": 2025,
+   "week": 15,
+   "p": 4.837,
+   "cum": -30.33
+  },
+  {
+   "game_id": "2025_15_MIA_PIT",
+   "season": 2025,
+   "week": 15,
+   "p": -2.599,
+   "cum": -32.93
+  },
+  {
+   "game_id": "2025_15_NYJ_JAX",
+   "season": 2025,
+   "week": 15,
+   "p": -0.772,
+   "cum": -33.7
+  },
+  {
+   "game_id": "2025_16_BUF_CLE",
+   "season": 2025,
+   "week": 16,
+   "p": 4.794,
+   "cum": -28.91
+  },
+  {
+   "game_id": "2025_16_KC_TEN",
+   "season": 2025,
+   "week": 16,
+   "p": 1.119,
+   "cum": -27.79
+  },
+  {
+   "game_id": "2025_16_LA_SEA",
+   "season": 2025,
+   "week": 16,
+   "p": -8.147,
+   "cum": -35.93
+  },
+  {
+   "game_id": "2025_16_LV_HOU",
+   "season": 2025,
+   "week": 16,
+   "p": 1.104,
+   "cum": -34.83
+  },
+  {
+   "game_id": "2025_16_MIN_NYG",
+   "season": 2025,
+   "week": 16,
+   "p": 4.853,
+   "cum": -29.98
+  },
+  {
+   "game_id": "2025_16_NYJ_NO",
+   "season": 2025,
+   "week": 16,
+   "p": -2.661,
+   "cum": -32.64
+  },
+  {
+   "game_id": "2025_17_HOU_LAC",
+   "season": 2025,
+   "week": 17,
+   "p": -2.635,
+   "cum": -35.27
+  },
+  {
+   "game_id": "2025_17_NO_TEN",
+   "season": 2025,
+   "week": 17,
+   "p": -6.426,
+   "cum": -41.7
+  },
+  {
+   "game_id": "2025_17_NYG_LV",
+   "season": 2025,
+   "week": 17,
+   "p": 1.008,
+   "cum": -40.69
+  },
+  {
+   "game_id": "2025_17_PIT_CLE",
+   "season": 2025,
+   "week": 17,
+   "p": -0.729,
+   "cum": -41.42
+  },
+  {
+   "game_id": "2025_18_BAL_PIT",
+   "season": 2025,
+   "week": 18,
+   "p": -6.391,
+   "cum": -47.81
+  },
+  {
+   "game_id": "2025_18_GB_MIN",
+   "season": 2025,
+   "week": 18,
+   "p": -0.257,
+   "cum": -48.07
+  },
+  {
+   "game_id": "2025_18_IND_HOU",
+   "season": 2025,
+   "week": 18,
+   "p": 1.506,
+   "cum": -46.56
+  },
+  {
+   "game_id": "2025_18_KC_LV",
+   "season": 2025,
+   "week": 18,
+   "p": 2.233,
+   "cum": -44.33
+  },
+  {
+   "game_id": "2025_18_LAC_DEN",
+   "season": 2025,
+   "week": 18,
+   "p": 1.402,
+   "cum": -42.93
+  },
+  {
+   "game_id": "2025_18_NYJ_BUF",
+   "season": 2025,
+   "week": 18,
+   "p": 2.545,
+   "cum": -40.38
+  },
+  {
+   "game_id": "2025_19_HOU_PIT",
+   "season": 2025,
+   "week": 19,
+   "p": 1.063,
+   "cum": -39.32
+  },
+  {
+   "game_id": "2025_20_HOU_NE",
+   "season": 2025,
+   "week": 20,
+   "p": -0.752,
+   "cum": -40.07
+  },
+  {
+   "game_id": "2025_21_NE_DEN",
+   "season": 2025,
+   "week": 21,
+   "p": 4.813,
+   "cum": -35.26
+  },
+  {
+   "game_id": "2026_01_CLE_JAX",
+   "season": 2026,
+   "week": 1,
+   "p": -2.617,
+   "cum": -37.88
+  },
+  {
+   "game_id": "2026_01_DEN_KC",
+   "season": 2026,
+   "week": 1,
+   "p": 1.125,
+   "cum": -36.75
+  },
+  {
+   "game_id": "2026_01_MIA_LV",
+   "season": 2026,
+   "week": 1,
+   "p": -0.74,
+   "cum": -37.49
+  },
+  {
+   "game_id": "2026_02_CLE_TB",
+   "season": 2026,
+   "week": 2,
+   "p": -0.748,
+   "cum": -38.24
+  },
+  {
+   "game_id": "2026_02_LV_LAC",
+   "season": 2026,
+   "week": 2,
+   "p": 1.173,
+   "cum": -37.07
+  },
+  {
+   "game_id": "2026_02_PHI_TEN",
+   "season": 2026,
+   "week": 2,
+   "p": 1.105,
+   "cum": -35.96
+  },
+  {
+   "game_id": "2026_02_PIT_NE",
+   "season": 2026,
+   "week": 2,
+   "p": 1.058,
+   "cum": -34.9
+  }
+ ]
+}

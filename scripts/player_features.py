@@ -276,15 +276,17 @@ B = B.merge(vac, on=["season", "week", "team"], how="left")
 prev_out = out.assign(week=out.week + 1)
 now_out = set(zip(out.season, out.week, out.player_id))
 ret = prev_out[[(a, b, c) not in now_out for a, b, c in zip(prev_out.season, prev_out.week, prev_out.player_id)]]
-last_share = B.sort_values("t").groupby(["player_id", "season"]).target_share_m3.last().reset_index()
-rv = ret.merge(last_share, on=["player_id", "season"], how="left").groupby(["season", "week", "team"]).target_share_m3.sum().rename("returning_target_share").reset_index()
+ret = ret.assign(t=(ret.season.astype(int) * 100 + ret.week.astype(int)).astype("int64"))
+ret = pd.merge_asof(ret.sort_values("t"), B[["player_id", "t", "target_share_m3"]].dropna().sort_values("t"), on="t", by="player_id", allow_exact_matches=False)
+rv = ret.groupby(["season", "week", "team"]).target_share_m3.sum().rename("returning_target_share").reset_index()
 B = B.merge(rv, on=["season", "week", "team"], how="left")
 dsn = con.execute("""SELECT sc.season, sc.week, pl.gsis_id AS player_id, sc.team, sc.position, sc.defense_pct, sc.offense_pct FROM snap_counts sc
                      JOIN players pl ON pl.pfr_id = sc.pfr_player_id WHERE sc.season >= 2021""").df().sort_values(["player_id", "season", "week"])
 dsn["d4"] = dsn.groupby("player_id").defense_pct.transform(lambda x: x.rolling(4, min_periods=1).mean())
 dsn["o4"] = dsn.groupby("player_id").offense_pct.transform(lambda x: x.rolling(4, min_periods=1).mean())
-lastsn = dsn.groupby(["player_id", "season"])[["d4", "o4"]].last().reset_index()
-oi = out.merge(lastsn, on=["player_id", "season"], how="left").fillna({"d4": 0, "o4": 0})
+dsn["t"] = (dsn.season.astype(int) * 100 + dsn.week.astype(int)).astype("int64")
+oi = pd.merge_asof(out.assign(t=(out.season.astype(int) * 100 + out.week.astype(int)).astype("int64")).sort_values("t"),
+                   dsn[["player_id", "t", "d4", "o4"]].sort_values("t"), on="t", by="player_id", allow_exact_matches=False).fillna({"d4": 0, "o4": 0})
 agg = lambda pos, col, name: oi[oi.position.isin(pos)].groupby(["season", "week", "team"])[col].sum().rename(name).reset_index()  # noqa: E731
 B = B.merge(agg(["CB", "S", "SS", "FS", "DB"], "d4", "opp_db_out").rename(columns={"team": "opp"}), on=["season", "week", "opp"], how="left")
 B = B.merge(agg(["DE", "DT", "OLB", "EDGE", "DL", "LB", "ILB", "MLB"], "d4", "opp_front_out").rename(columns={"team": "opp"}), on=["season", "week", "opp"], how="left")

@@ -121,8 +121,9 @@ snaps = con.execute("""SELECT sc.season, sc.week, pl.gsis_id AS player_id, sc.of
                        JOIN players pl ON pl.pfr_id = sc.pfr_player_id WHERE sc.season >= 2023 AND sc.position IN ('T', 'G', 'C', 'OL')""").df()
 snaps = snaps.sort_values(["player_id", "season", "week"])
 snaps["os_m4"] = snaps.groupby("player_id").offense_pct.transform(lambda x: x.rolling(4, min_periods=1).mean())
-ol = out[out.position.isin(["T", "G", "C", "OL", "OT", "OG"])].merge(
-    snaps.groupby(["player_id", "season"]).os_m4.last().reset_index(), on=["player_id", "season"], how="left")
+snaps["t"] = (snaps.season.astype(int) * 100 + snaps.week.astype(int)).astype("int64")
+olq = out[out.position.isin(["T", "G", "C", "OL", "OT", "OG"])].assign(t=lambda d: (d.season.astype(int) * 100 + d.week.astype(int)).astype("int64"))
+ol = pd.merge_asof(olq.sort_values("t"), snaps[["player_id", "t", "os_m4"]].sort_values("t"), on="t", by="player_id", allow_exact_matches=False)
 olv = ol.groupby(["season", "week", "team"]).os_m4.sum().rename("own_ol_out").reset_index()
 F = F.merge(olv, on=["season", "week", "team"], how="left")
 F["own_ol_out"] = F.own_ol_out.fillna(0)

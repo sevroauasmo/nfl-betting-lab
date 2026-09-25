@@ -64,8 +64,11 @@ rep = con.execute("""SELECT CAST(season AS INT) AS season, CAST(week AS INT) AS 
 ina = ina.merge(rep, on=["season", "week", "player_id"], how="left")
 ina["surprise"] = ~ina.report_status.isin(["Out", "Doubtful"])
 use = pd.read_parquet(ROOT / "data/player_games.parquet", columns=["player_id", "season", "week", "target_share_m3", "carry_share_m3"])
-last = use.sort_values(["season", "week"]).groupby(["player_id", "season"])[["target_share_m3", "carry_share_m3"]].last().reset_index()
-ina = ina.merge(last, on=["player_id", "season"], how="left").fillna({"target_share_m3": 0, "carry_share_m3": 0})
+# usage going INTO this game: latest 3-game average from an earlier week (merge_asof, strictly before) -- no end-of-season lookahead
+use["t"] = (use.season * 100 + use.week).astype("int64")
+ina["t"] = (ina.season.astype(int) * 100 + ina.week.astype(int)).astype("int64")
+ina = pd.merge_asof(ina.sort_values("t"), use.sort_values("t")[["player_id", "t", "target_share_m3", "carry_share_m3"]],
+                    on="t", by="player_id", allow_exact_matches=False).fillna({"target_share_m3": 0, "carry_share_m3": 0})
 qb_starts = con.execute("SELECT qb_id AS player_id, season, count(*) starts FROM team_games WHERE season >= 2023 GROUP BY ALL").df()
 ina = ina.merge(qb_starts, on=["player_id", "season"], how="left").fillna({"starts": 0})
 sur = ina[ina.surprise]

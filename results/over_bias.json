@@ -1,0 +1,1517 @@
+{
+ "by_market": [
+  {
+   "label": "RB reception_yds",
+   "games": 865,
+   "bets": 2606,
+   "under": 0.5165,
+   "fair": 0.4999,
+   "bias": 0.0166,
+   "bias_ci90": [
+    0.0013,
+    0.0333
+   ],
+   "roi": -0.0353,
+   "roi_ci90": [
+    -0.0641,
+    -0.004
+   ],
+   "p_roi_le0": 0.971,
+   "hold": 0.0693,
+   "roi_best": -0.0112,
+   "roi_exch": -0.0015,
+   "exch_bets": 787
+  },
+  {
+   "label": "WR reception_yds",
+   "games": 868,
+   "bets": 5619,
+   "under": 0.5257,
+   "fair": 0.4998,
+   "bias": 0.0259,
+   "bias_ci90": [
+    0.0146,
+    0.0369
+   ],
+   "roi": -0.0178,
+   "roi_ci90": [
+    -0.039,
+    0.0028
+   ],
+   "p_roi_le0": 0.926,
+   "hold": 0.0695,
+   "roi_best": 0.0075,
+   "roi_exch": 0.0101,
+   "exch_bets": 1723
+  },
+  {
+   "label": "RB rush_yds",
+   "games": 864,
+   "bets": 3037,
+   "under": 0.5318,
+   "fair": 0.4996,
+   "bias": 0.0322,
+   "bias_ci90": [
+    0.0181,
+    0.0461
+   ],
+   "roi": -0.0053,
+   "roi_ci90": [
+    -0.0317,
+    0.0208
+   ],
+   "p_roi_le0": 0.613,
+   "hold": 0.0693,
+   "roi_best": 0.022,
+   "roi_exch": 0.0403,
+   "exch_bets": 1005
+  },
+  {
+   "label": "RB receptions",
+   "games": 862,
+   "bets": 2419,
+   "under": 0.5221,
+   "fair": 0.5082,
+   "bias": 0.0139,
+   "bias_ci90": [
+    -0.0022,
+    0.0306
+   ],
+   "roi": -0.0363,
+   "roi_ci90": [
+    -0.067,
+    -0.0035
+   ],
+   "p_roi_le0": 0.969,
+   "hold": 0.0671,
+   "roi_best": 0.0008,
+   "roi_exch": 0.0144,
+   "exch_bets": 921
+  },
+  {
+   "label": "WR receptions",
+   "games": 866,
+   "bets": 5310,
+   "under": 0.5422,
+   "fair": 0.5068,
+   "bias": 0.0354,
+   "bias_ci90": [
+    0.024,
+    0.0466
+   ],
+   "roi": -0.003,
+   "roi_ci90": [
+    -0.0246,
+    0.0183
+   ],
+   "p_roi_le0": 0.623,
+   "hold": 0.0671,
+   "roi_best": 0.0394,
+   "roi_exch": 0.039,
+   "exch_bets": 2129
+  },
+  {
+   "label": "RB rush_attempts",
+   "games": 859,
+   "bets": 2366,
+   "under": 0.5279,
+   "fair": 0.4996,
+   "bias": 0.0283,
+   "bias_ci90": [
+    0.014,
+    0.0431
+   ],
+   "roi": -0.0146,
+   "roi_ci90": [
+    -0.0413,
+    0.0135
+   ],
+   "p_roi_le0": 0.803,
+   "hold": 0.0685,
+   "roi_best": 0.0224,
+   "roi_exch": 0.0047,
+   "exch_bets": 836
+  },
+  {
+   "label": "RB rush_reception_yds",
+   "games": 749,
+   "bets": 2281,
+   "under": 0.5217,
+   "fair": 0.5002,
+   "bias": 0.0215,
+   "bias_ci90": [
+    0.0056,
+    0.0379
+   ],
+   "roi": -0.0262,
+   "roi_ci90": [
+    -0.0561,
+    0.0046
+   ],
+   "p_roi_le0": 0.919,
+   "hold": 0.0698,
+   "roi_best": -0.0175,
+   "roi_exch": -0.0763,
+   "exch_bets": 372
+  },
+  {
+   "label": "WR rush_reception_yds",
+   "games": 603,
+   "bets": 2779,
+   "under": 0.5232,
+   "fair": 0.4998,
+   "bias": 0.0234,
+   "bias_ci90": [
+    0.0088,
+    0.0382
+   ],
+   "roi": -0.0233,
+   "roi_ci90": [
+    -0.0507,
+    0.0043
+   ],
+   "p_roi_le0": 0.919,
+   "hold": 0.0698,
+   "roi_best": -0.0169,
+   "roi_exch": NaN,
+   "exch_bets": 0
+  },
+  {
+   "label": "RB reception_longest",
+   "games": 855,
+   "bets": 2141,
+   "under": 0.5334,
+   "fair": 0.5014,
+   "bias": 0.032,
+   "bias_ci90": [
+    0.0139,
+    0.051
+   ],
+   "roi": -0.0072,
+   "roi_ci90": [
+    -0.041,
+    0.028
+   ],
+   "p_roi_le0": 0.631,
+   "hold": 0.0693,
+   "roi_best": 0.0101,
+   "roi_exch": 0.0382,
+   "exch_bets": 435
+  },
+  {
+   "label": "WR reception_longest",
+   "games": 867,
+   "bets": 5419,
+   "under": 0.5208,
+   "fair": 0.5004,
+   "bias": 0.0204,
+   "bias_ci90": [
+    0.0093,
+    0.0313
+   ],
+   "roi": -0.0286,
+   "roi_ci90": [
+    -0.0493,
+    -0.0082
+   ],
+   "p_roi_le0": 0.992,
+   "hold": 0.0693,
+   "roi_best": -0.0118,
+   "roi_exch": -0.0007,
+   "exch_bets": 1321
+  },
+  {
+   "label": "RB rush_longest",
+   "games": 864,
+   "bets": 2786,
+   "under": 0.5384,
+   "fair": 0.5002,
+   "bias": 0.0382,
+   "bias_ci90": [
+    0.0239,
+    0.0531
+   ],
+   "roi": 0.0037,
+   "roi_ci90": [
+    -0.023,
+    0.0316
+   ],
+   "p_roi_le0": 0.417,
+   "hold": 0.0693,
+   "roi_best": 0.0254,
+   "roi_exch": 0.0127,
+   "exch_bets": 792
+  },
+  {
+   "label": "RB anytime_td",
+   "games": 160,
+   "bets": 395,
+   "under": 0.7241,
+   "fair": 0.7068,
+   "bias": 0.0172,
+   "bias_ci90": [
+    -0.0138,
+    0.0495
+   ],
+   "roi": -0.0753,
+   "roi_ci90": [
+    -0.1248,
+    -0.0239
+   ],
+   "p_roi_le0": 0.995,
+   "hold": 0.0878,
+   "roi_best": -0.058,
+   "roi_exch": NaN,
+   "exch_bets": 0
+  },
+  {
+   "label": "WR anytime_td",
+   "games": 166,
+   "bets": 652,
+   "under": 0.7791,
+   "fair": 0.7883,
+   "bias": -0.0091,
+   "bias_ci90": [
+    -0.0353,
+    0.0152
+   ],
+   "roi": -0.0971,
+   "roi_ci90": [
+    -0.1302,
+    -0.0653
+   ],
+   "p_roi_le0": 1.0,
+   "hold": 0.0873,
+   "roi_best": -0.0844,
+   "roi_exch": NaN,
+   "exch_bets": 0
+  }
+ ],
+ "core_by_season": [
+  {
+   "label": "2023",
+   "games": 274,
+   "bets": 3518,
+   "under": 0.5202,
+   "fair": 0.5013,
+   "bias": 0.0189,
+   "bias_ci90": [
+    0.0058,
+    0.0318
+   ],
+   "roi": -0.032,
+   "roi_ci90": [
+    -0.0568,
+    -0.0082
+   ],
+   "p_roi_le0": 0.988
+  },
+  {
+   "label": "2024",
+   "games": 281,
+   "bets": 3654,
+   "under": 0.523,
+   "fair": 0.4993,
+   "bias": 0.0236,
+   "bias_ci90": [
+    0.011,
+    0.0359
+   ],
+   "roi": -0.0218,
+   "roi_ci90": [
+    -0.0455,
+    0.0013
+   ],
+   "p_roi_le0": 0.943
+  },
+  {
+   "label": "2025",
+   "games": 281,
+   "bets": 3686,
+   "under": 0.5326,
+   "fair": 0.4988,
+   "bias": 0.0337,
+   "bias_ci90": [
+    0.0217,
+    0.0467
+   ],
+   "roi": -0.002,
+   "roi_ci90": [
+    -0.0241,
+    0.0226
+   ],
+   "p_roi_le0": 0.546
+  },
+  {
+   "label": "2026",
+   "games": 32,
+   "bets": 404,
+   "under": 0.5223,
+   "fair": 0.4997,
+   "bias": 0.0226,
+   "bias_ci90": [
+    -0.0169,
+    0.0589
+   ],
+   "roi": -0.022,
+   "roi_ci90": [
+    -0.0958,
+    0.0459
+   ],
+   "p_roi_le0": 0.699
+  },
+  {
+   "label": "2024 exch",
+   "games": 69,
+   "bets": 342,
+   "under": 0.5205,
+   "fair": 0.4994,
+   "bias": 0.0211,
+   "bias_ci90": [
+    -0.0157,
+    0.0582
+   ],
+   "roi": -0.016,
+   "roi_ci90": [
+    -0.0853,
+    0.0537
+   ],
+   "p_roi_le0": 0.637
+  },
+  {
+   "label": "2025 exch",
+   "games": 278,
+   "bets": 2854,
+   "under": 0.5347,
+   "fair": 0.4984,
+   "bias": 0.0363,
+   "bias_ci90": [
+    0.0218,
+    0.0506
+   ],
+   "roi": 0.0263,
+   "roi_ci90": [
+    -0.0014,
+    0.0536
+   ],
+   "p_roi_le0": 0.059
+  },
+  {
+   "label": "2026 exch",
+   "games": 32,
+   "bets": 319,
+   "under": 0.4984,
+   "fair": 0.4992,
+   "bias": -0.0008,
+   "bias_ci90": [
+    -0.0385,
+    0.0417
+   ],
+   "roi": -0.0402,
+   "roi_ci90": [
+    -0.1133,
+    0.0418
+   ],
+   "p_roi_le0": 0.807
+  }
+ ],
+ "by_book": [
+  {
+   "bookmaker": "prophetx",
+   "quotes": 9126,
+   "under": 0.5308,
+   "fair": 0.4924,
+   "hold": 0.0563,
+   "under_price": -110.0,
+   "roi": 0.0176,
+   "bias": 0.0384
+  },
+  {
+   "bookmaker": "betonlineag",
+   "quotes": 10530,
+   "under": 0.5316,
+   "fair": 0.4981,
+   "hold": 0.0651,
+   "under_price": -114.0,
+   "roi": 0.0024,
+   "bias": 0.0335
+  },
+  {
+   "bookmaker": "fanduel",
+   "quotes": 9885,
+   "under": 0.5253,
+   "fair": 0.5002,
+   "hold": 0.0476,
+   "under_price": -110.0,
+   "roi": -0.0011,
+   "bias": 0.0252
+  },
+  {
+   "bookmaker": "fanatics",
+   "quotes": 2594,
+   "under": 0.5332,
+   "fair": 0.5032,
+   "hold": 0.0693,
+   "under_price": -115.0,
+   "roi": -0.0093,
+   "bias": 0.03
+  },
+  {
+   "bookmaker": "draftkings",
+   "quotes": 10438,
+   "under": 0.5262,
+   "fair": 0.4994,
+   "hold": 0.0693,
+   "under_price": -115.0,
+   "roi": -0.01,
+   "bias": 0.0267
+  },
+  {
+   "bookmaker": "williamhill_us",
+   "quotes": 9486,
+   "under": 0.5279,
+   "fair": 0.4967,
+   "hold": 0.0776,
+   "under_price": -115.0,
+   "roi": -0.0117,
+   "bias": 0.0313
+  },
+  {
+   "bookmaker": "novig",
+   "quotes": 9559,
+   "under": 0.5264,
+   "fair": 0.4993,
+   "hold": 0.061,
+   "under_price": -112.0,
+   "roi": -0.012,
+   "bias": 0.0271
+  },
+  {
+   "bookmaker": "hardrockbet",
+   "quotes": 8426,
+   "under": 0.5258,
+   "fair": 0.4994,
+   "hold": 0.0698,
+   "under_price": -115.0,
+   "roi": -0.014,
+   "bias": 0.0264
+  },
+  {
+   "bookmaker": "pointsbetus",
+   "quotes": 2929,
+   "under": 0.5288,
+   "fair": 0.5019,
+   "hold": 0.0693,
+   "under_price": -115.0,
+   "roi": -0.0143,
+   "bias": 0.027
+  },
+  {
+   "bookmaker": "espnbet",
+   "quotes": 10804,
+   "under": 0.5243,
+   "fair": 0.4983,
+   "hold": 0.0693,
+   "under_price": -115.0,
+   "roi": -0.015,
+   "bias": 0.0259
+  },
+  {
+   "bookmaker": "bovada",
+   "quotes": 9240,
+   "under": 0.5232,
+   "fair": 0.4979,
+   "hold": 0.0693,
+   "under_price": -115.0,
+   "roi": -0.0155,
+   "bias": 0.0253
+  },
+  {
+   "bookmaker": "betparx",
+   "quotes": 2720,
+   "under": 0.5246,
+   "fair": 0.5002,
+   "hold": 0.0654,
+   "under_price": -114.0,
+   "roi": -0.016,
+   "bias": 0.0244
+  },
+  {
+   "bookmaker": "betmgm",
+   "quotes": 9783,
+   "under": 0.5239,
+   "fair": 0.4984,
+   "hold": 0.0693,
+   "under_price": -115.0,
+   "roi": -0.0172,
+   "bias": 0.0255
+  },
+  {
+   "bookmaker": "rebet",
+   "quotes": 2211,
+   "under": 0.5387,
+   "fair": 0.4962,
+   "hold": 0.1108,
+   "under_price": -123.0,
+   "roi": -0.0192,
+   "bias": 0.0425
+  },
+  {
+   "bookmaker": "barstool",
+   "quotes": 2160,
+   "under": 0.5241,
+   "fair": 0.5006,
+   "hold": 0.0698,
+   "under_price": -115.0,
+   "roi": -0.0219,
+   "bias": 0.0235
+  },
+  {
+   "bookmaker": "unibet_us",
+   "quotes": 15767,
+   "under": 0.5616,
+   "fair": 0.5475,
+   "hold": 0.0725,
+   "under_price": -122.0,
+   "roi": -0.0375,
+   "bias": 0.0141
+  },
+  {
+   "bookmaker": "fliff",
+   "quotes": 10231,
+   "under": 0.5283,
+   "fair": 0.4998,
+   "hold": 0.101,
+   "under_price": -120.0,
+   "roi": -0.0386,
+   "bias": 0.0285
+  },
+  {
+   "bookmaker": "betrivers",
+   "quotes": 37933,
+   "under": 0.5453,
+   "fair": 0.5334,
+   "hold": 0.0719,
+   "under_price": -117.0,
+   "roi": -0.0402,
+   "bias": 0.0118
+  },
+  {
+   "bookmaker": "ballybet",
+   "quotes": 11322,
+   "under": 0.5338,
+   "fair": 0.5246,
+   "hold": 0.0718,
+   "under_price": -117.0,
+   "roi": -0.0451,
+   "bias": 0.0092
+  }
+ ],
+ "slices": [
+  {
+   "label": "star: top-24 line of week (league-wide) [23-24]",
+   "games": 554,
+   "bets": 1986,
+   "under": 0.5076,
+   "fair": 0.5008,
+   "bias": 0.0067,
+   "bias_ci90": [
+    -0.0106,
+    0.0246
+   ],
+   "roi": -0.0535,
+   "roi_ci90": [
+    -0.0861,
+    -0.0203
+   ],
+   "p_roi_le0": 0.997,
+   "roi_exch": -0.0611
+  },
+  {
+   "label": "star: top-24 line of week (league-wide) [25-26]",
+   "games": 311,
+   "bets": 1092,
+   "under": 0.5385,
+   "fair": 0.4989,
+   "bias": 0.0395,
+   "bias_ci90": [
+    0.0156,
+    0.0628
+   ],
+   "roi": 0.0108,
+   "roi_ci90": [
+    -0.0339,
+    0.0544
+   ],
+   "p_roi_le0": 0.359,
+   "roi_exch": 0.0319
+  },
+  {
+   "label": "not a star [23-24]",
+   "games": 550,
+   "bets": 5186,
+   "under": 0.527,
+   "fair": 0.5001,
+   "bias": 0.0269,
+   "bias_ci90": [
+    0.0154,
+    0.0379
+   ],
+   "roi": -0.0165,
+   "roi_ci90": [
+    -0.0379,
+    0.0044
+   ],
+   "p_roi_le0": 0.911,
+   "roi_exch": 0.0188
+  },
+  {
+   "label": "not a star [25-26]",
+   "games": 310,
+   "bets": 2998,
+   "under": 0.529,
+   "fair": 0.4989,
+   "bias": 0.0301,
+   "bias_ci90": [
+    0.0162,
+    0.0452
+   ],
+   "roi": -0.0093,
+   "roi_ci90": [
+    -0.0355,
+    0.0188
+   ],
+   "p_roi_le0": 0.715,
+   "roi_exch": 0.0148
+  },
+  {
+   "label": "primetime (TNF/SNF/MNF) [23-24]",
+   "games": 118,
+   "bets": 1654,
+   "under": 0.5302,
+   "fair": 0.4997,
+   "bias": 0.0306,
+   "bias_ci90": [
+    0.014,
+    0.0482
+   ],
+   "roi": -0.0092,
+   "roi_ci90": [
+    -0.0399,
+    0.0241
+   ],
+   "p_roi_le0": 0.671,
+   "roi_exch": 0.076
+  },
+  {
+   "label": "primetime (TNF/SNF/MNF) [25-26]",
+   "games": 67,
+   "bets": 969,
+   "under": 0.5387,
+   "fair": 0.4985,
+   "bias": 0.0402,
+   "bias_ci90": [
+    0.015,
+    0.0666
+   ],
+   "roi": 0.0107,
+   "roi_ci90": [
+    -0.0367,
+    0.0601
+   ],
+   "p_roi_le0": 0.366,
+   "roi_exch": 0.0469
+  },
+  {
+   "label": "Sunday day [23-24]",
+   "games": 437,
+   "bets": 5518,
+   "under": 0.519,
+   "fair": 0.5005,
+   "bias": 0.0186,
+   "bias_ci90": [
+    0.0081,
+    0.0288
+   ],
+   "roi": -0.0321,
+   "roi_ci90": [
+    -0.0515,
+    -0.0129
+   ],
+   "p_roi_le0": 0.997,
+   "roi_exch": -0.0423
+  },
+  {
+   "label": "Sunday day [25-26]",
+   "games": 246,
+   "bets": 3121,
+   "under": 0.5293,
+   "fair": 0.4991,
+   "bias": 0.0303,
+   "bias_ci90": [
+    0.0159,
+    0.0438
+   ],
+   "roi": -0.0085,
+   "roi_ci90": [
+    -0.0353,
+    0.0169
+   ],
+   "p_roi_le0": 0.723,
+   "roi_exch": 0.0103
+  },
+  {
+   "label": "player on a popular team [23-24]",
+   "games": 319,
+   "bets": 2641,
+   "under": 0.5297,
+   "fair": 0.5002,
+   "bias": 0.0295,
+   "bias_ci90": [
+    0.0156,
+    0.0434
+   ],
+   "roi": -0.0116,
+   "roi_ci90": [
+    -0.0376,
+    0.0143
+   ],
+   "p_roi_le0": 0.761,
+   "roi_exch": 0.0547
+  },
+  {
+   "label": "player on a popular team [25-26]",
+   "games": 175,
+   "bets": 1484,
+   "under": 0.5189,
+   "fair": 0.4988,
+   "bias": 0.0201,
+   "bias_ci90": [
+    0.0018,
+    0.0386
+   ],
+   "roi": -0.0274,
+   "roi_ci90": [
+    -0.0615,
+    0.0074
+   ],
+   "p_roi_le0": 0.909,
+   "roi_exch": -0.0031
+  },
+  {
+   "label": "big last game (last >= 1.5x line) [23-24]",
+   "games": 540,
+   "bets": 1971,
+   "under": 0.5216,
+   "fair": 0.4987,
+   "bias": 0.0228,
+   "bias_ci90": [
+    0.0046,
+    0.04
+   ],
+   "roi": -0.0235,
+   "roi_ci90": [
+    -0.0578,
+    0.0088
+   ],
+   "p_roi_le0": 0.887,
+   "roi_exch": 0.1701
+  },
+  {
+   "label": "big last game (last >= 1.5x line) [25-26]",
+   "games": 300,
+   "bets": 1133,
+   "under": 0.5287,
+   "fair": 0.4989,
+   "bias": 0.0298,
+   "bias_ci90": [
+    0.0052,
+    0.0549
+   ],
+   "roi": -0.0094,
+   "roi_ci90": [
+    -0.0556,
+    0.0378
+   ],
+   "p_roi_le0": 0.607,
+   "roi_exch": 0.0314
+  },
+  {
+   "label": "quiet last game (last <= 0.5x line) [23-24]",
+   "games": 523,
+   "bets": 1651,
+   "under": 0.5233,
+   "fair": 0.5011,
+   "bias": 0.0222,
+   "bias_ci90": [
+    0.0005,
+    0.0437
+   ],
+   "roi": -0.0249,
+   "roi_ci90": [
+    -0.0651,
+    0.0153
+   ],
+   "p_roi_le0": 0.851,
+   "roi_exch": 0.0392
+  },
+  {
+   "label": "quiet last game (last <= 0.5x line) [25-26]",
+   "games": 302,
+   "bets": 960,
+   "under": 0.5031,
+   "fair": 0.4991,
+   "bias": 0.004,
+   "bias_ci90": [
+    -0.0247,
+    0.031
+   ],
+   "roi": -0.0574,
+   "roi_ci90": [
+    -0.1111,
+    -0.0066
+   ],
+   "p_roi_le0": 0.967,
+   "roi_exch": -0.0606
+  },
+  {
+   "label": "line > trailing-8 median by 15%+ [23-24]",
+   "games": 544,
+   "bets": 2390,
+   "under": 0.505,
+   "fair": 0.5014,
+   "bias": 0.0036,
+   "bias_ci90": [
+    -0.0127,
+    0.0208
+   ],
+   "roi": -0.06,
+   "roi_ci90": [
+    -0.0908,
+    -0.0281
+   ],
+   "p_roi_le0": 0.999,
+   "roi_exch": -0.1131
+  },
+  {
+   "label": "line > trailing-8 median by 15%+ [25-26]",
+   "games": 307,
+   "bets": 1397,
+   "under": 0.5168,
+   "fair": 0.4989,
+   "bias": 0.0179,
+   "bias_ci90": [
+    -0.0016,
+    0.0382
+   ],
+   "roi": -0.0315,
+   "roi_ci90": [
+    -0.068,
+    0.0064
+   ],
+   "p_roi_le0": 0.909,
+   "roi_exch": -0.0111
+  },
+  {
+   "label": "line < trailing-8 median [23-24]",
+   "games": 554,
+   "bets": 3301,
+   "under": 0.525,
+   "fair": 0.4994,
+   "bias": 0.0256,
+   "bias_ci90": [
+    0.0119,
+    0.039
+   ],
+   "roi": -0.019,
+   "roi_ci90": [
+    -0.0444,
+    0.0059
+   ],
+   "p_roi_le0": 0.898,
+   "roi_exch": 0.0052
+  },
+  {
+   "label": "line < trailing-8 median [25-26]",
+   "games": 309,
+   "bets": 1887,
+   "under": 0.531,
+   "fair": 0.4989,
+   "bias": 0.0321,
+   "bias_ci90": [
+    0.0139,
+    0.051
+   ],
+   "roi": -0.005,
+   "roi_ci90": [
+    -0.0389,
+    0.0304
+   ],
+   "p_roi_le0": 0.601,
+   "roi_exch": 0.0181
+  },
+  {
+   "label": "line moved UP day-before->close [23-24]",
+   "games": 542,
+   "bets": 2287,
+   "under": 0.5234,
+   "fair": 0.502,
+   "bias": 0.0214,
+   "bias_ci90": [
+    0.0047,
+    0.0366
+   ],
+   "roi": -0.0266,
+   "roi_ci90": [
+    -0.0577,
+    0.0022
+   ],
+   "p_roi_le0": 0.932,
+   "roi_exch": 0.074
+  },
+  {
+   "label": "line moved UP day-before->close [25-26]",
+   "games": 303,
+   "bets": 1112,
+   "under": 0.5441,
+   "fair": 0.499,
+   "bias": 0.0451,
+   "bias_ci90": [
+    0.0193,
+    0.0719
+   ],
+   "roi": 0.0199,
+   "roi_ci90": [
+    -0.0284,
+    0.0697
+   ],
+   "p_roi_le0": 0.255,
+   "roi_exch": 0.0204
+  },
+  {
+   "label": "line moved DOWN [23-24]",
+   "games": 529,
+   "bets": 1791,
+   "under": 0.5181,
+   "fair": 0.4975,
+   "bias": 0.0206,
+   "bias_ci90": [
+    0.0016,
+    0.0395
+   ],
+   "roi": -0.0283,
+   "roi_ci90": [
+    -0.0641,
+    0.0066
+   ],
+   "p_roi_le0": 0.907,
+   "roi_exch": -0.0653
+  },
+  {
+   "label": "line moved DOWN [25-26]",
+   "games": 292,
+   "bets": 900,
+   "under": 0.5267,
+   "fair": 0.4985,
+   "bias": 0.0282,
+   "bias_ci90": [
+    0.0017,
+    0.0551
+   ],
+   "roi": -0.0119,
+   "roi_ci90": [
+    -0.0617,
+    0.0388
+   ],
+   "p_roi_le0": 0.642,
+   "roi_exch": 0.0291
+  },
+  {
+   "label": "line unchanged [23-24]",
+   "games": 507,
+   "bets": 1668,
+   "under": 0.5084,
+   "fair": 0.4998,
+   "bias": 0.0086,
+   "bias_ci90": [
+    -0.0105,
+    0.0278
+   ],
+   "roi": -0.05,
+   "roi_ci90": [
+    -0.0857,
+    -0.014
+   ],
+   "p_roi_le0": 0.989,
+   "roi_exch": -0.1208
+  },
+  {
+   "label": "line unchanged [25-26]",
+   "games": 300,
+   "bets": 1269,
+   "under": 0.5217,
+   "fair": 0.4985,
+   "bias": 0.0232,
+   "bias_ci90": [
+    0.0007,
+    0.0459
+   ],
+   "roi": -0.0212,
+   "roi_ci90": [
+    -0.0631,
+    0.0215
+   ],
+   "p_roi_le0": 0.805,
+   "roi_exch": 0.0156
+  },
+  {
+   "label": "weeks 1-4 [23-24]",
+   "games": 123,
+   "bets": 1616,
+   "under": 0.5192,
+   "fair": 0.5007,
+   "bias": 0.0185,
+   "bias_ci90": [
+    -0.0039,
+    0.0387
+   ],
+   "roi": -0.0315,
+   "roi_ci90": [
+    -0.0732,
+    0.0063
+   ],
+   "p_roi_le0": 0.909,
+   "roi_exch": NaN
+  },
+  {
+   "label": "weeks 1-4 [25-26]",
+   "games": 96,
+   "bets": 1247,
+   "under": 0.5269,
+   "fair": 0.4994,
+   "bias": 0.0274,
+   "bias_ci90": [
+    0.0058,
+    0.0509
+   ],
+   "roi": -0.0125,
+   "roi_ci90": [
+    -0.0532,
+    0.0314
+   ],
+   "p_roi_le0": 0.68,
+   "roi_exch": 0.0188
+  },
+  {
+   "label": "weeks 5+ [23-24]",
+   "games": 432,
+   "bets": 5556,
+   "under": 0.5223,
+   "fair": 0.5002,
+   "bias": 0.0222,
+   "bias_ci90": [
+    0.0118,
+    0.0325
+   ],
+   "roi": -0.0254,
+   "roi_ci90": [
+    -0.0447,
+    -0.0061
+   ],
+   "p_roi_le0": 0.984,
+   "roi_exch": -0.016
+  },
+  {
+   "label": "weeks 5+ [25-26]",
+   "games": 217,
+   "bets": 2843,
+   "under": 0.5336,
+   "fair": 0.4987,
+   "bias": 0.0349,
+   "bias_ci90": [
+    0.0217,
+    0.0492
+   ],
+   "roi": -0.0002,
+   "roi_ci90": [
+    -0.0251,
+    0.0266
+   ],
+   "p_roi_le0": 0.473,
+   "roi_exch": 0.0199
+  },
+  {
+   "label": "playoffs [23-24]",
+   "games": 24,
+   "bets": 365,
+   "under": 0.5562,
+   "fair": 0.5016,
+   "bias": 0.0545,
+   "bias_ci90": [
+    0.0166,
+    0.0917
+   ],
+   "roi": 0.0359,
+   "roi_ci90": [
+    -0.0346,
+    0.1058
+   ],
+   "p_roi_le0": 0.202,
+   "roi_exch": -0.039
+  },
+  {
+   "label": "playoffs [25-26]",
+   "games": 13,
+   "bets": 186,
+   "under": 0.5484,
+   "fair": 0.5,
+   "bias": 0.0484,
+   "bias_ci90": [
+    -0.011,
+    0.116
+   ],
+   "roi": 0.0293,
+   "roi_ci90": [
+    -0.0819,
+    0.1556
+   ],
+   "p_roi_le0": 0.341,
+   "roi_exch": 0.0634
+  },
+  {
+   "label": "under priced plus-money (median) [23-24]",
+   "games": 62,
+   "bets": 67,
+   "under": 0.4478,
+   "fair": 0.4468,
+   "bias": 0.0009,
+   "bias_ci90": [
+    -0.0869,
+    0.0992
+   ],
+   "roi": -0.0863,
+   "roi_ci90": [
+    -0.2702,
+    0.1164
+   ],
+   "p_roi_le0": 0.761,
+   "roi_exch": NaN
+  },
+  {
+   "label": "under juiced -125 or worse [23-24]",
+   "games": 203,
+   "bets": 282,
+   "under": 0.5603,
+   "fair": 0.5355,
+   "bias": 0.0248,
+   "bias_ci90": [
+    -0.0246,
+    0.0752
+   ],
+   "roi": -0.034,
+   "roi_ci90": [
+    -0.1196,
+    0.0552
+   ],
+   "p_roi_le0": 0.753,
+   "roi_exch": NaN
+  },
+  {
+   "label": "under juiced -125 or worse [25-26]",
+   "games": 40,
+   "bets": 44,
+   "under": 0.5682,
+   "fair": 0.533,
+   "bias": 0.0352,
+   "bias_ci90": [
+    -0.0837,
+    0.1544
+   ],
+   "roi": -0.0053,
+   "roi_ci90": [
+    -0.2157,
+    0.2056
+   ],
+   "p_roi_le0": 0.512,
+   "roi_exch": NaN
+  },
+  {
+   "label": "high total (>=48) [23-24]",
+   "games": 98,
+   "bets": 1333,
+   "under": 0.5236,
+   "fair": 0.5002,
+   "bias": 0.0235,
+   "bias_ci90": [
+    0.003,
+    0.0445
+   ],
+   "roi": -0.0232,
+   "roi_ci90": [
+    -0.0613,
+    0.0162
+   ],
+   "p_roi_le0": 0.837,
+   "roi_exch": -0.1056
+  },
+  {
+   "label": "high total (>=48) [25-26]",
+   "games": 70,
+   "bets": 930,
+   "under": 0.5,
+   "fair": 0.4987,
+   "bias": 0.0013,
+   "bias_ci90": [
+    -0.0205,
+    0.0253
+   ],
+   "roi": -0.063,
+   "roi_ci90": [
+    -0.1041,
+    -0.0181
+   ],
+   "p_roi_le0": 0.987,
+   "roi_exch": -0.0384
+  }
+ ],
+ "exchange_fair": [
+  {
+   "label": "exchange fair prob, all",
+   "games": 379,
+   "bets": 3515,
+   "under": 0.53,
+   "fair": 0.5002,
+   "bias": 0.0298,
+   "bias_ci90": [
+    0.0172,
+    0.0428
+   ],
+   "roi": 0.0161,
+   "roi_ci90": [
+    -0.0084,
+    0.0418
+   ],
+   "p_roi_le0": 0.139
+  },
+  {
+   "label": "exchange 2024",
+   "games": 69,
+   "bets": 342,
+   "under": 0.5205,
+   "fair": 0.4958,
+   "bias": 0.0247,
+   "bias_ci90": [
+    -0.0113,
+    0.0631
+   ],
+   "roi": -0.016,
+   "roi_ci90": [
+    -0.0862,
+    0.06
+   ],
+   "p_roi_le0": 0.638
+  },
+  {
+   "label": "exchange 2025",
+   "games": 278,
+   "bets": 2854,
+   "under": 0.5347,
+   "fair": 0.5005,
+   "bias": 0.0341,
+   "bias_ci90": [
+    0.0193,
+    0.0484
+   ],
+   "roi": 0.0263,
+   "roi_ci90": [
+    -0.0017,
+    0.0534
+   ],
+   "p_roi_le0": 0.063
+  },
+  {
+   "label": "exchange 2026",
+   "games": 32,
+   "bets": 319,
+   "under": 0.4984,
+   "fair": 0.5023,
+   "bias": -0.0039,
+   "bias_ci90": [
+    -0.043,
+    0.0333
+   ],
+   "roi": -0.0402,
+   "roi_ci90": [
+    -0.1157,
+    0.031
+   ],
+   "p_roi_le0": 0.81
+  }
+ ],
+ "kalshi": {
+  "n": 1073,
+  "yes_rate": 0.3896,
+  "mid": 0.3976,
+  "no_taker_roi": -0.0232,
+  "by_bucket": [
+   {
+    "bucket": "(0.0, 0.1]",
+    "n": 113,
+    "mid": 0.0632,
+    "yes_rate": 0.0619,
+    "spread": 0.0321,
+    "no_taker_roi": -0.0146
+   },
+   {
+    "bucket": "(0.1, 0.25]",
+    "n": 210,
+    "mid": 0.1807,
+    "yes_rate": 0.1667,
+    "spread": 0.0381,
+    "no_taker_roi": -0.0053
+   },
+   {
+    "bucket": "(0.25, 0.4]",
+    "n": 216,
+    "mid": 0.3279,
+    "yes_rate": 0.3102,
+    "spread": 0.0385,
+    "no_taker_roi": 0.0038
+   },
+   {
+    "bucket": "(0.4, 0.6]",
+    "n": 325,
+    "mid": 0.5001,
+    "yes_rate": 0.5046,
+    "spread": 0.0406,
+    "no_taker_roi": -0.0439
+   },
+   {
+    "bucket": "(0.6, 0.75]",
+    "n": 151,
+    "mid": 0.6757,
+    "yes_rate": 0.6689,
+    "spread": 0.0438,
+    "no_taker_roi": -0.0612
+   },
+   {
+    "bucket": "(0.75, 0.9]",
+    "n": 58,
+    "mid": 0.796,
+    "yes_rate": 0.7586,
+    "spread": 0.0383,
+    "no_taker_roi": 0.0092
+   }
+  ]
+ },
+ "midpoint": [
+  {
+   "label": "all",
+   "games": 379,
+   "bets": 3515,
+   "under": 0.53,
+   "fair": 0.5002,
+   "bias": 0.0298,
+   "bias_ci90": [
+    0.0168,
+    0.043
+   ],
+   "roi": 0.0589,
+   "roi_ci90": [
+    0.0326,
+    0.0856
+   ],
+   "p_roi_le0": 0.0
+  },
+  {
+   "label": "2024",
+   "games": 69,
+   "bets": 342,
+   "under": 0.5205,
+   "fair": 0.4958,
+   "bias": 0.0247,
+   "bias_ci90": [
+    -0.0117,
+    0.0629
+   ],
+   "roi": 0.048,
+   "roi_ci90": [
+    -0.0256,
+    0.1261
+   ],
+   "p_roi_le0": 0.145
+  },
+  {
+   "label": "2025",
+   "games": 278,
+   "bets": 2854,
+   "under": 0.5347,
+   "fair": 0.5005,
+   "bias": 0.0341,
+   "bias_ci90": [
+    0.0196,
+    0.0488
+   ],
+   "roi": 0.0676,
+   "roi_ci90": [
+    0.0387,
+    0.0968
+   ],
+   "p_roi_le0": 0.0
+  },
+  {
+   "label": "2026",
+   "games": 32,
+   "bets": 319,
+   "under": 0.4984,
+   "fair": 0.5023,
+   "bias": -0.0039,
+   "bias_ci90": [
+    -0.0423,
+    0.0375
+   ],
+   "roi": -0.0074,
+   "roi_ci90": [
+    -0.0841,
+    0.0761
+   ],
+   "p_roi_le0": 0.572
+  },
+  {
+   "label": "player_reception_yds",
+   "games": 378,
+   "bets": 2510,
+   "under": 0.5251,
+   "fair": 0.5001,
+   "bias": 0.025,
+   "bias_ci90": [
+    0.0086,
+    0.0414
+   ],
+   "roi": 0.0498,
+   "roi_ci90": [
+    0.0177,
+    0.0824
+   ],
+   "p_roi_le0": 0.006
+  },
+  {
+   "label": "player_rush_yds",
+   "games": 356,
+   "bets": 1005,
+   "under": 0.5423,
+   "fair": 0.5005,
+   "bias": 0.0417,
+   "bias_ci90": [
+    0.0168,
+    0.0641
+   ],
+   "roi": 0.0818,
+   "roi_ci90": [
+    0.0321,
+    0.1263
+   ],
+   "p_roi_le0": 0.003
+  }
+ ]
+}
