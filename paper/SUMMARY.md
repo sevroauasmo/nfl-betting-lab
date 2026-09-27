@@ -1,20 +1,20 @@
 # Kalshi paper market-maker
 
-_Updated 2026-09-27 12:44 UTC. Paper orders only; fills from the real trade tape behind the recorded queue (pessimistic)._
+_Updated 2026-09-27 17:22 UTC. Paper orders only; fills from the real trade tape behind the recorded queue (pessimistic)._
 
-Orders placed: **10776** · filled: **493** · settled: **493**
+Orders placed: **15178** · filled: **3062** · settled: **495**
 
 ## By series × side
 
 | group | fills | games | contracts | P&L $ | fees $ | net return on capital |
 |---|---|---|---|---|---|---|
-| KXNFLREC / no_bid | 66 | 1 | 6600 | 310.00 | 14.00 | +6.2% |
+| KXNFLREC / no_bid | 67 | 2 | 6700 | 276.00 | 14.40 | +5.4% |
 | KXNFLRECYDS / no_bid | 61 | 1 | 6065 | -698.94 | 15.02 | -16.6% |
 | KXNFLRECYDS / yes_bid | 47 | 1 | 4267 | 273.68 | 13.18 | +15.9% |
 | KXNFLREC / yes_bid | 43 | 1 | 3780 | 39.89 | 12.60 | +1.5% |
 | KXNFLRSHYDS / no_bid | 36 | 1 | 3600 | -434.00 | 7.56 | -15.0% |
 | KXNFLRSHYDS / yes_bid | 28 | 1 | 2559 | -145.59 | 5.94 | -20.3% |
-| KXNFLTD / no_bid | 18 | 1 | 1800 | -30.00 | 3.48 | -2.2% |
+| KXNFLTD / no_bid | 19 | 2 | 1900 | -118.00 | 3.67 | -7.5% |
 | KXNFLTEAMTOTAL / no_bid | 18 | 1 | 1800 | -36.00 | 5.41 | -5.6% |
 | KXNFLTOTAL / no_bid | 16 | 1 | 1600 | -570.00 | 5.37 | -59.3% |
 | KXNFLTEAMTOTAL / yes_bid | 15 | 1 | 1440 | -244.07 | 3.45 | -33.3% |
@@ -45,7 +45,7 @@ Orders placed: **10776** · filled: **493** · settled: **493**
 
 | group | fills | games | contracts | P&L $ | fees $ | net return on capital |
 |---|---|---|---|---|---|---|
-| join / T-6h | 323 | 1 | 31649 | -2266.53 | 90.79 | -13.9% |
+| join / T-6h | 325 | 3 | 31849 | -2388.53 | 91.38 | -14.5% |
 | improve / T-6h | 170 | 1 | 16080 | -291.05 | 33.09 | -3.2% |
 
 ## By series × side × variant
@@ -55,12 +55,12 @@ Orders placed: **10776** · filled: **493** · settled: **493**
 | KXNFLREC / no_bid / improve | 41 | 1 | 4100 | 211.00 | 6.87 | +6.2% |
 | KXNFLRECYDS / no_bid / join | 36 | 1 | 3600 | -332.00 | 10.19 | -14.7% |
 | KXNFLRECYDS / yes_bid / join | 31 | 1 | 3100 | 88.00 | 10.50 | +5.9% |
+| KXNFLREC / no_bid / join | 26 | 2 | 2600 | 65.00 | 7.53 | +3.7% |
 | KXNFLREC / yes_bid / join | 28 | 1 | 2573 | 195.56 | 9.22 | +14.1% |
-| KXNFLREC / no_bid / join | 25 | 1 | 2500 | 99.00 | 7.13 | +6.1% |
 | KXNFLRECYDS / no_bid / improve | 25 | 1 | 2465 | -366.94 | 4.83 | -18.9% |
 | KXNFLRSHYDS / no_bid / join | 24 | 1 | 2400 | -166.00 | 5.53 | -9.2% |
 | KXNFLRSHYDS / yes_bid / join | 21 | 1 | 1958 | -369.54 | 4.80 | -55.7% |
-| KXNFLTD / no_bid / join | 15 | 1 | 1500 | -41.00 | 3.28 | -3.6% |
+| KXNFLTD / no_bid / join | 16 | 2 | 1600 | -129.00 | 3.47 | -10.0% |
 | KXNFLSPREAD / no_bid / join | 13 | 1 | 1299 | -131.09 | 3.89 | -14.5% |
 | KXNFLREC / yes_bid / improve | 15 | 1 | 1207 | -155.67 | 3.38 | -28.6% |
 | KXNFLTOTAL / no_bid / join | 12 | 1 | 1200 | -399.00 | 3.85 | -57.6% |
