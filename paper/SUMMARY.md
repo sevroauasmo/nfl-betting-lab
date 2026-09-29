@@ -1,8 +1,8 @@
 # Kalshi paper market-maker
 
-_Updated 2026-09-29 03:28 UTC. Paper orders only; fills from the real trade tape behind the recorded queue (pessimistic)._
+_Updated 2026-09-29 05:03 UTC. Paper orders only; fills from the real trade tape behind the recorded queue (pessimistic)._
 
-Orders placed: **19748** · filled: **5307** · settled: **5239**
+Orders placed: **19748** · filled: **5307** · settled: **5240**
 
 ## By series × side
 
@@ -21,8 +21,8 @@ Orders placed: **19748** · filled: **5307** · settled: **5239**
 | KXNFLTOTAL / no_bid | 140 | 16 | 13758 | -2152.53 | 48.37 | -33.1% |
 | KXNFLSPREAD / yes_bid | 132 | 16 | 12776 | -1044.25 | 41.21 | -29.0% |
 | KXNFLFIRSTTD / no_bid | 123 | 16 | 12300 | 299.00 | 13.38 | +2.5% |
+| KXNFLTD / yes_bid | 125 | 16 | 11810 | 263.94 | 25.81 | +12.1% |
 | KXNFLPASSYDS / yes_bid | 123 | 16 | 11808 | 1112.75 | 37.13 | +19.8% |
-| KXNFLTD / yes_bid | 124 | 16 | 11710 | 266.94 | 25.75 | +12.3% |
 | KXNFLTEAMTOTAL / yes_bid | 111 | 16 | 10255 | -161.60 | 29.79 | -3.3% |
 | KXNFL1HSPREAD / no_bid | 96 | 16 | 9478 | 867.90 | 32.75 | +13.0% |
 | KXNFL1QSPREAD / no_bid | 93 | 16 | 9088 | 575.24 | 29.97 | +8.4% |
@@ -45,7 +45,7 @@ Orders placed: **19748** · filled: **5307** · settled: **5239**
 
 | group | fills | games | contracts | P&L $ | fees $ | net return on capital |
 |---|---|---|---|---|---|---|
-| join / T-6h | 3048 | 16 | 294712 | -1902.75 | 921.37 | -1.7% |
+| join / T-6h | 3049 | 16 | 294812 | -1905.75 | 921.43 | -1.7% |
 | improve / T-6h | 1838 | 16 | 169972 | -2779.10 | 443.45 | -3.1% |
 | join / T-1h | 209 | 2 | 20664 | -2035.99 | 68.29 | -18.1% |
 | improve / T-1h | 144 | 2 | 14105 | -273.71 | 38.18 | -3.6% |
@@ -69,8 +69,8 @@ Orders placed: **19748** · filled: **5307** · settled: **5239**
 | KXNFLTOTAL / no_bid / join | 123 | 16 | 12217 | -1961.24 | 43.21 | -34.2% |
 | KXNFLTEAMTOTAL / no_bid / join | 118 | 16 | 11430 | -1655.22 | 37.45 | -30.5% |
 | KXNFLRECYDS / yes_bid / improve | 122 | 16 | 10929 | 84.56 | 34.81 | +1.2% |
+| KXNFLTD / yes_bid / join | 110 | 16 | 10397 | 169.71 | 23.16 | +8.3% |
 | KXNFLSPREAD / yes_bid / join | 104 | 16 | 10349 | -782.49 | 33.73 | -26.5% |
-| KXNFLTD / yes_bid / join | 109 | 16 | 10297 | 172.71 | 23.10 | +8.5% |
 | KXNFLPASSYDS / no_bid / join | 104 | 16 | 10281 | -1159.11 | 31.16 | -22.2% |
 | KXNFLPASSYDS / yes_bid / join | 97 | 16 | 9295 | 1032.41 | 30.19 | +22.2% |
 | KXNFLFIRSTTD / no_bid / join | 76 | 16 | 7600 | 109.00 | 8.50 | +1.4% |
