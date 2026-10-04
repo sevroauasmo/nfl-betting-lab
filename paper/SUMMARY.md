@@ -1,42 +1,42 @@
 # Kalshi paper market-maker
 
-_Updated 2026-10-04 20:26 UTC. Paper orders only; fills from the real trade tape behind the recorded queue (pessimistic)._
+_Updated 2026-10-04 23:39 UTC. Paper orders only; fills from the real trade tape behind the recorded queue (pessimistic)._
 
-Orders placed: **40022** · filled: **7968** · settled: **7005**
+Orders placed: **41050** · filled: **8873** · settled: **8133**
 
 ## By series × side
 
 | group | fills | games | contracts | P&L $ | fees $ | net return on capital |
 |---|---|---|---|---|---|---|
-| KXNFLRECYDS / no_bid | 1054 | 20 | 101964 | -3951.45 | 282.01 | -5.8% |
-| KXNFLREC / no_bid | 842 | 26 | 78672 | -580.22 | 221.41 | -1.6% |
-| KXNFLRSHYDS / no_bid | 675 | 22 | 64956 | -1510.35 | 182.53 | -3.9% |
-| KXNFLREC / yes_bid | 457 | 26 | 41443 | 75.54 | 138.76 | -0.3% |
-| KXNFLRECYDS / yes_bid | 333 | 20 | 30433 | 105.72 | 104.75 | +0.0% |
-| KXNFLTEAMTOTAL / no_bid | 304 | 26 | 28776 | -2679.33 | 85.09 | -21.7% |
-| KXNFLRSHYDS / yes_bid | 304 | 22 | 27443 | -290.88 | 92.09 | -3.0% |
-| KXNFLSPREAD / no_bid | 261 | 26 | 25635 | 1277.91 | 87.18 | +7.0% |
-| KXNFLTOTAL / no_bid | 225 | 26 | 22258 | -1285.53 | 77.41 | -12.5% |
-| KXNFLTD / no_bid | 221 | 25 | 21778 | -812.28 | 44.81 | -4.7% |
-| KXNFLPASSYDS / no_bid | 209 | 24 | 20646 | -1017.72 | 56.84 | -8.5% |
-| KXNFLSPREAD / yes_bid | 211 | 26 | 20571 | -2039.55 | 67.04 | -34.3% |
-| KXNFLFIRSTTD / no_bid | 192 | 26 | 19110 | 423.40 | 20.49 | +2.3% |
-| KXNFLPASSYDS / yes_bid | 169 | 24 | 16103 | 960.73 | 50.60 | +11.7% |
-| KXNFLTEAMTOTAL / yes_bid | 167 | 25 | 15379 | 611.07 | 46.80 | +6.5% |
-| KXNFL1HSPREAD / no_bid | 149 | 26 | 14582 | 633.60 | 51.56 | +6.0% |
-| KXNFLTD / yes_bid | 155 | 25 | 14561 | 785.81 | 32.10 | +30.5% |
-| KXNFL1QSPREAD / no_bid | 146 | 26 | 14303 | 549.00 | 46.27 | +4.9% |
-| KXNFLTOTAL / yes_bid | 131 | 23 | 12720 | 1625.18 | 41.29 | +28.0% |
-| KXNFL1HTOTAL / no_bid | 104 | 22 | 10125 | 259.90 | 34.81 | +5.2% |
-| KXNFL1QTOTAL / no_bid | 101 | 26 | 9399 | -33.69 | 31.77 | -1.3% |
-| KXNFL1HTOTAL / yes_bid | 93 | 23 | 9149 | 508.22 | 29.91 | +13.5% |
-| KXNFL1HSPREAD / yes_bid | 86 | 25 | 8436 | 79.97 | 31.92 | +1.6% |
-| KXNFLFIRSTTD / yes_bid | 79 | 22 | 7622 | -213.25 | 11.33 | -31.5% |
-| KXNFL1QSPREAD / yes_bid | 77 | 24 | 7547 | -42.02 | 24.77 | -3.1% |
-| KXNFL1QTOTAL / yes_bid | 70 | 24 | 6856 | -413.82 | 19.97 | -18.7% |
-| KXNFL1H / no_bid | 51 | 24 | 5100 | -139.00 | 18.25 | -5.0% |
-| KXNFL2HTOTAL / no_bid | 39 | 12 | 3394 | -182.41 | 11.25 | -15.1% |
-| KXNFL1H / yes_bid | 33 | 22 | 3118 | 34.13 | 11.10 | +2.0% |
+| KXNFLRECYDS / no_bid | 1287 | 27 | 124400 | -5092.90 | 345.49 | -6.1% |
+| KXNFLREC / no_bid | 984 | 30 | 92176 | -230.73 | 257.25 | -0.8% |
+| KXNFLRSHYDS / no_bid | 783 | 27 | 75451 | -2166.09 | 210.92 | -4.7% |
+| KXNFLREC / yes_bid | 527 | 30 | 48057 | -608.80 | 161.92 | -3.0% |
+| KXNFLRECYDS / yes_bid | 424 | 27 | 38671 | -402.90 | 133.89 | -3.2% |
+| KXNFLRSHYDS / yes_bid | 355 | 27 | 32464 | -598.95 | 109.20 | -4.8% |
+| KXNFLTEAMTOTAL / no_bid | 337 | 30 | 31978 | -2819.07 | 92.96 | -21.0% |
+| KXNFLTD / no_bid | 273 | 30 | 26863 | -523.73 | 52.89 | -2.5% |
+| KXNFLSPREAD / no_bid | 271 | 27 | 26635 | 1528.91 | 90.87 | +8.1% |
+| KXNFLTOTAL / no_bid | 238 | 30 | 23558 | -1355.53 | 80.81 | -12.8% |
+| KXNFLPASSYDS / no_bid | 228 | 27 | 22546 | -1410.72 | 62.41 | -10.7% |
+| KXNFLFIRSTTD / no_bid | 224 | 30 | 22310 | 284.40 | 23.27 | +1.2% |
+| KXNFLSPREAD / yes_bid | 213 | 27 | 20771 | -2126.55 | 67.74 | -35.2% |
+| KXNFL1QSPREAD / no_bid | 182 | 30 | 17753 | 893.99 | 56.25 | +6.5% |
+| KXNFLPASSYDS / yes_bid | 184 | 27 | 17603 | 925.73 | 55.05 | +10.3% |
+| KXNFLTD / yes_bid | 185 | 29 | 17406 | 661.71 | 38.81 | +20.8% |
+| KXNFL1HSPREAD / no_bid | 177 | 30 | 17304 | 1022.68 | 61.80 | +8.4% |
+| KXNFLTEAMTOTAL / yes_bid | 175 | 29 | 16106 | 620.04 | 48.60 | +6.4% |
+| KXNFLTOTAL / yes_bid | 146 | 26 | 14139 | 1868.20 | 46.59 | +28.0% |
+| KXNFL1HTOTAL / no_bid | 123 | 26 | 11975 | 504.90 | 40.44 | +9.4% |
+| KXNFL1QTOTAL / no_bid | 122 | 30 | 11354 | 481.93 | 39.02 | +7.6% |
+| KXNFL1HTOTAL / yes_bid | 112 | 27 | 10962 | 516.64 | 35.01 | +11.4% |
+| KXNFL1HSPREAD / yes_bid | 103 | 29 | 9976 | 88.64 | 37.32 | +1.4% |
+| KXNFLFIRSTTD / yes_bid | 99 | 26 | 9523 | -275.36 | 13.94 | -33.0% |
+| KXNFL1QSPREAD / yes_bid | 97 | 28 | 9469 | -225.76 | 31.43 | -9.4% |
+| KXNFL1QTOTAL / yes_bid | 77 | 28 | 7556 | -556.82 | 22.53 | -21.8% |
+| KXNFL1H / no_bid | 61 | 28 | 6100 | -56.00 | 21.92 | -2.1% |
+| KXNFL1H / yes_bid | 39 | 25 | 3718 | 115.13 | 13.18 | +7.4% |
+| KXNFL2HTOTAL / no_bid | 40 | 13 | 3494 | -186.41 | 11.32 | -15.4% |
 | KXNFL2HTOTAL / yes_bid | 27 | 12 | 2491 | 361.57 | 8.37 | +26.8% |
 | KXNFLGAME / no_bid | 22 | 19 | 2200 | -87.00 | 8.80 | -8.1% |
 | KXNFLGAME / yes_bid | 18 | 16 | 1800 | -80.00 | 7.19 | -9.9% |
@@ -45,74 +45,74 @@ Orders placed: **40022** · filled: **7968** · settled: **7005**
 
 | group | fills | games | contracts | P&L $ | fees $ | net return on capital |
 |---|---|---|---|---|---|---|
-| join / T-6h | 4282 | 26 | 415084 | -1044.90 | 1301.78 | -1.0% |
-| improve / T-6h | 2259 | 26 | 208090 | -3409.99 | 536.17 | -3.1% |
-| join / T-1h | 300 | 3 | 29577 | -2478.44 | 97.65 | -15.4% |
-| improve / T-1h | 164 | 3 | 15820 | -133.42 | 42.87 | -1.8% |
+| join / T-6h | 5013 | 30 | 486405 | -2518.03 | 1518.07 | -1.5% |
+| improve / T-6h | 2604 | 30 | 239944 | -3937.97 | 612.56 | -3.1% |
+| join / T-1h | 333 | 6 | 32786 | -2150.05 | 109.14 | -12.2% |
+| improve / T-1h | 183 | 6 | 17675 | -322.80 | 47.42 | -3.3% |
 
 ## By series × side × variant
 
 | group | fills | games | contracts | P&L $ | fees $ | net return on capital |
 |---|---|---|---|---|---|---|
-| KXNFLRECYDS / no_bid / join | 569 | 20 | 55765 | -2499.17 | 170.36 | -7.0% |
-| KXNFLRECYDS / no_bid / improve | 485 | 20 | 46199 | -1452.28 | 111.65 | -4.4% |
-| KXNFLRSHYDS / no_bid / join | 413 | 22 | 40203 | -269.00 | 120.11 | -1.5% |
-| KXNFLREC / no_bid / join | 412 | 26 | 39621 | -148.88 | 123.46 | -1.1% |
-| KXNFLREC / no_bid / improve | 430 | 26 | 39052 | -431.34 | 97.95 | -2.0% |
-| KXNFLRSHYDS / no_bid / improve | 262 | 22 | 24753 | -1241.35 | 62.42 | -7.6% |
-| KXNFLREC / yes_bid / join | 269 | 26 | 24686 | 490.97 | 84.74 | +3.1% |
-| KXNFLSPREAD / no_bid / join | 214 | 26 | 21120 | 781.21 | 73.29 | +5.1% |
-| KXNFLTOTAL / no_bid / join | 203 | 26 | 20217 | -1058.24 | 71.04 | -11.3% |
-| KXNFLRSHYDS / yes_bid / join | 204 | 22 | 19129 | -584.87 | 65.97 | -7.1% |
-| KXNFLRECYDS / yes_bid / join | 201 | 20 | 18710 | 136.14 | 67.94 | +0.8% |
-| KXNFLSPREAD / yes_bid / join | 179 | 26 | 17745 | -1805.79 | 58.53 | -34.5% |
-| KXNFLTEAMTOTAL / no_bid / join | 181 | 26 | 17380 | -2024.31 | 57.00 | -24.9% |
-| KXNFLTD / no_bid / join | 174 | 25 | 17244 | -826.53 | 38.13 | -6.1% |
-| KXNFLREC / yes_bid / improve | 188 | 24 | 16756 | -415.43 | 54.02 | -5.2% |
-| KXNFLPASSYDS / no_bid / join | 150 | 24 | 14793 | -975.66 | 43.93 | -12.5% |
-| KXNFLFIRSTTD / no_bid / join | 140 | 26 | 13910 | 193.40 | 14.95 | +1.4% |
-| KXNFLTD / yes_bid / join | 138 | 25 | 12999 | 709.01 | 29.17 | +30.3% |
-| KXNFLPASSYDS / yes_bid / join | 135 | 24 | 12879 | 885.74 | 42.21 | +12.5% |
-| KXNFLRECYDS / yes_bid / improve | 132 | 19 | 11723 | -30.42 | 36.81 | -1.4% |
-| KXNFLTEAMTOTAL / no_bid / improve | 123 | 25 | 11396 | -655.02 | 28.09 | -15.5% |
-| KXNFL1HSPREAD / no_bid / join | 114 | 24 | 11270 | 665.98 | 41.22 | +8.6% |
-| KXNFLTOTAL / yes_bid / join | 109 | 20 | 10782 | 1438.89 | 35.19 | +30.1% |
-| KXNFL1QSPREAD / no_bid / join | 99 | 25 | 9814 | 323.62 | 32.56 | +4.2% |
-| KXNFLTEAMTOTAL / yes_bid / join | 97 | 24 | 9011 | 504.81 | 30.54 | +10.3% |
-| KXNFL1HTOTAL / no_bid / join | 85 | 20 | 8493 | 472.31 | 31.90 | +11.8% |
-| KXNFLRSHYDS / yes_bid / improve | 100 | 20 | 8314 | 293.99 | 26.12 | +7.6% |
-| KXNFL1HTOTAL / yes_bid / join | 73 | 23 | 7300 | 413.00 | 26.14 | +13.9% |
-| KXNFL1HSPREAD / yes_bid / join | 73 | 25 | 7136 | -111.03 | 27.41 | -5.2% |
-| KXNFL1QTOTAL / no_bid / join | 68 | 24 | 6702 | -232.35 | 24.04 | -7.5% |
-| KXNFLTEAMTOTAL / yes_bid / improve | 70 | 22 | 6368 | 106.26 | 16.26 | +2.2% |
-| KXNFLPASSYDS / no_bid / improve | 59 | 19 | 5854 | -42.06 | 12.91 | -1.3% |
-| KXNFLFIRSTTD / yes_bid / join | 54 | 20 | 5250 | -20.44 | 8.22 | -5.5% |
-| KXNFLFIRSTTD / no_bid / improve | 52 | 18 | 5200 | 230.00 | 5.54 | +4.6% |
-| KXNFL1QSPREAD / yes_bid / join | 48 | 21 | 4742 | 95.78 | 15.99 | +5.7% |
-| KXNFL1QTOTAL / yes_bid / join | 48 | 21 | 4656 | -77.82 | 15.40 | -5.0% |
-| KXNFLTD / no_bid / improve | 47 | 18 | 4535 | 14.25 | 6.68 | +0.2% |
+| KXNFLRECYDS / no_bid / join | 708 | 27 | 69427 | -3121.69 | 212.42 | -7.0% |
+| KXNFLRECYDS / no_bid / improve | 579 | 27 | 54973 | -1971.21 | 133.07 | -5.0% |
+| KXNFLRSHYDS / no_bid / join | 482 | 27 | 47030 | -533.53 | 140.73 | -2.2% |
+| KXNFLREC / no_bid / join | 486 | 30 | 46939 | 133.50 | 145.37 | -0.0% |
+| KXNFLREC / no_bid / improve | 498 | 29 | 45237 | -364.23 | 111.88 | -1.5% |
+| KXNFLREC / yes_bid / join | 318 | 30 | 29491 | -48.33 | 102.04 | -1.0% |
+| KXNFLRSHYDS / no_bid / improve | 301 | 27 | 28421 | -1632.56 | 70.19 | -8.6% |
+| KXNFLRECYDS / yes_bid / join | 271 | 27 | 25289 | -225.84 | 91.84 | -2.7% |
+| KXNFLRSHYDS / yes_bid / join | 244 | 27 | 23050 | -1078.94 | 80.50 | -10.5% |
+| KXNFLSPREAD / no_bid / join | 224 | 27 | 22120 | 1032.21 | 76.98 | +6.6% |
+| KXNFLTD / no_bid / join | 215 | 30 | 21281 | -616.92 | 45.11 | -3.7% |
+| KXNFLTOTAL / no_bid / join | 210 | 29 | 20917 | -1030.24 | 73.11 | -10.8% |
+| KXNFLTEAMTOTAL / no_bid / join | 206 | 30 | 19861 | -2135.80 | 63.52 | -24.0% |
+| KXNFLREC / yes_bid / improve | 209 | 29 | 18567 | -560.47 | 59.88 | -6.3% |
+| KXNFLSPREAD / yes_bid / join | 181 | 27 | 17945 | -1892.79 | 59.23 | -35.5% |
+| KXNFLPASSYDS / no_bid / join | 163 | 27 | 16093 | -1193.66 | 47.96 | -13.9% |
+| KXNFLFIRSTTD / no_bid / join | 160 | 30 | 15910 | 105.40 | 16.84 | +0.6% |
+| KXNFLTD / yes_bid / join | 166 | 29 | 15644 | 639.91 | 35.23 | +22.3% |
+| KXNFLPASSYDS / yes_bid / join | 147 | 27 | 14079 | 771.74 | 45.78 | +10.0% |
+| KXNFL1HSPREAD / no_bid / join | 139 | 28 | 13692 | 1010.06 | 50.81 | +10.9% |
+| KXNFLRECYDS / yes_bid / improve | 153 | 24 | 13382 | -177.06 | 42.05 | -4.1% |
+| KXNFLTEAMTOTAL / no_bid / improve | 131 | 28 | 12117 | -683.27 | 29.44 | -15.2% |
+| KXNFL1QSPREAD / no_bid / join | 122 | 29 | 12114 | 594.62 | 40.04 | +6.4% |
+| KXNFLTOTAL / yes_bid / join | 121 | 23 | 11901 | 1608.91 | 39.55 | +29.7% |
+| KXNFL1HTOTAL / no_bid / join | 96 | 23 | 9543 | 755.31 | 35.33 | +17.6% |
+| KXNFLTEAMTOTAL / yes_bid / join | 103 | 28 | 9538 | 549.78 | 31.89 | +10.6% |
+| KXNFLRSHYDS / yes_bid / improve | 111 | 25 | 9414 | 479.99 | 28.70 | +11.8% |
+| KXNFL1HTOTAL / yes_bid / join | 87 | 27 | 8614 | 257.42 | 29.80 | +7.0% |
+| KXNFL1HSPREAD / yes_bid / join | 88 | 29 | 8537 | -83.41 | 32.52 | -3.7% |
+| KXNFL1QTOTAL / no_bid / join | 78 | 28 | 7702 | -130.35 | 27.74 | -4.1% |
+| KXNFLFIRSTTD / yes_bid / join | 73 | 24 | 7051 | -79.55 | 10.77 | -13.3% |
+| KXNFLTEAMTOTAL / yes_bid / improve | 72 | 23 | 6568 | 70.26 | 16.71 | +1.3% |
+| KXNFLPASSYDS / no_bid / improve | 65 | 22 | 6454 | -217.06 | 14.45 | -4.8% |
+| KXNFLFIRSTTD / no_bid / improve | 64 | 22 | 6400 | 179.00 | 6.43 | +2.9% |
+| KXNFL1QSPREAD / yes_bid / join | 62 | 25 | 6064 | -34.96 | 20.80 | -3.0% |
+| KXNFL1QSPREAD / no_bid / improve | 60 | 24 | 5639 | 299.37 | 16.21 | +6.5% |
+| KXNFLTD / no_bid / improve | 58 | 22 | 5582 | 93.19 | 7.78 | +1.7% |
+| KXNFL1H / no_bid / join | 51 | 28 | 5100 | -36.00 | 18.93 | -1.8% |
+| KXNFL1QTOTAL / yes_bid / join | 50 | 23 | 4856 | -84.82 | 16.28 | -5.1% |
 | KXNFLSPREAD / no_bid / improve | 47 | 18 | 4515 | 496.70 | 13.89 | +15.0% |
-| KXNFL1QSPREAD / no_bid / improve | 47 | 21 | 4490 | 225.38 | 13.71 | +6.3% |
-| KXNFL1H / no_bid / join | 42 | 24 | 4200 | -91.00 | 15.62 | -4.3% |
-| KXNFL1HSPREAD / no_bid / improve | 35 | 19 | 3312 | -32.38 | 10.34 | -1.7% |
-| KXNFLPASSYDS / yes_bid / improve | 34 | 15 | 3224 | 74.99 | 8.39 | +6.5% |
+| KXNFL1QTOTAL / no_bid / improve | 44 | 21 | 3652 | 612.28 | 11.28 | +30.5% |
+| KXNFL1HSPREAD / no_bid / improve | 38 | 20 | 3612 | 12.62 | 10.99 | +0.1% |
+| KXNFLPASSYDS / yes_bid / improve | 37 | 17 | 3524 | 153.99 | 9.27 | +12.6% |
+| KXNFL1QSPREAD / yes_bid / improve | 35 | 17 | 3405 | -190.80 | 10.63 | -22.6% |
+| KXNFL1H / yes_bid / join | 30 | 24 | 3000 | 101.00 | 11.16 | +7.5% |
 | KXNFLSPREAD / yes_bid / improve | 32 | 17 | 2827 | -233.76 | 8.51 | -33.0% |
-| KXNFL1QSPREAD / yes_bid / improve | 29 | 15 | 2805 | -137.80 | 8.78 | -19.9% |
-| KXNFL1QTOTAL / no_bid / improve | 33 | 17 | 2697 | 198.66 | 7.73 | +12.1% |
-| KXNFL1H / yes_bid / join | 25 | 21 | 2500 | -8.00 | 9.44 | -1.7% |
-| KXNFLFIRSTTD / yes_bid / improve | 25 | 14 | 2372 | -192.81 | 3.11 | -101.6% |
+| KXNFL1QTOTAL / yes_bid / improve | 27 | 17 | 2700 | -472.00 | 6.25 | -71.2% |
+| KXNFLTOTAL / no_bid / improve | 28 | 15 | 2641 | -325.29 | 7.70 | -32.5% |
+| KXNFLFIRSTTD / yes_bid / improve | 26 | 15 | 2472 | -195.81 | 3.17 | -101.6% |
+| KXNFL1HTOTAL / no_bid / improve | 27 | 15 | 2432 | -250.41 | 5.11 | -29.5% |
+| KXNFL1HTOTAL / yes_bid / improve | 25 | 16 | 2349 | 259.22 | 5.21 | +25.7% |
+| KXNFLTOTAL / yes_bid / improve | 25 | 13 | 2238 | 259.29 | 7.04 | +20.7% |
 | KXNFLGAME / no_bid / join | 22 | 19 | 2200 | -87.00 | 8.80 | -8.1% |
-| KXNFL1QTOTAL / yes_bid / improve | 22 | 14 | 2200 | -336.00 | 4.57 | -78.1% |
-| KXNFLTOTAL / no_bid / improve | 22 | 13 | 2041 | -227.29 | 6.37 | -25.2% |
-| KXNFL2HTOTAL / no_bid / improve | 24 | 9 | 1990 | -311.30 | 5.96 | -44.6% |
-| KXNFLTOTAL / yes_bid / improve | 22 | 12 | 1938 | 186.29 | 6.10 | +18.1% |
-| KXNFL1HTOTAL / yes_bid / improve | 20 | 13 | 1849 | 95.22 | 3.77 | +12.1% |
+| KXNFL2HTOTAL / no_bid / improve | 25 | 10 | 2090 | -315.30 | 6.03 | -44.9% |
 | KXNFLGAME / yes_bid / join | 18 | 16 | 1800 | -80.00 | 7.19 | -9.9% |
-| KXNFL1HTOTAL / no_bid / improve | 19 | 12 | 1632 | -212.41 | 2.91 | -34.3% |
-| KXNFLTD / yes_bid / improve | 17 | 14 | 1562 | 76.80 | 2.93 | +33.1% |
+| KXNFLTD / yes_bid / improve | 19 | 15 | 1762 | 21.80 | 3.58 | +6.5% |
 | KXNFL2HTOTAL / yes_bid / improve | 17 | 8 | 1491 | 224.57 | 4.72 | +29.1% |
+| KXNFL1HSPREAD / yes_bid / improve | 15 | 13 | 1439 | 172.05 | 4.80 | +39.1% |
 | KXNFL2HTOTAL / no_bid / join | 15 | 9 | 1404 | 128.89 | 5.29 | +21.6% |
-| KXNFL1HSPREAD / yes_bid / improve | 13 | 12 | 1300 | 191.00 | 4.51 | +45.6% |
 | KXNFL2HTOTAL / yes_bid / join | 10 | 9 | 1000 | 137.00 | 3.65 | +23.7% |
-| KXNFL1H / no_bid / improve | 9 | 7 | 900 | -48.00 | 2.63 | -7.8% |
-| KXNFL1H / yes_bid / improve | 8 | 6 | 618 | 42.13 | 1.66 | +26.8% |
+| KXNFL1H / no_bid / improve | 10 | 8 | 1000 | -20.00 | 2.99 | -3.2% |
+| KXNFL1H / yes_bid / improve | 9 | 7 | 718 | 14.13 | 2.02 | +6.8% |
