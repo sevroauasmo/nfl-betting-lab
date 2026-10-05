@@ -1,8 +1,8 @@
 # Kalshi paper market-maker
 
-_Updated 2026-10-05 03:53 UTC. Paper orders only; fills from the real trade tape behind the recorded queue (pessimistic)._
+_Updated 2026-10-05 11:08 UTC. Paper orders only; fills from the real trade tape behind the recorded queue (pessimistic)._
 
-Orders placed: **41050** · filled: **9634** · settled: **9531**
+Orders placed: **41050** · filled: **9634** · settled: **9532**
 
 ## By series × side
 
@@ -16,7 +16,7 @@ Orders placed: **41050** · filled: **9634** · settled: **9531**
 | KXNFLTEAMTOTAL / no_bid | 399 | 31 | 38178 | -2803.07 | 108.06 | -17.2% |
 | KXNFLRSHYDS / yes_bid | 420 | 31 | 38074 | -678.88 | 128.84 | -4.6% |
 | KXNFLSPREAD / no_bid | 350 | 31 | 34535 | 2329.91 | 116.07 | +9.6% |
-| KXNFLTD / no_bid | 349 | 31 | 34291 | 375.40 | 68.47 | +1.1% |
+| KXNFLTD / no_bid | 350 | 31 | 34391 | 383.40 | 68.60 | +1.1% |
 | KXNFLTOTAL / no_bid | 279 | 31 | 27658 | -1649.53 | 95.43 | -13.2% |
 | KXNFLPASSYDS / no_bid | 270 | 31 | 26723 | -3033.70 | 73.94 | -19.3% |
 | KXNFLFIRSTTD / no_bid | 238 | 31 | 23710 | 275.40 | 24.81 | +1.1% |
@@ -45,7 +45,7 @@ Orders placed: **41050** · filled: **9634** · settled: **9531**
 
 | group | fills | games | contracts | P&L $ | fees $ | net return on capital |
 |---|---|---|---|---|---|---|
-| join / T-6h | 5715 | 31 | 554141 | -2787.98 | 1725.40 | -1.5% |
+| join / T-6h | 5716 | 31 | 554241 | -2779.98 | 1725.53 | -1.5% |
 | improve / T-6h | 2934 | 31 | 269999 | -5212.08 | 673.59 | -3.5% |
 | join / T-1h | 581 | 7 | 57064 | -2757.48 | 182.59 | -9.0% |
 | improve / T-1h | 301 | 7 | 28935 | -210.36 | 74.00 | -1.5% |
@@ -64,7 +64,7 @@ Orders placed: **41050** · filled: **9634** · settled: **9531**
 | KXNFLRECYDS / yes_bid / join | 332 | 31 | 30832 | 280.78 | 110.80 | +1.2% |
 | KXNFLSPREAD / no_bid / join | 294 | 31 | 29120 | 1838.21 | 98.92 | +8.9% |
 | KXNFLRSHYDS / yes_bid / join | 303 | 31 | 28280 | -1165.27 | 99.16 | -9.4% |
-| KXNFLTD / no_bid / join | 274 | 31 | 27086 | 114.80 | 58.17 | +0.3% |
+| KXNFLTD / no_bid / join | 275 | 31 | 27186 | 122.80 | 58.30 | +0.3% |
 | KXNFLTOTAL / no_bid / join | 251 | 31 | 25017 | -1324.24 | 87.73 | -11.6% |
 | KXNFLTEAMTOTAL / no_bid / join | 248 | 31 | 24061 | -2145.80 | 74.81 | -19.9% |
 | KXNFLSPREAD / yes_bid / join | 204 | 31 | 20183 | -1928.83 | 66.53 | -32.4% |
