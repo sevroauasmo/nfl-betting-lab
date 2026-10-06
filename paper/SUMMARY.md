@@ -1,6 +1,6 @@
 # Kalshi paper market-maker
 
-_Updated 2026-10-06 11:18 UTC. Paper orders only; fills from the real trade tape behind the recorded queue (pessimistic)._
+_Updated 2026-10-06 13:03 UTC. Paper orders only; fills from the real trade tape behind the recorded queue (pessimistic)._
 
 Orders placed: **41998** · filled: **9855** · settled: **9753**
 
