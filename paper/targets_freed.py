@@ -120,7 +120,7 @@ def snapshot(games, key):
     now = int(time.time())
     for g in games:
         path = SNAP / f"{g['game_id']}.json.gz"
-        if path.exists() or not (g["kick"] - 90 * 60 <= now <= g["kick"] - 35 * 60):
+        if path.exists() or not (g["kick"] - 90 * 60 <= now <= g["kick"] - 5 * 60):
             continue
         espn = None
         sb = get("https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard") or {}
@@ -132,6 +132,45 @@ def snapshot(games, key):
         with gzip.open(path, "wt") as f:
             json.dump(snap, f)
         print(f"snapshot {g['game_id']}: {len(snap['kalshi'])} kalshi books, odds={'yes' if snap['odds'] else 'no'}, T-{(g['kick'] - now) // 60}m")
+
+
+def backfill(g, key):
+    """Rebuild the T-85 snapshot after the fact when no live run landed in the window (GitHub cron drops runs).
+    Kalshi: best bid/ask from 1-minute candles (no depth, so resting orders only simulate when they improve the book).
+    Odds: The Odds API historical endpoint (paid plans only; skipped if unavailable)."""
+    t = g["kick"] - 85 * 60
+    books = []
+    for code in g["codes"]:
+        for series in SERIES:
+            for path in ("/markets", "/historical/markets"):
+                d = get(f"{K}{path}", event_ticker=f"{series}-{code}", limit=1000) or {}
+                for m in d.get("markets", []):
+                    cp = (f"{K}/historical/markets/{m['ticker']}/candlesticks" if path.startswith("/historical")
+                          else f"{K}/series/{series}/markets/{m['ticker']}/candlesticks")
+                    cs = [c for c in (get(cp, start_ts=t - 600, end_ts=t, period_interval=1) or {}).get("candlesticks", []) if c["end_period_ts"] <= t]
+                    if not cs:
+                        continue
+                    v = lambda side: (cs[-1].get(side) or {}).get("close_dollars", (cs[-1].get(side) or {}).get("close"))  # noqa: E731
+                    yb, ya = v("yes_bid"), v("yes_ask")
+                    if yb is None or ya is None:
+                        continue
+                    sub = m.get("yes_sub_title") or ""
+                    st_ = re.search(r":\s*([\d.]+)\+", sub)
+                    books.append({"ticker": m["ticker"], "series": series, "player": sub.split(":")[0], "strike": float(st_.group(1)) if st_ else None,
+                                  "yes_bid": float(yb), "yes_bid_q": None, "no_bid": round(1 - float(ya), 2), "no_bid_q": None,
+                                  "team_code": m["ticker"].split("-")[2][:3]})
+                if books:
+                    break
+    odds = None
+    if key:
+        iso = datetime.fromtimestamp(t, timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        evs = (get(f"{ODDS}/historical/sports/americanfootball_nfl/events", apiKey=key, date=iso) or {}).get("data") or []
+        ev = next((e for e in evs if e["home_team"] == NAMES.get(g["home"]) and e["away_team"] == NAMES.get(g["away"])), None)
+        if ev:
+            od = (get(f"{ODDS}/historical/sports/americanfootball_nfl/events/{ev['id']}/odds", apiKey=key, regions="us,us_ex",
+                      markets=",".join(ODDS_MKT), oddsFormat="american", date=iso) or {}).get("data")
+            odds = {"event": ev, "odds": od} if od else None
+    return {"game": g, "ts": t, "kalshi": books, "odds": odds, "espn_injuries": None, "backfilled": True}
 
 
 # ------------------------------------------------------------------ grading
@@ -254,6 +293,8 @@ def grade_game(snap, rows):
                                  "result": "win" if win else "loss", "pnl": round((1 - cost) if win else -cost, 4)})
             # resting NO bid at the mid; queue ahead = size already resting at that NO price
             no_px = round(1 - round(r.mid, 2), 2); yes_px = round(1 - no_px, 2)
+            if abs(no_px - r.no_bid) < 1e-9 and (r.no_bid_q is None or (isinstance(r.no_bid_q, float) and math.isnan(r.no_bid_q))):
+                continue                                          # joining an existing level with unknown queue: can't simulate honestly
             q_ahead = float(r.no_bid_q or 0) if abs(no_px - r.no_bid) < 1e-9 else 0.0
             filled = rest_fill(r.ticker, yes_px, q_ahead, ts_snap, kick) / 100
             rows.append({**base, "strategy": "kalshi_rest_mid", "price": no_px, "stake": round(no_px * filled, 4), "filled": filled,
@@ -266,6 +307,15 @@ def grade(games):
     done = json.loads(DONE.read_text()) if DONE.exists() else {}
     rows = []
     now = int(time.time())
+    key = os.environ.get("ODDS_API_KEY")
+    for g in games:   # rebuild snapshots the live runs missed
+        p_ = SNAP / f"{g['game_id']}.json.gz"
+        if not p_.exists() and g["kick"] + 5 * 3600 < now < g["kick"] + 30 * 86400:
+            snap = backfill(g, key)
+            if snap["kalshi"] or snap["odds"]:
+                with gzip.open(p_, "wt") as f:
+                    json.dump(snap, f)
+                print(f"backfilled {g['game_id']}: {len(snap['kalshi'])} kalshi books, odds={'yes' if snap['odds'] else 'no'}")
     for p in sorted(SNAP.glob("*.json.gz")):
         gid = p.name.split(".")[0]
         if done.get(gid) in ("graded", "no_trigger"):
@@ -289,7 +339,8 @@ def summarize():
     lines = ["# Paper test: surprise inactive -> teammates' receiving unders", "",
              f"_Updated {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC. Prices snapshotted ~T-85 (after inactives); nothing is actually bet._", ""]
     done = json.loads(DONE.read_text()) if DONE.exists() else {}
-    lines.append(f"Games snapshotted: {len(list(SNAP.glob('*.json.gz')))} · graded: {sum(v == 'graded' for v in done.values())} with a trigger, "
+    nb = sum(1 for p in SNAP.glob("*.json.gz") if json.load(gzip.open(p, "rt")).get("backfilled"))
+    lines.append(f"Games snapshotted: {len(list(SNAP.glob('*.json.gz')))} ({nb} rebuilt after the fact from 1-minute Kalshi candles / odds history) · graded: {sum(v == 'graded' for v in done.values())} with a trigger, "
                  f"{sum(v == 'no_trigger' for v in done.values())} without · pending: {sum(v in ('waiting', 'error') for v in done.values())}")
     lines.append("")
     if BETS.exists():
