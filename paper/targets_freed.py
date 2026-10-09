@@ -120,7 +120,7 @@ def snapshot(games, key):
     now = int(time.time())
     for g in games:
         path = SNAP / f"{g['game_id']}.json.gz"
-        if path.exists() or not (g["kick"] - 90 * 60 <= now <= g["kick"] - 5 * 60):
+        if path.exists() or not (g["kick"] - 85 * 60 <= now <= g["kick"] - 5 * 60):
             continue
         espn = None
         sb = get("https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard") or {}

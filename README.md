@@ -70,10 +70,10 @@ About 50 more triggered team-games (roughly the rest of this season) confirms or
 
 ## Automation (paper only)
 
-`.github/workflows/paper-maker.yml` runs on GitHub Actions on game days and calls
+`.github/workflows/targets-freed.yml` runs on GitHub Actions and calls
 [`paper/targets_freed.py`](paper/targets_freed.py). No real orders are sent.
 
-- **snapshot** (after inactives, before kickoff): Kalshi receiving-ladder order books, and sportsbook and
+- **snapshot** (T−85 to T−5, after inactives are out): Kalshi receiving-ladder order books, and sportsbook and
   Novig/ProphetX odds via The Odds API (`ODDS_API_KEY` repo secret, ~4 credits a game).
 - **backfill**: GitHub's scheduler drops many runs. Any game the live run missed is rebuilt afterward from
   Kalshi's 1-minute candles at T−85 (free) and The Odds API's history (paid plan only).
@@ -83,7 +83,10 @@ About 50 more triggered team-games (roughly the rest of this season) confirms or
   inactive player or one with no snaps is void.
 - **summarize**: writes [`paper/TARGETS_FREED.md`](paper/TARGETS_FREED.md).
 
-Run it by hand: Actions tab → *kalshi-paper-maker* → *Run workflow*, or locally:
+Timing comes from **cron-job.org**, which calls the workflow's `workflow_dispatch` endpoint every 15 minutes during
+kickoff windows. GitHub's own scheduler only runs a daily backup that grades finished games.
+
+Run it by hand: Actions tab → *targets-freed* → *Run workflow*, or locally:
 
 ```bash
 uv run --no-project --python 3.12 --with requests --with pandas --with pyarrow python paper/targets_freed.py

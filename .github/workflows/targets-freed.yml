@@ -1,0 +1,34 @@
+name: targets-freed
+
+# Paper test of surprise-inactive receiver unders. No real orders are sent.
+# Timing: cron-job.org calls this workflow (workflow_dispatch) every 15 min during kickoff windows, because GitHub's own
+# scheduler drops most runs. The daily schedule below is a backup that also grades finished games.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 10 * * *"   # daily: grade finished games (and rebuild any missed snapshots), refresh the summary
+
+concurrency:
+  group: targets-freed
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Snapshot (after inactives, before kickoff), grade finished games, summarize
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: uv run --no-project --python 3.12 --with requests --with pandas --with pyarrow python paper/targets_freed.py
+      - name: Commit state
+        run: |
+          git config user.name "paper-bot"
+          git config user.email "paper-bot@users.noreply.github.com"
+          git add paper/state paper/TARGETS_FREED.md
+          git diff --cached --quiet || (git commit -m "targets-freed: $(date -u +%Y-%m-%dT%H:%MZ)" && git pull --rebase && git push)
