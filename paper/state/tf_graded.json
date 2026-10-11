@@ -64,5 +64,13 @@
  "2026_04_PIT_CLE": "no_trigger",
  "2026_04_TEN_BAL": "no_trigger",
  "2026_05_TB_DAL": "no_trigger",
- "2026_05_PHI_JAX": "no_trigger"
+ "2026_05_PHI_JAX": "no_trigger",
+ "2026_05_CHI_GB": "waiting",
+ "2026_05_CIN_MIA": "waiting",
+ "2026_05_CLE_NYJ": "waiting",
+ "2026_05_HOU_TEN": "waiting",
+ "2026_05_IND_PIT": "waiting",
+ "2026_05_LV_NE": "waiting",
+ "2026_05_MIN_NO": "waiting",
+ "2026_05_NYG_WAS": "waiting"
 }
