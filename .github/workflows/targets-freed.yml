@@ -1,7 +1,8 @@
 name: targets-freed
 
-# Paper test of surprise-inactive receiver unders. No real orders are sent.
-# Timing: cron-job.org calls this workflow (workflow_dispatch) every 15 min during kickoff windows, because GitHub's own
+# Surprise-inactive receiver unders: Kalshi orders (paper/live_trader.py; demo unless repo variable KALSHI_ENV=live)
+# plus the paper test (paper/targets_freed.py).
+# Timing: cron-job.org calls this workflow (workflow_dispatch) every 5 min during pregame windows, because GitHub's own
 # scheduler drops most runs. The daily schedule below is a backup that also grades finished games.
 on:
   workflow_dispatch:
@@ -22,6 +23,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
+      - name: Trade (inactive news -> Kalshi NO orders)
+        continue-on-error: true
+        env:
+          KALSHI_ENV: ${{ vars.KALSHI_ENV || 'demo' }}
+          KALSHI_KEY_ID: ${{ vars.KALSHI_ENV == 'live' && secrets.KALSHI_LIVE_KEY_ID || secrets.KALSHI_DEMO_KEY_ID }}
+          KALSHI_PRIVATE_KEY: ${{ vars.KALSHI_ENV == 'live' && secrets.KALSHI_LIVE_PRIVATE_KEY || secrets.KALSHI_DEMO_PRIVATE_KEY }}
+        run: uv run --no-project --python 3.12 --with requests --with pandas --with pyarrow --with cryptography python paper/live_trader.py
       - name: Snapshot (after inactives, before kickoff), grade finished games, summarize
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
