@@ -88,10 +88,8 @@ def schedule():
 def kalshi_books(g):
     out = []
     for series in SERIES:
-        d = get(f"{K}/markets", series_ticker=series, status="open", limit=1000) or {}
-        for m in d.get("markets", []):
-            if m["event_ticker"].split("-")[1] not in g["codes"]:
-                continue
+        ms = [m for code in g["codes"] for m in (get(f"{K}/markets", event_ticker=f"{series}-{code}", status="open", limit=1000) or {}).get("markets", [])]
+        for m in ms:                                   # per-event query: a series-wide listing truncates at 1000 on full slates
             ob = (get(f"{K}/markets/{m['ticker']}/orderbook") or {}).get("orderbook_fp") or {}
             yes = [(float(p), float(q)) for p, q in ob.get("yes_dollars") or []]
             no = [(float(p), float(q)) for p, q in ob.get("no_dollars") or []]

@@ -9,27 +9,41 @@ on:
   schedule:
     - cron: "17 10 * * *"   # daily: grade finished games (and rebuild any missed snapshots), refresh the summary
 
-concurrency:
-  group: targets-freed
-  cancel-in-progress: false
-
 permissions:
   contents: write
 
+# Two jobs with separate queues, so a slow paper snapshot never delays an order.
 jobs:
-  run:
+  trade:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 15
+    concurrency: { group: targets-freed-trade, cancel-in-progress: false }
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
       - name: Trade (inactive news -> Kalshi NO orders)
-        continue-on-error: true
         env:
           KALSHI_ENV: ${{ vars.KALSHI_ENV || 'demo' }}
           KALSHI_KEY_ID: ${{ vars.KALSHI_ENV == 'live' && secrets.KALSHI_LIVE_KEY_ID || secrets.KALSHI_DEMO_KEY_ID }}
           KALSHI_PRIVATE_KEY: ${{ vars.KALSHI_ENV == 'live' && secrets.KALSHI_LIVE_PRIVATE_KEY || secrets.KALSHI_DEMO_PRIVATE_KEY }}
         run: uv run --no-project --python 3.12 --with requests --with pandas --with pyarrow --with cryptography python paper/live_trader.py
+      - name: Commit order log
+        if: always()
+        run: |
+          git config user.name "paper-bot"
+          git config user.email "paper-bot@users.noreply.github.com"
+          git add paper/state/live
+          git diff --cached --quiet && exit 0
+          git commit -m "live-trader: $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4 5; do git pull --rebase && git push && exit 0; sleep $((i * 5)); done; exit 1
+
+  paper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    concurrency: { group: targets-freed-paper, cancel-in-progress: false }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
       - name: Snapshot (after inactives, before kickoff), grade finished games, summarize
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
@@ -38,5 +52,7 @@ jobs:
         run: |
           git config user.name "paper-bot"
           git config user.email "paper-bot@users.noreply.github.com"
-          git add paper/state paper/TARGETS_FREED.md
-          git diff --cached --quiet || (git commit -m "targets-freed: $(date -u +%Y-%m-%dT%H:%MZ)" && git pull --rebase && git push)
+          git add paper/state/tf paper/state/tf_bets.csv paper/state/tf_graded.json paper/TARGETS_FREED.md
+          git diff --cached --quiet && exit 0
+          git commit -m "targets-freed: $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4 5; do git pull --rebase && git push && exit 0; sleep $((i * 5)); done; exit 1

@@ -37,8 +37,9 @@ TRADE = {"demo": "https://external-api.demo.kalshi.co/trade-api/v2", "live": "ht
 BET, PER_WEEK = 5.0, 250.0
 TIGHT = 0.04
 WINDOW = (110 * 60, 10 * 60)                                      # act from T-110 to T-10
-INACTIVE = r"^{last}(?: \([^)]*\))?,?(?: [^.]{{0,60}}?,)? (?:is|was|has been|will be) (?:listed as |ruled |declared )?inactive\b"   # subject must be the player
-HEDGE = re.compile(r"\b(expected|likely|could|may|might|questionable|game-time|trending|probable|considered|doubtful)\b", re.I)
+INACTIVE = r"^(?:{first} )?{last}(?: \([^)]*\))?,?(?: [^.]{{0,80}}?,)? (?:is|was|has been|will be) (?:officially )?(?:listed as |ruled |declared )?inactive\b"
+HEDGE = re.compile(r"\b(expected|likely|could|may|might|trending|considered|projected|anticipated)\b", re.I)   # within the matched phrase
+TRANSIENT = ("rejected 429", "rejected 5", "error")              # order attempts worth retrying on the next run
 UA = {"User-Agent": "Mozilla/5.0"}
 
 
@@ -106,22 +107,22 @@ def candidates(g):
     c = pd.DataFrame({"ts": ts, "team": team, "position": pos}).reset_index().rename(columns={"player_id": "gsis_id"})
     c = c[(c.ts >= 0.10) & c.position.isin(["WR", "TE", "RB"])].merge(nv["players"][["gsis_id", "espn_id", "display_name"]], on="gsis_id")
     inj = nv["injuries"]; inj = inj[(inj.week == g["week"]) & inj.team.isin([g["home"], g["away"]])]
-    if inj.empty:                                              # nflverse not updated yet -> ESPN's pre-game-day designations
-        e = espn_injuries(g)
-        listed = {n for n, s in e.items() if s in ("Out", "Doubtful")}
-        c = c[~c.display_name.map(norm).isin(listed)]
-    else:
-        c = c[~c.gsis_id.isin(set(inj[inj.report_status.isin(["Out", "Doubtful"])].gsis_id))]
-    return c, inj
+    out = inj[inj.report_status.isin(["Out", "Doubtful"])]
+    out_names = set(out.full_name.map(norm)) | {n for n, s in espn_injuries(g).items() if s in ("Out", "Doubtful")}   # either source
+    c = c[~c.gsis_id.isin(set(out.gsis_id)) & ~c.display_name.map(norm).isin(out_names)]
+    teams = dict(zip(last3.player_display_name.map(norm), last3.team))   # name -> team, for assigning Kalshi ladders
+    return c, out_names, teams
 
 
 def inactive_news(espn_id, name, g):
-    last = re.escape(re.sub(r"\s+(Jr\.?|Sr\.?|II|III|IV|V)$", "", name).split()[-1])
+    first, _, last = re.sub(r"\s+(Jr\.?|Sr\.?|II|III|IV|V)$", "", name).partition(" ")   # "Amon-Ra St. Brown" -> "St. Brown"
+    pat = INACTIVE.format(first=re.escape(first), last=re.escape(last or first))
     feed = (get("https://site.api.espn.com/apis/fantasy/v2/games/ffl/news/players", playerId=int(espn_id), limit=30) or {}).get("feed", [])
     for a in feed:
         t = datetime.fromisoformat(a["published"].replace("Z", "+00:00")).timestamp()
         h = a.get("headline", "")
-        if g["kick"] - 30 * 3600 <= t <= g["kick"] and re.search(INACTIVE.format(last=last), h, re.I) and not HEDGE.search(h):
+        m = re.search(pat, h, re.I)
+        if g["kick"] - 30 * 3600 <= t <= g["kick"] and m and not HEDGE.search(m.group(0)):
             return {"published": a["published"], "headline": h}
     return None
 
@@ -134,18 +135,15 @@ def team_of(ticker, g):
     return next((t for a, t in opts if part.startswith(a)), None)
 
 
-def ladders(g, team, exclude):
+def ladders(g, team, exclude, teams):
     """Per (player, stat): the strike priced nearest 50/50, with current production best bids."""
     picks = []
     for series, stat in SERIES.items():
-        d = get(f"{K}/markets", series_ticker=series, status="open", limit=1000) or {}
         rows = []
-        for m in d.get("markets", []):
-            if m["event_ticker"].split("-")[1] not in g["codes"] or team_of(m["ticker"], g) != team:
-                continue
+        for m in [m for code in g["codes"] for m in (get(f"{K}/markets", event_ticker=f"{series}-{code}", status="open", limit=1000) or {}).get("markets", [])]:
             sub = m.get("yes_sub_title") or ""
             pn, strike = norm(sub.split(":")[0]), re.search(r":\s*([\d.]+)\+", sub)
-            if pn in exclude or not strike:
+            if (teams.get(pn) or team_of(m["ticker"], g)) != team or pn in exclude or not strike:
                 continue
             ob = (get(f"{K}/markets/{m['ticker']}/orderbook") or {}).get("orderbook_fp") or {}
             yes = [float(p) for p, q in ob.get("yes_dollars") or []]
@@ -158,6 +156,20 @@ def ladders(g, team, exclude):
             df = pd.DataFrame(rows)
             picks += [grp.loc[(grp.mid - 0.5).abs().idxmin()].to_dict() for _, grp in df.groupby("player")]
     return picks
+
+
+def ordered_on_exchange(g):
+    """Tickers in this game that already have an order of ours on the exchange (any status). The CSV can lag a failed push."""
+    out = set()
+    for series in SERIES:
+        for code in g["codes"]:
+            code_, resp = signed("GET", f"/portfolio/orders?event_ticker={series}-{code}&limit=1000")
+            if code_ == 404:                                      # no such event on this exchange (alias spelling, demo gaps)
+                continue
+            if code_ != 200:
+                raise RuntimeError(f"can't read existing orders ({code_}): {resp}")   # never trade blind
+            out |= {o["ticker"] for o in resp.get("orders", [])}
+    return out
 
 
 def place(r, g):
@@ -176,7 +188,10 @@ def place(r, g):
             "count": f"{count}.00", "price": f"{1 - no_px:.4f}",                               # V2 prices are on the YES scale
             "time_in_force": "good_till_canceled", "expiration_time": int(g["kick"]),
             "self_trade_prevention_type": "taker_at_cross", "post_only": post_only}
-    code, resp = signed("POST", "/portfolio/events/orders", body)
+    try:
+        code, resp = signed("POST", "/portfolio/events/orders", body)
+    except requests.RequestException as e:                        # outcome unknown: next run checks the exchange first
+        return {**row, "status": "error", "error": str(e)[:200]}
     if code in (200, 201):
         o = resp.get("order", resp)
         return {**row, "status": o.get("status", "placed"), "order_id": o.get("order_id", "")}
@@ -194,42 +209,50 @@ def run(games, now=None):
     new = []
 
     def spent(pred):
-        live_ = [o for o in orders.to_dict("records") + new if not str(o["status"]).startswith(("rejected", "skipped"))]
+        live_ = [o for o in orders.to_dict("records") + new if not str(o["status"]).startswith(("rejected", "skipped", "error"))]
         return sum(float(o["cost"]) for o in live_ if pred(o))
 
-    for g in games:
-        if not (g["kick"] - WINDOW[0] <= now <= g["kick"] - WINDOW[1]):
+    try:
+        for g in games:
+            if g["kick"] - WINDOW[0] <= now <= g["kick"] - WINDOW[1]:
+                try:
+                    trade_game(g, now, trig, orders, new, spent)
+                except Exception as e:                            # one game's failure must not stop the others
+                    print(f"{g['game_id']}: FAILED {type(e).__name__}: {e}")
+    finally:
+        TRIG.write_text(json.dumps(trig, indent=1))
+        if new:
+            pd.concat([orders, pd.DataFrame(new)]).to_csv(ORDERS, index=False)
+
+
+def trade_game(g, now, trig, orders, new, spent):
+    cand, out_names, teams = candidates(g)
+    print(f"{g['game_id']} T-{(g['kick'] - now) // 60}m: watching {', '.join(f'{n} ({t:.0%})' for n, t in zip(cand.display_name, cand.ts)) or 'nobody'}")
+    hits = {}
+    for _, c in cand.iterrows():
+        if pd.isna(c.espn_id):
             continue
-        cand, inj = candidates(g)
-        out_names = set(inj[inj.report_status.isin(["Out", "Doubtful"])].full_name.map(norm)) if not inj.empty else \
-            {n for n, st_ in espn_injuries(g).items() if st_ in ("Out", "Doubtful")}
-        print(f"{g['game_id']} T-{(g['kick'] - now) // 60}m: watching {', '.join(f'{n} ({t:.0%})' for n, t in zip(cand.display_name, cand.ts)) or 'nobody'}")
-        hits = {}
-        for _, c in cand.iterrows():
-            if pd.isna(c.espn_id):
+        n = inactive_news(c.espn_id, c.display_name, g)
+        if n:
+            hits.setdefault(c.team, []).append({"player": c.display_name, "ts": round(float(c.ts), 3), **n})
+    for team, who in hits.items():
+        key = f"{g['game_id']}|{team}"
+        trig.setdefault(key, {"first_seen": datetime.now(timezone.utc).isoformat(timespec="seconds"), "players": who})
+        print(f"  TRIGGER {team}: " + "; ".join(f"{w['player']} ({w['ts']:.0%}) - {w['headline']}" for w in who))
+        exclude = {norm(w["player"]) for w in who} | out_names        # scratched players + anyone already ruled out
+        spent_week = spent(lambda o: o["week"] == g["week"])
+        done = ordered_on_exchange(g) | {o["ticker"] for o in orders.to_dict("records") + new if not str(o["status"]).startswith(TRANSIENT)}
+        for r in ladders(g, team, exclude, teams):
+            if r["ticker"] in done:
                 continue
-            n = inactive_news(c.espn_id, c.display_name, g)
-            if n:
-                hits.setdefault(c.team, []).append({"player": c.display_name, "ts": round(float(c.ts), 3), **n})
-        for team, who in hits.items():
-            key = f"{g['game_id']}|{team}"
-            trig.setdefault(key, {"first_seen": datetime.now(timezone.utc).isoformat(timespec="seconds"), "players": who})
-            print(f"  TRIGGER {team}: " + "; ".join(f"{w['player']} ({w['ts']:.0%}) - {w['headline']}" for w in who))
-            exclude = {norm(w["player"]) for w in who} | out_names        # scratched players + anyone already ruled out
-            spent_week = spent(lambda o: o["week"] == g["week"])
-            for r in ladders(g, team, exclude):
-                if r["ticker"] in set(orders.ticker) | {o["ticker"] for o in new}:
-                    continue
-                if spent_week + BET > PER_WEEK:
-                    print(f"  weekly cap reached (${spent_week:.0f})"); break
-                o = {"game_id": g["game_id"], "team": team, "week": g["week"], **place(r, g)}
-                new.append(o)
-                if not o["status"].startswith(("rejected", "skipped")):
-                    spent_week += o["cost"]
-                print(f"  {o['mode']:4s} NO {o['ticker']} x{o['count']} @ {o['no_price']:.2f} (spread {o['spread']:.2f}) -> {o['status']} {o['error']}")
-    TRIG.write_text(json.dumps(trig, indent=1))
-    if new:
-        pd.concat([orders, pd.DataFrame(new)]).to_csv(ORDERS, index=False)
+            if spent_week + BET > PER_WEEK:
+                print(f"  weekly cap reached (${spent_week:.0f})"); break
+            o = {"game_id": g["game_id"], "team": team, "week": g["week"], **place(r, g)}
+            new.append(o)
+            done.add(r["ticker"])
+            if not o["status"].startswith(("rejected", "skipped", "error")):
+                spent_week += o["cost"]
+            print(f"  {o['mode']:4s} NO {o['ticker']} x{o['count']} @ {o['no_price']:.2f} (spread {o['spread']:.2f}) -> {o['status']} {o['error']}")
 
 
 if __name__ == "__main__":
