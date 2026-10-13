@@ -8,7 +8,10 @@ Each run (cron-job.org dispatches the workflow every 5 min in pregame windows):
      50/50, sized ~$BET each. Spread <= 4c: take the ask. Wider: rest a post-only NO bid at the mid. Every order expires
      at kickoff. Decisions use the production order book (public); orders go to KALSHI_ENV (demo | live).
 Cap: $PER_WEEK per NFL week (beyond that, the account balance is the limit). Each ticker is ordered at most once.
-State: paper/state/live/orders.csv (every order attempt), paper/state/live/triggers.json.
+State: paper/state/live/orders.csv (every order attempt), triggers.json, fills.json (per-order fills + settlement).
+Report: paper/LIVE.md (real fills and P&L from the exchange, next to the paper test for the same games).
+Alerts: triggers, orders, failures and settled results go to $ALERTS_FILE (JSON lines); paper/notify.py posts them
+as GitHub issues/comments.
 """
 import base64
 import io
@@ -32,6 +35,9 @@ ROOT = Path(__file__).resolve().parent
 LIVE = ROOT / "state" / "live"
 ORDERS = LIVE / "orders.csv"
 TRIG = LIVE / "triggers.json"
+FILLS = LIVE / "fills.json"
+REPORT = ROOT / "LIVE.md"
+ALERTS = []                                                      # (key, title, body) for paper/notify.py
 ENV = os.environ.get("KALSHI_ENV", "demo")                       # demo | live | off
 TRADE = {"demo": "https://external-api.demo.kalshi.co/trade-api/v2", "live": "https://external-api.kalshi.com/trade-api/v2"}
 BET, PER_WEEK = 5.0, 250.0
@@ -219,6 +225,7 @@ def run(games, now=None):
                     trade_game(g, now, trig, orders, new, spent)
                 except Exception as e:                            # one game's failure must not stop the others
                     print(f"{g['game_id']}: FAILED {type(e).__name__}: {e}")
+                    ALERTS.append(("errors", "[trade] errors", f"`{g['game_id']}` failed at T-{(g['kick'] - now) // 60}m: `{type(e).__name__}: {e}`"))
     finally:
         TRIG.write_text(json.dumps(trig, indent=1))
         if new:
@@ -237,6 +244,8 @@ def trade_game(g, now, trig, orders, new, spent):
             hits.setdefault(c.team, []).append({"player": c.display_name, "ts": round(float(c.ts), 3), **n})
     for team, who in hits.items():
         key = f"{g['game_id']}|{team}"
+        is_new = key not in trig
+        n_before = len(new)
         trig.setdefault(key, {"first_seen": datetime.now(timezone.utc).isoformat(timespec="seconds"), "players": who})
         print(f"  TRIGGER {team}: " + "; ".join(f"{w['player']} ({w['ts']:.0%}) - {w['headline']}" for w in who))
         exclude = {norm(w["player"]) for w in who} | out_names        # scratched players + anyone already ruled out
@@ -253,7 +262,87 @@ def trade_game(g, now, trig, orders, new, spent):
             if not o["status"].startswith(("rejected", "skipped", "error")):
                 spent_week += o["cost"]
             print(f"  {o['mode']:4s} NO {o['ticker']} x{o['count']} @ {o['no_price']:.2f} (spread {o['spread']:.2f}) -> {o['status']} {o['error']}")
+        mine = new[n_before:]
+        if is_new or mine:
+            lines = [f"**{w['player']}** ({w['ts']:.0%} target share): {w['headline']}" for w in who] if is_new else []
+            lines += ["", "| order | stat | strike | mode | NO price | contracts | cost | status |", "|---|---|---|---|---|---|---|---|"] if mine else []
+            lines += [f"| {o['player']} | {o['stat']} | {o['strike']:g}+ | {o['mode']} | {o['no_price']:.2f} | {o['count']} | ${o['cost']:.2f} | {o['status']} {o['error']} |" for o in mine]
+            ALERTS.append((key, f"[trade] {g['away']} @ {g['home']}: {team} trigger ({', '.join(w['player'] for w in who)}) [{ENV}]",
+                           f"T-{(g['kick'] - now) // 60}m\n\n" + "\n".join(lines)))
+
+
+# ------------------------------------------------------------------ fills, settlement, report
+def report(games):
+    """Reconcile every order with its exchange fills and the market result; write paper/LIVE.md."""
+    if not ORDERS.exists():
+        return
+    orders = pd.read_csv(ORDERS)
+    orders = orders[(orders.env == ENV) & orders.order_id.notna() & (orders.order_id.astype(str) != "")]
+    fills = json.loads(FILLS.read_text()) if FILLS.exists() else {}
+    for o in orders.to_dict("records"):
+        f = fills.get(o["order_id"])
+        if f and f.get("result"):
+            continue
+        code, resp = signed("GET", f"/portfolio/fills?order_id={o['order_id']}&limit=1000")
+        if code != 200:
+            print(f"fills {o['order_id']}: {code} {resp}"); continue
+        fs = resp.get("fills", [])
+        n = sum(float(x["count_fp"]) for x in fs)
+        cost = sum(float(x["count_fp"]) * float(x["no_price_dollars"]) for x in fs)
+        fee_ = sum(float(x.get("fee_cost") or 0) for x in fs)
+        m = (requests.get(f"{TRADE[ENV]}/markets/{o['ticker']}", timeout=30).json() or {}).get("market") or {}
+        res = m.get("result") if m.get("result") in ("yes", "no") else None
+        fills[o["order_id"]] = {"filled": n, "cost": round(cost, 4), "fee": round(fee_, 4), "result": res,
+                                "pnl": round((n if res == "no" else 0) - cost - fee_, 4) if res else None}
+    FILLS.write_text(json.dumps(fills, indent=1))
+    if orders.empty:
+        return
+    d = orders.assign(**{k: orders.order_id.map(lambda i, k=k: (fills.get(i) or {}).get(k)) for k in ("filled", "cost", "fee", "result", "pnl")}, lim_cost=orders.cost)
+    d["cost"] = d.cost.fillna(0) + d.fee.fillna(0)
+    paper = pd.read_csv(ROOT / "state" / "tf_bets.csv") if (ROOT / "state" / "tf_bets.csv").exists() else pd.DataFrame()
+    paper = paper[paper.strategy == "kalshi_take_tight"] if not paper.empty else paper
+    trig = json.loads(TRIG.read_text()) if TRIG.exists() else {}
+    notified = set(trig.get("_settled_notified", []))
+    lines = ["# Live trades: surprise-inactive receiver unders", "",
+             f"_Updated {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC · exchange: **{ENV}** · real fills and settlements from Kalshi._", ""]
+    f_ = d[d.filled.fillna(0) > 0]; s_ = f_[f_.result.notna()]
+    tot_pnl, tot_cost = s_.pnl.sum(), s_.cost.sum()
+    lines += [f"**Settled:** {len(s_)} bets, {(s_.result == 'no').sum()}-{(s_.result == 'yes').sum()}, "
+              f"P&L **${tot_pnl:+.2f}** on ${tot_cost:.2f} risked ({tot_pnl / tot_cost if tot_cost else 0:+.1%}). "
+              f"**Open:** {len(f_) - len(s_)} filled bets, ${f_[f_.result.isna()].cost.sum():.2f} at risk. "
+              f"**Unfilled:** {(d.filled.fillna(0) == 0).sum()} of {len(d)} orders.", "",
+              "| game | team | trigger | orders | filled | W-L | risked | P&L | ROI | paper (Kalshi tight) ROI |", "|---|---|---|---|---|---|---|---|---|---|"]
+    for (gid, team), x in d.groupby(["game_id", "team"], sort=False):
+        fx = x[x.filled.fillna(0) > 0]; sx = fx[fx.result.notna()]
+        who = ", ".join(w["player"] for w in trig.get(f"{gid}|{team}", {}).get("players", []))
+        pp = paper[(paper.game_id == gid) & (paper.team == team)] if not paper.empty else paper
+        p_roi = f"{pp.pnl.sum() / pp.stake.sum():+.1%}" if len(pp) and pp.stake.sum() else "–"
+        roi = f"{sx.pnl.sum() / sx.cost.sum():+.1%}" if len(sx) and sx.cost.sum() else "–"
+        lines.append(f"| {gid} | {team} | {who} | {len(x)} | {len(fx)} | {(sx.result == 'no').sum()}-{(sx.result == 'yes').sum()} | "
+                     f"${fx.cost.sum():.2f} | ${sx.pnl.sum():+.2f} | {roi} | {p_roi} |")
+        key = f"{gid}|{team}"
+        if len(fx) and len(sx) == len(fx) and key not in notified:           # every filled bet in this trigger has settled
+            ALERTS.append((key, None, f"**Settled:** {(sx.result == 'no').sum()}-{(sx.result == 'yes').sum()}, "
+                                      f"P&L ${sx.pnl.sum():+.2f} on ${sx.cost.sum():.2f} ({roi}). Paper test, same game: {p_roi}."))
+            notified.add(key)
+    trig["_settled_notified"] = sorted(notified)
+    TRIG.write_text(json.dumps(trig, indent=1))
+    lines += ["", "Paper column: the paper test's Kalshi strategy for the same trigger (take when spread ≤ 4¢), priced at its T-85 snapshot.", ""]
+    REPORT.write_text("\n".join(lines))
+
+
+def write_alerts():
+    if ALERTS and os.environ.get("ALERTS_FILE"):
+        with open(os.environ["ALERTS_FILE"], "a") as f:
+            for key, title, body in ALERTS:
+                f.write(json.dumps({"key": key, "title": title, "body": body}) + "\n")
 
 
 if __name__ == "__main__":
-    run(schedule())
+    games = schedule()
+    try:
+        run(games)
+        if ENV != "off":
+            report(games)
+    finally:
+        write_alerts()

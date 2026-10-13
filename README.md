@@ -80,6 +80,9 @@ receiving-yards ladder at the strike nearest 50/50: about $5 a bet, taking when 
 resting post-only at the mid, all expiring at kickoff. Cap: $250 per week. Orders go to Kalshi's
 **demo** exchange unless the repo variable `KALSHI_ENV` is `live` (needs `KALSHI_LIVE_KEY_ID` /
 `KALSHI_LIVE_PRIVATE_KEY` secrets); `off` disables it. Every order is logged to `paper/state/live/orders.csv`.
+Fills and settlements are reconciled from Kalshi into [`paper/LIVE.md`](paper/LIVE.md) (real P&L next to the paper
+result for the same trigger). Each trigger opens a GitHub issue that @-mentions the repo owner, with the orders
+placed; the settled result is added as a comment, and errors go to one shared issue.
 
 **Paper test** ([`paper/targets_freed.py`](paper/targets_freed.py)):
 

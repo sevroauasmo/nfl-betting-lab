@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     concurrency: { group: targets-freed-trade, cancel-in-progress: false }
+    permissions: { contents: write, issues: write }
+    env:
+      ALERTS_FILE: ${{ github.workspace }}/../alerts.jsonl
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
@@ -27,12 +30,17 @@ jobs:
           KALSHI_KEY_ID: ${{ vars.KALSHI_ENV == 'live' && secrets.KALSHI_LIVE_KEY_ID || secrets.KALSHI_DEMO_KEY_ID }}
           KALSHI_PRIVATE_KEY: ${{ vars.KALSHI_ENV == 'live' && secrets.KALSHI_LIVE_PRIVATE_KEY || secrets.KALSHI_DEMO_PRIVATE_KEY }}
         run: uv run --no-project --python 3.12 --with requests --with pandas --with pyarrow --with cryptography python paper/live_trader.py
+      - name: Notify (GitHub issues for triggers, orders, settled results, errors)
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: uv run --no-project --python 3.12 --with requests python paper/notify.py
       - name: Commit order log
         if: always()
         run: |
           git config user.name "paper-bot"
           git config user.email "paper-bot@users.noreply.github.com"
-          git add paper/state/live
+          git add paper/state/live paper/LIVE.md 2>/dev/null || git add paper/state/live
           git diff --cached --quiet && exit 0
           git commit -m "live-trader: $(date -u +%Y-%m-%dT%H:%MZ)"
           for i in 1 2 3 4 5; do git pull --rebase && git push && exit 0; sleep $((i * 5)); done; exit 1
