@@ -7,7 +7,7 @@ Each run (cron-job.org dispatches the workflow every 5 min in pregame windows):
   3. On a trigger, buy NO on each active teammate's receptions + receiving-yards ladder at the strike priced nearest
      50/50, sized ~$BET each. Spread <= 4c: take the ask. Wider: rest a post-only NO bid at the mid. Every order expires
      at kickoff. Decisions use the production order book (public); orders go to KALSHI_ENV (demo | live).
-Caps: $PER_TRIGGER per team-game, $PER_WEEK per NFL week. Each ticker is ordered at most once.
+Cap: $PER_WEEK per NFL week (beyond that, the account balance is the limit). Each ticker is ordered at most once.
 State: paper/state/live/orders.csv (every order attempt), paper/state/live/triggers.json.
 """
 import base64
@@ -34,7 +34,7 @@ ORDERS = LIVE / "orders.csv"
 TRIG = LIVE / "triggers.json"
 ENV = os.environ.get("KALSHI_ENV", "demo")                       # demo | live | off
 TRADE = {"demo": "https://external-api.demo.kalshi.co/trade-api/v2", "live": "https://external-api.kalshi.com/trade-api/v2"}
-BET, PER_TRIGGER, PER_WEEK = 10.0, 100.0, 250.0
+BET, PER_WEEK = 5.0, 250.0
 TIGHT = 0.04
 WINDOW = (110 * 60, 10 * 60)                                      # act from T-110 to T-10
 INACTIVE = r"^{last}(?: \([^)]*\))?,?(?: [^.]{{0,60}}?,)? (?:is|was|has been|will be) (?:listed as |ruled |declared )?inactive\b"   # subject must be the player
@@ -216,17 +216,16 @@ def run(games, now=None):
             trig.setdefault(key, {"first_seen": datetime.now(timezone.utc).isoformat(timespec="seconds"), "players": who})
             print(f"  TRIGGER {team}: " + "; ".join(f"{w['player']} ({w['ts']:.0%}) - {w['headline']}" for w in who))
             exclude = {norm(w["player"]) for w in who} | out_names        # scratched players + anyone already ruled out
-            spent_trig = spent(lambda o: o["game_id"] == g["game_id"] and o["team"] == team)
             spent_week = spent(lambda o: o["week"] == g["week"])
             for r in ladders(g, team, exclude):
                 if r["ticker"] in set(orders.ticker) | {o["ticker"] for o in new}:
                     continue
-                if spent_trig + BET > PER_TRIGGER or spent_week + BET > PER_WEEK:
-                    print(f"  cap reached (trigger ${spent_trig:.0f}, week ${spent_week:.0f})"); break
+                if spent_week + BET > PER_WEEK:
+                    print(f"  weekly cap reached (${spent_week:.0f})"); break
                 o = {"game_id": g["game_id"], "team": team, "week": g["week"], **place(r, g)}
                 new.append(o)
                 if not o["status"].startswith(("rejected", "skipped")):
-                    spent_trig += o["cost"]; spent_week += o["cost"]
+                    spent_week += o["cost"]
                 print(f"  {o['mode']:4s} NO {o['ticker']} x{o['count']} @ {o['no_price']:.2f} (spread {o['spread']:.2f}) -> {o['status']} {o['error']}")
     TRIG.write_text(json.dumps(trig, indent=1))
     if new:

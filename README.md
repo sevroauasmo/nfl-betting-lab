@@ -76,8 +76,8 @@ cron-job.org) and runs two scripts.
 **Trading** ([`paper/live_trader.py`](paper/live_trader.py)): from T−110 to T−10 it watches WR/TE/RB with ≥ 10%
 target share who aren't listed Out/Doubtful, and polls each one's ESPN player-news feed (RotoWire blurbs, posted
 ~T−75 to T−90) for "X is inactive". On a trigger it buys NO on each active teammate's Kalshi receptions and
-receiving-yards ladder at the strike nearest 50/50: about $10 a bet, taking when the spread is ≤ 4¢ and otherwise
-resting post-only at the mid, all expiring at kickoff. Caps: $100 per trigger, $250 per week. Orders go to Kalshi's
+receiving-yards ladder at the strike nearest 50/50: about $5 a bet, taking when the spread is ≤ 4¢ and otherwise
+resting post-only at the mid, all expiring at kickoff. Cap: $250 per week. Orders go to Kalshi's
 **demo** exchange unless the repo variable `KALSHI_ENV` is `live` (needs `KALSHI_LIVE_KEY_ID` /
 `KALSHI_LIVE_PRIVATE_KEY` secrets); `off` disables it. Every order is logged to `paper/state/live/orders.csv`.
 
