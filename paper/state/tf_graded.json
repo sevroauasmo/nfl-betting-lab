@@ -76,5 +76,6 @@
  "2026_05_BAL_ATL": "no_trigger",
  "2026_05_DEN_LAC": "no_trigger",
  "2026_05_DET_ARI": "no_trigger",
- "2026_05_SF_SEA": "no_trigger"
+ "2026_05_SF_SEA": "no_trigger",
+ "2026_05_BUF_LA": "graded"
 }
