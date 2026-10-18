@@ -15,3 +15,4 @@ game_id,team,week,ticker,cost,status,ts,env,player,stat,strike,mode,spread,no_pr
 2026_06_BAL_CLE,CLE,6,KXNFLRECYDS-26OCT18BALCLE-CLEHFANNIN44-40,4.64,placed,2026-10-18T16:00:30+00:00,demo,harold fannin,receiving_yards,40.0,take,0.01,0.58,8.0,01a14fbe-3d30-7145-91dc-dde92ff4fa77,
 2026_06_BAL_CLE,CLE,6,KXNFLRECYDS-26OCT18BALCLE-CLEJJEUDY3-15,4.8,placed,2026-10-18T16:00:31+00:00,demo,jerry jeudy,receiving_yards,15.0,take,0.01,0.48,10.0,01a14fbe-4118-7de6-89bf-c0bb60063b51,
 2026_06_BAL_CLE,CLE,6,KXNFLRECYDS-26OCT18BALCLE-CLEKCONCEPCION1-40,4.77,placed,2026-10-18T16:00:31+00:00,demo,kc concepcion,receiving_yards,40.0,take,0.01,0.53,9.0,01a14fbe-4118-7a9f-a150-497372b4ad2e,
+2026_06_BAL_CLE,CLE,6,KXNFLREC-26OCT18BALCLE-CLEHFANNIN44-5,4.8,placed,2026-10-18T16:05:24+00:00,demo,harold fannin,receptions,5.0,take,0.01,0.6,8.0,01a14fc2-b9a0-7570-918f-d3735fe3f309,

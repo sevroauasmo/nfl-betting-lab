@@ -110,5 +110,12 @@
   "fee": 0,
   "result": null,
   "pnl": null
+ },
+ "01a14fc2-b9a0-7570-918f-d3735fe3f309": {
+  "filled": 0,
+  "cost": 0,
+  "fee": 0,
+  "result": null,
+  "pnl": null
  }
 }
