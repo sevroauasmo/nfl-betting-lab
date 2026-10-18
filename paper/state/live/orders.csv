@@ -1,0 +1,9 @@
+game_id,team,week,ticker,cost,status,ts,env,player,stat,strike,mode,spread,no_price,count,order_id,error
+2026_06_TEN_IND,IND,6,KXNFLREC-26OCT18TENIND-INDJTAYLOR28-3,4.7,placed,2026-10-18T15:50:20+00:00,demo,jonathan taylor,receptions,3.0,take,0.01,0.47,10.0,01a14fb4-ee60-7763-8ddf-5d5f362a3ca8,
+2026_06_TEN_IND,IND,6,KXNFLREC-26OCT18TENIND-INDJDOWNS2-5,4.4,placed,2026-10-18T15:50:20+00:00,demo,josh downs,receptions,5.0,take,0.01,0.44,10.0,01a14fb4-ee60-7dc1-8aa2-2aa7bc52f1fe,
+2026_06_TEN_IND,IND,6,KXNFLREC-26OCT18TENIND-INDKALLEN10-5,4.7,placed,2026-10-18T15:50:20+00:00,demo,keenan allen,receptions,5.0,take,0.02,0.47,10.0,01a14fb4-f248-7d20-8c49-0cf9f3843e97,
+2026_06_TEN_IND,IND,6,KXNFLREC-26OCT18TENIND-INDLTREADWELL13-3,4.4,placed,2026-10-18T15:50:21+00:00,demo,laquon treadwell,receptions,3.0,take,0.01,0.55,8.0,01a14fb4-f248-7f59-8300-f5cdc04470b0,
+2026_06_TEN_IND,IND,6,KXNFLRECYDS-26OCT18TENIND-INDJTAYLOR28-20,4.4,placed,2026-10-18T15:50:21+00:00,demo,jonathan taylor,receiving_yards,20.0,take,0.01,0.55,8.0,01a14fb4-f248-778b-be78-f15658fdf5e0,
+2026_06_TEN_IND,IND,6,KXNFLRECYDS-26OCT18TENIND-INDJDOWNS2-50,4.6,placed,2026-10-18T15:50:21+00:00,demo,josh downs,receiving_yards,50.0,take,0.02,0.46,10.0,01a14fb4-f248-7157-9f12-3db1fed8d43e,
+2026_06_TEN_IND,IND,6,KXNFLRECYDS-26OCT18TENIND-INDKALLEN10-40,4.6,placed,2026-10-18T15:50:21+00:00,demo,keenan allen,receiving_yards,40.0,take,0.01,0.46,10.0,01a14fb4-f630-74c5-914c-17ce4b1c3144,
+2026_06_TEN_IND,IND,6,KXNFLRECYDS-26OCT18TENIND-INDLTREADWELL13-25,4.6,placed,2026-10-18T15:50:22+00:00,demo,laquon treadwell,receiving_yards,25.0,take,0.01,0.46,10.0,01a14fb4-f630-73fe-bc61-3293f25ebffb,
