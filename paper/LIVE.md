@@ -1,6 +1,6 @@
 # Live trades: surprise-inactive receiver unders
 
-_Updated 2026-10-18 16:30 UTC · exchange: **demo** · real fills and settlements from Kalshi._
+_Updated 2026-10-18 16:35 UTC · exchange: **demo** · real fills and settlements from Kalshi._
 
 **Settled:** 0 bets, 0-0, P&L **$+0.00** on $0.00 risked (+0.0%). **Open:** 0 filled bets, $0.00 at risk. **Unfilled:** 17 of 17 orders.
 
