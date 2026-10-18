@@ -79,5 +79,12 @@
  "2026_05_SF_SEA": "no_trigger",
  "2026_05_BUF_LA": "graded",
  "2026_06_SEA_DEN": "no_trigger",
- "2026_06_HOU_JAX": "no_trigger"
+ "2026_06_HOU_JAX": "no_trigger",
+ "2026_06_BAL_CLE": "waiting",
+ "2026_06_CAR_PHI": "waiting",
+ "2026_06_CHI_ATL": "waiting",
+ "2026_06_NO_NYG": "waiting",
+ "2026_06_NYJ_NE": "waiting",
+ "2026_06_PIT_TB": "waiting",
+ "2026_06_TEN_IND": "waiting"
 }
