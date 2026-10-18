@@ -122,8 +122,8 @@
   "filled": 0,
   "cost": 0,
   "fee": 0,
-  "result": null,
-  "pnl": null
+  "result": "yes",
+  "pnl": 0
  },
  "01a15067-7580-7595-9dda-af20893fe4a0": {
   "filled": 0,
