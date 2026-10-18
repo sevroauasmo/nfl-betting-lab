@@ -21,5 +21,16 @@
     "headline": "Judkins (ankle) is inactive for Sunday's game against the Ravens."
    }
   ]
+ },
+ "2026_06_BUF_LV|BUF": {
+  "first_seen": "2026-10-18T19:05:16+00:00",
+  "players": [
+   {
+    "player": "DJ Moore",
+    "ts": 0.15,
+    "published": "2026-10-18T18:57:38Z",
+    "headline": "Moore (shoulder) is listed as inactive Sunday in Las Vegas."
+   }
+  ]
  }
 }
