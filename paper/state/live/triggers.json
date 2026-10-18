@@ -10,5 +10,16 @@
    }
   ]
  },
- "_settled_notified": []
+ "_settled_notified": [],
+ "2026_06_BAL_CLE|CLE": {
+  "first_seen": "2026-10-18T16:00:25+00:00",
+  "players": [
+   {
+    "player": "Quinshon Judkins",
+    "ts": 0.135,
+    "published": "2026-10-18T15:41:31Z",
+    "headline": "Judkins (ankle) is inactive for Sunday's game against the Ravens."
+   }
+  ]
+ }
 }
