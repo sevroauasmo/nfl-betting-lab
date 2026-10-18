@@ -17,8 +17,8 @@
   "filled": 0,
   "cost": 0,
   "fee": 0,
-  "result": null,
-  "pnl": null
+  "result": "yes",
+  "pnl": 0
  },
  "01a14fb4-f248-7f59-8300-f5cdc04470b0": {
   "filled": 0,
