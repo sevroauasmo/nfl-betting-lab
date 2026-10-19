@@ -80,11 +80,15 @@
  "2026_05_BUF_LA": "graded",
  "2026_06_SEA_DEN": "no_trigger",
  "2026_06_HOU_JAX": "no_trigger",
- "2026_06_BAL_CLE": "waiting",
- "2026_06_CAR_PHI": "waiting",
- "2026_06_CHI_ATL": "waiting",
- "2026_06_NO_NYG": "waiting",
- "2026_06_NYJ_NE": "waiting",
- "2026_06_PIT_TB": "waiting",
- "2026_06_TEN_IND": "waiting"
+ "2026_06_BAL_CLE": "graded",
+ "2026_06_CAR_PHI": "no_trigger",
+ "2026_06_CHI_ATL": "no_trigger",
+ "2026_06_NO_NYG": "no_trigger",
+ "2026_06_NYJ_NE": "no_trigger",
+ "2026_06_PIT_TB": "no_trigger",
+ "2026_06_TEN_IND": "graded",
+ "2026_06_ARI_LA": "no_trigger",
+ "2026_06_BUF_LV": "graded",
+ "2026_06_DAL_GB": "no_trigger",
+ "2026_06_LAC_KC": "no_trigger"
 }

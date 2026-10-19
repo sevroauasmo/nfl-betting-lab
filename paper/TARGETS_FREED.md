@@ -1,16 +1,16 @@
 # Paper test: surprise inactive -> teammates' receiving unders
 
-_Updated 2026-10-19 00:55 UTC. Prices snapshotted ~T-85 (after inactives); nothing is actually bet._
+_Updated 2026-10-19 16:59 UTC. Prices snapshotted ~T-85 (after inactives); nothing is actually bet._
 
-Games snapshotted: 92 (62 rebuilt after the fact from 1-minute Kalshi candles / odds history) · graded: 7 with a trigger, 74 without · pending: 7
+Games snapshotted: 92 (62 rebuilt after the fact from 1-minute Kalshi candles / odds history) · graded: 10 with a trigger, 82 without · pending: 0
 
 | strategy | bets | fills | win rate | staked (units) | P&L (units) | ROI |
 |---|---|---|---|---|---|---|
-| book_best | 95 | 95 | 63.2% | 95.0 | +18.35 | +19.3% |
-| exchange_best | 89 | 89 | 65.2% | 89.0 | +22.38 | +25.2% |
-| kalshi_rest_mid | 63 | 56 | 66.1% | 29.3 | +7.71 | +26.3% |
-| kalshi_take_all | 85 | 85 | 67.1% | 46.9 | +10.09 | +21.5% |
-| kalshi_take_tight | 85 | 85 | 67.1% | 46.9 | +10.09 | +21.5% |
-| novig | 65 | 65 | 63.1% | 65.0 | +15.89 | +24.4% |
+| book_best | 120 | 120 | 62.5% | 120.0 | +20.70 | +17.2% |
+| exchange_best | 112 | 112 | 63.4% | 112.0 | +23.72 | +21.2% |
+| kalshi_rest_mid | 91 | 82 | 63.4% | 43.2 | +8.78 | +20.3% |
+| kalshi_take_all | 113 | 113 | 65.5% | 62.7 | +11.32 | +18.1% |
+| kalshi_take_tight | 112 | 112 | 65.2% | 62.2 | +10.80 | +17.4% |
+| novig | 88 | 88 | 61.4% | 88.0 | +16.88 | +19.2% |
 
 Kalshi bets stake the contract cost, so ROI is per dollar risked. Book/exchange bets stake 1 unit at American odds.
