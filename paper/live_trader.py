@@ -42,6 +42,7 @@ ENV = os.environ.get("KALSHI_ENV", "demo")                       # demo | live |
 TRADE = {"demo": "https://external-api.demo.kalshi.co/trade-api/v2", "live": "https://external-api.kalshi.com/trade-api/v2"}
 BET, PER_WEEK = 5.0, 250.0
 TIGHT = 0.04
+MAX_REST_SPREAD = 0.20                                            # wider books are bench players with no real market
 WINDOW = (110 * 60, 10 * 60)                                      # act from T-110 to T-10
 INACTIVE = r"^(?:{first} )?{last}(?: \([^)]*\))?,?(?: [^.]{{0,80}}?,)? (?:is|was|has been|will be) (?:officially )?(?:listed as |ruled |declared )?inactive\b"
 HEDGE = re.compile(r"\b(expected|likely|could|may|might|trending|considered|projected|anticipated)\b", re.I)   # within the matched phrase
@@ -164,8 +165,13 @@ def ladders(g, team, exclude, teams):
     return picks
 
 
+def prop(ticker):
+    """KXNFLREC-26OCT18BALCLE-CLEHFANNIN44-4 -> KXNFLREC-26OCT18BALCLE-CLEHFANNIN44: one bet per player+stat, whatever the strike."""
+    return ticker.rsplit("-", 1)[0]
+
+
 def ordered_on_exchange(g):
-    """Tickers in this game that already have an order of ours on the exchange (any status). The CSV can lag a failed push."""
+    """Props in this game that already have an order of ours on the exchange (any status). The CSV can lag a failed push."""
     out = set()
     for series in SERIES:
         for code in g["codes"]:
@@ -174,7 +180,7 @@ def ordered_on_exchange(g):
                 continue
             if code_ != 200:
                 raise RuntimeError(f"can't read existing orders ({code_}): {resp}")   # never trade blind
-            out |= {o["ticker"] for o in resp.get("orders", [])}
+            out |= {prop(o["ticker"]) for o in resp.get("orders", [])}
     return out
 
 
@@ -182,12 +188,16 @@ def place(r, g):
     spread = round((1 - r["no_bid"]) - r["yes_bid"], 2)
     if spread <= TIGHT:
         mode, no_px, post_only = "take", round(1 - r["yes_bid"], 2), False
-    else:
+    elif spread <= MAX_REST_SPREAD:
         mode, no_px, post_only = "rest", round(1 - round(r["mid"], 2), 2), True
+    else:
+        mode, no_px, post_only = "none", round(1 - round(r["mid"], 2), 2), True
     count = int(BET // (no_px + (fee(no_px) if mode == "take" else 0)))
     row = {"ts": datetime.now(timezone.utc).isoformat(timespec="seconds"), "env": ENV, "ticker": r["ticker"], "player": r["player"],
            "stat": r["stat"], "strike": r["strike"], "mode": mode, "spread": spread, "no_price": no_px, "count": count,
            "cost": round(count * no_px, 2), "status": "", "order_id": "", "error": ""}
+    if mode == "none":
+        return {**row, "status": "skipped", "error": f"spread {spread:.2f} > {MAX_REST_SPREAD}"}
     if count < 1:
         return {**row, "status": "skipped", "error": "price too high for bet size"}
     body = {"ticker": r["ticker"], "client_order_id": str(uuid.uuid4()), "side": "ask",          # ask == buy NO
@@ -250,19 +260,19 @@ def trade_game(g, now, trig, orders, new, spent):
         print(f"  TRIGGER {team}: " + "; ".join(f"{w['player']} ({w['ts']:.0%}) - {w['headline']}" for w in who))
         exclude = {norm(w["player"]) for w in who} | out_names        # scratched players + anyone already ruled out
         spent_week = spent(lambda o: o["week"] == g["week"])
-        done = ordered_on_exchange(g) | {o["ticker"] for o in orders.to_dict("records") + new if not str(o["status"]).startswith(TRANSIENT)}
+        done = ordered_on_exchange(g) | {prop(o["ticker"]) for o in orders.to_dict("records") + new if not str(o["status"]).startswith(TRANSIENT)}
         for r in ladders(g, team, exclude, teams):
-            if r["ticker"] in done:
+            if prop(r["ticker"]) in done:
                 continue
             if spent_week + BET > PER_WEEK:
                 print(f"  weekly cap reached (${spent_week:.0f})"); break
             o = {"game_id": g["game_id"], "team": team, "week": g["week"], **place(r, g)}
             new.append(o)
-            done.add(r["ticker"])
+            done.add(prop(r["ticker"]))
             if not o["status"].startswith(("rejected", "skipped", "error")):
                 spent_week += o["cost"]
             print(f"  {o['mode']:4s} NO {o['ticker']} x{o['count']} @ {o['no_price']:.2f} (spread {o['spread']:.2f}) -> {o['status']} {o['error']}")
-        mine = new[n_before:]
+        mine = [o for o in new[n_before:] if not o["status"].startswith(("rejected", "skipped"))]   # alert on real orders only
         if is_new or mine:
             lines = [f"**{w['player']}** ({w['ts']:.0%} target share): {w['headline']}" for w in who] if is_new else []
             lines += ["", "| order | stat | strike | mode | NO price | contracts | cost | status |", "|---|---|---|---|---|---|---|---|"] if mine else []
