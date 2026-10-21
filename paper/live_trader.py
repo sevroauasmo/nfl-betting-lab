@@ -45,6 +45,9 @@ BET, PER_WEEK = 5.0, 250.0
 TIGHT = 0.04
 MAX_REST_SPREAD = 0.20                                            # wider books are bench players with no real market
 WINDOW = (110 * 60, 10 * 60)                                      # act from T-110 to T-10
+MAX_MID_DIST = 0.20                                               # chosen strike must price 30-70c; else it's not the bet we tested
+EXPIRE_BEFORE_KICK = 120                                          # orders expire 2 min before scheduled kickoff
+SWEEP_AFTER_KICK = 6 * 3600                                       # cancel anything still resting from T-2m to T+6h
 INACTIVE = r"^(?:{first} )?{last}(?: \([^)]*\))?,?(?: [^.]{{0,80}}?,)? (?:is|was|has been|will be) (?:officially )?(?:listed as |ruled |declared )?inactive\b"
 HEDGE = re.compile(r"\b(expected|likely|could|may|might|trending|considered|projected|anticipated)\b", re.I)   # within the matched phrase
 TRANSIENT = ("rejected 429", "rejected 5", "error")              # order attempts worth retrying on the next run
@@ -195,18 +198,20 @@ def place(r, g):
         mode, no_px, post_only = "rest", round(1 - round(r["mid"], 2), 2), True
     else:
         mode, no_px, post_only = "none", round(1 - round(r["mid"], 2), 2), True
+    if abs(r["mid"] - 0.5) > MAX_MID_DIST or not 0.05 <= no_px <= 0.95:
+        mode = "none"
     count = int(BET // (no_px + (fee(no_px) if mode == "take" else 0)))
     row = {"ts": datetime.now(timezone.utc).isoformat(timespec="seconds"), "env": ENV, "ticker": r["ticker"], "player": r["player"],
            "stat": r["stat"], "strike": r["strike"], "mode": mode, "spread": spread, "no_price": no_px, "count": count,
            "cost": round(count * no_px, 2), "status": "", "order_id": "", "error": "",
            "depth_best": r.get("depth_best"), "depth_1c": r.get("depth_1c"), "depth_3c": r.get("depth_3c")}   # $ of NO takeable at order time
     if mode == "none":
-        return {**row, "status": "skipped", "error": f"spread {spread:.2f} > {MAX_REST_SPREAD}"}
+        return {**row, "status": "skipped", "error": f"spread {spread:.2f} / mid {r['mid']:.2f} outside limits"}
     if count < 1:
         return {**row, "status": "skipped", "error": "price too high for bet size"}
     body = {"ticker": r["ticker"], "client_order_id": str(uuid.uuid4()), "side": "ask",          # ask == buy NO
             "count": f"{count}.00", "price": f"{1 - no_px:.4f}",                               # V2 prices are on the YES scale
-            "time_in_force": "good_till_canceled", "expiration_time": int(g["kick"]),
+            "time_in_force": "good_till_canceled", "expiration_time": int(g["kick"]) - EXPIRE_BEFORE_KICK,
             "self_trade_prevention_type": "taker_at_cross", "post_only": post_only}
     try:
         code, resp = signed("POST", "/portfolio/events/orders", body)
@@ -225,7 +230,8 @@ def run(games, now=None):
         print("KALSHI_ENV=off: not trading"); return
     LIVE.mkdir(parents=True, exist_ok=True)
     trig = json.loads(TRIG.read_text()) if TRIG.exists() else {}
-    orders = pd.read_csv(ORDERS) if ORDERS.exists() else pd.DataFrame(columns=["game_id", "team", "week", "ticker", "cost", "status"])
+    all_orders = pd.read_csv(ORDERS) if ORDERS.exists() else pd.DataFrame(columns=["game_id", "team", "week", "ticker", "cost", "status", "env"])
+    orders = all_orders[all_orders.env == ENV] if "env" in all_orders else all_orders     # demo history never counts against live
     new = []
 
     def spent(pred):
@@ -233,6 +239,11 @@ def run(games, now=None):
         return sum(float(o["cost"]) for o in live_ if pred(o))
 
     try:
+        try:
+            cancel_stale(games, now)
+        except Exception as e:
+            print(f"sweep failed: {e}")
+            ALERTS.append(("errors", "[trade] errors", f"Post-kickoff cancel sweep failed: `{type(e).__name__}: {e}`"))
         for g in games:
             if g["kick"] - WINDOW[0] <= now <= g["kick"] - WINDOW[1]:
                 try:
@@ -247,7 +258,23 @@ def run(games, now=None):
     finally:
         TRIG.write_text(json.dumps(trig, indent=1))
         if new:
-            pd.concat([orders, pd.DataFrame(new)]).to_csv(ORDERS, index=False)
+            pd.concat([all_orders, pd.DataFrame(new)]).to_csv(ORDERS, index=False)
+
+
+def cancel_stale(games, now):
+    """Belt and braces for expiry: cancel any order of ours still resting once a game is within 2 min of kickoff
+    (late kickoffs, schedule drift). Never leave a pregame bid exposed to in-game flow."""
+    for g in games:
+        if not (g["kick"] - EXPIRE_BEFORE_KICK <= now <= g["kick"] + SWEEP_AFTER_KICK):
+            continue
+        for series in SERIES:
+            for code in g["codes"]:
+                c, r = signed("GET", f"/portfolio/orders?event_ticker={series}-{code}&status=resting&limit=1000")
+                for o in (r.get("orders", []) if c == 200 else []):
+                    c2, r2 = signed("DELETE", f"/portfolio/events/orders/{o['order_id']}?market_ticker={o['ticker']}")
+                    print(f"  swept {o['ticker']} ({g['game_id']}): {c2}")
+                    if c2 not in (200, 204, 404):
+                        ALERTS.append(("errors", "[trade] errors", f"Couldn't cancel resting order on `{o['ticker']}` after kickoff ({c2}: `{json.dumps(r2)[:150]}`)."))
 
 
 def log_depth(games, orders, now):
@@ -320,17 +347,25 @@ def report(games):
         f = fills.get(o["order_id"])
         if f and f.get("result"):
             continue
-        code, resp = signed("GET", f"/portfolio/fills?order_id={o['order_id']}&limit=1000")
-        if code != 200:
-            print(f"fills {o['order_id']}: {code} {resp}"); continue
-        fs = resp.get("fills", [])
-        n = sum(float(x["count_fp"]) for x in fs)
-        cost = sum(float(x["count_fp"]) * float(x["no_price_dollars"]) for x in fs)
-        fee_ = sum(float(x.get("fee_cost") or 0) for x in fs)
-        m = (requests.get(f"{TRADE[ENV]}/markets/{o['ticker']}", timeout=30).json() or {}).get("market") or {}
+        try:
+            code, resp = signed("GET", f"/portfolio/fills?order_id={o['order_id']}&limit=1000")
+            if code != 200:
+                print(f"fills {o['order_id']}: {code} {resp}"); continue
+            fs = resp.get("fills", [])
+            n = sum(float(x["count_fp"]) for x in fs)
+            cost = sum(float(x["count_fp"]) * float(x["no_price_dollars"]) for x in fs)
+            fee_ = sum(float(x.get("fee_cost") or 0) for x in fs)
+            m = (get(f"{TRADE[ENV]}/markets/{o['ticker']}") or {}).get("market") or {}
+        except Exception as e:                                    # one bad lookup must not sink the report
+            print(f"fills {o['order_id']}: {type(e).__name__}: {e}"); continue
         res = m.get("result") if m.get("result") in ("yes", "no") else None
+        if res is None and n == 0 and m.get("status") in ("settled", "finalized", "determined"):
+            res = "unfilled"                                      # settled with no fill: nothing to track
+        elif res is None and m.get("status") in ("settled", "finalized") :
+            res = "void"                                          # settled without yes/no (voided): refunded at cost
+        pnl = {"no": n - cost - fee_, "yes": -cost - fee_, "void": 0.0, "unfilled": 0.0}.get(res)
         fills[o["order_id"]] = {"filled": n, "cost": round(cost, 4), "fee": round(fee_, 4), "result": res,
-                                "pnl": round((n if res == "no" else 0) - cost - fee_, 4) if res else None}
+                                "pnl": round(pnl, 4) if pnl is not None else None}
     FILLS.write_text(json.dumps(fills, indent=1))
     if orders.empty:
         return
@@ -342,15 +377,15 @@ def report(games):
     notified = set(trig.get("_settled_notified", []))
     lines = ["# Live trades: surprise-inactive receiver unders", "",
              f"_Updated {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC · exchange: **{ENV}** · real fills and settlements from Kalshi._", ""]
-    f_ = d[d.filled.fillna(0) > 0]; s_ = f_[f_.result.notna()]
+    f_ = d[d.filled.fillna(0) > 0]; s_ = f_[f_.result.isin(["yes", "no"])]
     tot_pnl, tot_cost = s_.pnl.sum(), s_.cost.sum()
     lines += [f"**Settled:** {len(s_)} bets, {(s_.result == 'no').sum()}-{(s_.result == 'yes').sum()}, "
               f"P&L **${tot_pnl:+.2f}** on ${tot_cost:.2f} risked ({tot_pnl / tot_cost if tot_cost else 0:+.1%}). "
-              f"**Open:** {len(f_) - len(s_)} filled bets, ${f_[f_.result.isna()].cost.sum():.2f} at risk. "
+              f"**Open:** {f_.result.isna().sum()} filled bets, ${f_[f_.result.isna()].cost.sum():.2f} at risk. "
               f"**Unfilled:** {(d.filled.fillna(0) == 0).sum()} of {len(d)} orders.", "",
               "| game | team | trigger | orders | filled | W-L | risked | P&L | ROI | paper (Kalshi tight) ROI |", "|---|---|---|---|---|---|---|---|---|---|"]
     for (gid, team), x in d.groupby(["game_id", "team"], sort=False):
-        fx = x[x.filled.fillna(0) > 0]; sx = fx[fx.result.notna()]
+        fx = x[x.filled.fillna(0) > 0]; sx = fx[fx.result.isin(["yes", "no"])]
         who = ", ".join(w["player"] for w in trig.get(f"{gid}|{team}", {}).get("players", []))
         pp = paper[(paper.game_id == gid) & (paper.team == team)] if not paper.empty else paper
         p_roi = f"{pp.pnl.sum() / pp.stake.sum():+.1%}" if len(pp) and pp.stake.sum() else "–"
@@ -358,7 +393,7 @@ def report(games):
         lines.append(f"| {gid} | {team} | {who} | {len(x)} | {len(fx)} | {(sx.result == 'no').sum()}-{(sx.result == 'yes').sum()} | "
                      f"${fx.cost.sum():.2f} | ${sx.pnl.sum():+.2f} | {roi} | {p_roi} |")
         key = f"{gid}|{team}"
-        if len(fx) and len(sx) == len(fx) and key not in notified:           # every filled bet in this trigger has settled
+        if len(fx) and fx.result.notna().all() and key not in notified:           # every filled bet in this trigger has settled
             ALERTS.append((key, None, f"**Settled:** {(sx.result == 'no').sum()}-{(sx.result == 'yes').sum()}, "
                                       f"P&L ${sx.pnl.sum():+.2f} on ${sx.cost.sum():.2f} ({roi}). Paper test, same game: {p_roi}."))
             notified.add(key)
