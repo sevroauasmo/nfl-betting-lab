@@ -375,9 +375,25 @@ def write_alerts():
                 f.write(json.dumps({"key": key, "title": title, "body": body}) + "\n")
 
 
+def preflight():
+    """Every run: prove the key works and show the balance, so a bad key surfaces now, not at the next trigger."""
+    try:
+        code, r = signed("GET", "/portfolio/balance")
+    except Exception as e:
+        code, r = None, {"error": str(e)}
+    if code == 200:
+        print(f"[{ENV}] balance ${float(r.get('balance_dollars') or r.get('balance', 0) / 100):,.2f}")
+        return True
+    print(f"[{ENV}] PREFLIGHT FAILED: {code} {r}")
+    ALERTS.append(("errors", "[trade] errors", f"Preflight failed on **{ENV}**: can't read the balance ({code}: `{json.dumps(r)[:200]}`). Check the API key secrets."))
+    return False
+
+
 if __name__ == "__main__":
     games = schedule()
     try:
+        if ENV != "off" and not preflight():
+            sys.exit(1)
         run(games)
         if ENV != "off":
             report(games)
