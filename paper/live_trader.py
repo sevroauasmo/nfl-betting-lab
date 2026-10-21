@@ -35,6 +35,7 @@ ROOT = Path(__file__).resolve().parent
 LIVE = ROOT / "state" / "live"
 ORDERS = LIVE / "orders.csv"
 TRIG = LIVE / "triggers.json"
+DEPTH = LIVE / "depth.csv"                                       # depth of every ordered contract, every run until kickoff
 FILLS = LIVE / "fills.json"
 REPORT = ROOT / "LIVE.md"
 ALERTS = []                                                      # (key, title, body) for paper/notify.py
@@ -153,12 +154,14 @@ def ladders(g, team, exclude, teams):
             if (teams.get(pn) or team_of(m["ticker"], g)) != team or pn in exclude or not strike:
                 continue
             ob = (get(f"{K}/markets/{m['ticker']}/orderbook") or {}).get("orderbook_fp") or {}
-            yes = [float(p) for p, q in ob.get("yes_dollars") or []]
-            no = [float(p) for p, q in ob.get("no_dollars") or []]
+            yes = [(float(p), float(q)) for p, q in ob.get("yes_dollars") or []]
+            no = [(float(p), float(q)) for p, q in ob.get("no_dollars") or []]
             if yes and no:
-                yb, nb = max(yes), max(no)
+                yb, nb = max(yes)[0], max(no)[0]
+                depth = lambda c: round(sum(q * (1 - p) for p, q in yes if p >= yb - c - 1e-9), 2)   # $ of NO takeable within c of best  # noqa: E731
                 rows.append({"player": pn, "stat": stat, "ticker": m["ticker"], "strike": float(strike.group(1)),
-                             "yes_bid": yb, "no_bid": nb, "mid": (yb + 1 - nb) / 2})
+                             "yes_bid": yb, "no_bid": nb, "mid": (yb + 1 - nb) / 2,
+                             "depth_best": depth(0), "depth_1c": depth(0.01), "depth_3c": depth(0.03)})
         if rows:
             df = pd.DataFrame(rows)
             picks += [grp.loc[(grp.mid - 0.5).abs().idxmin()].to_dict() for _, grp in df.groupby("player")]
@@ -195,7 +198,8 @@ def place(r, g):
     count = int(BET // (no_px + (fee(no_px) if mode == "take" else 0)))
     row = {"ts": datetime.now(timezone.utc).isoformat(timespec="seconds"), "env": ENV, "ticker": r["ticker"], "player": r["player"],
            "stat": r["stat"], "strike": r["strike"], "mode": mode, "spread": spread, "no_price": no_px, "count": count,
-           "cost": round(count * no_px, 2), "status": "", "order_id": "", "error": ""}
+           "cost": round(count * no_px, 2), "status": "", "order_id": "", "error": "",
+           "depth_best": r.get("depth_best"), "depth_1c": r.get("depth_1c"), "depth_3c": r.get("depth_3c")}   # $ of NO takeable at order time
     if mode == "none":
         return {**row, "status": "skipped", "error": f"spread {spread:.2f} > {MAX_REST_SPREAD}"}
     if count < 1:
@@ -236,10 +240,33 @@ def run(games, now=None):
                 except Exception as e:                            # one game's failure must not stop the others
                     print(f"{g['game_id']}: FAILED {type(e).__name__}: {e}")
                     ALERTS.append(("errors", "[trade] errors", f"`{g['game_id']}` failed at T-{(g['kick'] - now) // 60}m: `{type(e).__name__}: {e}`"))
+        try:
+            log_depth(games, pd.concat([orders, pd.DataFrame(new)]) if new else orders, now)
+        except Exception as e:                                    # measurement only; never let it break trading
+            print(f"depth log failed: {e}")
     finally:
         TRIG.write_text(json.dumps(trig, indent=1))
         if new:
             pd.concat([orders, pd.DataFrame(new)]).to_csv(ORDERS, index=False)
+
+
+def log_depth(games, orders, now):
+    """How the book we traded into evolves to kickoff: best-level and within-1c/3c NO depth, per ordered ticker, per run."""
+    kicks = {g["game_id"]: g["kick"] for g in games if g["kick"] - WINDOW[0] <= now <= g["kick"]}
+    if orders.empty or not kicks:
+        return
+    rows = []
+    for o in orders[orders.game_id.isin(kicks) & ~orders.status.astype(str).str.startswith(("rejected", "skipped", "error"))].to_dict("records"):
+        ob = (get(f"{K}/markets/{o['ticker']}/orderbook") or {}).get("orderbook_fp") or {}
+        yes = [(float(p), float(q)) for p, q in ob.get("yes_dollars") or []]
+        if not yes:
+            continue
+        yb = max(yes)[0]
+        d = lambda c: round(sum(q * (1 - p) for p, q in yes if p >= yb - c - 1e-9), 2)  # noqa: E731
+        rows.append({"ts": now, "t_minus": (kicks[o["game_id"]] - now) // 60, "game_id": o["game_id"], "ticker": o["ticker"],
+                     "no_ask": round(1 - yb, 2), "depth_best": d(0), "depth_1c": d(0.01), "depth_3c": d(0.03)})
+    if rows:
+        pd.DataFrame(rows).to_csv(DEPTH, mode="a", header=not DEPTH.exists(), index=False)
 
 
 def trade_game(g, now, trig, orders, new, spent):
