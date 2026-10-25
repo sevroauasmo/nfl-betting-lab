@@ -32,5 +32,27 @@
     "headline": "Moore (shoulder) is listed as inactive Sunday in Las Vegas."
    }
   ]
+ },
+ "2026_07_MIA_NYJ|NYJ": {
+  "first_seen": "2026-10-25T15:55:22+00:00",
+  "players": [
+   {
+    "player": "Breece Hall",
+    "ts": 0.103,
+    "published": "2026-10-25T15:37:50Z",
+    "headline": "Hall (quadriceps) is inactive for Sunday's Week 7 matchup against the Dolphins."
+   }
+  ]
+ },
+ "2026_07_CLE_TEN|TEN": {
+  "first_seen": "2026-10-25T15:55:31+00:00",
+  "players": [
+   {
+    "player": "Tyjae Spears",
+    "ts": 0.113,
+    "published": "2026-10-25T15:36:44Z",
+    "headline": "Spears (knee) is listed as inactive Sunday against the Browns."
+   }
+  ]
  }
 }
