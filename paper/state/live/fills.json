@@ -220,8 +220,8 @@
   "filled": 8.0,
   "cost": 4.8,
   "fee": 0.1344,
-  "result": null,
-  "pnl": null
+  "result": "no",
+  "pnl": 3.0656
  },
  "01a173c6-2968-7371-b14b-572a894a85b6": {
   "filled": 9.0,
@@ -255,15 +255,15 @@
   "filled": 8.0,
   "cost": 4.32,
   "fee": 0.1392,
-  "result": null,
-  "pnl": null
+  "result": "no",
+  "pnl": 3.5408
  },
  "01a173c6-2d50-71da-b12a-5c9928a52952": {
   "filled": 8.0,
   "cost": 4.48,
   "fee": 0.138,
-  "result": null,
-  "pnl": null
+  "result": "yes",
+  "pnl": -4.618
  },
  "01a173c6-2d50-7ff6-92dd-b70d20067d5a": {
   "filled": 10.0,

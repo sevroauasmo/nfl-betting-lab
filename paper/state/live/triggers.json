@@ -10,7 +10,9 @@
    }
   ]
  },
- "_settled_notified": [],
+ "_settled_notified": [
+  "2026_07_MIA_NYJ|NYJ"
+ ],
  "2026_06_BAL_CLE|CLE": {
   "first_seen": "2026-10-18T16:00:25+00:00",
   "players": [
