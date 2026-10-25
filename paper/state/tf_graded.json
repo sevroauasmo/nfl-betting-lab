@@ -93,5 +93,12 @@
  "2026_06_LAC_KC": "no_trigger",
  "2026_06_WAS_SF": "no_trigger",
  "2026_07_NE_CHI": "no_trigger",
- "2026_07_PIT_NO": "no_trigger"
+ "2026_07_PIT_NO": "no_trigger",
+ "2026_07_CIN_BAL": "waiting",
+ "2026_07_CLE_TEN": "waiting",
+ "2026_07_IND_MIN": "waiting",
+ "2026_07_MIA_NYJ": "waiting",
+ "2026_07_NYG_HOU": "waiting",
+ "2026_07_SF_ATL": "waiting",
+ "2026_07_TB_CAR": "waiting"
 }
