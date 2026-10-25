@@ -276,8 +276,8 @@
   "filled": 8.0,
   "cost": 4.32,
   "fee": 0.1392,
-  "result": null,
-  "pnl": null
+  "result": "yes",
+  "pnl": -4.4592
  },
  "01a173c6-44c0-7756-8cc4-ae4c85d5a852": {
   "filled": 9.0,
@@ -304,42 +304,42 @@
   "filled": 8.0,
   "cost": 4.72,
   "fee": 0.1355,
-  "result": null,
-  "pnl": null
+  "result": "no",
+  "pnl": 3.1445
  },
  "01a173c6-48a8-7bc5-824e-a0247fb92159": {
   "filled": 10.0,
   "cost": 4.7,
   "fee": 0.1744,
-  "result": null,
-  "pnl": null
+  "result": "yes",
+  "pnl": -4.8744
  },
  "01a173c6-48a8-7246-8dc6-9306bd056af7": {
   "filled": 8.0,
   "cost": 4.32,
   "fee": 0.1392,
-  "result": null,
-  "pnl": null
+  "result": "yes",
+  "pnl": -4.4592
  },
  "01a173c6-4c90-753e-b805-2b313921d8de": {
   "filled": 8.0,
   "cost": 4.32,
   "fee": 0.1392,
-  "result": null,
-  "pnl": null
+  "result": "yes",
+  "pnl": -4.4592
  },
  "01a173c6-4c90-7426-849c-05882d9acf40": {
   "filled": 7.0,
   "cost": 4.27,
   "fee": 0.1166,
-  "result": null,
-  "pnl": null
+  "result": "yes",
+  "pnl": -4.3866
  },
  "01a173c6-4c90-7c61-8b2a-f15d5649a21b": {
   "filled": 9.0,
   "cost": 4.41,
   "fee": 0.1575,
-  "result": null,
-  "pnl": null
+  "result": "no",
+  "pnl": 4.4325
  }
 }
