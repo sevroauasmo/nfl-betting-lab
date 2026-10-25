@@ -62,3 +62,5 @@ game_id,team,week,ticker,cost,status,ts,env,player,stat,strike,mode,spread,no_pr
 2026_07_CLE_TEN,TEN,7,KXNFLRECYDS-26OCT25CLETEN-TENGHELM84-15,4.32,placed,2026-10-25T15:55:37+00:00,live,gunnar helm,receiving_yards,15.0,take,0.01,0.54,8.0,01a173c6-4c90-753e-b805-2b313921d8de,,1323.0,1361.5,1361.5
 2026_07_CLE_TEN,TEN,7,KXNFLRECYDS-26OCT25CLETEN-TENTPOLLARD20-10,4.27,placed,2026-10-25T15:55:38+00:00,live,tony pollard,receiving_yards,10.0,take,0.03,0.61,7.0,01a173c6-4c90-7426-849c-05882d9acf40,,76.25,476.15,1106.15
 2026_07_CLE_TEN,TEN,7,KXNFLRECYDS-26OCT25CLETEN-TENWROBINSON4-35,4.41,placed,2026-10-25T15:55:38+00:00,live,wandale robinson,receiving_yards,35.0,take,0.01,0.49,9.0,01a173c6-4c90-7c61-8b2a-f15d5649a21b,,34.3,134.3,1847.07
+2026_07_MIA_NYJ,NYJ,7,KXNFLREC-26OCT25MIANYJ-NYJBALLEN0-4,4.59,skipped,2026-10-25T16:15:28+00:00,live,braelon allen,receptions,4.0,none,0.97,0.51,9.0,,spread 0.97 / mid 0.49 outside limits,18.81,18.81,18.81
+2026_07_MIA_NYJ,NYJ,7,KXNFLRECYDS-26OCT25MIANYJ-NYJBALLEN0-15,4.95,skipped,2026-10-25T16:15:28+00:00,live,braelon allen,receiving_yards,15.0,none,0.54,0.55,9.0,,spread 0.54 / mid 0.45 outside limits,82.0,82.0,82.0
