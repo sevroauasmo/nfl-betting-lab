@@ -1,8 +1,9 @@
 """Live trader: 'surprise inactive -> teammates' receiving unders' on Kalshi.
 
 Each run (cron-job.org dispatches the workflow every 5 min in pregame windows):
-  1. For games kicking off in the next ~110 min, build candidates: WR/TE/RB with >=10% target share over their last
-     3 games who are NOT listed Out/Doubtful on the week's injury report.
+  1. For games kicking off in the next ~110 min, build candidates: WR/TE/RB with >=5% target share over their last
+     3 games who are NOT listed Out/Doubtful on the week's injury report. A team triggers when its surprise inactives'
+     target shares add up to >= 15% (the backtest's 10-15% bucket was break-even: +1% best book, -5% exchange, 89 games).
   2. Check each candidate's ESPN player-news feed (RotoWire blurbs) for "X is inactive" (posted ~T-75..T-90).
   3. On a trigger, buy NO on each active teammate's receptions + receiving-yards ladder at the strike priced nearest
      50/50, sized ~$BET each. Spread <= 4c: take the ask. Wider: rest a post-only NO bid at the mid. Every order expires
@@ -41,7 +42,9 @@ REPORT = ROOT / "LIVE.md"
 ALERTS = []                                                      # (key, title, body) for paper/notify.py
 ENV = os.environ.get("KALSHI_ENV", "demo")                       # demo | live | off
 TRADE = {"demo": "https://external-api.demo.kalshi.co/trade-api/v2", "live": "https://external-api.kalshi.com/trade-api/v2"}
-BET, PER_WEEK = 5.0, 250.0
+BET, PER_WEEK = 10.0, 250.0
+WATCH_MIN = 0.05                                                  # watch anyone with >= 5% target share ...
+MIN_VACATED = 0.15                                                # ... and trigger when a team's scratched share sums to >= 15%
 TIGHT = 0.04
 MAX_REST_SPREAD = 0.20                                            # wider books are bench players with no real market
 WINDOW = (110 * 60, 10 * 60)                                      # act from T-110 to T-10
@@ -116,7 +119,7 @@ def candidates(g):
     team = last3.groupby("player_id").team.last()             # current team = team in most recent game
     pos = last3.groupby("player_id").position.last()
     c = pd.DataFrame({"ts": ts, "team": team, "position": pos}).reset_index().rename(columns={"player_id": "gsis_id"})
-    c = c[(c.ts >= 0.10) & c.position.isin(["WR", "TE", "RB"])].merge(nv["players"][["gsis_id", "espn_id", "display_name"]], on="gsis_id")
+    c = c[(c.ts >= WATCH_MIN) & c.position.isin(["WR", "TE", "RB"])].merge(nv["players"][["gsis_id", "espn_id", "display_name"]], on="gsis_id")
     inj = nv["injuries"]; inj = inj[(inj.week == g["week"]) & inj.team.isin([g["home"], g["away"]])]
     out = inj[inj.report_status.isin(["Out", "Doubtful"])]
     out_names = set(out.full_name.map(norm)) | {n for n, s in espn_injuries(g).items() if s in ("Out", "Doubtful")}   # either source
@@ -307,10 +310,14 @@ def trade_game(g, now, trig, orders, new, spent):
         if n:
             hits.setdefault(c.team, []).append({"player": c.display_name, "ts": round(float(c.ts), 3), **n})
     for team, who in hits.items():
+        vacated = sum(w["ts"] for w in who)
+        if vacated < MIN_VACATED:
+            print(f"  below threshold {team}: " + "; ".join(f"{w['player']} ({w['ts']:.0%})" for w in who) + f" = {vacated:.0%} < {MIN_VACATED:.0%}")
+            continue
         key = f"{g['game_id']}|{team}"
         is_new = key not in trig
         n_before = len(new)
-        trig.setdefault(key, {"first_seen": datetime.now(timezone.utc).isoformat(timespec="seconds"), "players": who})
+        trig.setdefault(key, {"first_seen": datetime.now(timezone.utc).isoformat(timespec="seconds")})["players"] = who
         print(f"  TRIGGER {team}: " + "; ".join(f"{w['player']} ({w['ts']:.0%}) - {w['headline']}" for w in who))
         exclude = {norm(w["player"]) for w in who} | out_names        # scratched players + anyone already ruled out
         spent_week = spent(lambda o: o["week"] == g["week"])
