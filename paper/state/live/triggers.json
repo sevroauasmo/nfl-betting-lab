@@ -57,5 +57,22 @@
     "headline": "Spears (knee) is listed as inactive Sunday against the Browns."
    }
   ]
+ },
+ "2026_08_LV_NYJ|NYJ": {
+  "first_seen": "2026-11-01T17:10:28+00:00",
+  "players": [
+   {
+    "player": "Tim Patrick",
+    "ts": 0.103,
+    "published": "2026-11-01T16:48:25Z",
+    "headline": "Patrick (coach's decision) is inactive for Sunday's game versus the Raiders."
+   },
+   {
+    "player": "Breece Hall",
+    "ts": 0.103,
+    "published": "2026-11-01T16:32:39Z",
+    "headline": "Hall (quadriceps) is inactive for Sunday's game against the Raiders."
+   }
+  ]
  }
 }
