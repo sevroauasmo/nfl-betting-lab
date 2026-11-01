@@ -423,7 +423,7 @@
   "filled": 20.0,
   "cost": 9.4,
   "fee": 0.3488,
-  "result": null,
-  "pnl": null
+  "result": "no",
+  "pnl": 10.2512
  }
 }
