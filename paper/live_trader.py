@@ -4,7 +4,11 @@ Each run (cron-job.org dispatches the workflow every 5 min in pregame windows):
   1. For games kicking off in the next ~110 min, build candidates: WR/TE/RB with >=5% target share over their last
      3 games who are NOT listed Out/Doubtful on the week's injury report. A team triggers when its surprise inactives'
      target shares add up to >= 15% (the backtest's 10-15% bucket was break-even: +1% best book, -5% exchange, 89 games).
-  2. Check each candidate's ESPN player-news feed (RotoWire blurbs) for "X is inactive" (posted ~T-75..T-90).
+     "Surprise" = not Out/Doubtful on the final official (nflverse) report, exactly as in the backtest.
+  2. A candidate counts as scratched when (a) their ESPN player-news feed (RotoWire blurbs) says "X is inactive"
+     (posted ~T-75..T-90) -> kind "inactive", or (b) after that report they were ruled out: a "ruled out" / "won't play"
+     blurb or an ESPN injury status of Out -> kind "ruled_out" (e.g. Questionable Friday, ruled out Saturday).
+     Each trigger records its kind so the two can be tracked separately.
   3. On a trigger, buy NO on each active teammate's receptions + receiving-yards ladder at the strike priced nearest
      50/50, sized ~$BET each. Spread <= 4c: take the ask. Wider: rest a post-only NO bid at the mid. Every order expires
      at kickoff. Decisions use the production order book (public); orders go to KALSHI_ENV (demo | live).
@@ -52,6 +56,8 @@ MAX_MID_DIST = 0.20                                               # chosen strik
 EXPIRE_BEFORE_KICK = 120                                          # orders expire 2 min before scheduled kickoff
 SWEEP_AFTER_KICK = 6 * 3600                                       # cancel anything still resting from T-2m to T+6h
 INACTIVE = r"^(?:{first} )?{last}(?: \([^)]*\))?,?(?: [^.]{{0,80}}?,)? (?:is|was|has been|will be) (?:officially )?(?:listed as |ruled |declared )?inactive\b"
+RULED_OUT = (r"^(?:{first} )?{last}(?: \([^)]*\))?,?(?: [^.]{{0,80}}?,)? (?:(?:is|was|has been|will be) (?:officially )?(?:ruled |declared |downgraded to )?out\b"
+             r"(?! of\b| there\b| for the (?:rest|remainder)\b)|(?:won't|will not) (?:play|suit up|be active)\b)")
 HEDGE = re.compile(r"\b(expected|likely|could|may|might|trending|considered|projected|anticipated)\b", re.I)   # within the matched phrase
 TRANSIENT = ("rejected 429", "rejected 5", "error")              # order attempts worth retrying on the next run
 UA = {"User-Agent": "Mozilla/5.0"}
@@ -96,7 +102,7 @@ def nflverse(season):
 
 
 def espn_injuries(g):
-    """(name -> status) from ESPN's game summary; used as a fallback when nflverse hasn't published the week's report."""
+    """name -> (status, unix date) from ESPN's game summary (current designation, incl. Saturday/game-day changes)."""
     sb = get("https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard") or {}
     homes = ALIAS.get(g["home"], [g["home"]])
     eid = next((e["id"] for e in sb.get("events", []) if abs(datetime.fromisoformat(e["date"].replace("Z", "+00:00")).timestamp() - g["kick"]) < 600
@@ -105,8 +111,7 @@ def espn_injuries(g):
     for t in ((get("https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary", event=eid) or {}).get("injuries") or []) if eid else []:
         for x in t.get("injuries", []):
             when = datetime.fromisoformat(x.get("date", "1970-01-01T00:00Z").replace("Z", "+00:00")).timestamp()
-            if when < g["kick"] - 12 * 3600:                   # Friday/Saturday designations only, not game-day updates
-                out[norm(x.get("athlete", {}).get("displayName", ""))] = x.get("status")
+            out[norm(x.get("athlete", {}).get("displayName", ""))] = (x.get("status"), when)
     return out
 
 
@@ -122,22 +127,35 @@ def candidates(g):
     c = c[(c.ts >= WATCH_MIN) & c.position.isin(["WR", "TE", "RB"])].merge(nv["players"][["gsis_id", "espn_id", "display_name"]], on="gsis_id")
     inj = nv["injuries"]; inj = inj[(inj.week == g["week"]) & inj.team.isin([g["home"], g["away"]])]
     out = inj[inj.report_status.isin(["Out", "Doubtful"])]
-    out_names = set(out.full_name.map(norm)) | {n for n, s in espn_injuries(g).items() if s in ("Out", "Doubtful")}   # either source
-    c = c[~c.gsis_id.isin(set(out.gsis_id)) & ~c.display_name.map(norm).isin(out_names)]
+    espn = espn_injuries(g)
+    # Surprise = not Out/Doubtful on the final official report (the backtest's definition). ESPN stands in only for a
+    # team nflverse hasn't published yet, using designations from before kick-12h (i.e. not Saturday/game-day news).
+    reported = set(out.full_name.map(norm))
+    no_report = {t for t in (g["home"], g["away"]) if t not in set(inj.team)}
+    if no_report:
+        reported |= {n for n, (s, t) in espn.items() if s in ("Out", "Doubtful") and t < g["kick"] - 12 * 3600}
+    c = c[~c.gsis_id.isin(set(out.gsis_id)) & ~c.display_name.map(norm).isin(reported)]
+    c = c.assign(espn_out=c.display_name.map(norm).map(lambda n: espn.get(n, (None, None))[0] == "Out"),
+                 espn_date=c.display_name.map(norm).map(lambda n: espn.get(n, (None, None))[1]))
+    out_names = reported | {n for n, (s, _) in espn.items() if s in ("Out", "Doubtful")}   # never bet on anyone out
     teams = dict(zip(last3.player_display_name.map(norm), last3.team))   # name -> team, for assigning Kalshi ladders
     return c, out_names, teams
 
 
 def inactive_news(espn_id, name, g):
+    """First matching blurb: game-day "is inactive" (kind inactive, last 30h) beats "ruled out" (kind ruled_out, last 72h;
+    anyone already Out/Doubtful on the official report was filtered out upstream, so this only catches post-report news)."""
     first, _, last = re.sub(r"\s+(Jr\.?|Sr\.?|II|III|IV|V)$", "", name).partition(" ")   # "Amon-Ra St. Brown" -> "St. Brown"
-    pat = INACTIVE.format(first=re.escape(first), last=re.escape(last or first))
+    f, l = re.escape(first), re.escape(last or first)
+    pats = [("inactive", INACTIVE.format(first=f, last=l), 30), ("ruled_out", RULED_OUT.format(first=f, last=l), 72)]
     feed = (get("https://site.api.espn.com/apis/fantasy/v2/games/ffl/news/players", playerId=int(espn_id), limit=30) or {}).get("feed", [])
-    for a in feed:
-        t = datetime.fromisoformat(a["published"].replace("Z", "+00:00")).timestamp()
-        h = a.get("headline", "")
-        m = re.search(pat, h, re.I)
-        if g["kick"] - 30 * 3600 <= t <= g["kick"] and m and not HEDGE.search(m.group(0)):
-            return {"published": a["published"], "headline": h}
+    for kind, pat, hours in pats:
+        for a in feed:
+            t = datetime.fromisoformat(a["published"].replace("Z", "+00:00")).timestamp()
+            h = a.get("headline", "")
+            m = re.search(pat, h, re.I)
+            if g["kick"] - hours * 3600 <= t <= g["kick"] and m and not HEDGE.search(m.group(0)):
+                return {"kind": kind, "published": a["published"], "headline": h}
     return None
 
 
@@ -307,6 +325,9 @@ def trade_game(g, now, trig, orders, new, spent):
         if pd.isna(c.espn_id):
             continue
         n = inactive_news(c.espn_id, c.display_name, g)
+        if not n and c.espn_out and c.espn_date and c.espn_date <= g["kick"]:     # ESPN downgraded them after the report
+            n = {"kind": "ruled_out", "published": datetime.fromtimestamp(c.espn_date, timezone.utc).isoformat(timespec="seconds"),
+                 "headline": "ESPN injury status: Out"}
         if n:
             hits.setdefault(c.team, []).append({"player": c.display_name, "ts": round(float(c.ts), 3), **n})
     for team, who in hits.items():
@@ -317,8 +338,10 @@ def trade_game(g, now, trig, orders, new, spent):
         key = f"{g['game_id']}|{team}"
         is_new = key not in trig
         n_before = len(new)
-        trig.setdefault(key, {"first_seen": datetime.now(timezone.utc).isoformat(timespec="seconds")})["players"] = who
-        print(f"  TRIGGER {team}: " + "; ".join(f"{w['player']} ({w['ts']:.0%}) - {w['headline']}" for w in who))
+        kind = "inactive" if all(w["kind"] == "inactive" for w in who) else "ruled_out"   # any pre-game ruling -> ruled_out
+        t_ = trig.setdefault(key, {"first_seen": datetime.now(timezone.utc).isoformat(timespec="seconds")})
+        t_["players"], t_["kind"] = who, kind
+        print(f"  TRIGGER {team} [{kind}]: " + "; ".join(f"{w['player']} ({w['ts']:.0%}, {w['kind']}) - {w['headline']}" for w in who))
         exclude = {norm(w["player"]) for w in who} | out_names        # scratched players + anyone already ruled out
         spent_week = spent(lambda o: o["week"] == g["week"])
         done = ordered_on_exchange(g) | {prop(o["ticker"]) for o in orders.to_dict("records") + new if not str(o["status"]).startswith(TRANSIENT)}
@@ -393,7 +416,8 @@ def report(games):
               "| game | team | trigger | orders | filled | W-L | risked | P&L | ROI | paper (Kalshi tight) ROI |", "|---|---|---|---|---|---|---|---|---|---|"]
     for (gid, team), x in d.groupby(["game_id", "team"], sort=False):
         fx = x[x.filled.fillna(0) > 0]; sx = fx[fx.result.isin(["yes", "no"])]
-        who = ", ".join(w["player"] for w in trig.get(f"{gid}|{team}", {}).get("players", []))
+        tk = trig.get(f"{gid}|{team}", {})
+        who = ", ".join(w["player"] for w in tk.get("players", [])) + f" ({tk.get('kind', 'inactive')})"
         pp = paper[(paper.game_id == gid) & (paper.team == team)] if not paper.empty else paper
         p_roi = f"{pp.pnl.sum() / pp.stake.sum():+.1%}" if len(pp) and pp.stake.sum() else "–"
         roi = f"{sx.pnl.sum() / sx.cost.sum():+.1%}" if len(sx) and sx.cost.sum() else "–"
@@ -406,6 +430,11 @@ def report(games):
             notified.add(key)
     trig["_settled_notified"] = sorted(notified)
     TRIG.write_text(json.dumps(trig, indent=1))
+    kinds = d.assign(kind=[trig.get(f"{a}|{b}", {}).get("kind", "inactive") for a, b in zip(d.game_id, d.team)])
+    ks = kinds[(kinds.filled.fillna(0) > 0) & kinds.result.isin(["yes", "no"])]
+    lines += ["", "**By trigger kind** (inactive = game-day inactive list; ruled_out = ruled out after the final injury report): "
+              + "; ".join(f"{k}: {(x.result == 'no').sum()}-{(x.result == 'yes').sum()}, ${x.pnl.sum():+.2f} on ${x.cost.sum():.2f}"
+                          for k, x in ks.groupby("kind")) if len(ks) else ""]
     lines += ["", "Paper column: the paper test's Kalshi strategy for the same trigger (take when spread ≤ 4¢), priced at its T-85 snapshot.", ""]
     REPORT.write_text("\n".join(lines))
 
