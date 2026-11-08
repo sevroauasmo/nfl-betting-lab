@@ -75,5 +75,18 @@
     "headline": "Hall (quadriceps) is inactive for Sunday's game against the Raiders."
    }
   ]
+ },
+ "2026_09_DAL_IND|DAL": {
+  "first_seen": "2026-11-08T16:40:24+00:00",
+  "players": [
+   {
+    "player": "George Pickens",
+    "ts": 0.192,
+    "kind": "ruled_out",
+    "published": "2026-11-08T16:32:00+00:00",
+    "headline": "ESPN injury status: Out"
+   }
+  ],
+  "kind": "ruled_out"
  }
 }
