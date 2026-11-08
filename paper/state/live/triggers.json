@@ -88,5 +88,18 @@
    }
   ],
   "kind": "inactive"
+ },
+ "2026_09_DAL_IND|IND": {
+  "first_seen": "2026-11-08T17:05:22+00:00",
+  "players": [
+   {
+    "player": "Will Mallory",
+    "ts": 0.15,
+    "kind": "ruled_out",
+    "published": "2026-11-08T16:50:00+00:00",
+    "headline": "ESPN injury status: Out"
+   }
+  ],
+  "kind": "ruled_out"
  }
 }
