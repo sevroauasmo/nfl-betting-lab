@@ -430,8 +430,8 @@
   "filled": 21.0,
   "cost": 9.24,
   "fee": 0.3623,
-  "result": null,
-  "pnl": null
+  "result": "yes",
+  "pnl": -9.6023
  },
  "01a1bc08-6060-72b2-9d15-eca81e3b9fb4": {
   "filled": 21.0,
