@@ -82,11 +82,11 @@
    {
     "player": "George Pickens",
     "ts": 0.192,
-    "kind": "ruled_out",
-    "published": "2026-11-08T16:32:00+00:00",
-    "headline": "ESPN injury status: Out"
+    "kind": "inactive",
+    "published": "2026-11-08T16:35:39Z",
+    "headline": "Pickens (hamstring) is inactive for Sunday's game at Indianapolis."
    }
   ],
-  "kind": "ruled_out"
+  "kind": "inactive"
  }
 }
