@@ -326,7 +326,8 @@ def trade_game(g, now, trig, orders, new, spent):
             continue
         n = inactive_news(c.espn_id, c.display_name, g)
         if not n and c.espn_out and c.espn_date and c.espn_date <= g["kick"]:     # ESPN downgraded them after the report
-            n = {"kind": "ruled_out", "published": datetime.fromtimestamp(c.espn_date, timezone.utc).isoformat(timespec="seconds"),
+            n = {"kind": "inactive" if c.espn_date >= g["kick"] - 3 * 3600 else "ruled_out",   # game-day Out = inactive list
+                 "published": datetime.fromtimestamp(c.espn_date, timezone.utc).isoformat(timespec="seconds"),
                  "headline": "ESPN injury status: Out"}
         if n:
             hits.setdefault(c.team, []).append({"player": c.display_name, "ts": round(float(c.ts), 3), **n})

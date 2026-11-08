@@ -95,11 +95,11 @@
    {
     "player": "Will Mallory",
     "ts": 0.15,
-    "kind": "ruled_out",
+    "kind": "inactive",
     "published": "2026-11-08T16:50:00+00:00",
-    "headline": "ESPN injury status: Out"
+    "headline": "ESPN injury status: Out (game-day inactive list)"
    }
   ],
-  "kind": "ruled_out"
+  "kind": "inactive"
  }
 }
