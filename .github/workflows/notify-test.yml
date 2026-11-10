@@ -1,0 +1,18 @@
+name: notify-test
+# Manual: posts one test alert through paper/notify.py, exactly as a real trigger would (issue + @mention + assignment).
+on: workflow_dispatch
+permissions: { contents: read, issues: write }
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Send test alert
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          ALERTS_FILE: ${{ github.workspace }}/../alerts.jsonl
+        run: |
+          echo "{\"key\": \"test-${{ github.run_id }}\", \"title\": \"[test] notification check ${{ github.run_id }}\", \"body\": \"Test alert from the notify-test workflow. Safe to close.\"}" > "$ALERTS_FILE"
+          uv run --no-project --python 3.12 --with requests python paper/notify.py

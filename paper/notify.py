@@ -52,7 +52,8 @@ def main():
         else:
             title = a["title"] or f"[trade] {a['key']}"
             r = requests.post(f"{API}/issues", headers=H, timeout=30,
-                              json={"title": title, "body": f"@{OWNER}\n\n{a['body']}\n\n<!-- key:{a['key']} -->"})
+                              json={"title": title, "body": f"@{OWNER}\n\n{a['body']}\n\n<!-- key:{a['key']} -->",
+                                    "assignees": [OWNER]})              # assignment = a second native notification reason
         if not num and r.status_code < 300:
             SEEN[a["key"]] = r.json()["number"]
         print(a["key"], r.status_code)
