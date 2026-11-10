@@ -1,6 +1,6 @@
 # Paper test: surprise inactive -> teammates' receiving unders
 
-_Updated 2026-11-10 00:20 UTC. Prices snapshotted ~T-85 (after inactives); nothing is actually bet._
+_Updated 2026-11-10 00:25 UTC. Prices snapshotted ~T-85 (after inactives); nothing is actually bet._
 
 Games snapshotted: 136 (62 rebuilt after the fact from 1-minute Kalshi candles / odds history) · graded: 17 with a trigger, 118 without · pending: 0
 
