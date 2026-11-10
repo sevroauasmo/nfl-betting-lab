@@ -34,6 +34,7 @@ jobs:
         if: always()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: uv run --no-project --python 3.12 --with requests python paper/notify.py
       - name: Commit order log
         if: always()
