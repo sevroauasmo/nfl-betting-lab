@@ -544,5 +544,89 @@
   "fee": 0.3495,
   "result": "yes",
   "pnl": -9.9495
+ },
+ "01a1d214-82d0-7c25-894b-7c0bcf437acd": {
+  "filled": 18.0,
+  "cost": 9.18,
+  "fee": 0.3149,
+  "result": null,
+  "pnl": null
+ },
+ "01a1d214-82d0-7d80-9fd8-340368977035": {
+  "filled": 19.0,
+  "cost": 9.5,
+  "fee": 0.3325,
+  "result": null,
+  "pnl": null
+ },
+ "01a1d214-82d0-737b-9745-25ad373d7c71": {
+  "filled": 20.0,
+  "cost": 9.4,
+  "fee": 0.3488,
+  "result": null,
+  "pnl": null
+ },
+ "01a1d214-82d0-752e-a66e-510f6579bce5": {
+  "filled": 15.0,
+  "cost": 9.45,
+  "fee": 0.2448,
+  "result": null,
+  "pnl": null
+ },
+ "01a1d214-82d0-73e4-90c6-76250f81ca60": {
+  "filled": 22.0,
+  "cost": 9.46,
+  "fee": 0.3775,
+  "result": null,
+  "pnl": null
+ },
+ "01a1d214-82d0-7bff-8a23-06cffdd27e68": {
+  "filled": 14.0,
+  "cost": 9.66,
+  "fee": 0.2097,
+  "result": null,
+  "pnl": null
+ },
+ "01a1d214-82d0-76ae-8cc4-2fad9076edb1": {
+  "filled": 17.0,
+  "cost": 9.18,
+  "fee": 0.2956,
+  "result": null,
+  "pnl": null
+ },
+ "01a1d214-82d0-7f58-8943-3679ecfa43cd": {
+  "filled": 19.0,
+  "cost": 9.31,
+  "fee": 0.3324,
+  "result": null,
+  "pnl": null
+ },
+ "01a1d214-82d0-77b8-8f66-26f1685b4da1": {
+  "filled": 16.0,
+  "cost": 9.28,
+  "fee": 0.2729,
+  "result": null,
+  "pnl": null
+ },
+ "01a1d214-82d0-7f1e-b4aa-b7c1e7106caa": {
+  "filled": 17.0,
+  "cost": 9.52,
+  "fee": 0.2933,
+  "result": null,
+  "pnl": null
+ },
+ "01a1d214-86b8-7bd3-a417-8ee93dbdfd45": {
+  "filled": 17.0,
+  "cost": 9.18,
+  "fee": 0.2956,
+  "result": null,
+  "pnl": null
+ },
+ "01a1d214-86b8-7f66-b87f-5c8f5d214bf8": {
+  "filled": 16.0,
+  "cost": 9.12,
+  "fee": 0.2746,
+  "result": null,
+  "pnl": null
  }
 }

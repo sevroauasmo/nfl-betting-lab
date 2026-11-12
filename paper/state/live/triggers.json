@@ -103,5 +103,18 @@
    }
   ],
   "kind": "inactive"
+ },
+ "2026_10_WAS_NYG|WAS": {
+  "first_seen": "2026-11-12T23:25:18+00:00",
+  "players": [
+   {
+    "player": "Treylon Burks",
+    "ts": 0.191,
+    "kind": "ruled_out",
+    "published": "2026-11-11T22:06:00+00:00",
+    "headline": "ESPN injury status: Out"
+   }
+  ],
+  "kind": "ruled_out"
  }
 }
