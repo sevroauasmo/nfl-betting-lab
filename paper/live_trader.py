@@ -7,8 +7,9 @@ Each run (cron-job.org dispatches the workflow every 5 min in pregame windows):
      "Surprise" = not Out/Doubtful on the final official (nflverse) report, exactly as in the backtest.
   2. A candidate counts as scratched when (a) their ESPN player-news feed (RotoWire blurbs) says "X is inactive"
      (posted ~T-75..T-90) -> kind "inactive", or (b) after that report they were ruled out: a "ruled out" / "won't play"
-     blurb or an ESPN injury status of Out -> kind "ruled_out" (e.g. Questionable Friday, ruled out Saturday).
-     Each trigger records its kind so the two can be tracked separately.
+     blurb -> kind "ruled_out" (e.g. Questionable Friday, ruled out Saturday).
+     Each trigger records its kind so the two can be tracked separately. An ESPN injury status of Out counts only if it
+     was stamped within 2h of kickoff (the inactive-list window): older entries can be stale (Burks, 2026-11-12: played).
   3. On a trigger, buy NO on each active teammate's receptions + receiving-yards ladder at the strike priced nearest
      50/50, sized ~$BET each. Spread <= 4c: take the ask. Wider: rest a post-only NO bid at the mid. Every order expires
      at kickoff. Decisions use the production order book (public); orders go to KALSHI_ENV (demo | live).
@@ -135,8 +136,8 @@ def candidates(g):
     if no_report:
         reported |= {n for n, (s, t) in espn.items() if s in ("Out", "Doubtful") and t < g["kick"] - 12 * 3600}
     c = c[~c.gsis_id.isin(set(out.gsis_id)) & ~c.display_name.map(norm).isin(reported)]
-    c = c.assign(espn_out=c.display_name.map(norm).map(lambda n: espn.get(n, (None, None))[0] == "Out"),
-                 espn_date=c.display_name.map(norm).map(lambda n: espn.get(n, (None, None))[1]))
+    st = c.display_name.map(norm).map(lambda n: espn.get(n, (None, None)))
+    c = c.assign(espn_out=st.map(lambda x: x[0] == "Out"), espn_date=st.map(lambda x: x[1]))
     out_names = reported | {n for n, (s, _) in espn.items() if s in ("Out", "Doubtful")}   # never bet on anyone out
     teams = dict(zip(last3.player_display_name.map(norm), last3.team))   # name -> team, for assigning Kalshi ladders
     return c, out_names, teams
@@ -325,10 +326,11 @@ def trade_game(g, now, trig, orders, new, spent):
         if pd.isna(c.espn_id):
             continue
         n = inactive_news(c.espn_id, c.display_name, g)
-        if not n and c.espn_out and c.espn_date and c.espn_date <= g["kick"]:     # ESPN downgraded them after the report
-            n = {"kind": "inactive" if c.espn_date >= g["kick"] - 3 * 3600 else "ruled_out",   # game-day Out = inactive list
-                 "published": datetime.fromtimestamp(c.espn_date, timezone.utc).isoformat(timespec="seconds"),
-                 "headline": "ESPN injury status: Out"}
+        # ESPN flips the status to Out when the inactive list posts (~T-90), sometimes before any blurb (Mallory, wk9).
+        # Only a change stamped inside that window counts: older "Out" entries can be stale (Burks, wk10: played).
+        if not n and c.espn_out and c.espn_date and g["kick"] - 2 * 3600 <= c.espn_date <= g["kick"]:
+            n = {"kind": "inactive", "published": datetime.fromtimestamp(c.espn_date, timezone.utc).isoformat(timespec="seconds"),
+                 "headline": "ESPN injury status changed to Out (inactive list)"}
         if n:
             hits.setdefault(c.team, []).append({"player": c.display_name, "ts": round(float(c.ts), 3), **n})
     for team, who in hits.items():

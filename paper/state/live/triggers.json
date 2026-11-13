@@ -115,6 +115,7 @@
     "headline": "ESPN injury status: Out"
    }
   ],
-  "kind": "ruled_out"
+  "kind": "false_trigger",
+  "note": "Burks played; ESPN injury status showed a stale Out. Trigger path removed 2026-11-13."
  }
 }
