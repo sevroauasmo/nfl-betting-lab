@@ -123,3 +123,5 @@ game_id,team,week,ticker,cost,status,ts,env,player,stat,strike,mode,spread,no_pr
 2026_10_MIN_GB,MIN,10,KXNFLRECYDS-26NOV15MINGB-MINJMASON27-10,9.52,placed,2026-11-15T16:50:29+00:00,live,jordan mason,receiving_yards,10.0,take,0.01,0.68,14.0,01a1e01e-1008-72df-9c1a-7fd2e941be1d,,461.81,1036.58,1989.31
 2026_10_MIN_GB,MIN,10,KXNFLRECYDS-26NOV15MINGB-MINJJEFFERSON18-90,9.18,placed,2026-11-15T16:50:29+00:00,live,justin jefferson,receiving_yards,90.0,take,0.01,0.51,18.0,01a1e01e-1008-7630-9b73-d2a0afaa4409,,65.15,358.8,1231.89
 2026_10_MIN_GB,MIN,10,KXNFLRECYDS-26NOV15MINGB-MINMPRICE4-20,9.18,placed,2026-11-15T16:50:29+00:00,live,myles price,receiving_yards,20.0,take,0.01,0.51,18.0,01a1e01e-1008-7fa7-bdc6-151868e899f7,,32.59,1047.03,1518.68
+2026_10_MIN_GB,MIN,10,KXNFLREC-26NOV15MINGB-MINTFELTON13-2,9.88,skipped,2026-11-15T17:15:24+00:00,live,tai felton,receptions,2.0,none,0.92,0.52,19.0,,spread 0.92 / mid 0.48 outside limits,0.98,1.97,1.97
+2026_10_MIN_GB,MIN,10,KXNFLRECYDS-26NOV15MINGB-MINTFELTON13-70,9.54,skipped,2026-11-15T17:15:24+00:00,live,tai felton,receiving_yards,70.0,none,0.93,0.53,18.0,,spread 0.93 / mid 0.47 outside limits,2.97,2.97,2.97
