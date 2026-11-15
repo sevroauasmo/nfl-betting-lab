@@ -136,5 +136,12 @@
  "2026_09_TB_CHI": "no_trigger",
  "2026_09_BUF_MIN": "no_trigger",
  "2026_10_WAS_NYG": "no_trigger",
- "2026_10_NE_DET": "no_trigger"
+ "2026_10_NE_DET": "no_trigger",
+ "2026_10_BUF_NYJ": "waiting",
+ "2026_10_CAR_NO": "waiting",
+ "2026_10_HOU_CLE": "waiting",
+ "2026_10_JAX_TEN": "waiting",
+ "2026_10_KC_ATL": "waiting",
+ "2026_10_MIA_IND": "waiting",
+ "2026_10_MIN_GB": "waiting"
 }
