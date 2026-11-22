@@ -149,5 +149,13 @@
  "2026_10_SEA_LV": "no_trigger",
  "2026_10_SF_DAL": "no_trigger",
  "2026_10_LAC_BAL": "no_trigger",
- "2026_11_IND_HOU": "no_trigger"
+ "2026_11_IND_HOU": "no_trigger",
+ "2026_11_ARI_KC": "waiting",
+ "2026_11_BAL_CAR": "waiting",
+ "2026_11_JAX_NYG": "waiting",
+ "2026_11_MIA_BUF": "waiting",
+ "2026_11_NO_CHI": "waiting",
+ "2026_11_PIT_PHI": "waiting",
+ "2026_11_TB_DET": "waiting",
+ "2026_11_TEN_DAL": "waiting"
 }
