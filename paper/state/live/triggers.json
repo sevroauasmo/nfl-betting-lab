@@ -132,5 +132,18 @@
    }
   ],
   "kind": "inactive"
+ },
+ "2026_11_LV_DEN|LV": {
+  "first_seen": "2026-11-22T20:10:29+00:00",
+  "players": [
+   {
+    "player": "Brock Bowers",
+    "ts": 0.241,
+    "kind": "inactive",
+    "published": "2026-11-22T19:58:58Z",
+    "headline": "Bowers (ankle/quad) is inactive for Sunday's game against the Broncos."
+   }
+  ],
+  "kind": "inactive"
  }
 }
