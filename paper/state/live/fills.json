@@ -717,15 +717,15 @@
   "filled": 20.0,
   "cost": 9.2,
   "fee": 0.3478,
-  "result": null,
-  "pnl": null
+  "result": "yes",
+  "pnl": -9.5478
  },
  "01a204e1-bea8-7c6e-8844-14f1c483b0d3": {
   "filled": 23.0,
   "cost": 9.2,
   "fee": 0.3864,
-  "result": null,
-  "pnl": null
+  "result": "yes",
+  "pnl": -9.5864
  },
  "01a204e1-bea8-71ba-b4e2-92110913f902": {
   "filled": 23.0,
