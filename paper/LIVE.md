@@ -1,6 +1,6 @@
 # Live trades: surprise-inactive receiver unders
 
-_Updated 2026-11-23 22:00 UTC · exchange: **live** · real fills and settlements from Kalshi._
+_Updated 2026-11-23 22:03 UTC · exchange: **live** · real fills and settlements from Kalshi._
 
 **Settled:** 81 bets, 42-39, P&L **$+2.57** on $684.43 risked (+0.4%). **Open:** 0 filled bets, $0.00 at risk. **Unfilled:** 0 of 81 orders.
 
@@ -13,7 +13,7 @@ _Updated 2026-11-23 22:00 UTC · exchange: **live** · real fills and settlement
 | 2026_09_DAL_IND | IND | Will Mallory (inactive) | 10 | 10 | 8-2 | $97.79 | $+51.21 | +52.4% | +46.3% |
 | 2026_10_WAS_NYG | WAS | Treylon Burks (false_trigger) | 12 | 12 | 6-6 | $115.83 | $-19.83 | -17.1% | – |
 | 2026_10_MIN_GB | MIN | Jordan Addison (inactive) | 12 | 12 | 7-5 | $115.63 | $+9.37 | +8.1% | +10.9% |
-| 2026_11_LV_DEN | LV | Brock Bowers (inactive) | 8 | 8 | 4-4 | $76.71 | $+6.29 | +8.2% | – |
+| 2026_11_LV_DEN | LV | Brock Bowers (inactive) | 8 | 8 | 4-4 | $76.71 | $+6.29 | +8.2% | -4.3% |
 
 **By trigger kind** (inactive = game-day inactive list; ruled_out = ruled out after the final injury report): false_trigger: 6-6, $-19.83 on $115.83; inactive: 36-33, $+22.40 on $568.60
 
