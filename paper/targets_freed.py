@@ -70,8 +70,33 @@ def norm(s):
     return re.sub(r"\s+(jr|sr|ii|iii|iv|v)$", "", re.sub(r"[^a-z ]", "", s)).strip()
 
 
-def schedule():
-    txt = S.get("https://github.com/nflverse/nfldata/raw/master/data/games.csv", timeout=60).text
+SCHED_CACHE = Path(__file__).resolve().parent / "state" / "games.csv"   # last good copy, committed by the paper job
+SCHED_URLS = ("https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
+              "https://github.com/nflverse/nfldata/raw/master/data/games.csv")
+
+
+def schedule_text(save=False):
+    """nflverse games.csv. GitHub sometimes times out or serves an error page (2026-11-25/26 trade runs died here), so:
+    two hosts x 3 tries, validate the header, and fall back to the committed cache."""
+    for attempt in range(3):
+        for url in SCHED_URLS:
+            try:
+                r = S.get(url, timeout=20)
+                if r.status_code == 200 and r.text.startswith("game_id,season,"):
+                    if save and (not SCHED_CACHE.exists() or SCHED_CACHE.read_text() != r.text):
+                        SCHED_CACHE.write_text(r.text)
+                    return r.text
+            except requests.RequestException:
+                pass
+        time.sleep(3 * (attempt + 1))
+    if SCHED_CACHE.exists():
+        print("schedule: GitHub unavailable, using cached games.csv", file=sys.stderr)
+        return SCHED_CACHE.read_text()
+    raise RuntimeError("schedule unavailable and no cache")
+
+
+def schedule(save=False):
+    txt = schedule_text(save)
     et = ZoneInfo("America/New_York")
     rows = []
     for r in csv.DictReader(io.StringIO(txt)):
@@ -358,7 +383,7 @@ def summarize():
 
 
 if __name__ == "__main__":
-    games = schedule()
+    games = schedule(save=True)
     steps = sys.argv[1:] or ["snapshot", "grade", "summarize"]
     if "snapshot" in steps: snapshot(games, os.environ.get("ODDS_API_KEY"))
     if "grade" in steps: grade(games)

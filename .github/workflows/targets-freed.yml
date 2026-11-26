@@ -61,7 +61,7 @@ jobs:
         run: |
           git config user.name "paper-bot"
           git config user.email "paper-bot@users.noreply.github.com"
-          git add paper/state/tf paper/state/tf_bets.csv paper/state/tf_graded.json paper/TARGETS_FREED.md
+          git add paper/state/tf paper/state/tf_bets.csv paper/state/tf_graded.json paper/state/games.csv paper/TARGETS_FREED.md
           git diff --cached --quiet && exit 0
           git commit -m "targets-freed: $(date -u +%Y-%m-%dT%H:%MZ)"
           for i in 1 2 3 4 5; do git pull --rebase && git push && exit 0; sleep $((i * 5)); done; exit 1
